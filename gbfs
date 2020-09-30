@@ -7,7 +7,7 @@
     "last_updated": {
       "description": "Last time the data in the feed was updated in POSIX time.",
       "type": "integer",
-      "minimum": 0
+      "minimum": 1450155600
     },
     "ttl": {
       "description": "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
@@ -17,13 +17,19 @@
     "version": {
       "description": "GBFS version number to which the feed conforms, according to the versioning framework.",
       "type": "string",
-      "pattern": "^\\d+\\.\\d+$"
+      "enum": [
+        "1.0",
+        "1.1",
+        "2.0",
+        "2.1",
+        "3.0"
+       ]
     },
     "data": {
       "description": "Response data in the form of name:value pairs.",
       "type": "object",
       "patternProperties": {
-        "^[a-zA-Z]{2}$": {
+        "^[a-zA-Z]{2,}$": {
           "type": "object",
             "properties": {
               "feeds": {
