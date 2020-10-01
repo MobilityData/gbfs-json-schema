@@ -33,7 +33,7 @@
       "description": "Response data in the form of name:value pairs.",
       "type": "object",
       "patternProperties": {
-        "[a-z]{2,3}(-[A-Z]{2})?": {
+        "^[a-z]{2,3}(-[A-Z]{2})?$": {
           "type": "object",
             "properties": {
               "feeds": {
