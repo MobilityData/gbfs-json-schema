@@ -50,7 +50,7 @@
               "maxItems": 2
             },
             "days": {
-              "description": "An array of abbreviations (first 3 letters) of English names of the days of the week for which this object apples.",
+              "description": "An array of abbreviations (first 3 letters) of English names of the days of the week for which this object applies.",
               "type": "array",
               "items": {
                 "type": "string",
