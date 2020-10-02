@@ -64,7 +64,7 @@
             },
             "max_range_meters": {
               "description": "The furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential.",
-              "type": "string",
+              "type": "number",
               "minimum": 0
             },
             "name": {
