@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#system_informationjson",
-  "description": "Details including system operator, system location, year implemented, URL, contact info, time zone.",
+  "$id": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#vehicle_typesjson-added-in-v21-rc",
+  "description": "Describes the types of vehicles that System operator has available for rent.",
   "type": "object",
   "properties": {
     "last_updated": {
@@ -33,123 +33,53 @@
       "description": "Response data in the form of name:value pairs.",
       "type": "object",
       "properties": {
-        "system_id": {
-          "description": "Identifier for this vehicle share system. This should be globally unique (even between different systems).",
-          "type": "string"
-        },
-        "language": {
-          "description": "The language that will be used throughout the rest of the files. It must match the value in the gbfs.json file.",
-          "type": "string",
-          "pattern": "^[a-z]{2,3}(-[A-Z]{2})?$"
-        },
-        "name": {
-          "description": "Name of the system to be displayed to customers.",
-          "type": "string"
-        },
-        "short_name": {
-          "description": "Optional abbreviation for a system.",
-          "type": "string"
-        },
-        "operator": {
-          "description": "Name of the operator",
-          "type": "string"
-        },
-        "url": {
-          "description": "The URL of the vehicle share system.",
-          "type": "string",
-          "format": "uri"
-        },
-        "purchase_url": {
-          "description": "URL where a customer can purchase a membership.",
-          "type": "string",
-          "format": "uri"
-        },
-        "start_date": {
-          "description": "Date that the system began operations.",
-          "type": "string",
-          "pattern": "^[0-9]{4}[-0-9]{2}[-0-9]{2}$"
-        },
-        "phone_number": {
-          "description": "A single voice telephone number fo rthe specified system that presents the telephone number as typical for the system's service area.",
-          "type": "string"
-        },
-        "email": {
-          "description": "Email address actively monitored by the operator's customer service department.",
-          "type": "string",
-          "format": "email"
-        },
-        "feed_contact_email": {
-          "description": "A signle contact email address for consumers of this feed to report technical issues.",
-          "type": "string",
-          "format": "email"
-        },
-        "timezone": {
-          "description": "The time zone where the system is located.",
-          "type": "string"
-        },
-        "license_id": {
-          "description": "An identifier for a standard license form the SPDX License List.",
-          "type": "string"
-        },
-        "license_url": {
-          "description": "A fully qualified URL of a page that desines the lciense terms for the GBFS data for this system.",
-          "type": "string",
-          "format": "uri"
-        },
-        "attribution_organization_name": {
-          "description": "Name of the organization to which attribution should be provided.",
-          "type": "string"
-        },
-        "attribution_url": {
-          "description": "URL of the organization to which attribution should be provided.",
-          "type": "string",
-          "format": "URI"
-        },
-        "rental_apps": {
-          "description": "Contains rental app information i nthe android and ios JSON objects.",
-          "type": "object",
-          "properties": {
-            "android": {
-              "description": "Contains rentall app download and app discovery information for the Android platform.",
-              "type": "object",
-              "properties": {
-                "store_uri": {
-                  "description": "URI wher ethe rental Android app can be downloaded from.",
-                  "type": "string",
-                  "format": "URI"
-                },
-                "discovery_uri": {
-                  "description": "URI can be used to discover if the rental Androir app is installed on the device.",
-                  "type": "string",
-                  "format": "URI"
-                }
-              }
+        "vehicle_types": {
+          "description": "Array tht contains one object per vehicle type in the system as defined below.",
+          "type": "array",
+          "items": {
+            "vehicle_type_id": {
+              "description": "Unique identifier of a vehicle type.",
+              "type": "string"
             },
-            "ios": {
-              "description": "Contains rental information for the iOS platform.",
-              "type": "object",
-              "properties": {
-                "store_uri": {
-                  "description": "URI wher ethe rental Android app can be downloaded from.",
-                  "type": "string",
-                  "format": "URI"
-                },
-                "discovery_uri": {
-                  "description": "URI can be used to discover if the rental Androir app is installed on the device.",
-                  "type": "string",
-                  "format": "URI"
-                }
-              }
+            "form_factor": {
+              "description": "The vehicle's general form factor.",
+              "type": "string",
+              "enum": [
+                "bicycle",
+                "car",
+                "moped",
+                "other",
+                "scooter"
+              ]
+            },
+            "propulstion_type": {
+              "description": "The primary propulsion type of the vehicle.",
+              "type": "string",
+              "enum": [
+                "human",
+                "electric_assist",
+                "electric",
+                "combustion"
+              ]
+            },
+            "max_range_meters": {
+              "description": "The furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential.",
+              "type": "string",
+              "minimum": 0
+            },
+            "name": {
+              "description": "The public name of this vehicle type.",
+              "type": "string"
             }
-          }
-        }
-      },
-      "required": [
-        "system_id",
-        "language",
-        "name",
-        "timezone"
-      ]
+          },
+          "required": [
+            "vehicle_type_id",
+            "form_factor",
+            "propulsion_type"
+          ]
+        },
+        "required": true
+      }
     }
   },
   "required": [
