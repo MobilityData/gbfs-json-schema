@@ -92,7 +92,7 @@
           "type": "string"
         },
         "license_url": {
-          "description": "A fully qualified URL of a page that desines the lciense terms for the GBFS data for this system.",
+          "description": "A fully qualified URL of a page that defines the license terms for the GBFS data for this system.",
           "type": "string",
           "format": "uri"
         },
@@ -106,23 +106,29 @@
           "format": "URI"
         },
         "rental_apps": {
-          "description": "Contains rental app information i nthe android and ios JSON objects.",
+          "description": "Contains rental app information in the android and ios JSON objects.",
           "type": "object",
           "properties": {
             "android": {
-              "description": "Contains rentall app download and app discovery information for the Android platform.",
+              "description": "Contains rental app download and app discovery information for the Android platform.",
               "type": "object",
               "properties": {
                 "store_uri": {
-                  "description": "URI wher ethe rental Android app can be downloaded from.",
+                  "description": "URI where the rental Android app can be downloaded from.",
                   "type": "string",
                   "format": "URI"
                 },
                 "discovery_uri": {
-                  "description": "URI can be used to discover if the rental Androir app is installed on the device.",
+                  "description": "URI that can be used to discover if the rental Android app is installed on the device.",
                   "type": "string",
                   "format": "URI"
                 }
+              },
+              "dependencies": {
+                "android": [
+                  "store_uri",
+                  "discovery_uri"
+                ]
               }
             },
             "ios": {
@@ -130,15 +136,21 @@
               "type": "object",
               "properties": {
                 "store_uri": {
-                  "description": "URI wher ethe rental Android app can be downloaded from.",
+                  "description": "URI where the rental iOS app can be downloaded from.",
                   "type": "string",
                   "format": "URI"
                 },
                 "discovery_uri": {
-                  "description": "URI can be used to discover if the rental Androir app is installed on the device.",
+                  "description": "URI that can be used to discover if the rental iOS app is installed on the device.",
                   "type": "string",
                   "format": "URI"
                 }
+              },
+              "dependencies": {
+                "ios": [
+                  "store_uri",
+                  "discovery_uri"
+                ]
               }
             }
           }
