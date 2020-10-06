@@ -83,11 +83,15 @@
       "if": {
         "properties": {
           "propulsion_type": {
-            "const": "human"
+            "const": [
+              "electric_assist",
+              "electric",
+              "combustion"
+            ]
           }
         }
       },
-      "else": {
+      "then": {
         "properties": {
           "max_range_meters": {
             "required": true
