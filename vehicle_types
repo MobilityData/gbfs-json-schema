@@ -34,7 +34,7 @@
       "type": "object",
       "properties": {
         "vehicle_types": {
-          "description": "Array tht contains one object per vehicle type in the system as defined below.",
+          "description": "Array that contains one object per vehicle type in the system as defined below.",
           "type": "array",
           "items": {
             "vehicle_type_id": {
@@ -79,6 +79,20 @@
           ]
         },
         "required": true
+      },
+      "if": {
+        "properties": {
+          "propulsion_type": {
+            "const": "human"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "max_range_meters": {
+            "required": true
+          }
+        }
       }
     }
   },
