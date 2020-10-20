@@ -14,6 +14,14 @@
       "type": "integer",
       "minimum": 0
     },
+    "version": {
+      "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
+      "type": "string",
+      "enum": [
+        "1.1-RC",
+        "1.1"
+      ]
+    },
     "data": {
       "description": "Array that contains one object per bike as defined below.",
       "type": "object",
@@ -49,24 +57,46 @@
               "minimum": 0,
               "maximum": 1
             },
-            "required": [
-              "bike_id",
-              "lat",
-              "lon",
-              "is_reserved",
-              "is_disabled"
-            ]
+            "rental_uris": {
+              "description": "Contains rental uris for Android, iOS, and web in the android, ios, and web fields (added in v1.1).",
+              "type": "object",
+              "properties": {
+                "android": {
+                  "description": "URI that can be passed to an Android app with an intent (added in v1.1).",
+                  "type": "string",
+                  "format": "uri"
+                },
+                "ios": {
+                  "description": "URI that can be used on iOS to launch the rental app for this vehicle (added in v1.1).",
+                  "type": "string",
+                  "format": "uri"
+                },
+                "web": {
+                  "description": "URL that can be used by a web browser to show more information about renting this vehicle (added in v1.1).",
+                  "type": "string",
+                  "format": "uri"
+                }
+              }
+            }
           },
           "required": [
-            "bikes"
+            "bike_id",
+            "lat",
+            "lon",
+            "is_reserved",
+            "is_disabled"
           ]
         }
       },
       "required": [
-        "last_updated",
-        "ttl",
-        "data"
+        "bikes"
       ]
     }
-  }
+  },
+  "required": [
+    "last_updated",
+    "ttl",
+    "version",
+    "data"
+  ]
 }
