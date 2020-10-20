@@ -15,7 +15,7 @@
       "minimum": 0
     },
     "version": {
-      "description": "GBFS version number to which the feed conforms, according to the versioning framework.",
+      "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
       "enum": [
         "1.1-RC",
@@ -75,7 +75,7 @@
           "format": "email"
         },
         "feed_contact_email": {
-          "description": "A single contact email address for consumers of this feed to report technical issues.",
+          "description": "A single contact email address for consumers of this feed to report technical issues (added in v1.1).",
           "type": "string",
           "format": "email"
         },
@@ -89,20 +89,20 @@
           "format": "uri"
         },
         "rental_apps": {
-          "description": "Contains rental app information in the android and ios JSON objects.",
+          "description": "Contains rental app information in the android and ios JSON objects (added in v1.1).",
           "type": "object",
           "properties": {
             "android": {
-              "description": "Contains rental app download and app discovery information for the Android platform.",
+              "description": "Contains rental app download and app discovery information for the Android platform. (added in v1.1)",
               "type": "object",
               "properties": {
                 "store_uri": {
-                  "description": "URI where the rental Android app can be downloaded from.",
+                  "description": "URI where the rental Android app can be downloaded from (added in v1.1).",
                   "type": "string",
                   "format": "URI"
                 },
                 "discovery_uri": {
-                  "description": "URI that can be used to discover if the rental Android app is installed on the device.",
+                  "description": "URI that can be used to discover if the rental Android app is installed on the device (added in v1.1).",
                   "type": "string",
                   "format": "URI"
                 }
@@ -115,16 +115,16 @@
               }
             },
             "ios": {
-              "description": "Contains rental information for the iOS platform.",
+              "description": "Contains rental information for the iOS platform (added in v1.1).",
               "type": "object",
               "properties": {
                 "store_uri": {
-                  "description": "URI where the rental iOS app can be downloaded from.",
+                  "description": "URI where the rental iOS app can be downloaded from (added in v1.1).",
                   "type": "string",
                   "format": "URI"
                 },
                 "discovery_uri": {
-                  "description": "URI that can be used to discover if the rental iOS app is installed on the device.",
+                  "description": "URI that can be used to discover if the rental iOS app is installed on the device (added in v1.1).",
                   "type": "string",
                   "format": "URI"
                 }
