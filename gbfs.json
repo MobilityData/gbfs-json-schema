@@ -18,10 +18,10 @@
       "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
       "enum": [
-        "1.1-RC",
-        "1.1",
-        "2.0-RC",
-        "2.0"
+        "2.1-RC",
+        "2.1-RC2",
+        "3.0-RC",
+        "3.0"
       ]
     },
     "data": {
@@ -44,6 +44,7 @@
                       "gbfs",
                       "gbfs_versions",
                       "system_information",
+                      "vehicle_types",
                       "station_information",
                       "station_status",
                       "free_bike_status",
@@ -51,7 +52,8 @@
                       "system_alerts",
                       "system_calendar",
                       "system_regions",
-                      "system_pricing_plans"
+                      "system_pricing_plans",
+                      "geofencing_zones"
                     ]
                   },
                   "url": {

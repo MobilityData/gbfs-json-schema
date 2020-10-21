@@ -18,10 +18,7 @@
       "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
       "enum": [
-        "1.1-RC",
-        "1.1",
-        "2.0-RC",
-        "2.0"
+        "2.1-RC"
       ]
     },
     "data": {
@@ -89,10 +86,58 @@
               },
               "minItems": 1
             },
+            "is_virtual_station": {
+              "description": "Is this station a location with or without physical infrastructure? (added in v2.1-RC)",
+              "type": "boolean"
+            },
+            "station_area": {
+              "description": "A multipolygon that describes the area of a virtual station (added in v2.1-RC).",
+              "type": "object",
+              "required": [
+                "type",
+                "coordinates"
+              ],
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "Multipolygon"
+                  ]
+                },
+                "coordinates": {
+                  "type": "array",
+                  "items": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "minItems": 4,
+                      "items": {
+                        "type": "array",
+                        "minItems": 2,
+                        "items": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
             "capacity": {
               "description": "Number of total docking points installed at this station, both available and unavailable.",
               "type": "number",
               "minimum": 0
+            },
+            "vehicle_capacity": {
+              "description": "An object where each key is a vehicle_type_id and the value is a number presenting the total number of vehicles of this type that can park within the station_area (added in v2.1-RC).",
+              "type": "object",
+              "properties": {
+                "type": "number"
+              }
+            },
+            "is_valet_station": {
+              "description": "Are valet services provided at this station? (added in v2.1-RC)",
+              "type": "boolean"
             },
             "rental_uris": {
               "description": "Contains rental uris for Android, iOS, and web in the android, ios, and web fields (added in v1.1).",
@@ -113,6 +158,13 @@
                   "type": "string",
                   "format": "uri"
                 }
+              }
+            },
+            "vehicle_type_capacity": {
+              "description": "An object where each key is a vehicle_type_id and the value is a number representing the total docking points installed at this station for each vehicle type (added in v2.1-RC).",
+              "type": "object",
+              "properties": {
+                "type": "number"
               }
             }
           },
