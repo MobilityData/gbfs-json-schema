@@ -18,8 +18,7 @@
       "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
       "enum": [
-        "1.1-RC",
-        "1.1"
+        "2.0"
       ]
     },
     "data": {
@@ -55,21 +54,15 @@
             },
             "is_installed": {
               "description": "Is the station currently on the street?",
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
+              "type": "boolean"
             },
             "is_renting": {
               "description": "Is the station currently renting vehicles?",
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
+              "type": "boolean"
             },
             "is_returning": {
               "description": "Is the station accepting vehicle returns?",
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
+              "type": "boolean"
             },
             "last_reported": {
               "description": "The last time this station reported its status to the operator's backend.",
@@ -80,7 +73,6 @@
           "required": [
             "station_id",
             "num_bikes_available",
-            "num_docks_available",
             "is_installed",
             "is_renting",
             "is_returning",

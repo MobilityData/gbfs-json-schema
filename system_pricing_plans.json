@@ -18,8 +18,9 @@
       "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
       "enum": [
-        "1.1-RC",
-        "1.1"
+        "2.0-RC",
+        "2.0",
+        "2.1-RC"
       ]
     },
     "data": {
@@ -54,9 +55,7 @@
             },
             "is_taxable": {
               "description": "Will additional tax be added to the base price?",
-              "type": "number",
-              "minimum": 0,
-              "maximum": 1
+              "type": "boolean"
             },
             "description": {
               "description": "Customer-readable description of the pricing plan.",
