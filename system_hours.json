@@ -14,6 +14,19 @@
       "type": "integer",
       "minimum": 0
     },
+    "version": {
+      "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
+      "type": "string",
+      "enum": [
+        "1.1-RC",
+        "1.1",
+        "2.0-RC",
+        "2.0",
+        "2.1-RC",
+        "2.1-RC2",
+        "3.0-RC"
+      ]
+    },
     "data": {
       "description": "Array that contains system hours of operations.",
       "type": "object",
@@ -79,6 +92,7 @@
   "required": [
     "last_updated",
     "ttl",
+    "version",
     "data"
   ]
 }
