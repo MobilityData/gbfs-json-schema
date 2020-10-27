@@ -18,7 +18,7 @@
       "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
       "enum": [
-        "2.0"
+        "2.1-RC"
       ]
     },
     "data": {
@@ -36,7 +36,7 @@
               "description": "Number of vehicles of any type physically available for rental at the station.",
               "type": "number",
               "minimum": 0
-            },
+            }, ,
             "num_bikes_disabled": {
               "description": "Number of disabled vehicles of any type at the station.",
               "type": "number",
@@ -68,6 +68,63 @@
               "description": "The last time this station reported its status to the operator's backend.",
               "type": "number",
               "minimum": 1450155600
+            },
+            "vehicle_docks_available": {
+              "description": "Object displaying available docks by vehicle type (added in v2.1-RC).",
+              "type": "array",
+              "items": {
+                "vehicle_type_ids": {
+                  "description": "An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station (added in v2.1-RC).",
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "count": {
+                  "description": "A number representing the total number of available docks for the defined vehicle type (added in v2.1-RC).",
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "dependencies": {
+                "vehicle_docks_available": [
+                  "vehicle_type_ids",
+                  "count"
+                ]
+              }
+            },
+            "vehicles": {
+              "description": "Array of objects containing data about a specific vehicle that is present at the docking station (added in v2.1-RC).",
+              "type": "array",
+              "items": {
+                "bike_id": {
+                  "description": "Rotated identifier of a vehicle (added in v2.1-RC).",
+                  "type": "string"
+                },
+                "is_reserved": {
+                  "description": "Is the vehicle currently reserved for someone else? (added in v2.1-RC)",
+                  "type": "boolean"
+                },
+                "is_disabled": {
+                  "description": "Is the vehicle currently disabled (broken)? (added in v2.1-RC)",
+                  "type": "boolean"
+                },
+                "vehicle_type_id": {
+                  "description": "The vehicle_type_id of this vehicle as described in vehicle_types.json (added in v2.1-RC).",
+                  "type": "string"
+                },
+                "current_range_meters": {
+                  "description": "The furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel (added in v2.1-RC).",
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "bike_id",
+                "is_reserved",
+                "is_disabled",
+                "vehicle_type_id"
+              ]
             }
           },
           "required": [
