@@ -18,7 +18,7 @@
       "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
       "enum": [
-        "2.1-RC"
+        "2.1-RC2"
       ]
     },
     "data": {
@@ -36,7 +36,22 @@
               "description": "Number of vehicles of any type physically available for rental at the station.",
               "type": "number",
               "minimum": 0
-            }, ,
+            },
+            "vehicles_types_available": {
+              "description": "Array of objects displaying the total number of each vehicle type at the station (added in v2.1-RC).",
+              "type": "array",
+              "items": {
+                "vehicle_type_id": {
+                  "description": "The vehicle_type_id of vehicle at the station (added in v2.1-RC).",
+                  "type": "string"
+                },
+                "count": {
+                  "description": "A number representing the total amount of this vehicle type at the station (added in v2.1-RC).",
+                  "type": "number",
+                  "minimum": 0
+                }
+              }
+            },
             "num_bikes_disabled": {
               "description": "Number of disabled vehicles of any type at the station.",
               "type": "number",
@@ -65,7 +80,7 @@
               "type": "boolean"
             },
             "last_reported": {
-              "description": "The last time this station reported its status to the operator's backend.",
+              "description": "The last time this station reported its status to the operator's backend in POSIX time.",
               "type": "number",
               "minimum": 1450155600
             },
