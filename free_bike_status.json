@@ -32,7 +32,7 @@
           "type": "array",
           "items": {
             "bike_id": {
-              "description": "Identifier of a vehicle.",
+              "description": "Rotating (as of v2.0) identifier of a vehicle.",
               "type": "string"
             },
             "lat": {
@@ -81,7 +81,7 @@
               "type": "string"
             },
             "last_reported": {
-              "description": "The last time this vehicle reported its status to the operator's backend (added in v2.1-RC).",
+              "description": "The last time this vehicle reported its status to the operator's backend in POSIX time (added in v2.1-RC).",
               "type": "number",
               "minimum": 1450155600
             },
@@ -102,7 +102,7 @@
               "bike_id",
               "is_reserved",
               "is_disabled"
-            ]
+            ]     
           },
           "required": [
             "bikes"

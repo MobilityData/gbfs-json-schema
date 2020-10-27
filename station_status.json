@@ -18,7 +18,7 @@
       "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
       "enum": [
-        "2.1-RC"
+        "2.1-RC2"
       ]
     },
     "data": {
@@ -80,7 +80,7 @@
               "type": "boolean"
             },
             "last_reported": {
-              "description": "The last time this station reported its status to the operator's backend.",
+              "description": "The last time this station reported its status to the operator's backend in POSIX time.",
               "type": "number",
               "minimum": 1450155600
             },
@@ -113,7 +113,7 @@
               "type": "array",
               "items": {
                 "bike_id": {
-                  "description": "Identifier of a vehicle (added in v2.1-RC).",
+                  "description": "Rotated identifier of a vehicle (added in v2.1-RC).",
                   "type": "string"
                 },
                 "is_reserved": {

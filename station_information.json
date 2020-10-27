@@ -18,7 +18,7 @@
       "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
       "enum": [
-        "2.1-RC"
+        "2.1-RC2"
       ]
     },
     "data": {
@@ -163,7 +163,7 @@
             "vehicle_type_capacity": {
               "description": "An object where each key is a vehicle_type_id and the value is a number representing the total docking points installed at this station for each vehicle type (added in v2.1-RC).",
               "type": "object",
-              "properties": {
+              "additionalProperties": {
                 "type": "number"
               }
             }
