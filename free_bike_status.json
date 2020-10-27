@@ -29,7 +29,7 @@
           "type": "array",
           "items": {
             "bike_id": {
-              "description": "Identifier of a vehicle.",
+              "description": "Rotating (as of v2.0) identifier of a vehicle.",
               "type": "string"
             },
             "lat": {
@@ -93,7 +93,7 @@
               "lon",
               "is_reserved",
               "is_disabled"
-            ]
+            ]     
           },
           "required": [
             "bikes"
