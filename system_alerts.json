@@ -44,10 +44,10 @@
                 "description": "Type of alert.",
                 "type": "string",
                 "enum": [
-                  "SYSTEM_CLOSURE",
-                  "STATION_CLOSURE",
-                  "STATION_MOVE",
-                  "OTHER"
+                  "system_closure",
+                  "station_closure",
+                  "station_move",
+                  "other"
                 ]
               },
               "times": {
