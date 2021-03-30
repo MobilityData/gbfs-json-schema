@@ -18,7 +18,8 @@
       "description": "GBFS version number to which the feed conforms, according to the versioning framework.",
       "type": "string",
       "enum": [
-        "2.1-RC"
+        "2.1-RC",
+        "2.1"
       ]
     },
     "data": {
