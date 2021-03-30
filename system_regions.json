@@ -34,13 +34,16 @@
           "description": "Array of regions.",
           "type": "array",
           "items": {
-            "region_id": {
-              "description": "identifier of the region.",
-              "type": "string"
-            },
-            "name": {
-              "description": "Public name for this region.",
-              "type": "string"
+            "type":"object",
+            "properties": {
+              "region_id": {
+                "description": "identifier of the region.",
+                "type": "string"
+              },
+              "name": {
+                "description": "Public name for this region.",
+                "type": "string"
+              }
             },
             "required": [
               "region_id",

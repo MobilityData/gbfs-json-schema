@@ -29,69 +29,72 @@
           "description": "Array that contains one object per vehicle type in the system as defined below.",
           "type": "array",
           "items": {
-            "vehicle_type_id": {
-              "description": "Unique identifier of a vehicle type.",
-              "type": "string"
+            "type": "object",
+            "properties": {
+              "vehicle_type_id": {
+                "description": "Unique identifier of a vehicle type.",
+                "type": "string"
+              },
+              "form_factor": {
+                "description": "The vehicle's general form factor.",
+                "type": "string",
+                "enum": [
+                  "bicycle",
+                  "car",
+                  "moped",
+                  "other",
+                  "scooter"
+                ]
+              },
+              "propulsion_type": {
+                "description": "The primary propulsion type of the vehicle.",
+                "type": "string",
+                "enum": [
+                  "human",
+                  "electric_assist",
+                  "electric",
+                  "combustion"
+                ]
+              },
+              "max_range_meters": {
+                "description": "The furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential.",
+                "type": "number",
+                "minimum": 0
+              },
+              "name": {
+                "description": "The public name of this vehicle type.",
+                "type": "string"
+              }
             },
-            "form_factor": {
-              "description": "The vehicle's general form factor.",
-              "type": "string",
-              "enum": [
-                "bicycle",
-                "car",
-                "moped",
-                "other",
-                "scooter"
-              ]
-            },
-            "propulsion_type": {
-              "description": "The primary propulsion type of the vehicle.",
-              "type": "string",
-              "enum": [
-                "human",
-                "electric_assist",
-                "electric",
-                "combustion"
-              ]
-            },
-            "max_range_meters": {
-              "description": "The furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential.",
-              "type": "number",
-              "minimum": 0
-            },
-            "name": {
-              "description": "The public name of this vehicle type.",
-              "type": "string"
+            "required": [
+              "vehicle_type_id",
+              "form_factor",
+              "propulsion_type"
+            ]
+          },
+          "if": {
+            "properties": {
+              "propulsion_type": {
+                "const": [
+                  "electric",
+                  "electric_assist",
+                  "combustion"
+                ]
+              }
             }
           },
-          "required": [
-            "vehicle_type_id",
-            "form_factor",
-            "propulsion_type"
-          ]
-        },
-        "required": true
-      },
-      "if": {
-        "properties": {
-          "propulsion_type": {
-            "const": [
-              "electric",
-              "electric_assist",
-              "combustion"
-            ]
+          "then": {
+            "properties": {
+              "max_range_meters": {
+                "required": [
+                  "max_range_meters"
+                ]
+              }
+            }
           }
         }
       },
-      "then": {
-        "properties": {
-          "max_range_meters": {
-            "required": [
-              "max_range_meters"
-            ]
-          }
-        }
-      }
+      "required": ["vehicle_types"]
     }
   },
   "required": [
