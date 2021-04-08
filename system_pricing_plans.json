@@ -67,24 +67,27 @@
                 "description": "Array of segments when the price is a function of distance travelled, displayed in kilometers (added in v2.1-RC2).",
                 "type": "array",
                 "items": {
-                  "start": {
-                    "description": "Number of kilometers that have to elapse before this segment starts applying (added in v2.1-RC2).",
-                    "type": "number",
-                    "minimum": 0
-                  },
-                  "rate": {
-                    "description": "Rate that is charged for each kilometer interval after the start (added in v2.1-RC2).",
-                    "type": "number"
-                  },
-                  "interval": {
-                    "description": "Interval in kilometers at which the rate of this segment is either reapplied indefinitely, or if defined, up until (but not including) end kilometer (added in v2.1-RC2).",
-                    "type": "number",
-                    "minimum": 0
-                  },
-                  "end": {
-                    "description": "The kilometer at which the rate will no longer apply (added in v2.1-RC2).",
-                    "type": "number",
-                    "minimum": 0
+                  "type": "object",
+                  "properties": {
+                    "start": {
+                      "description": "Number of kilometers that have to elapse before this segment starts applying (added in v2.1-RC2).",
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "rate": {
+                      "description": "Rate that is charged for each kilometer interval after the start (added in v2.1-RC2).",
+                      "type": "number"
+                    },
+                    "interval": {
+                      "description": "Interval in kilometers at which the rate of this segment is either reapplied indefinitely, or if defined, up until (but not including) end kilometer (added in v2.1-RC2).",
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "end": {
+                      "description": "The kilometer at which the rate will no longer apply (added in v2.1-RC2).",
+                      "type": "number",
+                      "minimum": 0
+                    }
                   }
                 },
                 "dependencies": {
@@ -99,24 +102,27 @@
                 "description": "Array of segments when the price is a function of time travelled, displayed in minutes (added in v2.1-RC2).",
                 "type": "array",
                 "items": {
-                  "start": {
-                    "description": "Number of minutes that have to elapse before this segment starts applying (added in v2.1-RC2).",
-                    "type": "number",
-                    "minimum": 0
-                  },
-                  "rate": {
-                    "description": "Rate that is charged for each minute interval after the start (added in v2.1-RC2).",
-                    "type": "number"
-                  },
-                  "interval": {
-                    "description": "Interval in minutes at which the rate of this segment is either reapplied (added in v2.1-RC2).",
-                    "type": "number",
-                    "minimum": "0"
-                  },
-                  "end": {
-                    "description": "The minute at which the rate will no longer apply (added in v2.1-RC2).",
-                    "type": "number",
-                    "minimum": 0
+                  "type": "object",
+                  "properties": {
+                    "start": {
+                      "description": "Number of minutes that have to elapse before this segment starts applying (added in v2.1-RC2).",
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "rate": {
+                      "description": "Rate that is charged for each minute interval after the start (added in v2.1-RC2).",
+                      "type": "number"
+                    },
+                    "interval": {
+                      "description": "Interval in minutes at which the rate of this segment is either reapplied (added in v2.1-RC2).",
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "end": {
+                      "description": "The minute at which the rate will no longer apply (added in v2.1-RC2).",
+                      "type": "number",
+                      "minimum": 0
+                    }
                   }
                 },
                 "dependencies": {
