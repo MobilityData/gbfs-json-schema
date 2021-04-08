@@ -11,28 +11,57 @@
     <properties>
         <maven.compiler.source>15</maven.compiler.source>
         <maven.compiler.target>15</maven.compiler.target>
+
+        <gbfsRepoName>gbfs-json-schema</gbfsRepoName>
+        <gbfsBranch>a8309a9</gbfsBranch>
+        <gbfsGithubUrl>https://github.com/MobilityData/${gbfsRepoName}</gbfsGithubUrl>
+        <gbfsVersion>2.2</gbfsVersion>
+
+        <jackson-databind.version>2.5.4</jackson-databind.version>
+
+        <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
+        <jsonschema2pojo-maven-plugin.version>1.1.0</jsonschema2pojo-maven-plugin.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.4</version>
-        </dependency>
-        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.5.4</version>
+            <version>${jackson-databind.version}</version>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${maven-exec-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>download-extract-current-version</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <environmentVariables>
+                                <GITHUB_URL>${gbfsGithubUrl}/archive/${gbfsBranch}.zip</GITHUB_URL>
+                                <DESTINATION_PATH>src/main/resources/schema/v${gbfsVersion}</DESTINATION_PATH>
+                            </environmentVariables>
+                            <executable>./bin/gbfs-download-extract.sh</executable>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.jsonschema2pojo</groupId>
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
-                <version>1.1.0</version>
+                <version>${jsonschema2pojo-maven-plugin.version}</version>
                 <configuration>
+                    <classNamePrefix>GBFS</classNamePrefix>
+                    <removeOldOutput>true</removeOldOutput>
+                    <serializable>true</serializable>
                     <sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
                     <targetPackage>org.entur.gbfs</targetPackage>
                 </configuration>
