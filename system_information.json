@@ -101,12 +101,12 @@
                 "store_uri": {
                   "description": "URI where the rental Android app can be downloaded from (added in v1.1).",
                   "type": "string",
-                  "format": "URI"
+                  "format": "uri"
                 },
                 "discovery_uri": {
                   "description": "URI that can be used to discover if the rental Android app is installed on the device (added in v1.1).",
                   "type": "string",
-                  "format": "URI"
+                  "format": "uri"
                 }
               },
               "dependencies": {
@@ -123,12 +123,12 @@
                 "store_uri": {
                   "description": "URI where the rental iOS app can be downloaded from (added in v1.1).",
                   "type": "string",
-                  "format": "URI"
+                  "format": "uri"
                 },
                 "discovery_uri": {
                   "description": "URI that can be used to discover if the rental iOS app is installed on the device (added in v1.1).",
                   "type": "string",
-                  "format": "URI"
+                  "format": "uri"
                 }
               },
               "dependencies": {
