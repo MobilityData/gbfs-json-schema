@@ -51,9 +51,6 @@ if [ -f ${ZIP_FILE} ]; then
     echo "Remove non-schema files"
     rm ${DESTINATION_PATH}/.gitattributes
 
-    echo "Remove schema that needs manual implementation"
-    rm ${DESTINATION_PATH}/gbfs.json
-
     echo "Move each schema file into its own subfolder"
     find ${DESTINATION_PATH}/. -type f -exec sh -c 'mkdir "${0%.*}" && mv "$0" "${0%.*}/"' {} \;
 
