@@ -1,0 +1,23 @@
+{
+  "last_updated": 1434054678,
+  "ttl": 0,
+  "version": "2.2",
+  "data": {
+    "alerts": [
+      {
+        "alert_id": "TST:Alert:1",
+        "type": "station_closure",
+        "times": [
+          {
+            "start": 1434054678,
+            "end": 1434054987
+          }
+        ],
+        "station_ids": ["TST:Station:1"],
+        "summary": "Closed for maintenance",
+        "description": "Station is closed to install more docks.",
+        "last_updated": 1434054678
+      }
+    ]
+  }
+}

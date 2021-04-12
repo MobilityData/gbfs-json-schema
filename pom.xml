@@ -21,6 +21,10 @@
 
         <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
         <jsonschema2pojo-maven-plugin.version>1.1.0</jsonschema2pojo-maven-plugin.version>
+
+        <!-- Unit test frameworks versions -->
+        <assertj.core.version>3.17.1</assertj.core.version>
+        <junit.version>5.6.2</junit.version>
     </properties>
 
     <dependencies>
@@ -28,6 +32,26 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson-databind.version}</version>
+        </dependency>
+
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.core.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
