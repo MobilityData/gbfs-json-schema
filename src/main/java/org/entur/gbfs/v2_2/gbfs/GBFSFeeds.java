@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Objects;
 
 public class GBFSFeeds implements Serializable {
     @JsonProperty("feeds")
@@ -25,18 +24,5 @@ public class GBFSFeeds implements Serializable {
         return "GBFSFeeds{" +
                 "feeds=" + feeds +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        GBFSFeeds gbfsFeeds = (GBFSFeeds) o;
-        return feeds.equals(gbfsFeeds.feeds);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(feeds);
     }
 }
