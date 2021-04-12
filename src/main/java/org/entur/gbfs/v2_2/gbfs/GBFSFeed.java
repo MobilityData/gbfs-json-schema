@@ -5,7 +5,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyDescription;
 
 import java.io.Serializable;
 import java.net.URI;
-import java.util.Objects;
 
 public class GBFSFeed implements Serializable {
 
@@ -81,18 +80,5 @@ public class GBFSFeed implements Serializable {
             sb.append(']');
         }
         return sb.toString();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        GBFSFeed gbfsFeed = (GBFSFeed) o;
-        return name == gbfsFeed.name && url.equals(gbfsFeed.url);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, url);
     }
 }
