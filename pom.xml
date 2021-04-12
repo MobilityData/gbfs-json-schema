@@ -13,7 +13,7 @@
         <maven.compiler.target>15</maven.compiler.target>
 
         <gbfsRepoName>gbfs-json-schema</gbfsRepoName>
-        <gbfsBranch>a8309a9</gbfsBranch>
+        <gbfsBranch>5c2ca51</gbfsBranch>
         <gbfsGithubUrl>https://github.com/MobilityData/${gbfsRepoName}</gbfsGithubUrl>
         <gbfsVersion>2.2</gbfsVersion>
 
