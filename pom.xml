@@ -89,6 +89,9 @@
                 <version>${jsonschema2pojo-maven-plugin.version}</version>
                 <configuration>
                     <classNamePrefix>GBFS</classNamePrefix>
+                    <formatTypeMapping>
+                        <uri>java.lang.String</uri>
+                    </formatTypeMapping>
                     <removeOldOutput>true</removeOldOutput>
                     <serializable>true</serializable>
                     <sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
