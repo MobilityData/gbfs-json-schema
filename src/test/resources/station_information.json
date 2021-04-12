@@ -1,0 +1,27 @@
+{
+  "last_updated": 1434054678,
+  "ttl": 0,
+  "version": "2.2",
+  "data": {
+    "stations": [
+      {
+        "station_id": "TST:Station:1",
+        "name": "Cool bikes",
+        "lat": 12.34,
+        "lon": 45.67,
+        "vehicle_type_capacity": {
+          "TST:VehicleType:CityBike": 7
+        }
+      },
+      {
+        "station_id": "TST:Station:2",
+        "name": "Cooler bikes",
+        "lat": 11.34,
+        "lon": 44.67,
+        "vehicle_type_capacity": {
+          "TST:VehicleType:CityBike": 12
+        }
+      }
+    ]
+  }
+}
