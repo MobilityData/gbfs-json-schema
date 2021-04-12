@@ -20,7 +20,12 @@
         <jackson-databind.version>2.5.4</jackson-databind.version>
 
         <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+
         <jsonschema2pojo-maven-plugin.version>1.1.0</jsonschema2pojo-maven-plugin.version>
+        <jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
+        <!-- empty argLine property, the value is set up by Jacoco during unit tests execution -->
+        <argLine />
 
         <!-- Unit test frameworks versions -->
         <assertj.core.version>3.17.1</assertj.core.version>
@@ -94,6 +99,43 @@
                         <goals>
                             <goal>generate</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <argLine>@{argLine} -Xms500m -Xmx500m -Xss512k</argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>default-prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules />
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
