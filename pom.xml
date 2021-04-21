@@ -13,7 +13,6 @@
         <maven.compiler.target>11</maven.compiler.target>
 
         <gbfsRepoName>gbfs-json-schema</gbfsRepoName>
-        <gbfsBranch>5c2ca51</gbfsBranch>
         <gbfsGithubUrl>https://github.com/MobilityData/${gbfsRepoName}</gbfsGithubUrl>
         <gbfsVersion>2.2</gbfsVersion>
 
@@ -75,7 +74,7 @@
                         </goals>
                         <configuration>
                             <environmentVariables>
-                                <GITHUB_URL>${gbfsGithubUrl}/archive/${gbfsBranch}.zip</GITHUB_URL>
+                                <GITHUB_URL>${gbfsGithubUrl}/archive/v${gbfsVersion}.zip</GITHUB_URL>
                                 <DESTINATION_PATH>src/main/resources/schema/v${gbfsVersion}</DESTINATION_PATH>
                             </environmentVariables>
                             <executable>./bin/gbfs-download-extract.sh</executable>
@@ -89,7 +88,6 @@
                 <version>${jsonschema2pojo-maven-plugin.version}</version>
                 <configuration>
                     <classNamePrefix>GBFS</classNamePrefix>
-                    <excludes>**/geofencing_zones.json</excludes>
                     <formatTypeMapping>
                         <uri>java.lang.String</uri>
                     </formatTypeMapping>
