@@ -74,26 +74,16 @@
               "vehicle_type_id",
               "form_factor",
               "propulsion_type"
-            ]
-          },
-          "if": {
-            "properties": {
-              "propulsion_type": {
-                "const": [
-                  "electric",
-                  "electric_assist",
-                  "combustion"
-                ]
+            ],
+            "if": {
+              "properties": {
+                "propulsion_type": {
+                  "enum": ["electric", "electric_assist", "combustion"]
+                }
               }
-            }
-          },
-          "then": {
-            "properties": {
-              "max_range_meters": {
-                "required": [
-                  "max_range_meters"
-                ]
-              }
+            },
+            "then": {
+              "required": ["max_range_meters"]
             }
           }
         }
