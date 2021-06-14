@@ -1,0 +1,34 @@
+{
+    "vehicles": [
+        {
+      "vehicle_id": "c1",
+      "lat": 48.868192,
+      "lon": 2.362862,
+      "is_reserved": false,
+      "is_disabled": false,
+      "vehicle_type_id": "car1",
+      "station_id" : "station1",
+      "current_range_meters": 400000,   
+      "vehicle_accessories": [
+        "child_seat_0",
+        "winter_tires"
+      ],
+      "available_until" : "2021-05-17T15:00:00Z"
+    },
+        {
+      "vehicle_id": "c2",
+      "lat": 48.868192,
+      "lon": 2.362862,
+      "is_reserved": false,
+      "is_disabled": false,
+      "vehicle_type_id": "car2",
+      "station_id" : "station1",
+      "current_range_percent": 0.7,   
+      "vehicle_accessories": [
+        "child_seat_0"
+      ],
+      "share_type" : "one_way"
+    }
+    ]
+  }
+  
