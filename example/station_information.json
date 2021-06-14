@@ -1,0 +1,18 @@
+{
+    "stations": [
+        {
+            "station_id": "station1",
+            "name": "République",
+            "lat": 48.868192,
+            "lon": 2.362862,
+            "address" : "Place de la république 75010 Paris",
+            "post_code": "75010",
+            "rental_methods" : ["creditcard", "paypass"],
+            "share_type" : "round_trip",
+            "station_type" :"underground_parking",
+            "parking_hoop": false,
+            "station_desc": "station souterraine, située au niveau -2",
+            "contact_phone" : "+33109874321"
+        }
+    ]
+}
