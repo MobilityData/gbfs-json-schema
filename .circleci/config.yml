@@ -63,40 +63,40 @@ jobs:
           at: ~/project
       - run: *sonar-scan
 
-#  build:
-#    docker:
-#      - image: eu.gcr.io/entur-system-1287/circleci-toolbox-image
-#        auth:
-#          username: _json_key
-#          password: $DOCKER_PASSWORD
-#    environment:
-#      MAVEN_OPTS: -Xmx3G
-#    steps:
-#      - checkout
-#      - restore_cache:
-#          key: dep-cache-{{ checksum "pom.xml" }}
-#      - run: mvn org.apache.maven.plugins:maven-dependency-plugin:3.1.0:go-offline -s /tools/m2/settings.xml
-#      - save_cache:
-#          paths:
-#            - ~/.m2
-#          key: dep-cache-{{ checksum "pom.xml" }}
-#      # Cannot use -o because of snapshot dependencies.
-#      - run: mvn package -s /tools/m2/settings.xml -DskipTests
-#  deploy:
-#    docker:
-#      - image: eu.gcr.io/entur-system-1287/circleci-toolbox-image
-#        auth:
-#          username: _json_key
-#          password: $DOCKER_PASSWORD
-#    environment:
-#      DEBIAN_FRONTEND: "noninteractive"
-#    steps:
-#      - checkout
-#      - restore_cache:
-#          key: dep-cache-{{ checksum "pom.xml" }}
-#      - run:
-#          name: Maven deploy
-#          command: mvn deploy -s /tools/m2/settings.xml -DskipTests
+  build:
+    docker:
+      - image: eu.gcr.io/entur-system-1287/circleci-toolbox-image
+        auth:
+          username: _json_key
+          password: $DOCKER_PASSWORD
+    environment:
+      MAVEN_OPTS: -Xmx3G
+    steps:
+      - checkout
+      - restore_cache:
+          key: dep-cache-{{ checksum "pom.xml" }}
+      - run: mvn org.apache.maven.plugins:maven-dependency-plugin:3.1.0:go-offline -s /tools/m2/settings.xml
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: dep-cache-{{ checksum "pom.xml" }}
+      # Cannot use -o because of snapshot dependencies.
+      - run: mvn package -s /tools/m2/settings.xml -DskipTests
+  deploy:
+    docker:
+      - image: eu.gcr.io/entur-system-1287/circleci-toolbox-image
+        auth:
+          username: _json_key
+          password: $DOCKER_PASSWORD
+    environment:
+      DEBIAN_FRONTEND: "noninteractive"
+    steps:
+      - checkout
+      - restore_cache:
+          key: dep-cache-{{ checksum "pom.xml" }}
+      - run:
+          name: Maven deploy
+          command: mvn deploy -s /tools/m2/settings.xml -DskipTests
 workflows:
   version: 2
   build_test_deploy:
@@ -107,14 +107,14 @@ workflows:
           context: org-carbon
           requires:
             - test
-#      - build:
-#          context: org-carbon
-#          requires:
-#            - sonar
-#      - deploy:
-#          context: org-carbon
-#          requires:
-#            - build
-#          filters:
-#            branches:
-#              only: master
+      - build:
+          context: org-carbon
+          requires:
+            - sonar
+      - deploy:
+          context: org-carbon
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
