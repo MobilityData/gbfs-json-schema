@@ -40,9 +40,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
 
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-
         <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v2.2.1.zip</gbfsGithubUrl>
         <gbfsVersion>2.2</gbfsVersion>
 
@@ -73,6 +70,10 @@
         <!-- Unit test frameworks versions -->
         <assertj.core.version>3.17.1</assertj.core.version>
         <junit.version>5.6.2</junit.version>
+
+        <!-- GPG configuration for jar signing-->
+        <gpg.executable>gpg</gpg.executable>
+        <gpg.keyname>${env.GPG_KEY_NAME}</gpg.keyname>
     </properties>
 
     <dependencies>
@@ -104,6 +105,43 @@
     </dependencies>
 
     <build>
+        <extensions>
+            <!-- maven3 will need wagon-ssh extension in order to be able to release,
+            Using external variant in order to retain keys, etc -->
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh-external</artifactId>
+                <version>2.10</version>
+            </extension>
+        </extensions>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${maven-clean-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${maven-install-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${maven-site-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${maven-resources-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven-deploy-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
