@@ -48,9 +48,6 @@ if [ -f ${ZIP_FILE} ]; then
     mv ${DESTINATION_PATH}/**/* ${DESTINATION_PATH} &&
     rm -rf ${DESTINATION_PATH}/*/
 
-    echo "Remove non-schema files"
-    rm ${DESTINATION_PATH}/.gitattributes
-
     echo "Move each schema file into its own subfolder"
     find ${DESTINATION_PATH}/. -type f -exec sh -c 'mkdir "${0%.*}" && mv "$0" "${0%.*}/"' {} \;
 
