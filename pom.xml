@@ -40,9 +40,8 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
 
-        <gbfsRepoName>gbfs-json-schema</gbfsRepoName>
-        <gbfsGithubUrl>https://github.com/entur/${gbfsRepoName}</gbfsGithubUrl>
-        <gbfsVersion>2.2.1</gbfsVersion>
+        <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v2.2.1.zip</gbfsGithubUrl>
+        <gbfsVersion>2.2</gbfsVersion>
 
         <jackson-databind.version>2.5.4</jackson-databind.version>
 
@@ -102,7 +101,7 @@
                         </goals>
                         <configuration>
                             <environmentVariables>
-                                <GITHUB_URL>${gbfsGithubUrl}/archive/v${gbfsVersion}.zip</GITHUB_URL>
+                                <GITHUB_URL>${gbfsGithubUrl}</GITHUB_URL>
                                 <DESTINATION_PATH>src/main/resources/schema/v${gbfsVersion}</DESTINATION_PATH>
                             </environmentVariables>
                             <executable>./bin/gbfs-download-extract.sh</executable>
