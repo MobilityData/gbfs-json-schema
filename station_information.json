@@ -105,7 +105,7 @@
                   "type": {
                     "type": "string",
                     "enum": [
-                      "Multipolygon"
+                      "MultiPolygon"
                     ]
                   },
                   "coordinates": {
