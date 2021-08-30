@@ -20,6 +20,14 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+    <developers>
+        <developer>
+            <name>Tom Erik Støwer</name>
+            <email>tom.erik.stower@entur.org</email>
+            <organization>Entur</organization>
+            <organizationUrl>http://www.entur.org</organizationUrl>
+        </developer>
+    </developers>
     <scm>
         <connection>scm:git:ssh://git@github.com/entur/gbfs-java-model.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/entur/gbfs-java-model.git</developerConnection>
