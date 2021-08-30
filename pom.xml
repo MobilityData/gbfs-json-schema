@@ -4,7 +4,7 @@
 
     <groupId>org.entur.gbfs</groupId>
     <artifactId>gbfs-java-model</artifactId>
-    <version>2.2.2</version>
+    <version>2.2.3-SNAPSHOT</version>
 
     <name>gbfs-java-model</name>
     <description>Generates Java model from GBFS JSON schema using jsonschema2pojo.</description>
@@ -32,7 +32,7 @@
         <connection>scm:git:ssh://git@github.com/entur/gbfs-java-model.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/entur/gbfs-java-model.git</developerConnection>
         <url>https://github.com/entur/gbfs-java-model/tree/master</url>
-        <tag>gbfs-java-model-2.2.2</tag>
+        <tag>HEAD</tag>
     </scm>
     <distributionManagement>
         <snapshotRepository>
