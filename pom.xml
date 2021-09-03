@@ -75,7 +75,7 @@
 
         <!-- Unit test frameworks versions -->
         <assertj.core.version>3.17.1</assertj.core.version>
-        <junit.version>5.6.2</junit.version>
+        <junit.version>5.7.2</junit.version>
 
         <!-- GPG configuration for jar signing-->
         <gpg.executable>gpg</gpg.executable>
