@@ -137,16 +137,16 @@
                 "description": "Is there currently an increase in price in response to increased demand in this pricing plan? (added in v2.1-RC2)",
                 "type": "boolean"
               }
-            }
-          },
-          "required": [
-            "plan_id",
-            "name",
-            "currency",
-            "price",
-            "is_taxable",
-            "description"
-          ]
+            },
+            "required": [
+              "plan_id",
+              "name",
+              "currency",
+              "price",
+              "is_taxable",
+              "description"
+            ]
+          }
         }
       },
       "required": [
