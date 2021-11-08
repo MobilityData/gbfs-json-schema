@@ -117,42 +117,6 @@
                     "count"
                   ]
                 }
-              },
-              "vehicles": {
-                "description": "Array of objects containing data about a specific vehicle that is present at the docking station (added in v2.1-RC).",
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "bike_id": {
-                      "description": "Rotated identifier of a vehicle (added in v2.1-RC).",
-                      "type": "string"
-                    },
-                    "is_reserved": {
-                      "description": "Is the vehicle currently reserved for someone else? (added in v2.1-RC)",
-                      "type": "boolean"
-                    },
-                    "is_disabled": {
-                      "description": "Is the vehicle currently disabled (broken)? (added in v2.1-RC)",
-                      "type": "boolean"
-                    },
-                    "vehicle_type_id": {
-                      "description": "The vehicle_type_id of this vehicle as described in vehicle_types.json (added in v2.1-RC).",
-                      "type": "string"
-                    },
-                    "current_range_meters": {
-                      "description": "The furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel (added in v2.1-RC).",
-                      "type": "number",
-                      "minimum": 0
-                    }
-                  }
-                },
-                "required": [
-                  "bike_id",
-                  "is_reserved",
-                  "is_disabled",
-                  "vehicle_type_id"
-                ]
               }
             }
           },
