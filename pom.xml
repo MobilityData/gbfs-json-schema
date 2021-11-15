@@ -183,6 +183,7 @@
                     <serializable>true</serializable>
                     <initializeCollections>false</initializeCollections>
                     <inclusionLevel>NON_EMPTY</inclusionLevel>
+                    <generateBuilders>true</generateBuilders>
                     <sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
                     <targetPackage>org.entur.gbfs</targetPackage>
                 </configuration>
