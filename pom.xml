@@ -182,6 +182,7 @@
                     <removeOldOutput>true</removeOldOutput>
                     <serializable>true</serializable>
                     <initializeCollections>false</initializeCollections>
+                    <inclusionLevel>NON_EMPTY</inclusionLevel>
                     <sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
                     <targetPackage>org.entur.gbfs</targetPackage>
                 </configuration>
