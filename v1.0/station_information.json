@@ -83,7 +83,8 @@
               },
               "capacity": {
                 "description": "Number of total docking …ilable and unavailable.",
-                "type": "number"
+                "type": "integer",
+                "minimum": 0
               }
             },
             "required": ["station_id", "name", "lat", "lon"]

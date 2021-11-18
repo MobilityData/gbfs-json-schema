@@ -97,7 +97,7 @@
                             "maximum_speed_kph": {
                               "description":
                               "What is the maximum speed allowed, in kilometers per hour?",
-                              "type": "number",
+                              "type": "integer",
                               "minimum": 0
                             }
                           },

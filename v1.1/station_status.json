@@ -40,25 +40,25 @@
               "num_bikes_available": {
                 "description":
                   "Number of vehicles of any type physically available for rental at the station.",
-                "type": "number",
+                "type": "integer",
                 "minimum": 0
               },
               "num_bikes_disabled": {
                 "description":
                   "Number of disabled vehicles of any type at the station.",
-                "type": "number",
+                "type": "integer",
                 "minimum": 0
               },
               "num_docks_available": {
                 "description":
                   "Number of functional docks physically at the station.",
-                "type": "number",
+                "type": "integer",
                 "minimum": 0
               },
               "num_docks_disabled": {
                 "description":
                   "Number of empty but disabled docks at the station.",
-                "type": "number",
+                "type": "integer",
                 "minimum": 0
               },
               "is_installed": {

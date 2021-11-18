@@ -26,35 +26,35 @@
             "properties": {
               "start_month": {
                 "description": 	"Starting month for the system operations.",
-                "type": "number",
+                "type": "integer",
                 "minimum": 1,
                 "maximum": 12
               },
               "start_day": {
                 "description": "Starting day for the system operations.",
-                "type": "number",
+                "type": "integer",
                 "minimum": 1,
                 "maximum": 31
               },
               "start_year": {
                 "description": "Starting year for the system operations.",
-                "type": "number"
+                "type": "integer"
               },
               "end_month": {
                 "description": "End month for the system operations.",
-                "type": "number",
+                "type": "integer",
                 "minimum": 1,
                 "maximum": 12
               },
               "end_day": {
                 "description": "End day for the system operations.",
-                "type": "number",
+                "type": "integer",
                 "minimum": 1,
                 "maximum": 31
               },
               "end_year": {
                 "description": "End year for the system operations.",
-                "type": "number"
+                "type": "integer"
               }
             },
             "required": ["start_month", "start_day", "end_month", "end_day"]

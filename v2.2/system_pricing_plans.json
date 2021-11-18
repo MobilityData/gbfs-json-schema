@@ -78,7 +78,7 @@
                     "start": {
                       "description":
                         "Number of kilometers that have to elapse before this segment starts applying (added in v2.1-RC2).",
-                      "type": "number",
+                      "type": "integer",
                       "minimum": 0
                     },
                     "rate": {
@@ -89,13 +89,13 @@
                     "interval": {
                       "description":
                         "Interval in kilometers at which the rate of this segment is either reapplied indefinitely, or if defined, up until (but not including) end kilometer (added in v2.1-RC2).",
-                      "type": "number",
+                      "type": "integer",
                       "minimum": 0
                     },
                     "end": {
                       "description":
                         "The kilometer at which the rate will no longer apply (added in v2.1-RC2).",
-                      "type": "number",
+                      "type": "integer",
                       "minimum": 0
                     }
                   }
@@ -114,7 +114,7 @@
                     "start": {
                       "description":
                         "Number of minutes that have to elapse before this segment starts applying (added in v2.1-RC2).",
-                      "type": "number",
+                      "type": "integer",
                       "minimum": 0
                     },
                     "rate": {
@@ -125,13 +125,13 @@
                     "interval": {
                       "description":
                         "Interval in minutes at which the rate of this segment is either reapplied (added in v2.1-RC2).",
-                      "type": "number",
+                      "type": "integer",
                       "minimum": 0
                     },
                     "end": {
                       "description":
                         "The minute at which the rate will no longer apply (added in v2.1-RC2).",
-                      "type": "number",
+                      "type": "integer",
                       "minimum": 0
                     }
                   }

@@ -97,7 +97,7 @@
               "capacity": {
                 "description":
                   "Number of total docking points installed at this station, both available and unavailable.",
-                "type": "number",
+                "type": "integer",
                 "minimum": 0
               },
               "rental_uris": {
