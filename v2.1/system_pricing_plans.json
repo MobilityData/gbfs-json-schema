@@ -68,16 +68,16 @@
                   "Customer-readable description of the pricing plan.",
                 "type": "string"
               }
-            }
-          },
-          "required": [
-            "plan_id",
-            "name",
-            "currency",
-            "price",
-            "is_taxable",
-            "description"
-          ]
+            },
+            "required": [
+              "plan_id",
+              "name",
+              "currency",
+              "price",
+              "is_taxable",
+              "description"
+            ]
+          }
         }
       },
       "required": ["plans"]
