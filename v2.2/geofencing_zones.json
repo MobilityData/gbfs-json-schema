@@ -108,7 +108,7 @@
                   },
                   "geometry": {
                     "description":
-                      "A polygon that describes where rides might not be able to start, end, go through, or have otehr limitations. Must follow the right-hand rule.",
+                      "A polygon that describes where rides might not be able to start, end, go through, or have other limitations. Must follow the right-hand rule.",
                     "title": "GeoJSON MultiPolygon",
                     "type": "object",
                     "properties": {
