@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "system_pricing_plans.json",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1924988399
+    },
+    "ttl": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "plans": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "plan_id": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "currency": {
+                "type": "string",
+                "minLength": 3,
+                "maxLength": 3
+              },
+              "price": {
+                "type": "number"
+              },
+              "is_taxable": {
+                "type": ["number"]
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "plan_id",
+              "name",
+              "currency",
+              "price",
+              "is_taxable",
+              "description"
+            ]
+          }
+        }
+      },
+      "required": ["plans"]
+    }
+  },
+  "required": ["last_updated", "ttl", "data"]
+}

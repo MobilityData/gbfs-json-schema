@@ -1,0 +1,70 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id":
+    "https://github.com/NABSA/gbfs/blob/master/gbfs.md#gbfs_versionsjson-added-in-v11",
+  "description":
+    "Lists all feed endpoints published according to version sof the GBFS documentation. (added in v1.1)",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "description":
+        "Last time the data in the feed was updated in POSIX time.",
+      "type": "integer",
+      "minimum": 1450155600
+    },
+    "ttl": {
+      "description":
+        "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
+      "type": "integer",
+      "minimum": 0
+    },
+    "version": {
+      "description":
+        "GBFS version number to which the feed conforms, according to the versioning framework.",
+      "type": "string",
+      "const": "2.2"
+    },
+    "data": {
+      "description": "Response data in the form of name:value pairs.",
+      "type": "object",
+      "properties": {
+        "versions": {
+          "description":
+            "Contains one object, as defined below, for each of the available versions of a feed. The array must be sorted by increasing MAJOR and MINOR version number.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "version": {
+                "description":
+                  "The semantic version of the feed in the form X.Y",
+                "type": "string",
+                "enum": [
+                  "1.1-RC",
+                  "1.1",
+                  "2.0-RC",
+                  "2.0",
+                  "2.1-RC",
+                  "2.1-RC2",
+                  "2.1",
+                  "2.2",
+                  "3.0-RC",
+                  "3.0"
+                ]
+              },
+              "url": {
+                "description": "URL of the corresponding gbfs.json endpoint",
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": ["version", "url"]
+          }
+        }
+      },
+      "required": ["versions"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["last_updated", "ttl", "version", "data"]
+}

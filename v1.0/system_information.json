@@ -1,0 +1,62 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "system_information.json",
+  "description": "Describes the system includingSytem operation, System location, year implemented, URLS, contact info, time zone",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1924988399
+    },
+    "ttl": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "system_id": {
+          "type": "string"
+        },
+        "language": {
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "short_name": {
+          "type": "string"
+        },
+        "operator": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "purchase_url": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "phone_number": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "license_url": {
+          "type": "string"
+        }
+      },
+      "required": ["system_id", "language", "name", "timezone"]
+    }
+  },
+  "required": ["last_updated", "ttl", "data"]
+}

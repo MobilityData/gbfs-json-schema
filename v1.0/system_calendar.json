@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "system_calendar.json",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1924988399
+    },
+    "ttl": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "calendars": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "start_month": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 12
+              },
+              "start_day": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 31
+              },
+              "start_year": {
+                "type": "number"
+              },
+              "end_month": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 12
+              },
+              "end_day": {
+                "type": "number",
+                "minimum": 1,
+                "maximum": 31
+              },
+              "end_year": {
+                "type": "number"
+              }
+            },
+            "required": ["start_month", "start_day", "end_month", "end_day"]
+          },
+          "minItems": 1
+        }
+      },
+      "required": ["calendars"]
+    }
+  },
+  "required": ["last_updated", "ttl", "data"]
+}
