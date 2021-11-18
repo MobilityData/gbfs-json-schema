@@ -1,19 +1,22 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "station_information.json",
-  "description": "Mostly static list of all stations, their capacities and locations. Required of systems utilizing docks",
+  "$id": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#station_informationjson",
+  "description": "Details including system operator, system location, year implemented, URL, contact info, time zone.",
   "type": "object",
   "properties": {
     "last_updated": {
+      "description": 	"Last time the data in the feed was updated in POSIX time.",
       "type": "integer",
       "minimum": 0,
       "maximum": 1924988399
     },
     "ttl": {
+      "description": "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
       "type": "integer",
       "minimum": 0
     },
     "data": {
+      "description": "Array that contains one object per station as defined below.",
       "type": "object",
       "properties": {
         "stations": {
@@ -22,37 +25,47 @@
             "type": "object",
             "properties": {
               "station_id": {
+                "description": 	"Identifier of a station.",
                 "type": "string"
               },
               "name": {
+                "description": "Public name of the station.",
                 "type": "string"
               },
               "short_name": {
+                "description": "Short name or other type of identifier.",
                 "type": "string"
               },
               "lat": {
+                "description": 	"The latitude of the station.",
                 "type": "number",
                 "minimum": -90,
                 "maximum": 90
               },
               "lon": {
+                "description": 	"The longitude fo the station.",
                 "type": "number",
                 "minimum": -180,
                 "maximum": 180
               },
               "address": {
+                "description": 	"Address where station is located.",
                 "type": "string"
               },
               "cross_street": {
+                "description": 	"Cross street or landmark…the station is located.",
                 "type": "string"
               },
               "region_id": {
+                "description": "Identifier of the region…the station is located.",
                 "type": "string"
               },
               "post_code": {
+                "description": "Postal code where station is located.",
                 "type": "string"
               },
               "rental_methods": {
+                "description": "Payment methods accepted at this station.",
                 "type": "array",
                 "items": {
                   "type": "string",
@@ -69,6 +82,7 @@
                 }
               },
               "capacity": {
+                "description": "Number of total docking …ilable and unavailable.",
                 "type": "number"
               }
             },

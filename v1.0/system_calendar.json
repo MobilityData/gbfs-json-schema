@@ -1,19 +1,22 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "system_calendar.json",
-  "description": "",
+  "$id": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#system_calendarjson",
+  "description": "Describes the operating calendar for a system.",
   "type": "object",
   "properties": {
     "last_updated": {
+      "description": "Last time the data in the feed was updated in POSIX time.",
       "type": "integer",
       "minimum": 0,
       "maximum": 1924988399
     },
     "ttl": {
+      "description": 	"Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
       "type": "integer",
       "minimum": 0
     },
     "data": {
+      "description": "Array that contains opertions calendar for the system.",
       "type": "object",
       "properties": {
         "calendars": {
@@ -22,29 +25,35 @@
             "type": "object",
             "properties": {
               "start_month": {
+                "description": 	"Starting month for the system operations.",
                 "type": "number",
                 "minimum": 1,
                 "maximum": 12
               },
               "start_day": {
+                "description": "Starting day for the system operations.",
                 "type": "number",
                 "minimum": 1,
                 "maximum": 31
               },
               "start_year": {
+                "description": "Starting year for the system operations.",
                 "type": "number"
               },
               "end_month": {
+                "description": "End month for the system operations.",
                 "type": "number",
                 "minimum": 1,
                 "maximum": 12
               },
               "end_day": {
+                "description": "End day for the system operations.",
                 "type": "number",
                 "minimum": 1,
                 "maximum": 31
               },
               "end_year": {
+                "description": "End year for the system operations.",
                 "type": "number"
               }
             },
