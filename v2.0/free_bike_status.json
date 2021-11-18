@@ -22,7 +22,7 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
-      "enum": ["2.0"]
+      "const": "2.0"
     },
     "data": {
       "description":
