@@ -35,14 +35,14 @@
               "start_month": {
                 "description": "Starting month for the system operations.",
                 "type": "number",
-                "maximum": 1,
-                "minimum": 12
+                "minimum": 1,
+                "maximum": 12
               },
               "start_day": {
                 "description": "Starting day for the system operations.",
                 "type": "number",
-                "maximum": 1,
-                "minimum": 31
+                "minimum": 1,
+                "maximum": 31
               },
               "start_year": {
                 "description": "Starting year for the system operations.",
