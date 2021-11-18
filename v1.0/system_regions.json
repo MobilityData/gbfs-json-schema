@@ -16,6 +16,7 @@
       "minimum": 0
     },
     "data": {
+      "description": "Describe regions for a system that is broken up by geographic or political region.",
       "type": "object",
       "properties": {
         "regions": {
