@@ -16,7 +16,7 @@
       "minimum": 0
     },
     "data": {
-      "description": "Array that contains opertions calendar for the system.",
+      "description": "Array that contains operations calendar for the system.",
       "type": "object",
       "properties": {
         "calendars": {

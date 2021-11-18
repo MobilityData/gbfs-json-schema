@@ -72,7 +72,7 @@
                 }
               },
               "url": {
-                "description": "URL where the customer c…ation about this alert.",
+                "description": "URL where the customer can learn more information about this alert.",
                 "type": "string"
               },
               "summary": {
