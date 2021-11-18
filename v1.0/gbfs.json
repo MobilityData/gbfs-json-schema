@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "gbfs.json",
+  "description": "Auto discovery file GBFS endpoint",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1924988399
+    },
+    "ttl": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "data": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z]{2}$": {
+          "type": "object",
+          "properties": {
+            "feeds": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": ["name", "url"]
+              }
+            }
+          },
+          "required": ["feeds"]
+        },
+        "required": true
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["last_updated", "ttl", "data"]
+}

@@ -1,34 +1,27 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id": "https://github.com/NABSA/gbfs/blob/master/gbfs.md#system_regionsjson",
-  "description": "Describes regions for a system that is broken up by geographic or political region.",
+  "description":
+    "Describes regions for a system that is broken up by geographic or political region.",
   "type": "object",
   "properties": {
     "last_updated": {
-      "description": "Last time the data in the feed was updated in POSIX time.",
+      "description":
+        "Last time the data in the feed was updated in POSIX time.",
       "type": "integer",
       "minimum": 1450155600
     },
     "ttl": {
-      "description": "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
+      "description":
+        "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
       "type": "integer",
       "minimum": 0
     },
     "version": {
-      "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
+      "description":
+        "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
-      "enum": [
-        "1.1-RC",
-        "1.1",
-        "2.0-RC",
-        "2.0",
-        "2.1-RC",
-        "2.1-RC2",
-        "2.1",
-        "2.2",
-        "3.0-RC",
-        "3.0"
-      ]
+      "const": "2.2"
     },
     "data": {
       "type": "object",
@@ -37,7 +30,7 @@
           "description": "Array of regions.",
           "type": "array",
           "items": {
-            "type":"object",
+            "type": "object",
             "properties": {
               "region_id": {
                 "description": "identifier of the region.",
@@ -48,22 +41,12 @@
                 "type": "string"
               }
             },
-            "required": [
-              "region_id",
-              "name"
-            ]
+            "required": ["region_id", "name"]
           }
         }
       },
-      "required": [
-        "regions"
-      ]
+      "required": ["regions"]
     }
   },
-  "required": [
-    "last_updated",
-    "ttl",
-    "version",
-    "data"
-  ]
+  "required": ["last_updated", "ttl", "version", "data"]
 }

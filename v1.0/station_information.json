@@ -1,0 +1,83 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "station_information.json",
+  "description": "Mostly static list of all stations, their capacities and locations. Required of systems utilizing docks",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1924988399
+    },
+    "ttl": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "stations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "station_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "short_name": {
+                "type": "string"
+              },
+              "lat": {
+                "type": "number",
+                "minimum": -90,
+                "maximum": 90
+              },
+              "lon": {
+                "type": "number",
+                "minimum": -180,
+                "maximum": 180
+              },
+              "address": {
+                "type": "string"
+              },
+              "cross_street": {
+                "type": "string"
+              },
+              "region_id": {
+                "type": "string"
+              },
+              "post_code": {
+                "type": "string"
+              },
+              "rental_methods": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "KEY",
+                    "CREDITCARD",
+                    "PAYPASS",
+                    "APPLEPAY",
+                    "ANDROIDPAY",
+                    "TRANSITCARD",
+                    "ACCOUNTNUMBER",
+                    "PHONE"
+                  ]
+                }
+              },
+              "capacity": {
+                "type": "number"
+              }
+            },
+            "required": ["station_id", "name", "lat", "lon"]
+          }
+        }
+      },
+      "required": ["stations"]
+    }
+  },
+  "required": ["last_updated", "ttl", "data"]
+}

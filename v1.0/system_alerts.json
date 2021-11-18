@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "system_alerts.json",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1924988399
+    },
+    "ttl": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "alerts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "alert_id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "SYSTEM_CLOSURE",
+                  "STATION_CLOSURE",
+                  "STATION_MOVE",
+                  "OTHER"
+                ]
+              },
+              "times": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "start": {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    "end": {
+                      "type": "number",
+                      "minimum": 0
+                    }
+                  }
+                },
+                "additionalItems": false,
+                "required": ["start"]
+              },
+              "station_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "region_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "url": {
+                "type": "string"
+              },
+              "summary": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "last_updated": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 1924988399
+              }
+            },
+            "required": ["alert_id", "type", "summary"]
+          }
+        }
+      },
+      "required": ["alerts"]
+    }
+  },
+  "required": ["last_updated", "ttl", "data"]
+}
