@@ -93,6 +93,65 @@
           "type": "string",
           "format": "uri"
         },
+        "brand_assets": {
+          "description":
+          "An object where each key defines one of the items listed below (added in v2.3-RC).",
+          "type": "object",
+          "properties": {
+            "brand_last_modified": {
+              "description": "Date that indicates the last time any included brand assets were updated (added in v2.3-RC).",
+              "type": "string",
+              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+            },
+            "brand_terms_url": {
+              "description": "A fully qualified URL pointing to the location of a page that defines the license terms of brand icons, colors or other trademark information (added in v2.3-RC).",
+              "type": "string",
+              "format": "uri"
+            },
+            "brand_image_url": {
+              "description": "A fully qualified URL pointing to the location of a graphic file representing the brand for the service (added in v2.3-RC). ",
+              "type": "string",
+              "format": "uri"
+            },
+            "brand_image_url_dark": {
+              "description": "A fully qualified URL pointing to the location of a graphic file representing the brand for the service for use in dark mode (added in v2.3-RC).",
+              "type": "string",
+              "format": "uri"
+            },
+            "color": {
+              "description": "Color used to represent the brand for the service (added in v2.3-RC)",
+              "type": "string",
+              "pattern": "^#([a-fA-F0-9]{6})$"
+            }
+          },
+          "dependencies":{
+                  "brand_assets": ["brand_last_modified", "brand_image_url"]
+          }
+        },
+        "terms_url": {
+          "description":
+          "A fully qualified URL pointing to the terms of service (added in v2.3-RC)",
+          "type": "string",
+          "format": "uri"
+        },
+        "terms_last_updated": {
+          "description":
+          "The date that the terms of service provided at terms_url were last updated (added in v2.3-RC)",
+          "type": "string",
+          "format": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "privacy_url": {
+          "description":
+          "A fully qualified URL pointing to the privacy policy for the service (added in v2.3-RC).",
+          "type": "string",
+          "format": "uri"
+        },
+        "privacy_last_updated": {
+          "description":
+          "The date that the privacy policy provided at privacy_url was last updated (added in v2.3-RC).",
+          "type": "string",
+          "format": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
         "rental_apps": {
           "description":
             "Contains rental app information in the android and ios JSON objects (added in v1.1).",
@@ -145,7 +204,11 @@
           }
         }
       },
-      "required": ["system_id", "language", "name", "timezone"]
+      "required": ["system_id", "language", "name", "timezone"],
+      "dependencies": {
+        "terms_url": ["terms_last_updated"],
+        "privacy_url": ["privacy_last_updated"]
+      }
     }
   },
   "required": ["last_updated", "ttl", "version", "data"]

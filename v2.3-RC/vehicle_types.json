@@ -58,6 +58,58 @@
               "name": {
                 "description": "The public name of this vehicle type.",
                 "type": "string"
+              },
+              "default_reserve_time": {
+                "description": "Maximum time in minutes that a vehicle can be reserved before a rental begins added in v2.3-RC.",
+                "type": "integer",
+                "minimum": 0
+              },
+              "return_type": {
+                "description": "The conditions for returning the vehicle at the end of the trip added in v2.3-RC.",
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "free_floating",
+                    "roundtrip_station",
+                    "any_station"
+                  ]
+                }
+              },
+              "vehicle_assets": {
+                "description": "An object where each key defines one of the items listed below added in v2.3-RC.",
+                "type": "object",
+                "properties": {
+                  "icon_url": {
+                    "description": "A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications added in v2.3-RC.",
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "icon_url_dark": {
+                    "description": "A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode added in v2.3-RC.",
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "icon_last_modified": {
+                    "description": "Date that indicates the last time any included vehicle icon images were modified or updated added in v2.3-RC.",
+                    "type": "string",
+                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                  },
+                  "default_pricing_plan_id": {
+                    "description": "A plan_id as defined in system_pricing_plans.json added in v2.3-RC.",
+                    "type": "string"
+                  },
+                  "pricing_plan_ids": {
+                    "description": "Array of all pricing plan IDs as defined in system_pricing_plans.json added in v2.3-RC.",
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "dependencies": {
+                  "vehicle_assets": ["icon_url", "icon_last_modified"]
+                }
               }
             },
             "required": ["vehicle_type_id", "form_factor", "propulsion_type"],
