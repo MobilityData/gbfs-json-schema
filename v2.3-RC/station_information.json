@@ -147,6 +147,11 @@
                   "Are valet services provided at this station? (added in v2.1-RC)",
                 "type": "boolean"
               },
+              "is_charging_station": {
+                "description":
+                "Does the station support charging of electric vehicles? (added in v2.3-RC)",
+                "type": "boolean"
+              },
               "rental_uris": {
                 "description":
                   "Contains rental uris for Android, iOS, and web in the android, ios, and web fields (added in v1.1).",
