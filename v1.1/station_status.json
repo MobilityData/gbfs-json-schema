@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/NABSA/gbfs/blob/v1.1/gbfs.md#station_statusjson",
+  "description":
+    "Describes the capacity and rental availablility of the station",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "description":
+        "Last time the data in the feed was updated in POSIX time.",
+      "type": "integer",
+      "minimum": 1450155600
+    },
+    "ttl": {
+      "description":
+        "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
+      "type": "integer",
+      "minimum": 0
+    },
+    "version": {
+      "description":
+        "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
+      "type": "string",
+      "const": "1.1"
+    },
+    "data": {
+      "description":
+        "Array that contains one object per station as defined below.",
+      "type": "object",
+      "properties": {
+        "stations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "station_id": {
+                "description": "Identifier of a station.",
+                "type": "string"
+              },
+              "num_bikes_available": {
+                "description":
+                  "Number of vehicles of any type physically available for rental at the station.",
+                "type": "integer",
+                "minimum": 0
+              },
+              "num_bikes_disabled": {
+                "description":
+                  "Number of disabled vehicles of any type at the station.",
+                "type": "integer",
+                "minimum": 0
+              },
+              "num_docks_available": {
+                "description":
+                  "Number of functional docks physically at the station.",
+                "type": "integer",
+                "minimum": 0
+              },
+              "num_docks_disabled": {
+                "description":
+                  "Number of empty but disabled docks at the station.",
+                "type": "integer",
+                "minimum": 0
+              },
+              "is_installed": {
+                "description": "Is the station currently on the street?",
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "is_renting": {
+                "description": "Is the station currently renting vehicles?",
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "is_returning": {
+                "description": "Is the station accepting vehicle returns?",
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "last_reported": {
+                "description":
+                  "The last time this station reported its status to the operator's backend.",
+                "type": "number",
+                "minimum": 1450155600
+              }
+            },
+            "required": [
+              "station_id",
+              "num_bikes_available",
+              "num_docks_available",
+              "is_installed",
+              "is_renting",
+              "is_returning",
+              "last_reported"
+            ]
+          }
+        }
+      },
+      "required": ["stations"]
+    }
+  },
+  "required": ["last_updated", "ttl", "version", "data"]
+}

@@ -1,0 +1,150 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id":
+    "https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#geofencing_zonesjson",
+  "description":
+    "Describes geofencing zones and their associated rules and attributes (added in v2.1-RC).",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "description":
+        "Last time the data in the feed was updated in POSIX time.",
+      "type": "integer",
+      "minimum": 1450155600
+    },
+    "ttl": {
+      "description":
+        "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
+      "type": "integer",
+      "minimum": 0
+    },
+    "version": {
+      "description":
+        "GBFS version number to which the feed conforms, according to the versioning framework.",
+      "type": "string",
+      "const": "2.2"
+    },
+    "data": {
+      "description":
+        "Array that contains geofencing information for the system.",
+      "type": "object",
+      "properties": {
+        "geofencing_zones": {
+          "type": "object",
+          "description":
+            "Each geofenced zone and its associated rules and attributes is described as an object within the array of features.",
+          "properties": {
+            "type": {
+              "description": "FeatureCollection as per IETF RFC 7946.",
+              "type": "string",
+              "enum": ["FeatureCollection"]
+            },
+            "features": {
+              "description": "Array of objects.",
+              "type": "array",
+              "items": {
+                "title": "GeoJSON Feature",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": ["Feature"]
+                  },
+                  "properties": {
+                    "description":
+                      "Describing travel allowances and limitations.",
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "description": "Public name of the geofencing zone.",
+                        "type": "string"
+                      },
+                      "start": {
+                        "description":
+                          "Start time of the geofencing zone in POSIX time.",
+                        "type": "number",
+                        "minimum": 1450155600
+                      },
+                      "end": {
+                        "description":
+                          "End time of the geofencing zone in POSIX time.",
+                        "type": "number",
+                        "minimum": 1450155600
+                      },
+                      "rules": {
+                        "description":
+                          "Array that contains one object per rule.",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "vehicle_type_id": {
+                              "type": "array",
+                              "description":
+                                "Array of vehicle type IDs for which these restrictions apply.",
+                              "items": { "type": "string" }
+                            },
+                            "ride_allowed": {
+                              "description":
+                                "Is the undocked ride allowed to stat and end in this zone?",
+                              "type": "boolean"
+                            },
+                            "ride_through_allowed": {
+                              "description":
+                                "Is the ride allowed to travel through this zone?",
+                              "type": "boolean"
+                            },
+                            "maximum_speed_kph": {
+                              "description":
+                                "What is the maximum speed allowed, in kilometers per hour?",
+                              "type": "integer",
+                              "minimum": 0
+                            }
+                          },
+                          "required": ["ride_allowed", "ride_through_allowed"]
+                        }
+                      }
+                    }
+                  },
+                  "geometry": {
+                    "description":
+                      "A polygon that describes where rides might not be able to start, end, go through, or have other limitations. Must follow the right-hand rule.",
+                    "title": "GeoJSON MultiPolygon",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": ["MultiPolygon"]
+                      },
+                      "coordinates": {
+                        "type": "array",
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "array",
+                              "minItems": 2,
+                              "items": {
+                                "type": "number"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "required": ["type", "coordinates"]
+                  }
+                },
+                "required": ["type", "geometry", "properties"]
+              }
+            }
+          },
+          "required": ["type", "features"]
+        }
+      }
+    }
+  },
+  "required": ["last_updated", "ttl", "version", "data"]
+}

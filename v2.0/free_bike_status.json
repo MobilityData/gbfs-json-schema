@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id":
+    "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#free_bike_statusjson",
+  "description":
+    "Describes the vehicles that are not at a station and are available for rent.",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "description":
+        "Last time the data in the feed was updated in POSIX time.",
+      "type": "integer",
+      "minimum": 1450155600
+    },
+    "ttl": {
+      "description":
+        "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
+      "type": "integer",
+      "minimum": 0
+    },
+    "version": {
+      "description":
+        "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
+      "type": "string",
+      "const": "2.0"
+    },
+    "data": {
+      "description":
+        "Array that contains one object per bike as defined below.",
+      "type": "object",
+      "properties": {
+        "bikes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "bike_id": {
+                "description": "Rotating (as of v2.0) identifier of a vehicle.",
+                "type": "string"
+              },
+              "lat": {
+                "description": "The latitude of the vehicle.",
+                "type": "number",
+                "minimum": -90,
+                "maximum": 90
+              },
+              "lon": {
+                "description": "The longitude of the vehicle.",
+                "type": "number",
+                "minimum": -180,
+                "maximum": 180
+              },
+              "is_reserved": {
+                "description": "Is the vehicle currently reserved?",
+                "type": "boolean"
+              },
+              "is_disabled": {
+                "description": "Is the vehicle currently disabled (broken)?",
+                "type": "boolean"
+              },
+              "rental_uris": {
+                "description":
+                  "Contains rental uris for Android, iOS, and web in the android, ios, and web fields (added in v1.1).",
+                "type": "object",
+                "properties": {
+                  "android": {
+                    "description":
+                      "URI that can be passed to an Android app with an intent (added in v1.1).",
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "ios": {
+                    "description":
+                      "URI that can be used on iOS to launch the rental app for this vehicle (added in v1.1).",
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "web": {
+                    "description":
+                      "URL that can be used by a web browser to show more information about renting this vehicle (added in v1.1).",
+                    "type": "string",
+                    "format": "uri"
+                  }
+                }
+              }
+            },
+            "required": ["bike_id", "lat", "lon", "is_reserved", "is_disabled"]
+          }
+        }
+      },
+      "required": ["bikes"]
+    }
+  },
+  "required": ["last_updated", "ttl", "version", "data"]
+}
