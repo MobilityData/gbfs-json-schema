@@ -124,9 +124,7 @@
               "pattern": "^#([a-fA-F0-9]{6})$"
             }
           },
-          "dependencies":{
-                  "brand_assets": ["brand_last_modified", "brand_image_url"]
-          }
+          "required": ["brand_last_modified", "brand_image_url"]
         },
         "terms_url": {
           "description":
@@ -175,9 +173,7 @@
                   "format": "uri"
                 }
               },
-              "dependencies": {
-                "android": ["store_uri", "discovery_uri"]
-              }
+              "required": ["store_uri", "discovery_uri"]
             },
             "ios": {
               "description":
@@ -197,15 +193,13 @@
                   "format": "uri"
                 }
               },
-              "dependencies": {
-                "ios": ["store_uri", "discovery_uri"]
-              }
+              "required": ["store_uri", "discovery_uri"]
             }
           }
         }
       },
       "required": ["system_id", "language", "name", "timezone"],
-      "dependencies": {
+      "dependentRequired": {
         "terms_url": ["terms_last_updated"],
         "privacy_url": ["privacy_last_updated"]
       }
