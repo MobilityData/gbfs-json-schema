@@ -98,10 +98,8 @@
                       "type": "integer",
                       "minimum": 0
                     }
-                  }
-                },
-                "dependencies": {
-                  "per_km_pricing": ["start", "rate", "interval"]
+                  },
+                  "required": ["start", "rate", "interval"]
                 }
               },
               "per_min_pricing": {
@@ -134,10 +132,8 @@
                       "type": "integer",
                       "minimum": 0
                     }
-                  }
-                },
-                "dependencies": {
-                  "per_min_pricing": ["start", "rate", "interval"]
+                  },
+                  "required": ["start", "rate", "interval"]
                 }
               },
               "surge_pricing": {
