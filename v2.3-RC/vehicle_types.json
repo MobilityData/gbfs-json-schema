@@ -107,9 +107,7 @@
                     }
                   }
                 },
-                "dependencies": {
-                  "vehicle_assets": ["icon_url", "icon_last_modified"]
-                }
+                "required": ["icon_url", "icon_last_modified"]
               }
             },
             "required": ["vehicle_type_id", "form_factor", "propulsion_type"],

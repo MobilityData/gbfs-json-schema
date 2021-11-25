@@ -61,7 +61,8 @@
                       "type": "integer",
                       "minimum": 0
                     }
-                  }
+                  },
+                  "required": ["vehicle_type_id", "count"],
                 }
               },
               "num_bikes_disabled": {
@@ -121,10 +122,8 @@
                       "type": "integer",
                       "minimum": 0
                     }
-                  }
-                },
-                "dependencies": {
-                  "vehicle_docks_available": ["vehicle_type_ids", "count"]
+                  },
+                  "required": ["vehicle_type_ids", "count"]
                 }
               }
             },

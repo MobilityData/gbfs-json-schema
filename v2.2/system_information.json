@@ -116,9 +116,7 @@
                   "format": "uri"
                 }
               },
-              "dependencies": {
-                "android": ["store_uri", "discovery_uri"]
-              }
+              "required": ["store_uri", "discovery_uri"]
             },
             "ios": {
               "description":
@@ -138,9 +136,7 @@
                   "format": "uri"
                 }
               },
-              "dependencies": {
-                "ios": ["store_uri", "discovery_uri"]
-              }
+              "required": ["store_uri", "discovery_uri"]
             }
           }
         }
