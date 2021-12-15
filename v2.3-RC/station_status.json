@@ -62,7 +62,7 @@
                       "minimum": 0
                     }
                   },
-                  "required": ["vehicle_type_id", "count"],
+                  "required": ["vehicle_type_id", "count"]
                 }
               },
               "num_bikes_disabled": {
