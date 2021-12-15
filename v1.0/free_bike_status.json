@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/NABSA/gbfs/blob/v1.0/gbfs.md#free_bike_statusjson",
+  "description": "Describes the vehicles that are available for rent (as of v2.1-RC2).",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "description": "Last time the data in the feed was updated in POSIX time.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1924988399
+    },
+    "ttl": {
+      "description": "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
+      "type": "integer",
+      "minimum": 0
+    },
+    "data": {
+      "description": "Array that contains one object per bike as defined below.",
+      "type": "object",
+      "properties": {
+        "bikes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "bike_id": {
+                "description": "Rotating (as of v2.0) identifier of a vehicle.",
+                "type": "string"
+              },
+              "lat": {
+                "description": "The latitude of the vehicle.",
+                "type": "number",
+                "minimum": -90,
+                "maximum": 90
+              },
+              "lon": {
+                "description": 	"The longitude of the vehicle.",
+                "type": "number",
+                "minimum": -180,
+                "maximum": 180
+              },
+              "is_reserved": {
+                "description": "Is the vehicle currently reserved?",
+                "oneOf": [{ "type": "boolean" }, { "type": "number" }]
+              },
+              "is_disabled": {
+                "description": "Is the vehicle currently disabled (broken)?",
+                "oneOf": [{ "type": "boolean" }, { "type": "number" }]
+              }
+            },
+            "required": ["bike_id", "lat", "lon", "is_reserved", "is_disabled"]
+          }
+        }
+      },
+      "required": ["bikes"]
+    }
+  },
+  "required": ["last_updated", "ttl", "data"]
+}

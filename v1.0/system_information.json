@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/NABSA/gbfs/blob/v1.0/gbfs.md#system_informationjson",
+  "description": "Details including system operator, system location, year implemented, URL, contact info, time zone.",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "description": "Last time the data in the feed was updated in POSIX time.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1924988399
+    },
+    "ttl": {
+      "description": "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
+      "type": "integer",
+      "minimum": 0
+    },
+    "data": {
+      "description": "Response data in the form of name:value pairs.",
+      "type": "object",
+      "properties": {
+        "system_id": {
+          "description": "Identifier for this vehicle share system. This should be globally unique (even between different systems).",
+          "type": "string"
+        },
+        "language": {
+          "description": 	"The language that will be used throughout the rest of the files. It must match the value in the gbfs.json file.",
+          "type": "string",
+          "pattern": "^[a-z]{2}$"
+        },
+        "name": {
+          "description": "Name of the system to be displayed to customers.",
+          "type": "string"
+        },
+        "short_name": {
+          "description": 	"Optional abbreviation for a system.",
+          "type": "string"
+        },
+        "operator": {
+          "description": "Name of the operator",
+          "type": "string"
+        },
+        "url": {
+          "description": "The URL of the vehicle share system.",
+          "type": "string"
+        },
+        "purchase_url": {
+          "description": "URL where a customer can purchase a membership.",
+          "type": "string"
+        },
+        "start_date": {
+          "description": 	"Date that the system began operations.",
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        },
+        "phone_number": {
+          "description": "A single voice telephone number for the specified system that presents the telephone number as typical for the system's service area.",
+          "type": "string"
+        },
+        "email": {
+          "description": "Email address actively monitored by the operator's customer service department.",
+          "type": "string"
+        },
+        "timezone": {
+          "description": "The time zone where the system is located.",
+          "type": "string"
+        },
+        "license_url": {
+          "description": "A fully qualified URL of a page that defines the license terms for the GBFS data for this system.",
+          "type": "string"
+        }
+      },
+      "required": ["system_id", "language", "name", "timezone"]
+    }
+  },
+  "required": ["last_updated", "ttl", "data"]
+}

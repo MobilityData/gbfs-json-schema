@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id":
+    "https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#vehicle_typesjson-added-in-v21-rc",
+  "description":
+    "Describes the types of vehicles that System operator has available for rent (added in v2.1-RC).",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "description":
+        "Last time the data in the feed was updated in POSIX time.",
+      "type": "integer",
+      "minimum": 1450155600
+    },
+    "ttl": {
+      "description":
+        "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
+      "type": "integer",
+      "minimum": 0
+    },
+    "version": {
+      "description":
+        "GBFS version number to which the feed conforms, according to the versioning framework.",
+      "type": "string",
+      "const": "2.2"
+    },
+    "data": {
+      "description": "Response data in the form of name:value pairs.",
+      "type": "object",
+      "properties": {
+        "vehicle_types": {
+          "description":
+            "Array that contains one object per vehicle type in the system as defined below.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "vehicle_type_id": {
+                "description": "Unique identifier of a vehicle type.",
+                "type": "string"
+              },
+              "form_factor": {
+                "description": "The vehicle's general form factor.",
+                "type": "string",
+                "enum": ["bicycle", "car", "moped", "other", "scooter"]
+              },
+              "propulsion_type": {
+                "description": "The primary propulsion type of the vehicle.",
+                "type": "string",
+                "enum": ["human", "electric_assist", "electric", "combustion"]
+              },
+              "max_range_meters": {
+                "description":
+                  "The furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential.",
+                "type": "number",
+                "minimum": 0
+              },
+              "name": {
+                "description": "The public name of this vehicle type.",
+                "type": "string"
+              }
+            },
+            "required": ["vehicle_type_id", "form_factor", "propulsion_type"],
+            "if": {
+              "properties": {
+                "propulsion_type": {
+                  "enum": ["electric", "electric_assist", "combustion"]
+                }
+              }
+            },
+            "then": {
+              "required": ["max_range_meters"]
+            }
+          }
+        }
+      },
+      "required": ["vehicle_types"]
+    }
+  },
+  "required": ["last_updated", "ttl", "version", "data"]
+}

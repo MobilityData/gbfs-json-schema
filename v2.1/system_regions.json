@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/NABSA/gbfs/blob/v2.1/gbfs.md#system_regionsjson",
+  "description":
+    "Describes regions for a system that is broken up by geographic or political region.",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "description":
+        "Last time the data in the feed was updated in POSIX time.",
+      "type": "integer",
+      "minimum": 1450155600
+    },
+    "ttl": {
+      "description":
+        "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
+      "type": "integer",
+      "minimum": 0
+    },
+    "version": {
+      "description":
+        "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
+      "type": "string",
+      "const": "2.1"
+    },
+    "data": {
+      "description": "Describe regions for a system that is broken up by geographic or political region.",
+      "type": "object",
+      "properties": {
+        "regions": {
+          "description": "Array of regions.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "region_id": {
+                "description": "identifier of the region.",
+                "type": "string"
+              },
+              "name": {
+                "description": "Public name for this region.",
+                "type": "string"
+              }
+            },
+            "required": ["region_id", "name"]
+          }
+        }
+      },
+      "required": ["regions"]
+    }
+  },
+  "required": ["last_updated", "ttl", "version", "data"]
+}
