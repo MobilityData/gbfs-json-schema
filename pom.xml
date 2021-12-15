@@ -46,9 +46,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
 
-        <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v2.2.4.zip</gbfsGithubUrl>
-        <gbfsVersion>2.2</gbfsVersion>
-
+        <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/heads/fix-invalid-json.zip</gbfsGithubUrl>
+        <schemaVersion>fix-invalid-json</schemaVersion>
         <jackson-databind.version>2.12.5</jackson-databind.version>
 
         <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
@@ -163,7 +162,8 @@
                         <configuration>
                             <environmentVariables>
                                 <GITHUB_URL>${gbfsGithubUrl}</GITHUB_URL>
-                                <DESTINATION_PATH>src/main/resources/schema/v${gbfsVersion}</DESTINATION_PATH>
+                                <SCHEMA_VERSION>${schemaVersion}</SCHEMA_VERSION>
+                                <DESTINATION_PATH>src/main/resources/schema</DESTINATION_PATH>
                             </environmentVariables>
                             <executable>./bin/gbfs-download-extract.sh</executable>
                         </configuration>
@@ -174,23 +174,42 @@
                 <groupId>org.jsonschema2pojo</groupId>
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
                 <version>${jsonschema2pojo-maven-plugin.version}</version>
-                <configuration>
-                    <classNamePrefix>GBFS</classNamePrefix>
-                    <formatTypeMapping>
-                        <uri>java.lang.String</uri>
-                    </formatTypeMapping>
-                    <removeOldOutput>true</removeOldOutput>
-                    <serializable>true</serializable>
-                    <initializeCollections>false</initializeCollections>
-                    <generateBuilders>true</generateBuilders>
-                    <sourceDirectory>${basedir}/src/main/resources/schema</sourceDirectory>
-                    <targetPackage>org.entur.gbfs</targetPackage>
-                </configuration>
                 <executions>
                     <execution>
+                        <id>generate-v2.2-sources</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
+                        <configuration>
+                            <classNamePrefix>GBFS</classNamePrefix>
+                            <formatTypeMapping>
+                                <uri>java.lang.String</uri>
+                            </formatTypeMapping>
+                            <removeOldOutput>false</removeOldOutput>
+                            <serializable>true</serializable>
+                            <initializeCollections>false</initializeCollections>
+                            <generateBuilders>true</generateBuilders>
+                            <sourceDirectory>${basedir}/src/main/resources/schema/v2.2</sourceDirectory>
+                            <targetPackage>org.entur.gbfs.v2_2</targetPackage>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-v2.3-RC-sources</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <classNamePrefix>GBFS</classNamePrefix>
+                            <formatTypeMapping>
+                                <uri>java.lang.String</uri>
+                            </formatTypeMapping>
+                            <removeOldOutput>false</removeOldOutput>
+                            <serializable>true</serializable>
+                            <initializeCollections>false</initializeCollections>
+                            <generateBuilders>true</generateBuilders>
+                            <sourceDirectory>${basedir}/src/main/resources/schema/v2.3-RC</sourceDirectory>
+                            <targetPackage>org.entur.gbfs.v2_3_RC</targetPackage>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>

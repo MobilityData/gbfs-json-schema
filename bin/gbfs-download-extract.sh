@@ -13,6 +13,7 @@ validate () {
 }
 
 validate "GITHUB_URL" ${GITHUB_URL}
+validate "SCHEMA_VERSION" ${SCHEMA_VERSION}
 validate "DESTINATION_PATH" ${DESTINATION_PATH}
 
 ZIP_FILE=downloaded.zip
@@ -45,8 +46,8 @@ if [ -f ${ZIP_FILE} ]; then
     rm ${ZIP_FILE} &&
 
     echo "Remove intermediate folder" &&
-    mv ${DESTINATION_PATH}/**/* ${DESTINATION_PATH} &&
-    rm -rf ${DESTINATION_PATH}/*/
+    mv ${DESTINATION_PATH}/gbfs-json-schema-${SCHEMA_VERSION}/* ${DESTINATION_PATH} &&
+    rm -rf ${DESTINATION_PATH}/gbfs-json-schema-${SCHEMA_VERSION}
 
     echo "Move each schema file into its own subfolder"
     find ${DESTINATION_PATH}/. -type f -exec sh -c 'mkdir "${0%.*}" && mv "$0" "${0%.*}/"' {} \;
