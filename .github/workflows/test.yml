@@ -12,7 +12,7 @@ jobs:
       - name: Install jsonschema
         run: pip install jsonschema==3.2.0
       - run: |
-          for i in *.json; do
+          for i in **/*.json; do
             echo "Validating $i"
             jsonschema $i
           done
