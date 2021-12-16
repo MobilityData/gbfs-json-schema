@@ -1,0 +1,18 @@
+name: Validate JSON Schema files
+on: [push]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install jsonschema
+        run: pip install jsonschema==3.2.0
+      - run: |
+          for i in **/*.json; do
+            echo "Validating $i"
+            jsonschema $i
+          done
