@@ -111,6 +111,24 @@
                 "type": "string"
               }
             },
+            "anyOf": [
+              {
+                "required": ["lat", "lon"],
+                "errorMessage": "Both 'lat' and 'lon' are required."
+              },
+              {
+                "required": ["station_id"],
+                "properties": {
+                  "lat": {
+                    "not": {}
+                  },
+                  "lon": {
+                    "not": {}
+                  }
+                },
+                "errorMessage": "'station_id' is required if 'lat' and 'lon' are not present."
+              }
+            ],
             "required": ["bike_id", "is_reserved", "is_disabled"]
           }
         }
