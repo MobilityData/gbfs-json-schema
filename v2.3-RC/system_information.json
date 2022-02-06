@@ -136,7 +136,7 @@
           "description":
           "The date that the terms of service provided at terms_url were last updated (added in v2.3-RC)",
           "type": "string",
-          "format": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         },
         "privacy_url": {
           "description":
@@ -148,7 +148,7 @@
           "description":
           "The date that the privacy policy provided at privacy_url was last updated (added in v2.3-RC).",
           "type": "string",
-          "format": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
         },
         "rental_apps": {
           "description":
