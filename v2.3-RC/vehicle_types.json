@@ -93,7 +93,7 @@
                   "icon_last_modified": {
                     "description": "Date that indicates the last time any included vehicle icon images were modified or updated added in v2.3-RC.",
                     "type": "string",
-                    "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+                    "format": "date"
                   },
                   "default_pricing_plan_id": {
                     "description": "A plan_id as defined in system_pricing_plans.json added in v2.3-RC.",

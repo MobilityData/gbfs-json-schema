@@ -64,7 +64,7 @@
         "start_date": {
           "description": "Date that the system began operations.",
           "type": "string",
-          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          "format": "date"
         },
         "phone_number": {
           "description":
@@ -101,7 +101,7 @@
             "brand_last_modified": {
               "description": "Date that indicates the last time any included brand assets were updated (added in v2.3-RC).",
               "type": "string",
-              "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+              "format": "date"
             },
             "brand_terms_url": {
               "description": "A fully qualified URL pointing to the location of a page that defines the license terms of brand icons, colors or other trademark information (added in v2.3-RC).",
@@ -136,7 +136,7 @@
           "description":
           "The date that the terms of service provided at terms_url were last updated (added in v2.3-RC)",
           "type": "string",
-          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          "format": "date"
         },
         "privacy_url": {
           "description":
@@ -148,7 +148,7 @@
           "description":
           "The date that the privacy policy provided at privacy_url was last updated (added in v2.3-RC).",
           "type": "string",
-          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          "format": "date"
         },
         "rental_apps": {
           "description":
