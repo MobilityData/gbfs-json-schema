@@ -94,20 +94,20 @@
                     "description": "Date that indicates the last time any included vehicle icon images were modified or updated added in v2.3-RC.",
                     "type": "string",
                     "format": "date"
-                  },
-                  "default_pricing_plan_id": {
-                    "description": "A plan_id as defined in system_pricing_plans.json added in v2.3-RC.",
-                    "type": "string"
-                  },
-                  "pricing_plan_ids": {
-                    "description": "Array of all pricing plan IDs as defined in system_pricing_plans.json added in v2.3-RC.",
-                    "type": "array",
-                    "items": {
-                      "type": "string"
-                    }
                   }
                 },
                 "required": ["icon_url", "icon_last_modified"]
+              },
+              "default_pricing_plan_id": {
+                "description": "A plan_id as defined in system_pricing_plans.json added in v2.3-RC.",
+                "type": "string"
+              },
+              "pricing_plan_ids": {
+                "description": "Array of all pricing plan IDs as defined in system_pricing_plans.json added in v2.3-RC.",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               }
             },
             "required": ["vehicle_type_id", "form_factor", "propulsion_type"],
