@@ -51,7 +51,7 @@
         "start_date": {
           "description": 	"Date that the system began operations.",
           "type": "string",
-          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+          "format": "date"
         },
         "phone_number": {
           "description": "A single voice telephone number for the specified system that presents the telephone number as typical for the system's service area.",
