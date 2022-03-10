@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id":
-    "https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md#geofencing_zonesjson",
+    "https://github.com/NABSA/gbfs/blob/v2.3-RC2/gbfs.md#geofencing_zonesjson",
   "description":
     "Describes geofencing zones and their associated rules and attributes (added in v2.1-RC).",
   "type": "object",
@@ -22,7 +22,7 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework.",
       "type": "string",
-      "const": "2.3-RC"
+      "const": "2.3-RC2"
     },
     "data": {
       "description":
