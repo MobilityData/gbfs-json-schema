@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md#system_regionsjson",
+  "$id": "https://github.com/NABSA/gbfs/blob/v2.3-RC2/gbfs.md#system_regionsjson",
   "description":
     "Describes regions for a system that is broken up by geographic or political region.",
   "type": "object",
@@ -21,7 +21,7 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
-      "const": "2.3-RC"
+      "const": "2.3-RC2"
     },
     "data": {
       "description": "Describe regions for a system that is broken up by geographic or political region.",

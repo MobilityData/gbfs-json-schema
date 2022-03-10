@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id":
-    "https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md#gbfs_versionsjson-added-in-v11",
+    "https://github.com/NABSA/gbfs/blob/v2.3-RC2/gbfs.md#gbfs_versionsjson-added-in-v11",
   "description":
     "Lists all feed endpoints published according to version sof the GBFS documentation. (added in v1.1)",
   "type": "object",
@@ -22,7 +22,7 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework.",
       "type": "string",
-      "const": "2.3-RC"
+      "const": "2.3-RC2"
     },
     "data": {
       "description": "Response data in the form of name:value pairs.",
