@@ -64,17 +64,10 @@
                 "type": "integer",
                 "minimum": 0
               },
-              "return_type": {
-                "description": "The conditions for returning the vehicle at the end of the trip added in v2.3-RC.",
-                "type": "array",
-                "items": {
-                  "type": "string",
-                  "enum": [
-                    "free_floating",
-                    "roundtrip_station",
-                    "any_station"
-                  ]
-                }
+              "return_constraint": {
+                "description": "The conditions for returning the vehicle at the end of the trip. Added in v2.3-RC as return_type, and updated to return_constraint in v2.3-RC2.",
+                "type": "string",
+                "enum": ["free_floating", "roundtrip_station", "any_station", "hybrid"],
               },
               "vehicle_assets": {
                 "description": "An object where each key defines one of the items listed below added in v2.3-RC.",
