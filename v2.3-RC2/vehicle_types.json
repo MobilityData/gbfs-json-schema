@@ -188,8 +188,7 @@
                 "propulsion_type": {
                   "enum": ["electric", "electric_assist", "combustion", "combustion_diesel", "hybrid", "plug_in_hybrid", "hydrogen_fuel_cell"]
                 }
-              },
-              "required": ["propulsion_type"]
+              }
             },
             "then": {
               "required": ["max_range_meters"]
