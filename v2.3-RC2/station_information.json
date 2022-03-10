@@ -128,6 +128,26 @@
                   }
                 }
               },
+              "parking_type": {
+                "description": "Type of parking station. Added in v2.3-RC2",
+                  "type": "string",
+                  "enum": [
+                    "parking_lot",
+                    "street_parking",
+                    "underground_parking",
+                    "sidewalk_parking",
+                    "other"
+                  ]
+                },
+              "parking_hoop": {
+                "description": "Are parking hoops present at this station? Added in v2.3-RC2",
+                "type": "boolean"
+              },
+              "contact_phone": {
+                "description": "Contact phone of the station. Added in v2.3-RC2",
+                "type": "string",
+                "pattern": "^\\+[1-9]\\d{1,14}$"
+              },
               "capacity": {
                 "description":
                   "Number of total docking points installed at this station, both available and unavailable.",
