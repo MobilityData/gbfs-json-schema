@@ -42,7 +42,7 @@
               "form_factor": {
                 "description": "The vehicle's general form factor.",
                 "type": "string",
-                "enum": ["bicycle", "cargo_bicycle" ,"car", "moped", "scooter_standing", "scooter_seated", "other", "scooter"]
+                "enum": ["bicycle", "car", "moped", "other", "scooter"]
               },
               "propulsion_type": {
                 "description": "The primary propulsion type of the vehicle.",
@@ -57,22 +57,7 @@
               },
               "name": {
                 "description": "The public name of this vehicle type.",
-                "type": "string",
-              },
-              "wheel_count": {
-                "description": "Number of wheels this vehicle type has. Added in v2.3-RC2",
-                "type": "number",
-                "minimum": 0
-              },
-              "max_permitted_speed": {
-                "description": "The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations. Added in v2.3-RC2",
-                "type": "number",
-                "minimum": 0
-              },
-              "rated_power": {
-                "description": "The rated power of the motor for this vehicle type in watts. Added in v2.3-RC2",
-                "type": "number",
-                "minimum": 0
+                "type": "string"
               },
               "default_reserve_time": {
                 "description": "Maximum time in minutes that a vehicle can be reserved before a rental begins added in v2.3-RC.",
