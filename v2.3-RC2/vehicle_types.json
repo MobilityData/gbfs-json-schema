@@ -78,7 +78,7 @@
                     },
                     "eco_sticker": {
                       "description": " Name of the eco label. Added in v2.3-RC2.",
-                      "type": "string",
+                      "type": "string"
                     }
                   }
                 },
@@ -92,7 +92,7 @@
               },
               "name": {
                 "description": "The public name of this vehicle type.",
-                "type": "string",
+                "type": "string"
               },
               "vehicle_accessories": {
                 "description": "Description of accessories available in the vehicle.",
@@ -113,15 +113,15 @@
               },
               "make": {
                 "description": "The name of the vehicle manufacturer. Added in v2.3-RC2",
-                "type": "string",
+                "type": "string"
               },
               "model": {
                 "description": "The name of the vehicle model. Added in v2.3-RC2",
-                "type": "string",
+                "type": "string"
               },
               "color": {
                 "description": "The color of the vehicle. Added in v2.3-RC2",
-                "type": "string",
+                "type": "string"
               },
               "wheel_count": {
                 "description": "Number of wheels this vehicle type has. Added in v2.3-RC2",
@@ -146,7 +146,7 @@
               "return_constraint": {
                 "description": "The conditions for returning the vehicle at the end of the trip. Added in v2.3-RC as return_type, and updated to return_constraint in v2.3-RC2.",
                 "type": "string",
-                "enum": ["free_floating", "roundtrip_station", "any_station", "hybrid"],
+                "enum": ["free_floating", "roundtrip_station", "any_station", "hybrid"]
               },
               "vehicle_assets": {
                 "description": "An object where each key defines one of the items listed below added in v2.3-RC.",
