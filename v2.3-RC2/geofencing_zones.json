@@ -92,7 +92,7 @@
                             },
                             "station_parking": {
                               "description": "Vehicle MUST be parked at stations defined in station_information.json within this geofence zone",
-                              "type": "boolean",
+                              "type": "boolean"
                             }
                           },
                           "required": ["ride_allowed", "ride_through_allowed"]
