@@ -145,7 +145,7 @@
               },
               "contact_phone": {
                 "description": "Contact phone of the station. Added in v2.3-RC2",
-                "type": "string",
+                "type": "string"
               },
               "capacity": {
                 "description":
