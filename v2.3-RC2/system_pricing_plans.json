@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id":
-    "https://github.com/NABSA/gbfs/blob/v2.3-RC/gbfs.md#system_pricing_plansjson",
+    "https://github.com/NABSA/gbfs/blob/v2.3-RC2/gbfs.md#system_pricing_plansjson",
   "description": "Describes the pricing schemes of the system.",
   "type": "object",
   "properties": {
@@ -21,7 +21,7 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
-      "const": "2.3-RC"
+      "const": "2.3-RC2"
     },
     "data": {
       "description":
