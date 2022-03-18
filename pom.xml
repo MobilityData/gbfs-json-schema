@@ -194,7 +194,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-v2.3-RC-sources</id>
+                        <id>generate-v2.3-RC2-sources</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
@@ -207,8 +207,8 @@
                             <serializable>true</serializable>
                             <initializeCollections>false</initializeCollections>
                             <generateBuilders>true</generateBuilders>
-                            <sourceDirectory>${basedir}/src/main/resources/schema/v2.3-RC</sourceDirectory>
-                            <targetPackage>org.entur.gbfs.v2_3_RC</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/schema/v2.3-RC2</sourceDirectory>
+                            <targetPackage>org.entur.gbfs.v2_3_RC2</targetPackage>
                         </configuration>
                     </execution>
                 </executions>
