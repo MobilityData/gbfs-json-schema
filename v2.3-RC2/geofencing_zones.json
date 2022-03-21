@@ -57,12 +57,12 @@
                       },
                       "start": {
                         "description": "Start time of the geofencing zone in POSIX time.",
-                        "type": "number",
+                        "type": "integer",
                         "minimum": 1450155600
                       },
                       "end": {
                         "description": "End time of the geofencing zone in POSIX time.",
-                        "type": "number",
+                        "type": "integer",
                         "minimum": 1450155600
                       },
                       "rules": {
