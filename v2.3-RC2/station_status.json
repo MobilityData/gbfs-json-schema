@@ -99,7 +99,7 @@
               "last_reported": {
                 "description":
                   "The last time this station reported its status to the operator's backend in POSIX time.",
-                "type": "number",
+                "type": "integer",
                 "minimum": 1450155600
               },
               "vehicle_docks_available": {
