@@ -103,7 +103,7 @@
               },
               "g_CO2_km": {
                 "description": "Maximum quantity of CO2, in grams, emitted per kilometer, according to the WLTP. Added in v2.3-RC2",
-                "type": "number",
+                "type": "integer",
                 "minimum": 0
               },
               "vehicle_image": {
@@ -125,17 +125,17 @@
               },
               "wheel_count": {
                 "description": "Number of wheels this vehicle type has. Added in v2.3-RC2",
-                "type": "number",
+                "type": "integer",
                 "minimum": 0
               },
               "max_permitted_speed": {
                 "description": "The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations. Added in v2.3-RC2",
-                "type": "number",
+                "type": "integer",
                 "minimum": 0
               },
               "rated_power": {
                 "description": "The rated power of the motor for this vehicle type in watts. Added in v2.3-RC2",
-                "type": "number",
+                "type": "integer",
                 "minimum": 0
               },
               "default_reserve_time": {
