@@ -48,7 +48,7 @@
 
         <gbfsGithubUrl>https://github.com/MobilityData/gbfs-json-schema/archive/refs/tags/v3.0.2.zip</gbfsGithubUrl>
         <schemaVersion>3.0.2</schemaVersion>
-        <jackson-databind.version>2.12.5</jackson-databind.version>
+        <jackson-databind.version>2.13.2.2</jackson-databind.version>
 
         <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
         <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
