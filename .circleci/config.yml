@@ -66,19 +66,19 @@ jobs:
           auth:
             username: $DOCKERHUB_LOGIN
             password: $DOCKERHUB_PASSWORD
-        environment:
-          DEBIAN_FRONTEND: "noninteractive"
-        steps:
-          - checkout
-          - restore_cache:
-              key: dep-cache-v2-{{ checksum "pom.xml" }}
-          - run:
-              name: Download Maven settings
-              command: wget https://raw.githubusercontent.com/entur/circleci-toolbox-image-java11/master/tools/m2/settings.xml -O .circleci/settings.xml
-          - run: *jfrog-login
-          - run:
-              name: Maven deploy
-              command: mvn deploy -s .circleci/settings.xml -DskipTests
+      environment:
+        DEBIAN_FRONTEND: "noninteractive"
+      steps:
+        - checkout
+        - restore_cache:
+            key: dep-cache-v2-{{ checksum "pom.xml" }}
+        - run:
+            name: Download Maven settings
+            command: wget https://raw.githubusercontent.com/entur/circleci-toolbox-image-java11/master/tools/m2/settings.xml -O .circleci/settings.xml
+        - run: *jfrog-login
+        - run:
+            name: Maven deploy
+            command: mvn deploy -s .circleci/settings.xml -DskipTests
 workflows:
   version: 2
   build_test_deploy:
