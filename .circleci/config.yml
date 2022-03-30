@@ -1,10 +1,15 @@
 version: 2
 
 aliases:
+  - &jfrog-login
+    name: Rename jfrog environment variable for maven setting.xml
+    command: |
+      echo "export JFROG_USER=$ARTIFACTORY_USER"  >> $BASH_ENV
+      echo "export JFROG_PASS=$ARTIFACTORY_PASSWORD"  >> $BASH_ENV
   - &sonar-scan
     name: Sonar scan
     command: |
-      mvn -Psonar -s /tools/m2/settings.xml \
+      mvn -Psonar -s .circleci/settings.xml \
         sonar:sonar \
         -Dsonar.projectKey=entur_${CIRCLE_PROJECT_REPONAME} \
         -Dsonar.organization=${SONAR_ORG} \
@@ -13,25 +18,34 @@ aliases:
         -Dsonar.login=${ENTUR_SONAR_PASSWORD}
 
 jobs:
-  test:
+  build:
     docker:
-      - image: eu.gcr.io/entur-system-1287/circleci-toolbox-image-java11
+      - image: cimg/openjdk:11.0
         auth:
-          username: _json_key
-          password: $DOCKER_PASSWORD
+          username: $DOCKERHUB_LOGIN
+          password: $DOCKERHUB_PASSWORD
     environment:
       MAVEN_OPTS: -Xmx3G
     steps:
       - checkout
       - restore_cache:
-          key: dep-cache-{{ checksum "pom.xml" }}
-      - run: mvn org.apache.maven.plugins:maven-dependency-plugin:3.1.0:go-offline -s /tools/m2/settings.xml
+          keys:
+            - dep-cache-v2-{{ checksum "pom.xml" }}
+            - dep-cache-v2-
+      - run:
+          name: Download Maven settings
+          command: wget https://raw.githubusercontent.com/entur/circleci-toolbox-image-java11/master/tools/m2/settings.xml -O .circleci/settings.xml
+      - run: *jfrog-login
+      - run:
+          name: Refresh cache
+          command: mvn org.apache.maven.plugins:maven-dependency-plugin:3.1.0:go-offline -s .circleci/settings.xml
       - save_cache:
           paths:
             - ~/.m2
-          key: dep-cache-{{ checksum "pom.xml" }}
+          key: dep-cache-v2-{{ checksum "pom.xml" }}
       # Cannot use -o because of snapshot dependencies.
-      - run: mvn verify -s /tools/m2/settings.xml
+      - run: mvn package -s .circleci/settings.xml
+      - run: *sonar-scan
       - run:
           name: Save test results
           command: |
@@ -46,73 +60,33 @@ jobs:
           root: ~/project
           paths:
             - target
-
-  sonar:
-    docker:
-      - image: eu.gcr.io/entur-system-1287/circleci-toolbox-image-java11
-        auth:
-          username: _json_key
-          password: $DOCKER_PASSWORD
-    environment:
-      MAVEN_OPTS: -Xmx3G
-    steps:
-      - checkout
-      - restore_cache:
-          key: dep-cache-{{ checksum "pom.xml" }}
-      - attach_workspace:
-          at: ~/project
-      - run: *sonar-scan
-
-  build:
-    docker:
-      - image: eu.gcr.io/entur-system-1287/circleci-toolbox-image
-        auth:
-          username: _json_key
-          password: $DOCKER_PASSWORD
-    environment:
-      MAVEN_OPTS: -Xmx3G
-    steps:
-      - checkout
-      - restore_cache:
-          key: dep-cache-{{ checksum "pom.xml" }}
-      - run: mvn org.apache.maven.plugins:maven-dependency-plugin:3.1.0:go-offline -s /tools/m2/settings.xml
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: dep-cache-{{ checksum "pom.xml" }}
-      # Cannot use -o because of snapshot dependencies.
-      - run: mvn package -s /tools/m2/settings.xml -DskipTests
-  deploy:
-    docker:
-      - image: eu.gcr.io/entur-system-1287/circleci-toolbox-image
-        auth:
-          username: _json_key
-          password: $DOCKER_PASSWORD
+deploy:
+  docker:
+    - image: cimg/openjdk:11.0
+      auth:
+        username: $DOCKERHUB_LOGIN
+        password: $DOCKERHUB_PASSWORD
     environment:
       DEBIAN_FRONTEND: "noninteractive"
     steps:
       - checkout
       - restore_cache:
-          key: dep-cache-{{ checksum "pom.xml" }}
+          key: dep-cache-v2-{{ checksum "pom.xml" }}
+      - run:
+          name: Download Maven settings
+          command: wget https://raw.githubusercontent.com/entur/circleci-toolbox-image-java11/master/tools/m2/settings.xml -O .circleci/settings.xml
+      - run: *jfrog-login
       - run:
           name: Maven deploy
-          command: mvn deploy -s /tools/m2/settings.xml -DskipTests
+          command: mvn deploy -s .circleci/settings.xml -DskipTests
 workflows:
   version: 2
   build_test_deploy:
     jobs:
-      - test:
-          context: org-carbon
-      - sonar:
-          context: org-carbon
-          requires:
-            - test
       - build:
-          context: org-carbon
-          requires:
-            - sonar
+          context: global
       - deploy:
-          context: org-carbon
+          context: global
           requires:
             - build
           filters:
