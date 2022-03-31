@@ -73,7 +73,7 @@
         <argLine />
 
         <!-- Unit test frameworks versions -->
-        <assertj.core.version>3.20.2</assertj.core.version>
+        <assertj.core.version>3.22.0</assertj.core.version>
         <junit.version>5.8.2</junit.version>
 
         <!-- GPG configuration for jar signing-->
