@@ -46,7 +46,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
 
-        <gbfsGithubUrl>https://github.com/MobilityData/gbfs-json-schema/archive/refs/tags/v2.3.0.zip</gbfsGithubUrl>
+        <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v2.3.0.zip</gbfsGithubUrl>
         <schemaVersion>2.3.0</schemaVersion>
         <jackson-databind.version>2.13.2.2</jackson-databind.version>
 
