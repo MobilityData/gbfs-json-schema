@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id":
-    "https://github.com/NABSA/gbfs/blob/v2.3-RC2/gbfs.md#station_informationjson",
+    "https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#station_informationjson",
   "description":
     "Details including system operator, system location, year implemented, URL, contact info, time zone.",
   "type": "object",
@@ -22,7 +22,7 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
-      "const": "2.3-RC2"
+      "const": "2.3"
     },
     "data": {
       "description":
@@ -129,7 +129,7 @@
                 }
               },
               "parking_type": {
-                "description": "Type of parking station. Added in v2.3-RC2",
+                "description": "Type of parking station. Added in v2.3",
                   "type": "string",
                   "enum": [
                     "parking_lot",
@@ -140,11 +140,11 @@
                   ]
                 },
               "parking_hoop": {
-                "description": "Are parking hoops present at this station? Added in v2.3-RC2",
+                "description": "Are parking hoops present at this station? Added in v2.3",
                 "type": "boolean"
               },
               "contact_phone": {
-                "description": "Contact phone of the station. Added in v2.3-RC2",
+                "description": "Contact phone of the station. Added in v2.3",
                 "type": "string"
               },
               "capacity": {

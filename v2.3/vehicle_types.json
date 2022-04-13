@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id":
-    "https://github.com/NABSA/gbfs/blob/v2.3-RC2/gbfs.md#vehicle_typesjson-added-in-v21-rc",
+    "https://github.com/NABSA/gbfs/blob/v2.3/gbfs.md#vehicle_typesjson-added-in-v21-rc",
   "description":
     "Describes the types of vehicles that System operator has available for rent (added in v2.1-RC).",
   "type": "object",
@@ -22,7 +22,7 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework.",
       "type": "string",
-      "const": "2.3-RC2"
+      "const": "2.3"
     },
     "data": {
       "description": "Response data in the form of name:value pairs.",
@@ -61,23 +61,23 @@
               },
 
               "propulsion_type": {
-                "description": "The primary propulsion type of the vehicle. Updated in v2.3-RC2 to represent car-sharing",
+                "description": "The primary propulsion type of the vehicle. Updated in v2.3 to represent car-sharing",
                 "type": "string",
                 "enum": ["human", "electric_assist", "electric", "combustion", "combustion_diesel", "hybrid", "plug_in_hybrid", "hydrogen_fuel_cell"]
               },
               "eco_label": {
-                "description": "Vehicle air quality certificate. added in v2.3-RC2.",
+                "description": "Vehicle air quality certificate. added in v2.3.",
                 "type": "array",
                 "items":  {
                   "type": "object",
                   "properties": {
                     "country_code": {
-                      "description": " Country code following the ISO 3166-1 alpha-2 notation. Added in v2.3-RC2.",
+                      "description": " Country code following the ISO 3166-1 alpha-2 notation. Added in v2.3.",
                       "type": "string",
                       "pattern": "^[A-Z]{2}"
                     },
                     "eco_sticker": {
-                      "description": " Name of the eco label. Added in v2.3-RC2.",
+                      "description": " Name of the eco label. Added in v2.3.",
                       "type": "string"
                     }
                   }
@@ -102,39 +102,39 @@
                 }
               },
               "g_CO2_km": {
-                "description": "Maximum quantity of CO2, in grams, emitted per kilometer, according to the WLTP. Added in v2.3-RC2",
+                "description": "Maximum quantity of CO2, in grams, emitted per kilometer, according to the WLTP. Added in v2.3",
                 "type": "integer",
                 "minimum": 0
               },
               "vehicle_image": {
-                "description": "URL to an image that would assist the user in identifying the vehicle. JPEG or PNG. Added in v2.3-RC2",
+                "description": "URL to an image that would assist the user in identifying the vehicle. JPEG or PNG. Added in v2.3",
                 "type": "string",
                 "format": "uri"
               },
               "make": {
-                "description": "The name of the vehicle manufacturer. Added in v2.3-RC2",
+                "description": "The name of the vehicle manufacturer. Added in v2.3",
                 "type": "string"
               },
               "model": {
-                "description": "The name of the vehicle model. Added in v2.3-RC2",
+                "description": "The name of the vehicle model. Added in v2.3",
                 "type": "string"
               },
               "color": {
-                "description": "The color of the vehicle. Added in v2.3-RC2",
+                "description": "The color of the vehicle. Added in v2.3",
                 "type": "string"
               },
               "wheel_count": {
-                "description": "Number of wheels this vehicle type has. Added in v2.3-RC2",
+                "description": "Number of wheels this vehicle type has. Added in v2.3",
                 "type": "integer",
                 "minimum": 0
               },
               "max_permitted_speed": {
-                "description": "The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations. Added in v2.3-RC2",
+                "description": "The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations. Added in v2.3",
                 "type": "integer",
                 "minimum": 0
               },
               "rated_power": {
-                "description": "The rated power of the motor for this vehicle type in watts. Added in v2.3-RC2",
+                "description": "The rated power of the motor for this vehicle type in watts. Added in v2.3",
                 "type": "integer",
                 "minimum": 0
               },
@@ -144,7 +144,7 @@
                 "minimum": 0
               },
               "return_constraint": {
-                "description": "The conditions for returning the vehicle at the end of the trip. Added in v2.3-RC as return_type, and updated to return_constraint in v2.3-RC2.",
+                "description": "The conditions for returning the vehicle at the end of the trip. Added in v2.3-RC as return_type, and updated to return_constraint in v2.3.",
                 "type": "string",
                 "enum": ["free_floating", "roundtrip_station", "any_station", "hybrid"]
               },
