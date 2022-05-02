@@ -40,6 +40,7 @@
                   "The semantic version of the feed in the form X.Y",
                 "type": "string",
                 "enum": [
+                  "1.0",
                   "1.1",
                   "2.0",
                   "2.1",
