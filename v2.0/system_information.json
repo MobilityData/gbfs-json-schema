@@ -84,7 +84,7 @@
           "format": "email"
         },
         "timezone": {
-          "$ref": "../common/definitions.json#/definitions/timezone"
+          "$ref": "../common/timezones.json#/definitions/timezone"
         },
         "license_url": {
           "description":
