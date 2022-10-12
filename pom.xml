@@ -48,7 +48,7 @@
 
         <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v2.3.2.zip</gbfsGithubUrl>
         <schemaVersion>2.3.2</schemaVersion>
-        <jackson-databind.version>2.13.4</jackson-databind.version>
+        <jackson-databind.version>2.13.4.1</jackson-databind.version>
 
         <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
         <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
