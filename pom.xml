@@ -89,9 +89,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.jsonschema2pojo</groupId>
-            <artifactId>jsonschema2pojo-maven-plugin</artifactId>
-            <version>${jsonschema2pojo-maven-plugin.version}</version>
+            <groupId>de.grundid.opendatalab</groupId>
+            <artifactId>geojson-jackson</artifactId>
+            <version>1.14</version>
         </dependency>
 
         <!-- Test dependencies -->
@@ -180,6 +180,15 @@
                 <groupId>org.jsonschema2pojo</groupId>
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
                 <version>${jsonschema2pojo-maven-plugin.version}</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.entur.gbfs</groupId>
+                        <artifactId>rule-factory</artifactId>
+                        <version>1.0.0</version>
+                        <scope>system</scope>
+                        <systemPath>${project.basedir}/rule-factory/target/rule-factory-1.0.1.jar</systemPath>
+                    </dependency>
+                </dependencies>
                 <executions>
                     <execution>
                         <id>generate-v2.2-sources</id>

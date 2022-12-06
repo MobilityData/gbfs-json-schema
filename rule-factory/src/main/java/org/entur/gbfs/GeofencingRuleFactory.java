@@ -13,6 +13,7 @@ import org.jsonschema2pojo.util.ParcelableHelper;
 import org.jsonschema2pojo.util.ReflectionHelper;
 
 public class GeofencingRuleFactory extends RuleFactory {
+
     @Override
     public Rule<JPackage, JType> getObjectRule() {
         return new GeofencingObjectRule(this, new ParcelableHelper(), new ReflectionHelper(this));
@@ -36,12 +37,9 @@ public class GeofencingRuleFactory extends RuleFactory {
                 JPackage _package,
                 Schema schema
         ) {
-            if(nodeName.equals("geofencing_zones")) {
-                // do something custom here
-                if (node instanceof ObjectNode) {
-                    ObjectNode on = (ObjectNode) node;
-                    on.set("javaClass", new TextNode("org.geojson.MultiPolygon"));
-                }
+            if (nodeName.equals("geometry") && node instanceof ObjectNode) {
+                ObjectNode on = (ObjectNode) node;
+                on.set("existingJavaType", new TextNode("org.geojson.MultiPolygon"));
             }
             return super.apply(nodeName, node, parent, _package, schema);
         }
