@@ -88,6 +88,12 @@
             <version>${jackson-databind.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.jsonschema2pojo</groupId>
+            <artifactId>jsonschema2pojo-maven-plugin</artifactId>
+            <version>${jsonschema2pojo-maven-plugin.version}</version>
+        </dependency>
+
         <!-- Test dependencies -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -191,6 +197,7 @@
                             <generateBuilders>true</generateBuilders>
                             <sourceDirectory>${basedir}/src/main/resources/schema/v2.2</sourceDirectory>
                             <targetPackage>org.entur.gbfs.v2_2</targetPackage>
+                            <customRuleFactory>org.entur.gbfs.GeofencingRuleFactory</customRuleFactory>
                         </configuration>
                     </execution>
                     <execution>
@@ -209,6 +216,7 @@
                             <generateBuilders>true</generateBuilders>
                             <sourceDirectory>${basedir}/src/main/resources/schema/v2.3</sourceDirectory>
                             <targetPackage>org.entur.gbfs.v2_3</targetPackage>
+                            <customRuleFactory>org.entur.gbfs.GeofencingRuleFactory</customRuleFactory>
                         </configuration>
                     </execution>
                 </executions>
