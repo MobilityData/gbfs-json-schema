@@ -186,7 +186,7 @@
                         <artifactId>rule-factory</artifactId>
                         <version>1.0.0</version>
                         <scope>system</scope>
-                        <systemPath>${project.basedir}/rule-factory/target/rule-factory-1.0.1.jar</systemPath>
+                        <systemPath>${project.basedir}/rule-factory/target/rule-factory-1.0.0.jar</systemPath>
                     </dependency>
                 </dependencies>
                 <executions>
