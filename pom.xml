@@ -4,7 +4,7 @@
 
     <groupId>org.entur.gbfs</groupId>
     <artifactId>gbfs-java-model</artifactId>
-    <version>2.3.3-SNAPSHOT</version>
+    <version>3.0.0-SNAPSHOT</version>
 
     <name>gbfs-java-model</name>
     <description>Generates Java model from GBFS JSON schema using jsonschema2pojo.</description>
