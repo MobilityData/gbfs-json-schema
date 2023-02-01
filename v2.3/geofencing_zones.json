@@ -77,7 +77,7 @@
                               "items": { "type": "string" }
                             },
                             "ride_allowed": {
-                              "description": "Is the undocked ride allowed to stat and end in this zone?",
+                              "description": "Is the undocked ride allowed to start and end in this zone?",
                               "type": "boolean"
                             },
                             "ride_through_allowed": {
