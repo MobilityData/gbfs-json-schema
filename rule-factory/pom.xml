@@ -12,7 +12,7 @@
         <jdk.version>1.8</jdk.version>
 
         <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
-        <jsonschema2pojo-maven-plugin.version>1.2.0</jsonschema2pojo-maven-plugin.version>
+        <jsonschema2pojo-maven-plugin.version>1.2.1</jsonschema2pojo-maven-plugin.version>
     </properties>
 
     <dependencies>
