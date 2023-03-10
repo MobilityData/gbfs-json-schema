@@ -1195,6 +1195,26 @@
           }
         }
       },
+      "anyOf": [
+        {
+          "required": ["license_id"],
+          "properties": {
+            "license_url": {
+              "not": {}
+            }
+          },
+          "errorMessage": "license_id is required if license_url is not present."
+        },
+        {
+          "required": ["license_url"],
+          "properties": {
+            "license_id": {
+              "not": {}
+            }
+          },
+          "errorMessage": "license_url is required if license_id is not present."
+        }
+      ],
       "required": ["system_id", "languages", "name", "opening_hours", "feed_contact_email", "timezone"],
       "dependentRequired": {
         "terms_url": ["terms_last_updated"],

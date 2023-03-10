@@ -197,5 +197,5 @@
       }
     },
   "required": ["last_updated", "ttl", "version", "data"]
-  }
+}
 
