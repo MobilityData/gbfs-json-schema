@@ -1195,24 +1195,17 @@
           }
         }
       },
-      "anyOf": [
+      "oneOf": [
         {
-          "required": ["license_id"],
-          "properties": {
-            "license_url": {
-              "not": {}
-            }
-          },
-          "errorMessage": "license_id is required if license_url is not present."
+          "not": {"required" : ["license_url", "license_id"] }
         },
         {
-          "required": ["license_url"],
-          "properties": {
-            "license_id": {
-              "not": {}
-            }
-          },
-          "errorMessage": "license_url is required if license_id is not present."
+          "required": ["license_id"],
+          "not": {"required": ["license_id"] },
+        },
+                {
+          "required": ["license_url"], 
+          "not": {"required": ["license_url"] }
         }
       ],
       "required": ["system_id", "languages", "name", "opening_hours", "feed_contact_email", "timezone"],
