@@ -57,17 +57,17 @@
                         "items": {
                           "type": "object",
                           "properties": {
-                            "start": {
-                              "description": "Start time of the alert.",
-                              "type": "integer",
-                              "minimum": 1450155600
+                            "text": {
+                              "description": "The translated text.",
+                              "type": "string"
                             },
-                            "end": {
-                              "description": "End time of the alert.",
-                              "type": "integer",
-                              "minimum": 1450155600
+                            "language": {
+                              "description": "IETF BCP 47 language code.",
+                              "type": "string",
+                              "pattern": "^[a-z]{2,3}(-[A-Z]{2})?$"
                             }
-                          }
+                          },
+                          "required": ["text", "language"]
                         }
                       },
                       "start": {
