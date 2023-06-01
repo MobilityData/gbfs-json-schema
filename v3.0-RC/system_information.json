@@ -1201,9 +1201,9 @@
         },
         {
           "required": ["license_id"],
-          "not": {"required": ["license_id"] },
+          "not": {"required": ["license_id"] }
         },
-                {
+        {
           "required": ["license_url"], 
           "not": {"required": ["license_url"] }
         }
