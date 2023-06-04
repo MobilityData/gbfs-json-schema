@@ -45,8 +45,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>1.8</jdk.version>
-        <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/heads/fix-3.0-schemas.zip</gbfsGithubUrl>
-        <schemaVersion>fix-3.0-schemas</schemaVersion>
+        <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v3.0-RC.zip</gbfsGithubUrl>
+        <schemaVersion>3.0-RC</schemaVersion>
         <jackson-databind.version>2.15.2</jackson-databind.version>
         <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
         <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
