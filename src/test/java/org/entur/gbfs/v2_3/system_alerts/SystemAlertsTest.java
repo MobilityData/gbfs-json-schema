@@ -11,7 +11,7 @@ public class SystemAlertsTest {
 
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("system_alerts.json");
+        URL resource = getClass().getClassLoader().getResource("v2_X/system_alerts.json");
         objectMapper.readValue(resource, GBFSSystemAlerts.class);
     }
 }

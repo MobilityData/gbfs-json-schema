@@ -11,7 +11,7 @@ public class SystemInformationTest {
 
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("system_information.json");
+        URL resource = getClass().getClassLoader().getResource("v2_X/system_information.json");
         objectMapper.readValue(resource, GBFSSystemInformation.class);
     }
 }

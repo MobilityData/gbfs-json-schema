@@ -11,7 +11,7 @@ public class FreeBikeStatusTest {
 
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("free_bike_status.json");
+        URL resource = getClass().getClassLoader().getResource("v2_X/free_bike_status.json");
         objectMapper.readValue(resource, GBFSFreeBikeStatus.class);
     }
 }

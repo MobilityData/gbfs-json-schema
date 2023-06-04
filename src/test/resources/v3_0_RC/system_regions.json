@@ -1,0 +1,45 @@
+{
+  "last_updated": 1640887163,
+  "ttl": 86400,
+  "version": "3.0-RC",
+  "data": {
+    "regions": [
+      {
+        "name": [
+          {
+            "text": "North",
+            "language": "en"
+          }
+        ],
+        "region_id": "3"
+      },
+      {
+        "name": [
+          {
+            "text": "East",
+            "language": "en"
+          }
+        ],
+        "region_id": "4"
+      },
+      {
+        "name": [
+          {
+            "text": "South",
+            "language": "en"
+          }
+        ],
+        "region_id": "5"
+      },
+      {
+        "name": [
+          {
+            "text": "West",
+            "language": "en"
+          }
+        ],
+        "region_id": "6"
+      }
+    ]
+  }
+}
