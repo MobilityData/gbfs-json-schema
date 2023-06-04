@@ -11,7 +11,7 @@ public class SystemHoursTest {
 
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("system_hours.json");
+        URL resource = getClass().getClassLoader().getResource("v2_X/system_hours.json");
         objectMapper.readValue(resource, GBFSSystemHours.class);
     }
 }

@@ -11,7 +11,7 @@ public class GBFSVersionsTest {
 
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("gbfs_versions.json");
+        URL resource = getClass().getClassLoader().getResource("v2_X/gbfs_versions.json");
         objectMapper.readValue(resource, GBFSGbfsVersions.class);
     }
 }

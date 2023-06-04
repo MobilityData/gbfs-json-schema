@@ -11,7 +11,7 @@ public class SystemRegionsTest {
 
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("system_regions.json");
+        URL resource = getClass().getClassLoader().getResource("v2_X/system_regions.json");
         objectMapper.readValue(resource, GBFSSystemRegions.class);
     }
 }

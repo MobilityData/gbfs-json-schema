@@ -11,7 +11,7 @@ public class VehicleTypesTest {
 
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("vehicle_types.json");
+        URL resource = getClass().getClassLoader().getResource("v2_X/vehicle_types.json");
         objectMapper.readValue(resource, GBFSVehicleTypes.class);
     }
 }

@@ -12,7 +12,7 @@ public class GBFSTest {
 
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("gbfs.json");
+        URL resource = getClass().getClassLoader().getResource("v2_X/gbfs.json");
         objectMapper.readValue(resource, GBFS.class);
     }
 }

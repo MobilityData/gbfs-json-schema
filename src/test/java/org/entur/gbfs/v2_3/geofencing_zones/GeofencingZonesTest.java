@@ -11,7 +11,7 @@ public class GeofencingZonesTest {
 
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("geofencing_zones.json");
+        URL resource = getClass().getClassLoader().getResource("v2_X/geofencing_zones.json");
         objectMapper.readValue(resource, GBFSGeofencingZones.class);
     }
 }

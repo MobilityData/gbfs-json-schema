@@ -11,7 +11,7 @@ public class SystemPricingPlansTest {
 
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("system_pricing_plans.json");
+        URL resource = getClass().getClassLoader().getResource("v2_X/system_pricing_plans.json");
         objectMapper.readValue(resource, GBFSSystemPricingPlans.class);
     }
 }

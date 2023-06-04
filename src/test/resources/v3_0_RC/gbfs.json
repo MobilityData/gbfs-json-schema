@@ -1,0 +1,17 @@
+{
+  "last_updated": 1640887163,
+  "ttl": 0,
+  "version": "3.0-RC",
+  "data": {
+    "feeds": [
+      {
+        "name": "system_information",
+        "url": "https://www.example.com/gbfs/1/system_information"
+      },
+      {
+        "name": "station_information",
+        "url": "https://www.example.com/gbfs/1/station_information"
+      }
+    ]
+  }
+}

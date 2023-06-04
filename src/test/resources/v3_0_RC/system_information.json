@@ -1,0 +1,68 @@
+{
+  "last_updated": 1640887163,
+  "ttl": 1800,
+  "version": "3.0-RC",
+  "data": {
+    "system_id": "example_cityname",
+    "languages": ["en"],
+    "name": [
+      {
+        "text": "Example Bike Rental",
+        "language": "en"
+      }
+    ],
+    "short_name": [
+      {
+        "text": "Example Bike",
+        "language": "en"
+      }
+    ],
+    "operator": [
+      {
+        "text": "Example Sharing, Inc",
+        "language": "en"
+      }
+    ],
+    "opening_hours": "Apr 1-Nov 3 00:00-24:00",
+    "start_date": "2010-06-10",
+    "url": "https://www.example.com",
+    "purchase_url": "https://www.example.com",
+    "phone_number": "+18005551234",
+    "email": "customerservice@example.com",
+    "feed_contact_email": "datafeed@example.com",
+    "timezone": "America/Chicago",
+    "license_url": "https://www.example.com/data-license.html",
+    "terms_url": [
+      {
+        "text": "https://www.example.com/en/terms",
+        "language": "en"
+      }
+    ],
+    "terms_last_updated": "2021-06-21",
+    "privacy_url": [
+      {
+        "text": "https://www.example.com/en/privacy-policy",
+        "language": "en"
+      }
+    ],
+    "privacy_last_updated": "2019-01-13",
+    "rental_apps": {
+      "android": {
+        "discovery_uri": "com.example.android://",
+        "store_uri": "https://play.google.com/store/apps/details?id=com.example.android"
+      },
+      "ios": {
+        "store_uri": "https://apps.apple.com/app/apple-store/id123456789",
+        "discovery_uri": "com.example.ios://"
+      }
+    },
+    "brand_assets": {
+      "brand_last_modified": "2021-06-15",
+      "brand_image_url": "https://www.example.com/assets/brand_image.svg",
+      "brand_image_url_dark": "https://www.example.com/assets/brand_image_dark.svg",
+      "color": "#C2D32C",
+      "brand_terms_url": "https://www.example.com/assets/brand.pdf"
+    }
+
+  }
+}

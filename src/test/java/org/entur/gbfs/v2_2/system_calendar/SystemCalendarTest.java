@@ -11,7 +11,7 @@ public class SystemCalendarTest {
 
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("system_calendar.json");
+        URL resource = getClass().getClassLoader().getResource("v2_X/system_calendar.json");
         objectMapper.readValue(resource, GBFSSystemCalendar.class);
     }
 }

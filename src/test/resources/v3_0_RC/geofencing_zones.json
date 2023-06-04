@@ -1,0 +1,98 @@
+{
+  "last_updated": 1640887163,
+  "ttl": 60,
+  "version": "3.0-RC",
+  "data": {
+    "geofencing_zones": {
+      "type": "FeatureCollection",
+      "features": [
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "MultiPolygon",
+            "coordinates": [
+              [
+                [
+                  [
+                    -122.578067,
+                    45.562982
+                  ],
+                  [
+                    -122.661838,
+                    45.562741
+                  ],
+                  [
+                    -122.661151,
+                    45.504542
+                  ],
+                  [
+                    -122.578926,
+                    45.5046625
+                  ],
+                  [
+                    -122.578067,
+                    45.562982
+                  ]
+                ]
+              ],
+              [
+                [
+                  [
+                    -122.650680,
+                    45.548197
+                  ],
+                  [
+                    -122.650852,
+                    45.534731
+                  ],
+                  [
+                    -122.630939,
+                    45.535212
+                  ],
+                  [
+                    -122.630424,
+                    45.548197
+                  ],
+                  [
+                    -122.650680,
+                    45.548197
+                  ]
+                ]
+              ]
+            ]
+          },
+          "properties": {
+            "name": [
+              {
+                "text": "NE 24th/NE Knott",
+                "language": "en"
+              }
+            ],
+            "start": 1593878400,
+            "end": 1593907260,
+            "rules": [
+              {
+                "vehicle_type_id": [
+                  "moped1",
+                  "car1"
+                ],
+                "ride_start_allowed": false,
+                "ride_end_allowed": false,
+                "ride_through_allowed": true,
+                "maximum_speed_kph": 10,
+                "station_parking": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "global_rules": [
+      {
+        "ride_start_allowed": false,
+        "ride_end_allowed": false,
+        "ride_through_allowed": true
+      }
+    ]
+  }
+}

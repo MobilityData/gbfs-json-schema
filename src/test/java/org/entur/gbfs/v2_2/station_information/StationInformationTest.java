@@ -11,7 +11,7 @@ public class StationInformationTest {
 
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("station_information.json");
+        URL resource = getClass().getClassLoader().getResource("v2_X/station_information.json");
         objectMapper.readValue(resource, GBFSStationInformation.class);
     }
 }
