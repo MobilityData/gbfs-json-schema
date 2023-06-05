@@ -1,17 +1,13 @@
 package org.entur.gbfs.v2_3.free_bike_status;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.entur.gbfs.TestBase;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.net.URL;
 
-public class FreeBikeStatusTest {
-    private static final ObjectMapper objectMapper = new ObjectMapper();
-
+public class FreeBikeStatusTest extends TestBase {
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("v2_X/free_bike_status.json");
-        objectMapper.readValue(resource, GBFSFreeBikeStatus.class);
+        assertUnmarshalDoesNotThrow("v2_X/free_bike_status.json", GBFSFreeBikeStatus.class);
     }
 }

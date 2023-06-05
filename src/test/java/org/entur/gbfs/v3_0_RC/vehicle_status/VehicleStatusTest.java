@@ -1,17 +1,11 @@
 package org.entur.gbfs.v3_0_RC.vehicle_status;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.entur.gbfs.TestBase;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.net.URL;
-
-public class VehicleStatusTest {
-    private static final ObjectMapper objectMapper = new ObjectMapper();
-
+class VehicleStatusTest extends TestBase {
     @Test
-    public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("v3_0_RC/vehicle_status.json");
-        objectMapper.readValue(resource, GBFSVehicleStatus.class);
+    void testUnmarshal() {
+        assertUnmarshalDoesNotThrow("v3_0_RC/vehicle_status.json", GBFSVehicleStatus.class);
     }
 }
