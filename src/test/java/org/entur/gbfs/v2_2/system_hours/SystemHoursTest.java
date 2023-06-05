@@ -1,17 +1,13 @@
 package org.entur.gbfs.v2_2.system_hours;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.entur.gbfs.TestBase;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.net.URL;
 
-public class SystemHoursTest {
-    private static final ObjectMapper objectMapper = new ObjectMapper();
-
+public class SystemHoursTest extends TestBase {
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("v2_X/system_hours.json");
-        objectMapper.readValue(resource, GBFSSystemHours.class);
+        assertUnmarshalDoesNotThrow("v2_X/system_hours.json", GBFSSystemHours.class);
     }
 }

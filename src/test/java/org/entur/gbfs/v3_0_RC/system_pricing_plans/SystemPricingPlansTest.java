@@ -1,17 +1,13 @@
 package org.entur.gbfs.v3_0_RC.system_pricing_plans;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.entur.gbfs.TestBase;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.net.URL;
 
-public class SystemPricingPlansTest {
-    private static final ObjectMapper objectMapper = new ObjectMapper();
-
+class SystemPricingPlansTest extends TestBase {
     @Test
-    public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("v3_0_RC/system_pricing_plans.json");
-        objectMapper.readValue(resource, GBFSSystemPricingPlans.class);
+    void testUnmarshal() throws IOException {
+        assertUnmarshalDoesNotThrow("v3_0_RC/system_pricing_plans.json", GBFSSystemPricingPlans.class);
     }
 }

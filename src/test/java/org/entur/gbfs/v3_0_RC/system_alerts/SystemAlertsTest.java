@@ -1,17 +1,13 @@
 package org.entur.gbfs.v3_0_RC.system_alerts;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.entur.gbfs.TestBase;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.net.URL;
 
-public class SystemAlertsTest {
-    private static final ObjectMapper objectMapper = new ObjectMapper();
-
+public class SystemAlertsTest extends TestBase {
     @Test
     public void testUnmarshal() throws IOException {
-        URL resource = getClass().getClassLoader().getResource("v3_0_RC/system_alerts.json");
-        objectMapper.readValue(resource, GBFSSystemAlerts.class);
+        assertUnmarshalDoesNotThrow("v3_0_RC/system_alerts.json", GBFSSystemAlerts.class);
     }
 }
