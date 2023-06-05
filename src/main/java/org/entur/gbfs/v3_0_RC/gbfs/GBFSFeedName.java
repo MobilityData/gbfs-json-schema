@@ -12,28 +12,30 @@ import org.entur.gbfs.v3_0_RC.system_regions.GBFSSystemRegions;
 import org.entur.gbfs.v3_0_RC.vehicle_status.GBFSVehicleStatus;
 import org.entur.gbfs.v3_0_RC.vehicle_types.GBFSVehicleTypes;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import static java.util.Map.entry;
-
 public class GBFSFeedName {
-    static private Map<GBFSFeed.Name, Class<?>> feedNameMap = Map.ofEntries(
-            entry(GBFSFeed.Name.GBFS, GBFSFeed.class),
-            entry(GBFSFeed.Name.GBFS_VERSIONS, GBFSGbfsVersions.class),
-            entry(GBFSFeed.Name.GEOFENCING_ZONES, GBFSGeofencingZones.class),
-            entry(GBFSFeed.Name.MANIFEST, GBFSManifest.class),
-            entry(GBFSFeed.Name.STATION_INFORMATION, GBFSStationInformation.class),
-            entry(GBFSFeed.Name.STATION_STATUS, GBFSStationStatus.class),
-            entry(GBFSFeed.Name.SYSTEM_ALERTS, GBFSSystemAlerts.class),
-            entry(GBFSFeed.Name.SYSTEM_INFORMATION, GBFSSystemInformation.class),
-            entry(GBFSFeed.Name.SYSTEM_PRICING_PLANS, GBFSSystemPricingPlans.class),
-            entry(GBFSFeed.Name.SYSTEM_REGIONS, GBFSSystemRegions.class),
-            entry(GBFSFeed.Name.VEHICLE_STATUS, GBFSVehicleStatus.class),
-            entry(GBFSFeed.Name.VEHICLE_TYPES, GBFSVehicleTypes.class)
-    );
+    static private final Map<GBFSFeed.Name, Class<?>> feedNameMap = new HashMap<>();
 
-    static private Map<Class<?>, GBFSFeed.Name> classMap = feedNameMap.entrySet().stream().collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey));
+    static private final Map<Class<?>, GBFSFeed.Name> classMap;
+
+    static {
+        feedNameMap.put(GBFSFeed.Name.GBFS, GBFSFeed.class);
+        feedNameMap.put(GBFSFeed.Name.GBFS_VERSIONS, GBFSGbfsVersions.class);
+        feedNameMap.put(GBFSFeed.Name.GEOFENCING_ZONES, GBFSGeofencingZones.class);
+        feedNameMap.put(GBFSFeed.Name.MANIFEST, GBFSManifest.class);
+        feedNameMap.put(GBFSFeed.Name.STATION_INFORMATION, GBFSStationInformation.class);
+        feedNameMap.put(GBFSFeed.Name.STATION_STATUS, GBFSStationStatus.class);
+        feedNameMap.put(GBFSFeed.Name.SYSTEM_ALERTS, GBFSSystemAlerts.class);
+        feedNameMap.put(GBFSFeed.Name.SYSTEM_INFORMATION, GBFSSystemInformation.class);
+        feedNameMap.put(GBFSFeed.Name.SYSTEM_PRICING_PLANS, GBFSSystemPricingPlans.class);
+        feedNameMap.put(GBFSFeed.Name.SYSTEM_REGIONS, GBFSSystemRegions.class);
+        feedNameMap.put(GBFSFeed.Name.VEHICLE_STATUS, GBFSVehicleStatus.class);
+        feedNameMap.put(GBFSFeed.Name.VEHICLE_TYPES, GBFSVehicleTypes.class);
+        classMap = feedNameMap.entrySet().stream().collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey));
+    }
 
     public static Class<?> implementingClass(GBFSFeed.Name feedName) {
         return feedNameMap.get(feedName);
