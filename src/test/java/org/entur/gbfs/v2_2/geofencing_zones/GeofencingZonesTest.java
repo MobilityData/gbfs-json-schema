@@ -4,13 +4,11 @@ import org.entur.gbfs.TestBase;
 import org.geojson.LngLatAlt;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GeofencingZonesTest extends TestBase {
+class GeofencingZonesTest extends TestBase {
     @Test
-    public void testUnmarshal() throws IOException {
+    void testUnmarshal() {
         GBFSGeofencingZones zones = assertUnmarshalDoesNotThrow("v2_X/geofencing_zones.json", GBFSGeofencingZones.class);
         GBFSFeature feature = zones.getData().getGeofencingZones().getFeatures().get(0);
 

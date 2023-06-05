@@ -12,14 +12,16 @@ import org.entur.gbfs.v3_0_RC.system_regions.GBFSSystemRegions;
 import org.entur.gbfs.v3_0_RC.vehicle_status.GBFSVehicleStatus;
 import org.entur.gbfs.v3_0_RC.vehicle_types.GBFSVehicleTypes;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
 public class GBFSFeedName {
-    static private final Map<GBFSFeed.Name, Class<?>> feedNameMap = new HashMap<>();
+    private GBFSFeedName() {}
 
-    static private final Map<Class<?>, GBFSFeed.Name> classMap;
+    private static final Map<GBFSFeed.Name, Class<?>> feedNameMap = new EnumMap<>(GBFSFeed.Name.class);
+
+    private static final Map<Class<?>, GBFSFeed.Name> classMap;
 
     static {
         feedNameMap.put(GBFSFeed.Name.GBFS, GBFSFeed.class);
