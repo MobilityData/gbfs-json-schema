@@ -124,8 +124,6 @@
                         <groupId>org.entur.gbfs</groupId>
                         <artifactId>rule-factory</artifactId>
                         <version>${parent.version}</version>
-                        <scope>system</scope>
-                        <systemPath>${project.basedir}/../rule-factory/target/rule-factory-${parent.version}.jar</systemPath>
                     </dependency>
                 </dependencies>
                 <executions>
