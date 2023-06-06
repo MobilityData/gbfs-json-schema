@@ -2,18 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.entur.gbfs</groupId>
     <artifactId>rule-factory</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>1.8</jdk.version>
-
-        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <jsonschema2pojo-maven-plugin.version>1.2.1</jsonschema2pojo-maven-plugin.version>
-    </properties>
+    <parent>
+        <groupId>org.entur.gbfs</groupId>
+        <artifactId>gbfs-java-model-parent</artifactId>
+        <version>3.0.1-SNAPSHOT</version>
+    </parent>
 
     <dependencies>
         <dependency>
@@ -21,7 +17,6 @@
             <artifactId>jsonschema2pojo-maven-plugin</artifactId>
             <version>${jsonschema2pojo-maven-plugin.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>

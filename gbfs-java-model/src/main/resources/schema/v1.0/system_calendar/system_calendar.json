@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/NABSA/gbfs/blob/v1.0/gbfs.md#system_calendarjson",
+  "description": "Describes the operating calendar for a system.",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "description": "Last time the data in the feed was updated in POSIX time.",
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1924988399
+    },
+    "ttl": {
+      "description": 	"Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
+      "type": "integer",
+      "minimum": 0
+    },
+    "data": {
+      "description": "Array that contains operations calendar for the system.",
+      "type": "object",
+      "properties": {
+        "calendars": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "start_month": {
+                "description": 	"Starting month for the system operations.",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
+              },
+              "start_day": {
+                "description": "Starting day for the system operations.",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 31
+              },
+              "start_year": {
+                "description": "Starting year for the system operations.",
+                "type": "integer"
+              },
+              "end_month": {
+                "description": "End month for the system operations.",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 12
+              },
+              "end_day": {
+                "description": "End day for the system operations.",
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 31
+              },
+              "end_year": {
+                "description": "End year for the system operations.",
+                "type": "integer"
+              }
+            },
+            "required": ["start_month", "start_day", "end_month", "end_day"]
+          },
+          "minItems": 1
+        }
+      },
+      "required": ["calendars"]
+    }
+  },
+  "required": ["last_updated", "ttl", "data"]
+}
