@@ -193,7 +193,8 @@
             "required": ["ride_start_allowed", "ride_end_allowed", "ride_through_allowed"]
           }
         }
-      }
+      },
+      "required": ["geofencing_zones", "global_rules"]
     }
   },
   "required": ["last_updated", "ttl", "version", "data"]
