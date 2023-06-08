@@ -81,7 +81,7 @@
                         "minimum": 1450155600
                       },
                       "rules": {
-                        "description": "Array that contains one object per rule.",
+                        "description": "Array of Rule objects defining restrictions that apply within the area of the polygon.",
                         "type": "array",
                         "items": {
                           "type": "object",
@@ -156,8 +156,8 @@
           },
           "required": ["type", "features"]
         },
-        "rules": {
-          "description": "Array that contains one object per rule.",
+        "global_rules": {
+          "description": "Array of Rule objects defining restrictions that apply globally in all areas as the default restrictions, except where overridden with an explicit geofencing zone.",
           "type": "array",
           "items": {
             "type": "object",

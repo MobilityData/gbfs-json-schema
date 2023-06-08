@@ -36,7 +36,6 @@
                 "type": "string",
                 "enum": [
                   "gbfs",
-                  "manifest",
                   "gbfs_versions",
                   "system_information",
                   "vehicle_types",
