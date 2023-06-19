@@ -1104,7 +1104,8 @@
             "properties": {
               "text": {
                 "description": "The translated text.",
-                "type": "string"
+                "type": "string",
+                "format": "uri"
               },
               "language": {
                 "description": "IETF BCP 47 language code.",
@@ -1130,7 +1131,8 @@
             "properties": {
               "text": {
                 "description": "The translated text.",
-                "type": "string"
+                "type": "string",
+                "format": "uri"
               },
               "language": {
                 "description": "IETF BCP 47 language code.",

@@ -107,7 +107,6 @@
                   },
                   "required": ["text", "language"]
                 }
-                }
               },
               "per_km_pricing": {
                 "description":
@@ -192,10 +191,11 @@
               "description"
             ]
           }
-        },
+        }
+      },
       "required": ["plans"]
-      }
-    },
+    }
+  },
   "required": ["last_updated", "ttl", "version", "data"]
 }
 

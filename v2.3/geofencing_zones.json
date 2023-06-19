@@ -137,7 +137,8 @@
           },
           "required": ["type", "features"]
         }
-      }
+      },
+      "required": ["geofencing_zones"]
     }
   },
   "required": ["last_updated", "ttl", "version", "data"]
