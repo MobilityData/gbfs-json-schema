@@ -22,7 +22,10 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework.",
       "type": "string",
-      "const": "3.0-RC"
+      "enum": [
+        "3.0-RC",
+        "3.0"
+      ]
     },
     "data": {
       "description": "Response data in the form of name:value pairs.",

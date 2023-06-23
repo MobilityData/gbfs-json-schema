@@ -21,7 +21,10 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
-      "const": "3.0-RC"
+      "enum": [
+        "3.0-RC",
+        "3.0"
+      ]
     },
     "data": {
       "description":
