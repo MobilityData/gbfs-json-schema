@@ -24,7 +24,7 @@
       "enum": [
         "3.0-RC",
         "3.0"
-      ],
+      ]
     },
     "data": {
       "description": "Response data in the form of name:value pairs.",
