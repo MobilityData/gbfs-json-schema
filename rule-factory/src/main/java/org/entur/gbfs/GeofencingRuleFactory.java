@@ -37,7 +37,7 @@ public class GeofencingRuleFactory extends RuleFactory {
                 JPackage _package,
                 Schema schema
         ) {
-            if (nodeName.equals("geometry") && node instanceof ObjectNode) {
+            if ((nodeName.equals("geometry") || nodeName.equals("station_area")) && node instanceof ObjectNode) {
                 ObjectNode on = (ObjectNode) node;
                 on.set("existingJavaType", new TextNode("org.geojson.MultiPolygon"));
             }
