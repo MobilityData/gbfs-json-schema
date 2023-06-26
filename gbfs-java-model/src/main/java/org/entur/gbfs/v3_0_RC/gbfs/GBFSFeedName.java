@@ -27,7 +27,6 @@ public class GBFSFeedName {
         feedNameMap.put(GBFSFeed.Name.GBFS, GBFSFeed.class);
         feedNameMap.put(GBFSFeed.Name.GBFS_VERSIONS, GBFSGbfsVersions.class);
         feedNameMap.put(GBFSFeed.Name.GEOFENCING_ZONES, GBFSGeofencingZones.class);
-        feedNameMap.put(GBFSFeed.Name.MANIFEST, GBFSManifest.class);
         feedNameMap.put(GBFSFeed.Name.STATION_INFORMATION, GBFSStationInformation.class);
         feedNameMap.put(GBFSFeed.Name.STATION_STATUS, GBFSStationStatus.class);
         feedNameMap.put(GBFSFeed.Name.SYSTEM_ALERTS, GBFSSystemAlerts.class);
