@@ -59,7 +59,8 @@
               }
             },
             "required": ["name", "url"]
-          }
+          },
+          "minItems": 1
         }
       },
       "required": ["feeds"]
