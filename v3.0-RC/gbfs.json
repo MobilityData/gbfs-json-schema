@@ -27,6 +27,7 @@
       ]
     },
     "data": {
+      "type": "object",
       "properties": {
         "feeds": {
           "description": "An array of all of the feeds that are published by the auto-discovery file. Each element in the array is an object with the keys below.",
@@ -58,12 +59,12 @@
               }
             },
             "required": ["name", "url"]
-          }
-        },
-        "required": true
-      }
-    },
-    "required": true
+          },
+          "minItems": 1
+        }
+      },
+      "required": ["feeds"]
+    }
   },
   "additionalProperties": false,
   "required": ["last_updated", "ttl", "version", "data"]

@@ -58,9 +58,9 @@
             },
             "required": ["version", "url"]
           }
-        },
-        "required": true
+        }
       },
+      "required": ["versions"],
       "additionalProperties": false
     }
   },
