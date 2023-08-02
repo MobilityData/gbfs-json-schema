@@ -47,7 +47,6 @@
                 "description":
                   "Array of objects displaying the total number of each vehicle type at the station (added in v2.1-RC).",
                 "type": "array",
-                "minItems": 1,
                 "items": {
                   "type": "object",
                   "properties": {
