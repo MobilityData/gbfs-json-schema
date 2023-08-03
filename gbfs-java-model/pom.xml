@@ -1,16 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
+    <groupId>org.entur.gbfs</groupId>
     <artifactId>gbfs-java-model</artifactId>
+    <version>3.0.1-SNAPSHOT</version>
 
     <name>gbfs-java-model</name>
 
-    <parent>
-        <groupId>org.entur.gbfs</groupId>
-        <artifactId>gbfs-java-model-parent</artifactId>
-        <version>3.0.1-SNAPSHOT</version>
-    </parent>
+    <description>Generates Java model from GBFS JSON schema using jsonschema2pojo.</description>
+    <url>https://github.com/entur/gbfs-java-model</url>
+    <organization>
+        <name>Entur AS</name>
+        <url>http://www.entur.org/</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>EUPL-1.2 with modifications</name>
+            <url>https://joinup.ec.europa.eu/software/page/eupl</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <name>Tom Erik Støwer</name>
+            <email>tom.erik.stower@entur.org</email>
+            <organization>Entur</organization>
+            <organizationUrl>http://www.entur.org</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:ssh://git@github.com/entur/gbfs-java-model.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/entur/gbfs-java-model.git</developerConnection>
+        <url>https://github.com/entur/gbfs-java-model/tree/master</url>
+        <tag>HEAD</tag>
+    </scm>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>entur2-snapshots</name>
+            <url>https://entur2.jfrog.io/entur2/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdk.version>1.8</jdk.version>
+
+        <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v3.0-RC3.zip</gbfsGithubUrl>
+        <schemaVersion>3.0-RC3</schemaVersion>
+
+        <jsonschema2pojo-maven-plugin.version>1.2.1</jsonschema2pojo-maven-plugin.version>
+        <jackson-databind.version>2.15.2</jackson-databind.version>
+
+        <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
+        <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+        <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-enforcer-plugin.version>3.3.0</maven-enforcer-plugin.version>
+        <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
+        <maven-javadoc-plugin.version>3.5.0</maven-javadoc-plugin.version>
+        <maven-release-plugin.version>2.5.3</maven-release-plugin.version>
+        <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+        <maven-dependency-plugin.version>3.1.2</maven-dependency-plugin.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
+        <maven-clean-plugin.version>3.2.0</maven-clean-plugin.version>
+        <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
+        <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
+        <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+
+        <!-- empty argLine property, the value is set up by Jacoco during unit tests execution -->
+        <argLine />
+
+        <!-- Unit test frameworks versions -->
+        <assertj.core.version>3.24.2</assertj.core.version>
+        <junit.version>5.9.3</junit.version>
+
+        <!-- GPG configuration for jar signing-->
+        <gpg.executable>gpg</gpg.executable>
+        <gpg.keyname>${env.GPG_KEY_NAME}</gpg.keyname>
+
+    </properties>
+
 
     <dependencies>
         <dependency>
@@ -123,7 +195,7 @@
                     <dependency>
                         <groupId>org.entur.gbfs</groupId>
                         <artifactId>rule-factory</artifactId>
-                        <version>${parent.version}</version>
+                        <version>${version}</version>
                     </dependency>
                 </dependencies>
                 <executions>
