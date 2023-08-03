@@ -195,7 +195,7 @@
                     <dependency>
                         <groupId>org.entur.gbfs</groupId>
                         <artifactId>rule-factory</artifactId>
-                        <version>${version}</version>
+                        <version>1.0.0</version>
                     </dependency>
                 </dependencies>
                 <executions>

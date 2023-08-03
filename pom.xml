@@ -6,7 +6,7 @@
 
     <groupId>org.entur.gbfs</groupId>
     <artifactId>gbfs-java-model-parent</artifactId>
-    <version>3.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <name>gbfs-java-model-parent</name>
     <packaging>pom</packaging>
