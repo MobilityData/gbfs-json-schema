@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.entur.gbfs</groupId>
     <artifactId>gbfs-java-model</artifactId>
-    <version>3.0.1-SNAPSHOT</version>
+    <version>3.0.1</version>
 
     <name>gbfs-java-model</name>
 
@@ -32,7 +32,7 @@
         <connection>scm:git:ssh://git@github.com/entur/gbfs-java-model.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/entur/gbfs-java-model.git</developerConnection>
         <url>https://github.com/entur/gbfs-java-model/tree/master</url>
-        <tag>HEAD</tag>
+        <tag>gbfs-java-model-3.0.1</tag>
     </scm>
     <distributionManagement>
         <snapshotRepository>
