@@ -90,3 +90,4 @@ build/
 models/typescript/node_modules/*
 
 models/java/gbfs-java-model/target/*
+*.iml
