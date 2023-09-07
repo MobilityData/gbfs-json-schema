@@ -16,6 +16,18 @@ aliases:
         -Dsonar.projectName=${CIRCLE_PROJECT_REPONAME} \
         -Dsonar.host.url=https://sonarcloud.io \
         -Dsonar.login=${ENTUR_SONAR_PASSWORD}
+  - &release
+    name: Release
+    command: |
+      echo "Start release"
+      git config --global user.email "circleci@entur.no"
+      git config --global user.name "circleci"
+      git checkout master
+      mvn gitflow:release-start gitflow:release-finish -DskipTests=true -pl gbfs-java-model -Prelease -DpostReleaseGoals=deploy -DargLine='-Prelease -pl gbfs-java-model -DskipTests -s .circleci/settings.xml' -B -s .circleci/settings.xml
+  - &import_gpg_key
+    name: Configure GPG private key for signing project artifacts in OSS Sonatype
+    command: |
+      echo $SONATYPE_GPG_KEY_BASE64 | base64 --decode | gpg --batch --no-tty --import --yes
 
 jobs:
   build:
@@ -30,8 +42,9 @@ jobs:
       - checkout
       - restore_cache:
           keys:
-            - dep-cache-v2-{{ checksum "pom.xml" }}
-            - dep-cache-v2-
+            - dep-cache-{{ checksum "pom.xml" }}
+            # fallback to the most recent cache if there is no exact match for this pom.xml
+            - dep-cache-
       - run:
           name: Download Maven settings
           command: wget https://raw.githubusercontent.com/entur/circleci-toolbox-image-java11/master/tools/m2/settings.xml -O .circleci/settings.xml
@@ -69,16 +82,32 @@ jobs:
     environment:
       DEBIAN_FRONTEND: "noninteractive"
     steps:
+      - run: git config --global user.email "circleci@entur.no"
+      - run: git config --global user.name "circleci"
       - checkout
       - restore_cache:
-          key: dep-cache-v2-{{ checksum "pom.xml" }}
+          keys:
+            - dep-cache-{{ checksum "pom.xml" }}
+            # fallback to the most recent cache if there is no exact match for this pom.xml
+            - dep-cache-
       - run:
           name: Download Maven settings
           command: wget https://raw.githubusercontent.com/entur/circleci-toolbox-image-java11/master/tools/m2/settings.xml -O .circleci/settings.xml
       - run: *jfrog-login
       - run:
-          name: Maven deploy
-          command: mvn install -pl rule-factory && mvn deploy -s .circleci/settings.xml -DskipTests -pl gbfs-java-model
+          name: Refresh cache
+          command: mvn org.apache.maven.plugins:maven-dependency-plugin:3.1.0:go-offline -s .circleci/settings.xml
+      - run: mvn install -pl rule-factory -s .circleci/settings.xml && mvn package -s .circleci/settings.xml -Dmaven.test.skip=true -pl gbfs-java-model
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - target
+      - run: *import_gpg_key
+      - run: *release
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: dep-cache-{{ checksum "pom.xml" }}
 workflows:
   version: 2
   build_test_deploy:
