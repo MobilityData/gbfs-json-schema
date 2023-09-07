@@ -24,7 +24,7 @@ public class GBFSFeedName {
     private static final Map<Class<?>, GBFSFeed.Name> classMap;
 
     static {
-        feedNameMap.put(GBFSFeed.Name.GBFS, GBFSFeed.class);
+        feedNameMap.put(GBFSFeed.Name.GBFS, GBFSGbfs.class);
         feedNameMap.put(GBFSFeed.Name.GBFS_VERSIONS, GBFSGbfsVersions.class);
         feedNameMap.put(GBFSFeed.Name.GEOFENCING_ZONES, GBFSGeofencingZones.class);
         feedNameMap.put(GBFSFeed.Name.STATION_INFORMATION, GBFSStationInformation.class);
