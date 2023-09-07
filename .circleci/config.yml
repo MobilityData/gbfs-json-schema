@@ -73,6 +73,7 @@ jobs:
           root: ~/project
           paths:
             - target
+            - gbfs-java-model/target
   deploy:
     docker:
       - image: cimg/openjdk:17.0
@@ -102,6 +103,7 @@ jobs:
           root: ~/project
           paths:
             - target
+            - gbfs-java-model/target
       - run: *import_gpg_key
       - run: *release
       - save_cache:
