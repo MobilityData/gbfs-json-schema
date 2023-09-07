@@ -44,7 +44,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdk.version>1.8</jdk.version>
+        <jdk.version>17</jdk.version>
 
         <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v3.0-RC4.zip</gbfsGithubUrl>
         <schemaVersion>3.0-RC4</schemaVersion>
