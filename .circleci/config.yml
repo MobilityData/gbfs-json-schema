@@ -44,7 +44,7 @@ jobs:
             - ~/.m2
           key: dep-cache-v2-{{ checksum "pom.xml" }}
       # Cannot use -o because of snapshot dependencies.
-      - run: mvn package -s .circleci/settings.xml
+      - run: mvn verify -s .circleci/settings.xml
       - run: *sonar-scan
       - run:
           name: Save test results
@@ -78,7 +78,7 @@ jobs:
       - run: *jfrog-login
       - run:
           name: Maven deploy
-          command: mvn deploy -s .circleci/settings.xml -DskipTests
+          command: mvn install -pl rule-factory && mvn deploy -s .circleci/settings.xml -DskipTests -pl gbfs-java-model
 workflows:
   version: 2
   build_test_deploy:
