@@ -54,7 +54,7 @@
         <geojson-jackson.version>1.14</geojson-jackson.version>
 
         <jacoco-maven-plugin.version>0.8.10</jacoco-maven-plugin.version>
-        <nexus-staging-maven-plugin.version>2.22.2</nexus-staging-maven-plugin.version>
+        <nexus-staging-maven-plugin.version>1.16.13</nexus-staging-maven-plugin.version>
         <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
         <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
         <maven-enforcer-plugin.version>3.4.0</maven-enforcer-plugin.version>
