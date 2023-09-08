@@ -4,5 +4,11 @@
     "group:allNonMajor",
     "schedule:weekly"
   ],
-  "timezone": "Europe/Oslo"
+  "timezone": "Europe/Oslo",
+  "packageRules": [
+    {
+      "matchPackageNames": ["org.entur.gbfs:rule-factory"],
+      "enabled": false
+    }
+  ]
 }
