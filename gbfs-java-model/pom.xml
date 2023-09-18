@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.entur.gbfs</groupId>
     <artifactId>gbfs-java-model</artifactId>
-    <version>3.0.9-SNAPSHOT</version>
+    <version>3.0.9</version>
 
     <name>gbfs-java-model</name>
 
