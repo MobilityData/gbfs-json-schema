@@ -46,8 +46,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>17</jdk.version>
 
-        <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v3.0-RC4.zip</gbfsGithubUrl>
-        <schemaVersion>3.0-RC4</schemaVersion>
+        <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v3.0-RC5.zip</gbfsGithubUrl>
+        <schemaVersion>3.0-RC5</schemaVersion>
 
         <jsonschema2pojo-maven-plugin.version>1.2.1</jsonschema2pojo-maven-plugin.version>
         <jackson-databind.version>2.15.3</jackson-databind.version>
