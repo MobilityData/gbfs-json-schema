@@ -3,7 +3,7 @@
   "$id":
     "https://github.com/NABSA/gbfs/blob/v1.1/gbfs.md#station_informationjson",
   "description":
-    "Details including system operator, system location, year implemented, URL, contact info, time zone.",
+    "List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.",
   "type": "object",
   "properties": {
     "last_updated": {
