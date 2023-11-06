@@ -64,7 +64,7 @@
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
         <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
-        <maven-clean-plugin.version>3.3.1</maven-clean-plugin.version>
+        <maven-clean-plugin.version>3.3.2</maven-clean-plugin.version>
         <maven-install-plugin.version>2.5.2</maven-install-plugin.version>
         <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
         <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
@@ -82,7 +82,7 @@
 
         <!-- Unit test frameworks versions -->
         <assertj.core.version>3.24.2</assertj.core.version>
-        <junit.version>5.10.0</junit.version>
+        <junit.version>5.10.1</junit.version>
     </properties>
 
 
