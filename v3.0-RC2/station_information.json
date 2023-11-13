@@ -191,13 +191,13 @@
                 "type": "integer",
                 "minimum": 0
               },
-              "vehicle_type_area_capacity": {
-                "description": "An object where each key is a vehicle_type_id and the value is a number presenting the total number of vehicles of this type that can park within the station_area (added in v2.1-RC).",
+              "vehicle_types_capacity": {
+                "description": "This field's value is an array of objects containing the keys vehicle_type_ids and count defined below. These objects are used to model the parking capacity of virtual stations (defined using the is_virtual_station field) for each vehicle type that can be returned to this station.",
                 "type": "array",
                 "items": {
                   "type": "object",
                   "properties": {
-                    "vehicle_type_id": {
+                    "vehicle_type_ids": {
                       "description": "A vehicle_type_id, as defined in vehicle_types.json, that may park at the virtual station.",
                       "type": "string"
                     },
@@ -210,13 +210,13 @@
                   "required": ["vehicle_type_id","count"]
                 }
               },
-              "vehicle_type_dock_capacity": {
+              "vehicle_docks_capacity": {
                 "description": "This field's value is an array of objects containing the keys vehicle_type_id and count defined below. These objects are used to model the total docking capacity of a station, both available and unavailable, for each type of vehicle defined in vehicle_types.json.",
                 "type": "array",
                 "items": {
                   "type": "object",
                   "properties": {
-                    "vehicle_type_id": {
+                    "vehicle_type_ids": {
                       "description": "A vehicle_type_id, as defined in vehicle_types.json, that may dock at the station.",
                       "type": "string"
                     },
