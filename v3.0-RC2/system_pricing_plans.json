@@ -133,7 +133,7 @@
                     "interval": {
                       "description":
                         "Interval in kilometers at which the rate of this segment is either reapplied indefinitely, or if defined, up until (but not including) end kilometer (added in v2.1-RC2).",
-                      "type": "integer",
+                      "type": "number",
                       "minimum": 0
                     },
                     "end": {
@@ -167,7 +167,7 @@
                     "interval": {
                       "description":
                         "Interval in minutes at which the rate of this segment is either reapplied (added in v2.1-RC2).",
-                      "type": "integer",
+                      "type": "number",
                       "minimum": 0
                     },
                     "end": {
