@@ -123,6 +123,11 @@
           "type": "string",
           "format": "date"
         },
+        "termination_date": {
+          "description": "Date after which this data source will no longer be available to consuming applications.",
+          "type": "string",
+          "format": "date"
+        },
         "phone_number": {
           "description":
             "This OPTIONAL field SHOULD contain a single voice telephone number for the specified system’s customer service department. MUST be in E.164 format as defined in Field Types.",
