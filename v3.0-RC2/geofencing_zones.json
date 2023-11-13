@@ -1,16 +1,13 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id":
-    "https://github.com/NABSA/gbfs/blob/v3.0-RC2/gbfs.md#geofencing_zonesjson",
-  "description":
-    "Describes geofencing zones and their associated rules and attributes (added in v2.1-RC).",
+  "$id": "https://github.com/NABSA/gbfs/blob/v3.0-RC2/gbfs.md#geofencing_zonesjson",
+  "description": "Describes geofencing zones and their associated rules and attributes (added in v2.1-RC).",
   "type": "object",
   "properties": {
     "last_updated": {
-      "description":
-        "Last time the data in the feed was updated in POSIX time.",
-      "type": "integer",
-      "minimum": 1450155600
+      "description": "Last time the data in the feed was updated in POSIX time.",
+      "type": "string",
+      "format": "date-time"
     },
     "ttl": {
       "description": "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
@@ -20,11 +17,7 @@
     "version": {
       "description": "GBFS version number to which the feed conforms, according to the versioning framework.",
       "type": "string",
-      "enum": [
-        "3.0-RC",
-        "3.0-RC2",
-        "3.0"
-      ]
+      "enum": ["3.0-RC", "3.0-RC2", "3.0"]
     },
     "data": {
       "description": "Array that contains geofencing information for the system.",
@@ -51,8 +44,7 @@
                     "enum": ["Feature"]
                   },
                   "properties": {
-                    "description":
-                      "Describing travel allowances and limitations.",
+                    "description": "Describing travel allowances and limitations.",
                     "type": "object",
                     "properties": {
                       "name": {
@@ -76,13 +68,13 @@
                       },
                       "start": {
                         "description": "Start time of the geofencing zone in POSIX time.",
-                        "type": "integer",
-                        "minimum": 1450155600
+                        "type": "string",
+                        "format": "date-time"
                       },
                       "end": {
                         "description": "End time of the geofencing zone in POSIX time.",
-                        "type": "integer",
-                        "minimum": 1450155600
+                        "type": "string",
+                        "format": "date-time"
                       },
                       "rules": {
                         "description": "Array of Rule objects defining restrictions that apply within the area of the polygon.",
@@ -104,8 +96,7 @@
                               "type": "boolean"
                             },
                             "ride_through_allowed": {
-                              "description":
-                                "Is the ride allowed to travel through this zone?",
+                              "description": "Is the ride allowed to travel through this zone?",
                               "type": "boolean"
                             },
                             "maximum_speed_kph": {
@@ -118,14 +109,17 @@
                               "type": "boolean"
                             }
                           },
-                          "required": ["ride_start_allowed", "ride_end_allowed", "ride_through_allowed"]
+                          "required": [
+                            "ride_start_allowed",
+                            "ride_end_allowed",
+                            "ride_through_allowed"
+                          ]
                         }
                       }
                     }
                   },
                   "geometry": {
-                    "description":
-                      "A polygon that describes where rides might not be able to start, end, go through, or have other limitations. Must follow the right-hand rule.",
+                    "description": "A polygon that describes where rides might not be able to start, end, go through, or have other limitations. Must follow the right-hand rule.",
                     "title": "GeoJSON MultiPolygon",
                     "type": "object",
                     "properties": {
@@ -180,8 +174,7 @@
                 "type": "boolean"
               },
               "ride_through_allowed": {
-                "description":
-                "Is the ride allowed to travel through this zone?",
+                "description": "Is the ride allowed to travel through this zone?",
                 "type": "boolean"
               },
               "maximum_speed_kph": {
@@ -194,7 +187,11 @@
                 "type": "boolean"
               }
             },
-            "required": ["ride_start_allowed", "ride_end_allowed", "ride_through_allowed"]
+            "required": [
+              "ride_start_allowed",
+              "ride_end_allowed",
+              "ride_through_allowed"
+            ]
           }
         }
       },

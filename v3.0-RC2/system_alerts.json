@@ -7,8 +7,8 @@
     "last_updated": {
       "description":
         "Last time the data in the feed was updated in POSIX time.",
-      "type": "integer",
-      "minimum": 1450155600
+      "type": "string",
+      "format": "date-time"
     },
     "ttl": {
       "description":
@@ -58,13 +58,13 @@
                   "properties": {
                     "start": {
                       "description": "Start time of the alert.",
-                      "type": "integer",
-                      "minimum": 1450155600
+                      "type": "string",
+                      "format": "date-time"
                     },
                     "end": {
                       "description": "End time of the alert.",
-                      "type": "integer",
-                      "minimum": 1450155600
+                      "type": "string",
+                      "format": "date-time"
                     }
                   }
                 },

@@ -8,8 +8,8 @@
     "last_updated": {
       "description":
         "Last time the data in the feed was updated in POSIX time.",
-      "type": "integer",
-      "minimum": 1450155600
+      "type": "string",
+      "format": "date-time"
     },
     "ttl": {
       "description":
@@ -102,8 +102,8 @@
               "last_reported": {
                 "description":
                   "The last time this station reported its status to the operator's backend in POSIX time.",
-                "type": "integer",
-                "minimum": 1450155600
+                "type": "string",
+                "format": "date-time"
               },
               "vehicle_docks_available": {
                 "description":
