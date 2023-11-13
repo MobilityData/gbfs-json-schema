@@ -82,7 +82,7 @@
                         "items": {
                           "type": "object",
                           "properties": {
-                            "vehicle_type_id": {
+                            "vehicle_type_ids": {
                               "type": "array",
                               "description": "Array of vehicle type IDs for which these restrictions apply.",
                               "items": { "type": "string" }
