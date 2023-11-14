@@ -150,8 +150,8 @@
               "last_updated": {
                 "description":
                   "Indicates the last time the info for the alert was updated.",
-                "type": "number",
-                "minimum": 1450155600
+                "type": "string",
+                "format": "date-time"
               }
             },
             "required": ["alert_id", "type", "summary"]
