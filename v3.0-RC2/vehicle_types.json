@@ -69,7 +69,7 @@
                 "type": "string",
                 "enum": ["human", "electric_assist", "electric", "combustion", "combustion_diesel", "hybrid", "plug_in_hybrid", "hydrogen_fuel_cell"]
               },
-              "eco_label": {
+              "eco_labels": {
                 "description": "Vehicle air quality certificate. added in v2.3.",
                 "type": "array",
                 "items":  {
