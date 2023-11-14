@@ -226,7 +226,7 @@
                       "minimum": 0
                     }
                   },
-                  "required": ["vehicle_type_id","count"]
+                  "required": ["vehicle_type_ids","count"]
                 }
               },
               "is_valet_station": {
