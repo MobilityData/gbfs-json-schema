@@ -227,7 +227,7 @@
                       }
                     },
                     "count": {
-                      "description": "The total number of docks at the station, both available and unavailable, that may accept the corresponding vehicle type as defined by its vehicle_type_id.",
+                      "description": "A number representing the total number of docks at the station, both available and unavailable, that may accept the vehicle types specified by vehicle_type_ids.",
                       "type": "integer",
                       "minimum": 0
                     }
