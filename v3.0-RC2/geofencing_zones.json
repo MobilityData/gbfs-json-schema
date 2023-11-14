@@ -72,7 +72,7 @@
                         "format": "date-time"
                       },
                       "end": {
-                        "description": "End time of the geofencing zone in POSIX time.",
+                        "description": "End time of the geofencing zone in RFC3339 format.",
                         "type": "string",
                         "format": "date-time"
                       },
