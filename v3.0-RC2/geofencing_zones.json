@@ -67,7 +67,7 @@
                         }
                       },
                       "start": {
-                        "description": "Start time of the geofencing zone in POSIX time.",
+                        "description": "Start time of the geofencing zone in RFC3339 format.",
                         "type": "string",
                         "format": "date-time"
                       },
