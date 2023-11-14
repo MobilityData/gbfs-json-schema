@@ -214,7 +214,7 @@
                 }
               },
               "vehicle_docks_capacity": {
-                "description": "This field's value is an array of objects containing the keys vehicle_type_id and count defined below. These objects are used to model the total docking capacity of a station, both available and unavailable, for each type of vehicle defined in vehicle_types.json.",
+                "description": "This field's value is an array of objects containing the keys vehicle_type_ids and count defined below. These objects are used to model the total docking capacity of a station, both available and unavailable, for each type of vehicle that may dock at this station.",
                 "type": "array",
                 "items": {
                   "type": "object",
