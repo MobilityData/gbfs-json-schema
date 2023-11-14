@@ -199,7 +199,10 @@
                   "properties": {
                     "vehicle_type_ids": {
                       "description": "A vehicle_type_id, as defined in vehicle_types.json, that may park at the virtual station.",
-                      "type": "string"
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
                     },
                     "count": {
                       "description": "A number representing the total number of vehicles of the corresponding vehicle_type_id type that can park within the virtual station.",
