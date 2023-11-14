@@ -205,7 +205,7 @@
                       }
                     },
                     "count": {
-                      "description": "A number representing the total number of vehicles of the corresponding vehicle_type_id type that can park within the virtual station.",
+                      "description": "A number representing the total number of vehicles of the specified vehicle_type_ids that can park within the virtual station.",
                       "type": "integer",
                       "minimum": 0
                     }
