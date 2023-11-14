@@ -220,7 +220,7 @@
                   "type": "object",
                   "properties": {
                     "vehicle_type_ids": {
-                      "description": "A vehicle_type_id, as defined in vehicle_types.json, that may dock at the station.",
+                      "description": "An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station.",
                       "type": "array",
                       "items": {
                         "type": "string"
