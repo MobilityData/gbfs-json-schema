@@ -7,7 +7,7 @@
   "properties": {
     "last_updated": {
       "description":
-        "Last time the data in the feed was updated in POSIX time.",
+        "Last time the data in the feed was updated in RFC3339 format.",
       "type": "string",
       "format": "date-time"
     },
