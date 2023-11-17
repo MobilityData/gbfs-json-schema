@@ -80,6 +80,7 @@
                           "properties": {
                             "vehicle_type_id": {
                               "type": "array",
+                              "uniqueItems": true,
                               "description":
                               "Array of vehicle type IDs for which these restrictions apply.",
                               "items": { "type": "string" }
