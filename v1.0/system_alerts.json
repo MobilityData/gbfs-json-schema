@@ -60,6 +60,7 @@
               "station_ids": {
                 "description": "Array of identifiers of the stations for which this alert applies.",
                 "type": "array",
+                "uniqueItems": true,
                 "items": {
                   "type": "string"
                 }
@@ -67,6 +68,7 @@
               "region_ids": {
                 "description": "Array of identifiers of the regions for which this alert applies.",
                 "type": "array",
+                "uniqueItems": true,
                 "items": {
                   "type": "string"
                 }
