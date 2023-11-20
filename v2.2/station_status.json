@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#station_statusjson",
+  "$id": "https://github.com/MobilityData/gbfs/blob/v2.2/gbfs.md#station_statusjson",
   "description":
     "Describes the capacity and rental availability of the station",
   "type": "object",

@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id":
-    "https://github.com/NABSA/gbfs/blob/v2.0/gbfs.md#system_pricing_plansjson",
+    "https://github.com/MobilityData/gbfs/blob/v2.0/gbfs.md#system_pricing_plansjson",
   "description": "Describes the pricing schemes of the system.",
   "type": "object",
   "properties": {

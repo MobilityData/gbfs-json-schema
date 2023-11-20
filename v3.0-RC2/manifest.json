@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://github.com/NABSA/gbfs/blob/v3.0-RC2/gbfs.md#manifestjson",
+  "$id": "https://github.com/MobilityData/gbfs/blob/v3.0-RC2/gbfs.md#manifestjson",
   "description": "An index of gbfs.json URLs for each GBFS data set produced by a publisher. A single instance of this file should be published at a single stable URL, for example: https://example.com/gbfs/manifest.json.",
   "type": "object",
   "properties": {

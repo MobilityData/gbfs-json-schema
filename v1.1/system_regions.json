@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://github.com/NABSA/gbfs/blob/v1.1/gbfs.md#system_regionsjson",
+  "$id": "https://github.com/MobilityData/gbfs/blob/v1.1/gbfs.md#system_regionsjson",
   "description":
     "Describes regions for a system that is broken up by geographic or political region.",
   "type": "object",
