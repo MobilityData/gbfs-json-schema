@@ -254,6 +254,25 @@
                             <customRuleFactory>org.entur.gbfs.GeofencingRuleFactory</customRuleFactory>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>generate-v3.0-RC2-sources</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <classNamePrefix>GBFS</classNamePrefix>
+                            <formatTypeMapping>
+                                <uri>java.lang.String</uri>
+                            </formatTypeMapping>
+                            <removeOldOutput>false</removeOldOutput>
+                            <serializable>true</serializable>
+                            <initializeCollections>false</initializeCollections>
+                            <generateBuilders>true</generateBuilders>
+                            <sourceDirectory>${basedir}/src/main/resources/schema/v3.0-RC2</sourceDirectory>
+                            <targetPackage>org.entur.gbfs.v3_0_RC2</targetPackage>
+                            <customRuleFactory>org.entur.gbfs.GeofencingRuleFactory</customRuleFactory>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
             <plugin>
