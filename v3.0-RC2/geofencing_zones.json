@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://github.com/NABSA/gbfs/blob/v3.0-RC2/gbfs.md#geofencing_zonesjson",
+  "$id": "https://github.com/MobilityData/gbfs/blob/v3.0-RC2/gbfs.md#geofencing_zonesjson",
   "description": "Describes geofencing zones and their associated rules and attributes (added in v2.1-RC).",
   "type": "object",
   "properties": {

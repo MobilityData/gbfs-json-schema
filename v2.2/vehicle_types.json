@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id":
-    "https://github.com/NABSA/gbfs/blob/v2.2/gbfs.md#vehicle_typesjson-added-in-v21-rc",
+    "https://github.com/MobilityData/gbfs/blob/v2.2/gbfs.md#vehicle_typesjson-added-in-v21",
   "description":
     "Describes the types of vehicles that System operator has available for rent (added in v2.1-RC).",
   "type": "object",
