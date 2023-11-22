@@ -177,7 +177,6 @@
               "pricing_plan_ids": {
                 "description": "Array of all pricing plan IDs as defined in system_pricing_plans.json added in v2.3-RC.",
                 "type": "array",
-                "uniqueItems": true,
                 "items": {
                   "type": "string"
                 }

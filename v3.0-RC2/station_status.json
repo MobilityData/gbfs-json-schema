@@ -116,7 +116,6 @@
                       "description":
                         "An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station (added in v2.1-RC).",
                       "type": "array",
-                      "uniqueItems": true,
                       "items": {
                         "type": "string"
                       }
