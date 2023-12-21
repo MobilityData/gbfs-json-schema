@@ -41,7 +41,7 @@ features = ["napi6"]
 optional = true
 
 [dependencies.napi-derive]
-version = "2.14.2"
+version = "2.14.4"
 optional = true
 
 [dependencies.pyo3]
