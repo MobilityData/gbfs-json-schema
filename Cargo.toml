@@ -15,7 +15,7 @@ napi = ["dep:napi", "dep:napi-derive"]
 pretty_assertions = "1.4.0"
 
 [dependencies]
-futures = "0.3.29"
+futures = "0.3.30"
 http = "1.0.0"
 serde_json = "1.0.108"
 serde_with = "3.4.0"
