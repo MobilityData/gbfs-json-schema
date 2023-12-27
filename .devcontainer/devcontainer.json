@@ -1,15 +1,4 @@
 {
 	"name": "Rust",
-	"image": "mcr.microsoft.com/devcontainers/rust:1-1-bullseye",
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	"features": {
-		"ghcr.io/devcontainers/features/node:1": {
-			"version": "20",
-			"nvmVersion": "latest"
-		},
-		"ghcr.io/devcontainers/features/python:1": {
-			"installTools": true,
-			"version": "latest"
-		}
-	}
+	"image": "mcr.microsoft.com/devcontainers/rust:1-1-bullseye"
 }
