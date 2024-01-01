@@ -75,13 +75,13 @@
         <dependency-check-maven.version>5.3.2</dependency-check-maven.version>
         <maven-scm-provider-gitexe.version>1.13.0</maven-scm-provider-gitexe.version>
         <maven-scm-api.version>1.13.0</maven-scm-api.version>
-        <gitflow-maven-plugin.version>1.20.0</gitflow-maven-plugin.version>
+        <gitflow-maven-plugin.version>1.21.0</gitflow-maven-plugin.version>
 
         <!-- empty argLine property, the value is set up by Jacoco during unit tests execution -->
         <argLine />
 
         <!-- Unit test frameworks versions -->
-        <assertj.core.version>3.24.2</assertj.core.version>
+        <assertj.core.version>3.25.0</assertj.core.version>
         <junit.version>5.10.1</junit.version>
     </properties>
 
