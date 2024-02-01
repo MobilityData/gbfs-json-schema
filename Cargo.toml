@@ -12,36 +12,36 @@ pyo3 = ["dep:pyo3"]
 napi = ["dep:napi", "dep:napi-derive"]
 
 [dev-dependencies]
-pretty_assertions = "1.4.0"
+pretty_assertions = "1.4"
 
 [dependencies]
-futures = "0.3.30"
-http = "1.0.0"
-serde_json = "1.0.112"
-serde_with = "3.5.1"
-url = "2.5.0"
-url_serde = "0.2.0"
+futures = "0.3"
+http = "1.0"
+serde_json = "1.0"
+serde_with = "3.5"
+url = "2.5"
+url_serde = "0.2"
 
 [dependencies.geo-types]
-version = "0.7.12"
+version = "0.7"
 features = ["serde"]
 
 [dependencies.serde]
-version = "1.0.196"
+version = "1.0"
 features = ["derive"]
 
 [dependencies.reqwest]
-version = "0.11.23"
+version = "0.11"
 features = ["json"]
 
 [dependencies.napi]
-version = "2.15.0"
+version = "2.15"
 default-features = false
 features = ["napi6"]
 optional = true
 
 [dependencies.napi-derive]
-version = "2.15.0"
+version = "2.15"
 optional = true
 
 [dependencies.pyo3]
