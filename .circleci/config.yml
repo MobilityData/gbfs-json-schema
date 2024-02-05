@@ -32,7 +32,7 @@ aliases:
 jobs:
   build:
     docker:
-      - image: cimg/openjdk:17.0
+      - image: cimg/openjdk:17.0.10
         auth:
           username: $DOCKERHUB_LOGIN
           password: $DOCKERHUB_PASSWORD
@@ -76,7 +76,7 @@ jobs:
             - gbfs-java-model/target
   deploy:
     docker:
-      - image: cimg/openjdk:17.0
+      - image: cimg/openjdk:17.0.10
         auth:
           username: $DOCKERHUB_LOGIN
           password: $DOCKERHUB_PASSWORD
