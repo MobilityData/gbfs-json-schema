@@ -1,15 +1,15 @@
-package org.entur.gbfs.v3_0_RC.gbfs;
+package org.entur.gbfs.v3_0_RC2.gbfs;
 
-import org.entur.gbfs.v3_0_RC.gbfs_versions.GBFSGbfsVersions;
-import org.entur.gbfs.v3_0_RC.geofencing_zones.GBFSGeofencingZones;
-import org.entur.gbfs.v3_0_RC.station_information.GBFSStationInformation;
-import org.entur.gbfs.v3_0_RC.station_status.GBFSStationStatus;
-import org.entur.gbfs.v3_0_RC.system_alerts.GBFSSystemAlerts;
-import org.entur.gbfs.v3_0_RC.system_information.GBFSSystemInformation;
-import org.entur.gbfs.v3_0_RC.system_pricing_plans.GBFSSystemPricingPlans;
-import org.entur.gbfs.v3_0_RC.system_regions.GBFSSystemRegions;
-import org.entur.gbfs.v3_0_RC.vehicle_status.GBFSVehicleStatus;
-import org.entur.gbfs.v3_0_RC.vehicle_types.GBFSVehicleTypes;
+import org.entur.gbfs.v3_0_RC2.gbfs_versions.GBFSGbfsVersions;
+import org.entur.gbfs.v3_0_RC2.geofencing_zones.GBFSGeofencingZones;
+import org.entur.gbfs.v3_0_RC2.station_information.GBFSStationInformation;
+import org.entur.gbfs.v3_0_RC2.station_status.GBFSStationStatus;
+import org.entur.gbfs.v3_0_RC2.system_alerts.GBFSSystemAlerts;
+import org.entur.gbfs.v3_0_RC2.system_information.GBFSSystemInformation;
+import org.entur.gbfs.v3_0_RC2.system_pricing_plans.GBFSSystemPricingPlans;
+import org.entur.gbfs.v3_0_RC2.system_regions.GBFSSystemRegions;
+import org.entur.gbfs.v3_0_RC2.vehicle_status.GBFSVehicleStatus;
+import org.entur.gbfs.v3_0_RC2.vehicle_types.GBFSVehicleTypes;
 
 import java.util.EnumMap;
 import java.util.Map;
