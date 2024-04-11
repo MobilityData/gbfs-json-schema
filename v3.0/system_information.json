@@ -1,16 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id":
-    "https://github.com/MobilityData/gbfs/blob/v3.0-RC/gbfs.md#system_informationjson",
+    "https://github.com/MobilityData/gbfs/blob/v3.0/gbfs.md#system_informationjson",
   "description":
     "Details including system operator, system location, year implemented, URL, contact info, time zone.",
   "type": "object",
   "properties": {
     "last_updated": {
       "description":
-        "Last time the data in the feed was updated in POSIX time.",
-      "type": "integer",
-      "minimum": 1450155600
+        "Last time the data in the feed was updated in RFC3339 format.",
+      "type": "string",
+      "format": "date-time"
     },
     "ttl": {
       "description":
@@ -22,10 +22,7 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
-      "enum": [
-        "3.0-RC",
-        "3.0"
-      ]
+      "const": "3.0"
     },
     "data": {
       "description": "Response data in the form of name:value pairs.",
@@ -66,7 +63,7 @@
           }
         },
         "opening_hours": {
-          "description": "Hours and dates of operation for the system in OSM opening_hours format. (added in v3.0-RC)",
+          "description": "Hours and dates of operation for the system in OSM opening_hours format. (added in v3.0)",
           "type": "string"
         },
         "short_name": {
@@ -119,6 +116,11 @@
         },
         "start_date": {
           "description": "Date that the system began operations.",
+          "type": "string",
+          "format": "date"
+        },
+        "termination_date": {
+          "description": "Date after which this data source will no longer be available to consuming applications.",
           "type": "string",
           "format": "date"
         },

@@ -1,16 +1,16 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id":
-    "https://github.com/MobilityData/gbfs/blob/v3.0-RC/gbfs.md#vehicle_typesjson",
+    "https://github.com/MobilityData/gbfs/blob/v3.0/gbfs.md#vehicle_typesjson",
   "description":
     "Describes the types of vehicles that System operator has available for rent (added in v2.1-RC).",
   "type": "object",
   "properties": {
     "last_updated": {
       "description":
-        "Last time the data in the feed was updated in POSIX time.",
-      "type": "integer",
-      "minimum": 1450155600
+        "Last time the data in the feed was updated in RFC3339 format.",
+      "type": "string",
+      "format": "date-time"
     },
     "ttl": {
       "description":
@@ -22,10 +22,7 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework.",
       "type": "string",
-      "enum": [
-        "3.0-RC",
-        "3.0"
-      ]
+      "const": "3.0"
     },
     "data": {
       "description": "Response data in the form of name:value pairs.",
@@ -68,7 +65,7 @@
                 "type": "string",
                 "enum": ["human", "electric_assist", "electric", "combustion", "combustion_diesel", "hybrid", "plug_in_hybrid", "hydrogen_fuel_cell"]
               },
-              "eco_label": {
+              "eco_labels": {
                 "description": "Vehicle air quality certificate. added in v2.3.",
                 "type": "array",
                 "items":  {

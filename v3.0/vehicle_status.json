@@ -1,9 +1,9 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id":
-    "https://github.com/MobilityData/gbfs/blob/v3.0-RC2/gbfs.md#vehicle_statusjson",
+    "https://github.com/MobilityData/gbfs/blob/v3.0/gbfs.md#vehicle_statusjson",
   "description":
-    "Describes the vehicles that are available for rent (as of v3.0-RC, formerly free_bike_status).",
+    "Describes the vehicles that are available for rent (as of v3.0, formerly free_bike_status).",
   "type": "object",
   "properties": {
     "last_updated": {
@@ -22,11 +22,7 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
-      "enum": [
-        "3.0-RC",
-        "3.0-RC2",
-        "3.0"
-      ]
+      "const": "3.0"
     },
     "data": {
       "description":
