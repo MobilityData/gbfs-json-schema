@@ -63,7 +63,7 @@
           }
         },
         "opening_hours": {
-          "description": "Hours and dates of operation for the system in OSM opening_hours format. (added in v3.0-RC)",
+          "description": "Hours and dates of operation for the system in OSM opening_hours format. (added in v3.0)",
           "type": "string"
         },
         "short_name": {
