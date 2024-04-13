@@ -46,8 +46,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>17</jdk.version>
 
-        <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v3.0-RC8.zip</gbfsGithubUrl>
-        <schemaVersion>3.0-RC8</schemaVersion>
+        <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v3.0.zip</gbfsGithubUrl>
+        <schemaVersion>3.0</schemaVersion>
 
         <jsonschema2pojo-maven-plugin.version>1.2.1</jsonschema2pojo-maven-plugin.version>
         <jackson-databind.version>2.17.0</jackson-databind.version>
@@ -236,7 +236,7 @@
                         </configuration>
                     </execution>
                     <execution>
-                        <id>generate-v3.0-RC-sources</id>
+                        <id>generate-v3.0-sources</id>
                         <goals>
                             <goal>generate</goal>
                         </goals>
@@ -249,27 +249,8 @@
                             <serializable>true</serializable>
                             <initializeCollections>false</initializeCollections>
                             <generateBuilders>true</generateBuilders>
-                            <sourceDirectory>${basedir}/src/main/resources/schema/v3.0-RC</sourceDirectory>
-                            <targetPackage>org.entur.gbfs.v3_0_RC</targetPackage>
-                            <customRuleFactory>org.entur.gbfs.GeofencingRuleFactory</customRuleFactory>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>generate-v3.0-RC2-sources</id>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <classNamePrefix>GBFS</classNamePrefix>
-                            <formatTypeMapping>
-                                <uri>java.lang.String</uri>
-                            </formatTypeMapping>
-                            <removeOldOutput>false</removeOldOutput>
-                            <serializable>true</serializable>
-                            <initializeCollections>false</initializeCollections>
-                            <generateBuilders>true</generateBuilders>
-                            <sourceDirectory>${basedir}/src/main/resources/schema/v3.0-RC2</sourceDirectory>
-                            <targetPackage>org.entur.gbfs.v3_0_RC2</targetPackage>
+                            <sourceDirectory>${basedir}/src/main/resources/schema/v3.0</sourceDirectory>
+                            <targetPackage>org.entur.gbfs.v3_0</targetPackage>
                             <customRuleFactory>org.entur.gbfs.GeofencingRuleFactory</customRuleFactory>
                         </configuration>
                     </execution>
