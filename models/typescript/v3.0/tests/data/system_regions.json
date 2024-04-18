@@ -1,0 +1,18 @@
+{
+    "last_updated": "2024-04-18T09:37:59.000+00:00",
+    "ttl": 21600,
+    "version": "3.0",
+    "data": {
+        "regions": [
+            {
+                "region_id": "YVO:Region:5",
+                "name": [
+                    {
+                        "text": "Gothenburg",
+                        "language": "en"
+                    }
+                ]
+            }
+        ]
+    }
+}
