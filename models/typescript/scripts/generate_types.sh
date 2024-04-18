@@ -3,6 +3,8 @@
 # This script generates typescript interfaces from the gbfs schemas (npx quicktype)
 # It also generates files that help with testing the generated interfaces (npx ts-interface-builder)
 # It takes the gbfs version number as an argument
+# Using this script can be done as follows: ./scripts/generate_types.sh 3.0
+# Just make sure to have the gbfs schemas in the correct folder ./vX.X
 
 gbfs_version="v$1" #$1 is the first argument passed to the script (the version number)
 parent_dir="$(dirname "$(dirname "$0")")"
