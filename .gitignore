@@ -85,3 +85,6 @@ build/
 # Mac
 */.DS_Store
 .DS_Store
+
+# Node Modules
+models/typescript/node_modules/*
