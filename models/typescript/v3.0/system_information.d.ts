@@ -24,7 +24,7 @@ export interface SystemInformation {
     /**
      * Last time the data in the feed was updated in RFC3339 format.
      */
-    last_updated: Date;
+    last_updated: string;
     /**
      * Number of seconds before the data in the feed will be updated again (0 if the data should
      * always be refreshed).
@@ -113,7 +113,7 @@ export interface Data {
      * The date that the privacy policy provided at privacy_url was last updated (added in
      * v2.3-RC).
      */
-    privacy_last_updated?: Date;
+    privacy_last_updated?: string;
     /**
      * A fully qualified URL pointing to the privacy policy for the service. An array with one
      * object per supported language with the following keys:
@@ -135,7 +135,7 @@ export interface Data {
     /**
      * Date that the system began operations.
      */
-    start_date?: Date;
+    start_date?: string;
     /**
      * Identifier for this vehicle share system. This should be globally unique (even between
      * different systems).
@@ -144,12 +144,12 @@ export interface Data {
     /**
      * Date after which this data source will no longer be available to consuming applications.
      */
-    termination_date?: Date;
+    termination_date?: string;
     /**
      * The date that the terms of service provided at terms_url were last updated (added in
      * v2.3-RC)
      */
-    terms_last_updated?: Date;
+    terms_last_updated?: string;
     /**
      * A fully qualified URL pointing to the terms of service (also often called "terms of use"
      * or "terms and conditions") for the service. An array with one object per supported
@@ -196,7 +196,7 @@ export interface BrandAssets {
      * Date that indicates the last time any included brand assets were updated (added in
      * v2.3-RC).
      */
-    brand_last_modified: Date;
+    brand_last_modified: string;
     /**
      * A fully qualified URL pointing to the location of a page that defines the license terms
      * of brand icons, colors or other trademark information (added in v2.3-RC).

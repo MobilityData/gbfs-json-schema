@@ -23,7 +23,7 @@ export interface SystemAlerts {
     /**
      * Last time the data in the feed was updated in RFC3339 format.
      */
-    last_updated: Date;
+    last_updated: string;
     /**
      * Number of seconds before the data in the feed will be updated again (0 if the data should
      * always be refreshed).
@@ -57,7 +57,7 @@ export interface Alert {
     /**
      * Indicates the last time the info for the alert was updated.
      */
-    last_updated?: Date;
+    last_updated?: string;
     /**
      * Array of identifiers of the regions for which this alert applies.
      */
@@ -113,11 +113,11 @@ export interface Time {
     /**
      * End time of the alert.
      */
-    end?: Date;
+    end?: string;
     /**
      * Start time of the alert.
      */
-    start?: Date;
+    start?: string;
     [property: string]: any;
 }
 

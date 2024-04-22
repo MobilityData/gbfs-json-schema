@@ -6,7 +6,7 @@ import * as t from "ts-interface-checker";
 
 export const VehicleStatus = t.iface([], {
   "data": "Data",
-  "last_updated": "Date",
+  "last_updated": "string",
   "ttl": "number",
   "version": "Version",
   [t.indexKey]: "any",
@@ -24,7 +24,7 @@ export const Vehicle = t.iface([], {
   "home_station_id": t.opt("string"),
   "is_disabled": "boolean",
   "is_reserved": "boolean",
-  "last_reported": t.opt("Date"),
+  "last_reported": t.opt("string"),
   "lat": t.opt("number"),
   "lon": t.opt("number"),
   "pricing_plan_id": t.opt("string"),

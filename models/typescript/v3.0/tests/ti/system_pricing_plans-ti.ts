@@ -6,7 +6,7 @@ import * as t from "ts-interface-checker";
 
 export const SystemPricingPlans = t.iface([], {
   "data": "Data",
-  "last_updated": "Date",
+  "last_updated": "string",
   "ttl": "number",
   "version": "Version",
   [t.indexKey]: "any",

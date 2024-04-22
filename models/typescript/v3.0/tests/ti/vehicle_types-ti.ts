@@ -6,7 +6,7 @@ import * as t from "ts-interface-checker";
 
 export const VehicleTypes = t.iface([], {
   "data": "Data",
-  "last_updated": "Date",
+  "last_updated": "string",
   "ttl": "number",
   "version": "Version",
   [t.indexKey]: "any",
@@ -84,7 +84,7 @@ export const ReturnConstraint = t.union(t.lit("free_floating"), t.lit("roundtrip
 export const VehicleAccessory = t.union(t.lit("air_conditioning"), t.lit("automatic"), t.lit("manual"), t.lit("convertible"), t.lit("cruise_control"), t.lit("doors_2"), t.lit("doors_3"), t.lit("doors_4"), t.lit("doors_5"), t.lit("navigation"));
 
 export const VehicleAssets = t.iface([], {
-  "icon_last_modified": "Date",
+  "icon_last_modified": "string",
   "icon_url": "string",
   "icon_url_dark": t.opt("string"),
   [t.indexKey]: "any",

@@ -24,7 +24,7 @@ export interface VehicleTypes {
     /**
      * Last time the data in the feed was updated in RFC3339 format.
      */
-    last_updated: Date;
+    last_updated: string;
     /**
      * Number of seconds before the data in the feed will be updated again (0 if the data should
      * always be refreshed).
@@ -244,7 +244,7 @@ export interface VehicleAssets {
      * Date that indicates the last time any included vehicle icon images were modified or
      * updated added in v2.3-RC.
      */
-    icon_last_modified: Date;
+    icon_last_modified: string;
     /**
      * A fully qualified URL pointing to the location of a graphic icon file that MAY be used to
      * represent this vehicle type on maps and in other applications added in v2.3-RC.

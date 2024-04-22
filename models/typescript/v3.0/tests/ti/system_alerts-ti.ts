@@ -6,7 +6,7 @@ import * as t from "ts-interface-checker";
 
 export const SystemAlerts = t.iface([], {
   "data": "Data",
-  "last_updated": "Date",
+  "last_updated": "string",
   "ttl": "number",
   "version": "Version",
   [t.indexKey]: "any",
@@ -20,7 +20,7 @@ export const Data = t.iface([], {
 export const Alert = t.iface([], {
   "alert_id": "string",
   "description": t.opt(t.array("Description")),
-  "last_updated": t.opt("Date"),
+  "last_updated": t.opt("string"),
   "region_ids": t.opt(t.array("string")),
   "station_ids": t.opt(t.array("string")),
   "summary": t.array("Summary"),
@@ -43,8 +43,8 @@ export const Summary = t.iface([], {
 });
 
 export const Time = t.iface([], {
-  "end": t.opt("Date"),
-  "start": t.opt("Date"),
+  "end": t.opt("string"),
+  "start": t.opt("string"),
   [t.indexKey]: "any",
 });
 

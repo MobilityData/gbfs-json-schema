@@ -6,7 +6,7 @@ import * as t from "ts-interface-checker";
 
 export const GeofencingZones = t.iface([], {
   "data": "Data",
-  "last_updated": "Date",
+  "last_updated": "string",
   "ttl": "number",
   "version": "Version",
   [t.indexKey]: "any",
@@ -40,10 +40,10 @@ export const GeoJSONMultiPolygon = t.iface([], {
 export const GeometryType = t.lit("MultiPolygon");
 
 export const Properties = t.iface([], {
-  "end": t.opt("Date"),
+  "end": t.opt("string"),
   "name": t.opt(t.array("Name")),
   "rules": t.opt(t.array("Rule")),
-  "start": t.opt("Date"),
+  "start": t.opt("string"),
   [t.indexKey]: "any",
 });
 

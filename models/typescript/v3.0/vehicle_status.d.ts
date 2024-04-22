@@ -24,7 +24,7 @@ export interface VehicleStatus {
     /**
      * Last time the data in the feed was updated in RFC3339 format.
      */
-    last_updated: Date;
+    last_updated: string;
     /**
      * Number of seconds before the data in the feed will be updated again (0 if the data should
      * always be refreshed).
@@ -77,7 +77,7 @@ export interface Vehicle {
      * The last time this vehicle reported its status to the operator's backend in RFC3339
      * format (added in v2.1-RC).
      */
-    last_reported?: Date;
+    last_reported?: string;
     /**
      * The latitude of the vehicle.
      */

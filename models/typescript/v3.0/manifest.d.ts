@@ -22,7 +22,7 @@ export interface Manifest {
     /**
      * Last time the data in the feed was updated in RFC3339 format.
      */
-    last_updated: Date;
+    last_updated: string;
     /**
      * Number of seconds before the data in the feed will be updated again (0 if the data should
      * always be refreshed).

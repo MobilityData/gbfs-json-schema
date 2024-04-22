@@ -6,7 +6,7 @@ import * as t from "ts-interface-checker";
 
 export const Manifest = t.iface([], {
   "data": "Data",
-  "last_updated": "Date",
+  "last_updated": "string",
   "ttl": "number",
   "version": "ManifestVersion",
   [t.indexKey]: "any",

@@ -23,7 +23,7 @@ export interface StationStatus {
     /**
      * Last time the data in the feed was updated in RFC3339 format.
      */
-    last_updated: Date;
+    last_updated: string;
     /**
      * Number of seconds before the data in the feed will be updated again (0 if the data should
      * always be refreshed).
@@ -62,7 +62,7 @@ export interface Station {
      * The last time this station reported its status to the operator's backend in RFC3339
      * format.
      */
-    last_reported: Date;
+    last_reported: string;
     /**
      * Number of functional docks physically at the station.
      */
