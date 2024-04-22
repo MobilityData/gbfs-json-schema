@@ -1,6 +1,6 @@
 {
   "name": "gbfs-typescript-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Language Bindings for GBFS in Typescript",
   "types": "index.d.ts",
   "scripts": {
