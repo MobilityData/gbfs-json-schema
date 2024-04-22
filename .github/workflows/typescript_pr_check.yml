@@ -1,0 +1,42 @@
+name: GBFS Typescript Language Bindings - PR Check
+on:
+  pull_request:
+    branches: 
+        - main
+    paths:
+      - "models/typescript/**"
+    
+jobs:
+    check-versions:
+        name: check-version-job
+        runs-on: ubuntu-latest
+    
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+              with:
+                ref: master
+
+            - name: Get current local version
+              id: get_current_local_version
+              run: echo "version=$(jq -r '.version' models/typescript/package.json)" >> $GITHUB_OUTPUT
+            
+            - name: Get version on master
+              id: get_master_version
+              run: echo "master-version=$(jq -r '.version' jq -r '.version' master/models/typescript/package.json)" >> $GITHUB_OUTPUT
+            
+            - name: Compare versions
+              run: |
+                current_version="${{ steps.get_current_local_version.outputs.version }}"
+                master_version="${{ steps.get_master_version.outputs.master-version }}"
+      
+                if [ "$current_version" != "$master_version" ]; then
+                  echo "Versions are different:"
+                  echo "Current version: $current_version"
+                  echo "Version on master: $master_version"
+                else
+                  echo "Versions are the same: $current_version"
+                  echo "Please update the package.json version so that your changes will be published."
+                  exit 1
+                fi
+    
