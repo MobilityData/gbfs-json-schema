@@ -17,24 +17,28 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v2
-              with:
-                ref: master
 
-            - name: Get package.json from master
+            - name: Get local branch package.json version
+              id: get_local_version
+              run: |
+                version=$(jq -r '.version' models/typescript/package.json)
+                echo "::set-output name=version::$version"
+          
+            - name: Get master branch package.json version
+              id: get_master_version
               run: |
                 git fetch origin master
-                git checkout origin/master -- models/typescript/package.json
-                mv models/typescript/package.json master_package.json
-            
-            - name: Compare package.json
+                master_version=$(git show origin/master:models/typescript/package.json | jq -r '.version')
+                echo "::set-output name=master_version::$master_version"
+          
+            - name: Compare versions
               run: |
-                diff=$(jq -sS --exit-status '.[0] == .[1]' models/typescript/package.json master_package.json || echo "different")
-                if [ "$diff" == "different" ]; then
-                    echo "Package.json files are different"
-                    # You can take appropriate actions here
+                local_version="${{ steps.get_local_version.outputs.version }}"
+                master_version="${{ steps.get_master_version.outputs.master_version }}"
+                if [ "$local_version" != "$master_version" ]; then
+                    echo "Local branch version ($local_version) is different from master branch version ($master_version)"
                 else
-                    echo "Package.json files are the same"
-                    echo "Please update the package.json version so that your changes will be published."
+                    echo "Local branch version ($local_version) is the same as master branch version ($master_version)"
                     exit 1
                 fi
     
