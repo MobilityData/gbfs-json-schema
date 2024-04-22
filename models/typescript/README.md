@@ -18,13 +18,17 @@ Currently only version 3.0 of GBFS is supported
 
 ## Example Code
 ```typescript
+// top level import
+import { v3 } from './';
+
 // high level types
-import { SystemInformation } from 'gbfs-typescript-types/v3.0';
+import { SystemInformation } from './v3.0';
 
 // lower level properties need to have path specified
-import { Data as SystemInformationData } from 'gbfs-typescript-types/v3.0/system_information';
-import { Data as VehicleStatusData } from 'gbfs-typescript-types/v3.0/vehicle_status';
+import { Data as SystemInformationData } from './v3.0/system_information';
+import { Data as VehicleStatusData } from './v3.0/vehicle_status';
 
+let vehicleStatus: v3.VehicleStatus;
 let systemInformationData: SystemInformationData;
 const url = "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/system-information";
 fetch(url).then((systemInformationResponse) => {
