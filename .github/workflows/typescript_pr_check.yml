@@ -20,13 +20,13 @@ jobs:
 
             - name: Get local branch package.json version
               id: get_local_version
-              run: echo "version=$(jq -r '.version' models/typescript/package.json) >> $GITHUB_OUTPUT
+              run: echo "version=$(jq -r '.version' models/typescript/package.json)" >> $GITHUB_OUTPUT
           
             - name: Get master branch package.json version
               id: get_master_version
               run: |
                 git fetch origin master
-                echo "master_version=$(git show origin/master:models/typescript/package.json | jq -r '.version') >> $GITHUB_OUTPUT
+                echo "master_version=$(git show origin/master:models/typescript/package.json | jq -r '.version')" >> $GITHUB_OUTPUT
           
             - name: Compare versions
               env:
