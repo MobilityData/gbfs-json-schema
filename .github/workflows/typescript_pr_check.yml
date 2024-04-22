@@ -1,5 +1,8 @@
 name: GBFS Typescript Language Bindings - PR Check
 on:
+  push:
+    branches:
+        - feat/publish-gbfs-language-binding-workflow
   pull_request:
     branches: 
         - main
