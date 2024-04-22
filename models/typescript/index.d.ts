@@ -1,1 +1,1 @@
-export * from './v3.0';
+export * as v3 from './v3.0';

@@ -13,6 +13,7 @@ output_path="$parent_dir/$gbfs_version/"
 test_path="$parent_dir/$gbfs_version/tests/ti/"
 copyright_file="$parent_dir/scripts/copyright.txt"
 
+# Iterate over all the files in the folder of the gbfs version
 for file in "$folder_path"/*
 do
     # Extract the file name from the path and add it to the array
@@ -24,6 +25,9 @@ do
 
     # generates model files from schema files
     npx quicktype -s schema "$folder_path$file_name" -o "$output_file.ts" --prefer-unions --just-types
+
+    # JSON cannot represent Date objects, so manually change Date to string
+    sed -i "" "s/Date;/string;/g" "$output_file.ts"
 
     # generates files for typescript testing
     npx ts-interface-builder "$output_file.ts" -o $test_path
