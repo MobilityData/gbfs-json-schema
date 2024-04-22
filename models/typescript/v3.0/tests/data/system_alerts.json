@@ -1,0 +1,19 @@
+{
+    "last_updated": "2019-07-04T13:33:03.969Z",
+    "ttl": 3600,
+    "version": "3.0",
+    "data": {
+        "alerts": [
+            {
+                "alert_id": "1",
+                "summary": [
+                    {
+                        "language": "en",
+                        "text": "High Wind Warning"
+                    }
+                ],
+                "type": "station_closure"
+            }
+        ]
+    }
+}

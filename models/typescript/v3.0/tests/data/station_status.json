@@ -1,0 +1,27 @@
+{
+    "last_updated": "2019-07-04T13:33:03.969Z",
+    "ttl": 60,
+    "version": "3.0",
+    "data": {
+      "stations": [
+        {
+          "station_id": "6efbec5a-6b8c-455b-bed2-8d66be6d6a4b",
+          "is_installed": true,
+          "is_renting": true,
+          "is_returning": true,
+          "last_reported": "2019-07-04T13:33:03.969Z",
+          "vehicle_types_available": [
+            {
+              "vehicle_type_id": "ebicycle_paris",
+              "count": 0
+            },
+            {
+              "vehicle_type_id": "escooter_paris",
+              "count": 0
+            }
+          ],
+          "num_vehicles_available": 0
+        }
+      ]
+    }
+  }

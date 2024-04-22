@@ -1,0 +1,41 @@
+{
+    "last_updated": "2019-07-04T13:33:03.969Z",
+    "ttl": 60,
+    "version": "3.0",
+    "data": {
+        "feeds": [
+            {
+                "name": "system_information",
+                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/system-information"
+            },
+            {
+                "name": "vehicle_status",
+                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/vehicle-status"
+            },
+            {
+                "name": "vehicle_types",
+                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/vehicle-types"
+            },
+            {
+                "name": "system_pricing_plans",
+                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/system-pricing-plans"
+            },
+            {
+                "name": "station_information",
+                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/station-information"
+            },
+            {
+                "name": "station_status",
+                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/station-status"
+            },
+            {
+                "name": "geofencing_zones",
+                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/geofencing-zones"
+            },
+            {
+                "name": "gbfs_versions",
+                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/versions"
+            }
+        ]
+    }
+}

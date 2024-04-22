@@ -1,0 +1,59 @@
+{
+    "last_updated": "2019-07-04T13:33:03.969Z",
+    "ttl": 60,
+    "version": "3.0",
+    "data": {
+        "plans": [
+            {
+                "plan_id": "87c7ed6e-aecf-4900-9a85-2a78efbba65b",
+                "name": [
+                    {
+                        "text": "bike-standard-pricing-paris",
+                        "language": "en"
+                    }
+                ],
+                "currency": "EUR",
+                "price": 1,
+                "is_taxable": false,
+                "description": [
+                    {
+                        "text": "Standard pricing for bikes, 1.00 EUR to unlock, 0.28 EUR per minute to rent",
+                        "language": "en"
+                    }
+                ],
+                "per_min_pricing": [
+                    {
+                        "start": 0,
+                        "rate": 0.28,
+                        "interval": 1
+                    }
+                ]
+            },
+            {
+                "plan_id": "e1df7c5c-3232-422f-bf38-94cabb55fb99",
+                "name": [
+                    {
+                        "text": "scooter-standard-pricing-paris",
+                        "language": "en"
+                    }
+                ],
+                "currency": "EUR",
+                "price": 1.2,
+                "is_taxable": false,
+                "description": [
+                    {
+                        "text": "Standard pricing for scooters, 1.20 EUR to unlock, 0.28 EUR per minute to rent",
+                        "language": "en"
+                    }
+                ],
+                "per_min_pricing": [
+                    {
+                        "start": 0,
+                        "rate": 0.28,
+                        "interval": 1
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "last_updated": "2019-07-04T13:33:03.969Z",
+    "ttl": 60,
+    "version": "3.0",
+    "data": {
+      "vehicle_types": [
+        {
+          "vehicle_type_id": "ebicycle_paris",
+          "form_factor": "bicycle",
+          "propulsion_type": "electric_assist",
+          "max_range_meters": 90000,
+          "name": [
+            {
+              "text": "Electric Bicycle",
+              "language": "en"
+            }
+          ],
+          "default_pricing_plan_id": "87c7ed6e-aecf-4900-9a85-2a78efbba65b"
+        }
+      ]
+    }
+  }
