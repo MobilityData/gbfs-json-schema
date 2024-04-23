@@ -19,7 +19,7 @@ Currently only version 3.0 of GBFS is supported
 ## Example Code
 ```typescript
 // top level import
-import { v3 } from './';
+import { v3 } from 'gbfs-typescript-types';
 
 // high level types
 import { SystemInformation } from 'gbfs-typescript-types/v3.0';
