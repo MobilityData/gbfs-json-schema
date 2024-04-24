@@ -1,7 +1,7 @@
 package org.mobilitydata.gbfs.v3_0.manifest;
 
 import org.mobilitydata.gbfs.TestBase;
-import org.mobilitydata.v3_0.GBFSManifest;
+import org.mobilitydata.gbfs.v3_0.GBFSManifest;
 import org.junit.jupiter.api.Test;
 
 class ManifestTest extends TestBase {

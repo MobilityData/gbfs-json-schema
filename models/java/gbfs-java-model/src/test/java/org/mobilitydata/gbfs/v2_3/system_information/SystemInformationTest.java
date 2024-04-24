@@ -1,7 +1,7 @@
 package org.mobilitydata.gbfs.v2_3.system_information;
 
 import org.mobilitydata.gbfs.TestBase;
-import org.mobilitydata.v2_3.GBFSSystemInformation;
+import org.mobilitydata.gbfs.v2_3.GBFSSystemInformation;
 import org.junit.jupiter.api.Test;
 
 class SystemInformationTest extends TestBase {

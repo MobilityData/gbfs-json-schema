@@ -1,17 +1,17 @@
 package org.mobilitydata.gbfs.v3_0.gbfs;
 
-import org.mobilitydata.v3_0.GBFSGbfsVersions;
-import org.mobilitydata.v3_0.GBFSGeofencingZones;
-import org.mobilitydata.v3_0.GBFSStationInformation;
-import org.mobilitydata.v3_0.GBFSStationStatus;
-import org.mobilitydata.v3_0.GBFSSystemAlerts;
-import org.mobilitydata.v3_0.GBFSSystemInformation;
-import org.mobilitydata.v3_0.GBFSSystemPricingPlans;
-import org.mobilitydata.v3_0.GBFSSystemRegions;
-import org.mobilitydata.v3_0.GBFSVehicleStatus;
-import org.mobilitydata.v3_0.GBFSVehicleTypes;
-import org.mobilitydata.v3_0.GBFSFeed;
-import org.mobilitydata.v3_0.GBFSGbfs;
+import org.mobilitydata.gbfs.v3_0.GBFSGbfsVersions;
+import org.mobilitydata.gbfs.v3_0.GBFSGeofencingZones;
+import org.mobilitydata.gbfs.v3_0.GBFSStationInformation;
+import org.mobilitydata.gbfs.v3_0.GBFSStationStatus;
+import org.mobilitydata.gbfs.v3_0.GBFSSystemAlerts;
+import org.mobilitydata.gbfs.v3_0.GBFSSystemInformation;
+import org.mobilitydata.gbfs.v3_0.GBFSSystemPricingPlans;
+import org.mobilitydata.gbfs.v3_0.GBFSSystemRegions;
+import org.mobilitydata.gbfs.v3_0.GBFSVehicleStatus;
+import org.mobilitydata.gbfs.v3_0.GBFSVehicleTypes;
+import org.mobilitydata.gbfs.v3_0.GBFSFeed;
+import org.mobilitydata.gbfs.v3_0.GBFSGbfs;
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 
 public class GBFSFeedName {
     private GBFSFeedName() {}
+
 
     private static final Map<GBFSFeed.Name, Class<?>> feedNameMap = new EnumMap<>(GBFSFeed.Name.class);
 

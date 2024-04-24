@@ -1,7 +1,7 @@
 package org.mobilitydata.gbfs.v3_0.vehicle_types;
 
 import org.mobilitydata.gbfs.TestBase;
-import org.mobilitydata.v3_0.GBFSVehicleTypes;
+import org.mobilitydata.gbfs.v3_0.GBFSVehicleTypes;
 import org.junit.jupiter.api.Test;
 
 class VehicleTypesTest extends TestBase {

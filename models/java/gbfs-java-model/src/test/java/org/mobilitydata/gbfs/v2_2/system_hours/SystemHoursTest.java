@@ -1,7 +1,7 @@
 package org.mobilitydata.gbfs.v2_2.system_hours;
 
 import org.mobilitydata.gbfs.TestBase;
-import org.mobilitydata.v2_2.GBFSSystemHours;
+import org.mobilitydata.gbfs.v2_2.GBFSSystemHours;
 import org.junit.jupiter.api.Test;
 
 class SystemHoursTest extends TestBase {

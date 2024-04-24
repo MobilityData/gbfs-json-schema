@@ -1,7 +1,7 @@
 package org.mobilitydata.gbfs.v2_3.station_status;
 
 import org.mobilitydata.gbfs.TestBase;
-import org.mobilitydata.v2_3.GBFSStationStatus;
+import org.mobilitydata.gbfs.v2_3.GBFSStationStatus;
 import org.junit.jupiter.api.Test;
 
 class StationStatusTest extends TestBase {
