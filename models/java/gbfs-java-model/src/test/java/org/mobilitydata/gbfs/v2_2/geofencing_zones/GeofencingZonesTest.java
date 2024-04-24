@@ -1,8 +1,8 @@
 package org.mobilitydata.gbfs.v2_2.geofencing_zones;
 
 import org.mobilitydata.gbfs.TestBase;
-import org.mobilitydata.v2_2.GBFSFeature;
-import org.mobilitydata.v2_2.GBFSGeofencingZones;
+import org.mobilitydata.gbfs.v2_2.GBFSFeature;
+import org.mobilitydata.gbfs.v2_2.GBFSGeofencingZones;
 import org.geojson.LngLatAlt;
 import org.junit.jupiter.api.Test;
 

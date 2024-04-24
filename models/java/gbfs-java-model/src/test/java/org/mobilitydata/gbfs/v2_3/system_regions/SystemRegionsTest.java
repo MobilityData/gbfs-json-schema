@@ -1,7 +1,7 @@
 package org.mobilitydata.gbfs.v2_3.system_regions;
 
 import org.mobilitydata.gbfs.TestBase;
-import org.mobilitydata.v2_3.GBFSSystemRegions;
+import org.mobilitydata.gbfs.v2_3.GBFSSystemRegions;
 import org.junit.jupiter.api.Test;
 
 class SystemRegionsTest extends TestBase {

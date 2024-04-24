@@ -1,6 +1,6 @@
 package org.mobilitydata.gbfs.v2_2.gbfs;
 
-import org.mobilitydata.v2_2.GBFSStationInformation;
+import org.mobilitydata.gbfs.v2_2.GBFSStationInformation;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
