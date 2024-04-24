@@ -4,6 +4,7 @@ JSON Schema for [General Bikeshare Feed Specification(GBFS)](https://github.com/
 ## Language Bindings
 
 * [TypeScript ](models/typescript/README.md)
+* [Java ](models/java/README.md)
 
 Are we missing your favorite language? Consider contributing:
 
