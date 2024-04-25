@@ -48,4 +48,6 @@ jobs:
 
       - name: Deploy with Maven
         run: mvn -B clean deploy -pl gbfs-java-model -Pci-cd
+        env:
+          MAVEN_GPG_PASSPHRASE: ${{ env.MAVEN_GPG_PASSPHRASE }}
           

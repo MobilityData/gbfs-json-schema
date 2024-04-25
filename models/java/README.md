@@ -10,7 +10,7 @@ classes are prefixed with "GBFS".
 Packages include GBFS versions to accommodate for future releases which may include older versions,
 since some consumers may need to handle multiple non-compatible versions in the same application 
 (i.e. you should be able to parse v2.1 feeds with the v2.2 package, but v3.0 package would not
-be able to parse v2.2 feeds)
+be able to parse v2.2 feeds).
 
 ## Add the Dependency 
 
