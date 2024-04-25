@@ -7,7 +7,7 @@
   "timezone": "Europe/Oslo",
   "packageRules": [
     {
-      "matchPackageNames": ["org.entur.gbfs:rule-factory"],
+      "matchPackageNames": ["org.mobilitydata.gbfs:rule-factory"],
       "enabled": false
     }
   ]
