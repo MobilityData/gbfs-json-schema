@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Build and Deploy Java Language Bindings
 
 on:
   push:
@@ -37,10 +37,10 @@ jobs:
           java-version: '17.0.11'
           distribution: 'temurin'
           server-id: ossrh
-          server-username: MAVEN_USERNAME
-          server-password: MAVEN_PASSWORD
-          gpg-private-key: MAVEN_GPG_PRIVATE_KEY
-          gpg-passphrase: MAVEN_GPG_PASSPHRASE
+          server-username: ${{ env.MAVEN_USERNAME }}
+          server-password:  ${{ env.MAVEN_PASSWORD }}
+          gpg-private-key:  ${{ env.MAVEN_GPG_PRIVATE_KEY }}
+          gpg-passphrase:  ${{ env.MAVEN_GPG_PASSPHRASE }}
     
       - name: Build and package
         run: |
