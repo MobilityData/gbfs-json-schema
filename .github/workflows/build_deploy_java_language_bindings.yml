@@ -47,5 +47,5 @@ jobs:
           mvn install -pl rule-factory
 
       - name: Deploy with Maven
-        run: mvn -B clean deploy -pl gbfs-java-model
+        run: mvn -B clean deploy -pl gbfs-java-model -Pci-cd
           
