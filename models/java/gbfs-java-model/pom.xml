@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.mobilitydata</groupId>
     <artifactId>gbfs-java-model</artifactId>
-    <version>3.1.3-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <name>gbfs-java-model</name>
 
