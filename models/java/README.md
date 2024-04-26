@@ -25,7 +25,7 @@ dependencies section:
 <dependency>
   <groupId>org.mobilitydata</groupId>
   <artifactId>gbfs-java-model</artifactId>
-  <version>1.0.0</version>
+  <version>3.1.3</version>
 </dependency>
 ```
 
