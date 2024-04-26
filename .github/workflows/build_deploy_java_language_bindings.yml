@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - master
-      - feat/109-java-language-bindings
     paths:
       - "models/java/**"
 

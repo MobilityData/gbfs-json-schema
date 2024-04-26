@@ -24,6 +24,12 @@
     </licenses>
     <developers>
         <developer>
+            <name>Alessandro Kreslin</name>
+            <email>alessandro@mobilitydata.org</email>
+            <organization>MobilityData</organization>
+            <organizationUrl>http://www.mobilitydata.org</organizationUrl>
+        </developer>
+        <developer>
             <name>Tom Erik Støwer</name>
             <email>tom.erik.stower@entur.org</email>
             <organization>Entur</organization>
@@ -51,9 +57,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <jdk.version>17</jdk.version>
 
-        <gbfsGithubUrl>https://github.com/entur/gbfs-json-schema/archive/refs/tags/v3.0.zip</gbfsGithubUrl>
-        <schemaVersion>3.0</schemaVersion>
-
         <jsonschema2pojo-maven-plugin.version>1.2.1</jsonschema2pojo-maven-plugin.version>
         <jackson-databind.version>2.17.0</jackson-databind.version>
         <geojson-jackson.version>1.14</geojson-jackson.version>
@@ -80,7 +83,6 @@
         <dependency-check-maven.version>5.3.2</dependency-check-maven.version>
         <maven-scm-provider-gitexe.version>1.13.0</maven-scm-provider-gitexe.version>
         <maven-scm-api.version>1.13.0</maven-scm-api.version>
-        <gitflow-maven-plugin.version>1.21.0</gitflow-maven-plugin.version>
 
         <!-- empty argLine property, the value is set up by Jacoco during unit tests execution -->
         <argLine />
@@ -340,19 +342,6 @@
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
                 <version>${dependency-check-maven.version}</version>
-            </plugin>
-            <plugin>
-                <groupId>com.amashchenko.maven.plugin</groupId>
-                <artifactId>gitflow-maven-plugin</artifactId>
-                <version>${gitflow-maven-plugin.version}</version>
-                <configuration>
-                    <allowSnapshots>false</allowSnapshots>
-                    <verbose>true</verbose>
-                    <commitMessagePrefix>[ci skip]</commitMessagePrefix>
-                    <gitFlowConfig>
-                        <developmentBranch>master</developmentBranch>
-                    </gitFlowConfig>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
