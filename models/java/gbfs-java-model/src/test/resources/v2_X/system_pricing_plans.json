@@ -1,0 +1,24 @@
+{
+  "last_updated": 1606858558,
+  "ttl": 300,
+  "version": "2.2",
+  "data": {
+    "plans": [
+      {
+        "plan_id": "TST:PricingPlan:Basic",
+        "name": "Basic",
+        "currency": "NOK",
+        "price": 0.0,
+        "is_taxable": false,
+        "description": "Start NOK 0, Per minute 3,50 NOK",
+        "per_min_pricing": [
+          {
+            "start": 0,
+            "rate": 3.5,
+            "interval": 1
+          }
+        ]
+      }
+    ]
+  }
+}
