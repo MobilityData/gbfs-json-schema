@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - feat/java-language-bindings-cicd
     paths:
       - "models/java/**"
 
@@ -46,7 +47,7 @@ jobs:
           mvn install -pl rule-factory
 
       - name: Deploy with Maven
-        run: mvn -B clean deploy -pl gbfs-java-model -Pci-cd
+        run: mvn -B clean deploy -pl gbfs-java-model -P ci-cd
         env:
           MAVEN_GPG_PASSPHRASE: ${{ env.MAVEN_GPG_PASSPHRASE }}
           
