@@ -5,8 +5,6 @@ on:
     branches:
       - master
       - feat/java-language-bindings-cicd
-    paths:
-      - "models/java/**"
 
 jobs:
   build:
@@ -26,8 +24,8 @@ jobs:
           export-env: true # Export loaded secrets as environment variables
         env:
           OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }} # This is required to connect to the vault in our 1Password account.
-          MAVEN_GPG_PRIVATE_KEY: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/yztcx47yzp4vizjyaq7ulvkgoi/Private Key"
-          MAVEN_GPG_PASSPHRASE: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/yztcx47yzp4vizjyaq7ulvkgoi/password"
+          MAVEN_GPG_PRIVATE_KEY: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/dkkfywvsr3xq6eyeubq6cldaxi/Private Key"
+          MAVEN_GPG_PASSPHRASE: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/dkkfywvsr3xq6eyeubq6cldaxi/password"
           MAVEN_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
           MAVEN_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
 
