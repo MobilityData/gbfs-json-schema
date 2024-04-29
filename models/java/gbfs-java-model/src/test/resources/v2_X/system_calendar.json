@@ -1,0 +1,17 @@
+{
+  "last_updated": 1434054678,
+  "ttl": 0,
+  "version": "2.2",
+  "data": {
+    "calendars": [
+      {
+        "start_month": 1,
+        "start_day": 1,
+        "start_year": 2020,
+        "end_month": 12,
+        "end_day": 30,
+        "end_year": 2021
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "last_updated": 1606857968,
+  "ttl": 300,
+  "version": "2.2",
+  "data": {
+    "bikes": [
+      {
+        "bike_id": "TST:Scooter:1234",
+        "lat": 59.91465759277344,
+        "lon": 10.760470390319824,
+        "is_reserved": false,
+        "is_disabled": true,
+        "vehicle_type_id": "TST:VehicleType:Scooter",
+        "current_range_meters": 1431.2,
+        "pricing_plan_id": "TST:PricingPlan:Basic",
+        "rental_uris": {
+          "android": "test://rentme/TST:Scooter:1234",
+          "ios": "test://rentme/TST:Scooter:1234",
+          "web": "https://test.com/rentme/TST:Scooter:1234"
+        }
+      }
+    ]
+  }
+}
