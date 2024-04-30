@@ -1,7 +1,8 @@
 {
   "name": "gbfs-typescript-types",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Language Bindings for GBFS in Typescript",
+  "license": "Apache-2.0",
   "types": "index.d.ts",
   "scripts": {
     "generate_typescript_v3.0": "./scripts/generate_types.sh 3.0"
@@ -24,11 +25,5 @@
   },
   "bugs": {
     "url": "https://github.com/MobilityData/gbfs-json-schema/issues"
-  },
-  "licenses": [
-    {
-      "type": "Apache 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0"
-    }
-  ]
+  }
 }
