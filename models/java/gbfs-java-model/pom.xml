@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.mobilitydata</groupId>
     <artifactId>gbfs-java-model</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <name>gbfs-java-model</name>
 
@@ -178,7 +178,7 @@
                     <dependency>
                         <groupId>org.mobilitydata.gbfs</groupId>
                         <artifactId>rule-factory</artifactId>
-                        <version>1.0.1</version>
+                        <version>1.0.2</version>
                     </dependency>
                 </dependencies>
                 <executions>
