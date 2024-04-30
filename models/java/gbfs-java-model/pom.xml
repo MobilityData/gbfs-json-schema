@@ -17,10 +17,10 @@
     </organization>
     <licenses>
         <license>
-            <name>EUPL-1.2 with modifications</name>
-            <url>https://joinup.ec.europa.eu/software/page/eupl</url>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
-        </license>
+          </license>
     </licenses>
     <developers>
         <developer>
@@ -138,23 +138,6 @@
         </extensions>
         <pluginManagement>
             <plugins>
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>exec-maven-plugin</artifactId>
-                    <version>${maven-exec-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>clear-target-folder</id>
-                            <phase>generate-sources</phase>
-                            <goals>
-                                <goal>exec</goal>
-                            </goals>
-                            <configuration>
-                                <executable>./bin/clear-targets.sh</executable>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${maven-compiler-plugin.version}</version>
