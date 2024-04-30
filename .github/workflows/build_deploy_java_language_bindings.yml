@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-        - "models/java/**"
+      - "models/java/**"
 
 jobs:
   build:
