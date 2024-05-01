@@ -9,6 +9,8 @@ jobs:
     check-versions:
         name: check-version-job
         runs-on: ubuntu-latest
+        outputs:
+            has-version-changed: ${{ steps.version-change-check.outputs.VERSION_CHANGED }}
     
         steps:
             - name: Checkout repository
@@ -36,15 +38,42 @@ jobs:
               run: echo "VERSION_MASTER=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)" >> $GITHUB_OUTPUT
             
             - name: Compare versions
+              id: version-change-check
               env:
                 local_version: ${{ steps.extract_version_current.outputs.VERSION_CURRENT }}
                 master_version: ${{ steps.extract_version_master.outputs.VERSION_MASTER }}
               run: |
                 if [ "$local_version" != "$master_version" ]; then
                     echo "Local branch version ($local_version) is different from master branch version ($master_version)"
+                    echo "VERSION_CHANGED=true" >> $GITHUB_OUTPUT
                 else
                     echo "Local branch version ($local_version) is the same as master branch version ($master_version)"
                     echo "Please update the models/java/gbfs-java-model/pom.xml version so that your changes will be published."
-                    exit 1
+                    echo "VERSION_CHANGED=false" >> $GITHUB_OUTPUT
                 fi
+
+    build-publish:
+        name: build-publish-job
+        needs: [check-versions]
+        if: needs.check-versions.outputs.has-version-changed == 'false'
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Comment on PR to update pom.xml
+              uses: actions/github-script@v5
+              with:
+                github-token: ${{ secrets.GITHUB_TOKEN }}
+                script: |
+                  const issueComment = `
+                    Hello! Thanks for opening/editing this pull request. 
+                    Please update the models/java/gbfs-java-model/pom.xml version so that your changes will be published.
+                  `;
+                  github.issues.createComment({
+                    issue_number: context.issue.number,
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    body: issueComment
+                  });
+            - name: Fail the workflow
+              run: exit 1
     
