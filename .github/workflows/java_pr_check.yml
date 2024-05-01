@@ -52,13 +52,15 @@ jobs:
                     echo "VERSION_CHANGED=false" >> $GITHUB_OUTPUT
                 fi
 
-    build-publish:
-        name: build-publish-job
+    github-pr-comment:
+        name: pr comment to update pom.xml
         needs: [check-versions]
         if: needs.check-versions.outputs.has-version-changed == 'false'
         runs-on: ubuntu-latest
 
         steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
             - name: Comment on PR to update pom.xml
               uses: actions/github-script@v5
               with:
