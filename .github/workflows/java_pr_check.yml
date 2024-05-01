@@ -26,7 +26,9 @@ jobs:
               run: echo "VERSION_CURRENT=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)" >> $GITHUB_OUTPUT
 
             - name: Checkout master branch
-              run: git checkout origin master
+              run: |
+                git fetch origin master
+                git checkout master
             
             - name: Extract Version from Master Branch
               id: extract_version_master
