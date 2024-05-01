@@ -1,0 +1,49 @@
+name: GBFS Java Language Bindings - PR Check
+on:
+  pull_request:
+    branches: 
+        - master
+    paths:
+        - "models/java/**"
+    
+jobs:
+    check-versions:
+        name: check-version-job
+        runs-on: ubuntu-latest
+    
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+            
+            - name: Set up JDK
+              uses: actions/setup-java@v4
+              with:
+                java-version: '17.0.11'
+                distribution: 'temurin'
+
+            - name: Extract Version from Current Branch
+              id: extract_version_current
+              working-directory: models/java/gbfs-java-model
+              run: echo "VERSION_CURRENT=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)" >> $GITHUB_OUTPUT
+
+            - name: Checkout master branch
+              run: git checkout master
+            
+            - name: Extract Version from Master Branch
+              id: extract_version_master
+              working-directory: models/java/gbfs-java-model
+              run: echo "VERSION_MASTER=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)" >> $GITHUB_OUTPUT
+            
+            - name: Compare versions
+              env:
+                local_version: ${{ steps.extract_version_current.outputs.VERSION_CURRENT }}
+                master_version: ${{ steps.extract_version_master.outputs.VERSION_MASTER }}
+              run: |
+                if [ "$local_version" != "$master_version" ]; then
+                    echo "Local branch version ($local_version) is different from master branch version ($master_version)"
+                else
+                    echo "Local branch version ($local_version) is the same as master branch version ($master_version)"
+                    echo "Please update the models/java/gbfs-java-model/pom.xml version so that your changes will be published."
+                    exit 1
+                fi
+    
