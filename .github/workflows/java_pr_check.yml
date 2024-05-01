@@ -1,4 +1,4 @@
-name: GBFS Java Language Bindings - PR Check
+name: GBFS Java Language Bindings - PR Version Update Check
 on:
   pull_request:
     branches: 
