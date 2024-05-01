@@ -62,19 +62,15 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v2
             - name: Comment on PR to update pom.xml
-              uses: actions/github-script@v5
+              uses: actions/github-script@v7
               with:
                 github-token: ${{ secrets.GITHUB_TOKEN }}
                 script: |
-                  const issueComment = `
-                    Hello! Thanks for opening/editing this pull request. 
-                    Please update the models/java/gbfs-java-model/pom.xml version so that your changes will be published.
-                  `;
-                  github.issues.createComment({
+                  github.rest.issues.createComment({
                     issue_number: context.issue.number,
                     owner: context.repo.owner,
                     repo: context.repo.repo,
-                    body: issueComment
+                    body: 'Hello! Thanks for opening/editing this pull request. Please update the models/java/gbfs-java-model/pom.xml version so that your changes will be published.'
                   });
             - name: Fail the workflow
               run: exit 1
