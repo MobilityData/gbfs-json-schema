@@ -1,0 +1,78 @@
+name: GBFS Java Language Bindings - PR Version Update Check
+on:
+  pull_request:
+    branches: 
+        - master
+    paths:
+        - "models/java/**"
+    
+jobs:
+    check-versions:
+        name: check-version-job
+        runs-on: ubuntu-latest
+        outputs:
+            has-version-changed: ${{ steps.version-change-check.outputs.VERSION_CHANGED }}
+    
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+            
+            - name: Set up JDK
+              uses: actions/setup-java@v4
+              with:
+                java-version: '17.0.11'
+                distribution: 'temurin'
+
+            - name: Extract Version from Current Branch
+              id: extract_version_current
+              working-directory: models/java/gbfs-java-model
+              run: echo "VERSION_CURRENT=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)" >> $GITHUB_OUTPUT
+
+            - name: Checkout master branch
+              run: |
+                git fetch origin master
+                git checkout master
+            
+            - name: Extract Version from Master Branch
+              id: extract_version_master
+              working-directory: models/java/gbfs-java-model
+              run: echo "VERSION_MASTER=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)" >> $GITHUB_OUTPUT
+            
+            - name: Compare versions
+              id: version-change-check
+              env:
+                local_version: ${{ steps.extract_version_current.outputs.VERSION_CURRENT }}
+                master_version: ${{ steps.extract_version_master.outputs.VERSION_MASTER }}
+              run: |
+                if [ "$local_version" != "$master_version" ]; then
+                    echo "Local branch version ($local_version) is different from master branch version ($master_version)"
+                    echo "VERSION_CHANGED=true" >> $GITHUB_OUTPUT
+                else
+                    echo "Local branch version ($local_version) is the same as master branch version ($master_version)"
+                    echo "Please update the models/java/gbfs-java-model/pom.xml version so that your changes will be published."
+                    echo "VERSION_CHANGED=false" >> $GITHUB_OUTPUT
+                fi
+
+    github-pr-comment:
+        name: pr comment to update pom.xml
+        needs: [check-versions]
+        if: needs.check-versions.outputs.has-version-changed == 'false'
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Comment on PR to update pom.xml
+              uses: actions/github-script@v7
+              with:
+                github-token: ${{ secrets.GITHUB_TOKEN }}
+                script: |
+                  github.rest.issues.createComment({
+                    issue_number: context.issue.number,
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    body: 'Thank you for opening/editing this pull request. Please update the models/java/gbfs-java-model/pom.xml version so that your changes will be published.'
+                  });
+            - name: Fail the workflow
+              run: exit 1
+    

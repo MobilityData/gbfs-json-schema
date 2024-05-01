@@ -2,7 +2,7 @@ name: GBFS Typescript Language Bindings - PR Check
 on:
   pull_request:
     branches: 
-        - main
+        - master
     paths:
       - "models/typescript/**"
     

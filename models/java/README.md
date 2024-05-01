@@ -48,7 +48,7 @@ ObjectMapper objectMapper = new ObjectMapper();
 
 // Assume some InputStream containing a serialized instance of vehicle_status.json
 // Deserialize into corresponding java class
-VehicleStatus vehicleStatus = objectMapper.readValue(inputStream, GBFSVehicleStatus.class);
+GBFSVehicleStatus vehicleStatus = objectMapper.readValue(inputStream, GBFSVehicleStatus.class);
 
 // It can be serialized in a similar fashion,
 objectMapper.writeValue(outputStream, vehicleStatus);
