@@ -70,7 +70,7 @@ jobs:
                     issue_number: context.issue.number,
                     owner: context.repo.owner,
                     repo: context.repo.repo,
-                    body: 'Hello! Thanks for opening/editing this pull request. Please update the models/java/gbfs-java-model/pom.xml version so that your changes will be published.'
+                    body: 'Thank you for opening/editing this pull request. Please update the models/java/gbfs-java-model/pom.xml version so that your changes will be published.'
                   });
             - name: Fail the workflow
               run: exit 1
