@@ -32,9 +32,9 @@ pub struct Vehicle {
     pub lat: Option<Latitude>,
     /// Longitude of the vehicle in decimal degrees.
     pub lon: Option<Longitude>,
-    /// Is the vehicle currently reserved? 
+    /// Is the vehicle currently reserved?
     pub is_reserved: bool,
-    /// Is the vehicle currently disabled? 
+    /// Is the vehicle currently disabled?
     pub is_disabled: bool,
     /// Rental URIs for Android, iOS, and web
     pub rental_uris: Option<RentalUris>,
@@ -52,7 +52,7 @@ pub struct Vehicle {
     /// The [Station](crate::v3_0_rc2::files::station_information::Station) where this vehicle must be returned to.
     pub home_station_id: Option<StationID>,
     /// The [PricingPlan](crate::v3_0_rc2::files::system_pricing_plans::SystemPricingPlan) this vehicle is eligible for.
-    /// 
+    ///
     /// If this field is defined it supersedes [default_pricing_plan_id](crate::v3_0_rc2::files::system_information::SystemInformation::default_pricing_plan_id).
     pub pricing_plan_id: Option<PricingPlanID>,
     /// List of vehicle equipment provided by the operator in addition to the accessories already provided in the vehicle (field vehicle_accessories of vehicle_types.json) but subject to more frequent updates.
@@ -72,6 +72,6 @@ pub struct RentalUris {
     pub android: Option<URI>,
     /// URI that can be used on iOS to launch the rental app for this vehicle.
     pub ios: Option<URI>,
-    /// URL that can be used by a web browser to show more information about renting a vehicle at this vehicle. 
+    /// URL that can be used by a web browser to show more information about renting a vehicle at this vehicle.
     pub web: Option<URL>,
 }

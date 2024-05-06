@@ -40,19 +40,19 @@ pub struct Station {
     /// Number of disabled dock points at the station.
     pub num_docks_disabled: Option<u32>,
     /// Is the station currently on the street?
-    /// 
+    ///
     /// In seasonal systems where equipment is removed during winter, boolean SHOULD be set to `false` during the off season.
     /// May also be set to `false` to indicate planned (future) stations which have not yet been installed.
     pub is_installed: bool,
     /// Is the station currently renting vehicles?
-    /// 
+    ///
     /// If the station is temporarily taken out of service and not allowing rentals, this field MUST be set to `false`.
     ///
     /// If a station becomes inaccessible to users due to road construction or other factors this field SHOULD be set to `false`.
     /// Field SHOULD be set to `false` during hours or days when the system is not offering vehicles for rent.
     pub is_renting: bool,
-    /// Is the station accepting vehicle returns? 
-    /// 
+    /// Is the station accepting vehicle returns?
+    ///
     /// If the station is temporarily taken out of service and not allowing vehicle returns, this field MUST be set to `false`.
     /// If a station becomes inaccessible to users due to road construction or other factors, this field SHOULD be set to `false`.
     pub is_returning: bool,
