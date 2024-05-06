@@ -102,7 +102,7 @@ pub struct VehicleTypesCapacity {
     /// Vehicles types that may park at the virtual station.
     pub vehicle_type_ids: Vec<VehicleTypeID>,
     /// If the virtual station is defined by [station_area](Station::station_area), this is the number that can park within the station area.
-    /// 
+    ///
     /// If [lat](Station::lat)/[lon](Station::lon) is defined, this is the number that can park at those coordinates.
     pub count: u32,
 }

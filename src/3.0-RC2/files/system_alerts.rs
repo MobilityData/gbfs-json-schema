@@ -28,7 +28,7 @@ pub struct SystemAlert {
     pub r#type: String,
     /// Indicating when the alert is in effect (for example, when the system or station is actually closed, or when a station is scheduled to be moved).
     pub times: Vec<AlertTime>,
-    /// If this is an alert that affects one or more stations, include their ID(s). Otherwise omit this field. 
+    /// If this is an alert that affects one or more stations, include their ID(s). Otherwise omit this field.
     /// If both [station_ids][SystemAlert::station_ids] and [region_ids][SystemAlert::region_ids] are omitted, this alert affects the entire system.
     pub station_ids: Option<Vec<StationID>>,
     /// If this system has regions, and if this alert only affects certain regions, include their ID(s).

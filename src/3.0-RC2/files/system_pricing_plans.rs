@@ -30,10 +30,10 @@ pub struct SystemPricingPlan {
     pub url: Option<URL>,
     /// Name of this pricing plan.
     pub name: Option<Vec<LocalizedString>>,
-    /// Currency used to pay the fare. 
+    /// Currency used to pay the fare.
     pub currency: Currency,
     /// Fare price, in the unit specified by currency.
-    /// 
+    ///
     /// In case of non-rate price, this field is the total price.
     /// In case of rate price, this field is the base price that is charged only once per trip (typically the price for unlocking) in addition to per_km_pricing and/or per_min_pricing.
     pub price: Option<NonNegativeFloat>,
@@ -69,11 +69,11 @@ pub struct PricingRate {
     /// Can be a negative number, which indicates that the traveler will receive a discount.
     pub rate: f64,
     /// Interval at which the rate of this segment is either reapplied indefinitely, or if defined, up until (but not including) `end` unit.
-    /// 
+    ///
     /// An interval of 0 indicates the rate is only charged once.
     pub interval: NonNegativeFloat,
     /// The unit at which the rate will no longer apply (exclusive) for example, if end is `20` the rate no longer applies at `20.00`.
-    /// 
+    ///
     ///  If this field is empty, the price issued for this segment is charged until the trip ends, in addition to the cost of any subsequent segments.
     pub end: Option<i32>,
 }

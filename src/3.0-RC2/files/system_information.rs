@@ -47,12 +47,13 @@ pub struct SystemInformationData {
     pub termination_date: Option<Date>,
     /// This OPTIONAL field SHOULD contain a single voice telephone number for the specified system’s customer service department.
     pub phone_number: Option<PhoneNumber>,
-    pub email: Option<Email>,
     /// This OPTIONAL field SHOULD contain a single contact email address actively monitored by the operator’s customer service department.
     /// This email address SHOULD be a direct contact point where riders can reach a customer service representative.
-    pub feed_contact_email: Option<Email>,
+    pub email: Option<Email>,
     /// This field MUST contain a single contact email for feed consumers to report issues with the feed.
     /// This email address SHOULD point to a stable email address, that does not correspond to an individual but rather the team or company that manages GBFS feeds.
+    pub feed_contact_email: Option<Email>,
+    // REQUIRED if the producer publishes datasets for more than one system geography, for example Berlin and Paris. A fully qualified URL pointing to the manifest.json file for the publisher.
     pub manifest_url: Option<ManifestFileUrl>,
     /// The time zone where the system is located.
     pub timezone: Option<Timezone>,
