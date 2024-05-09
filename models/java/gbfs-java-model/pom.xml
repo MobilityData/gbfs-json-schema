@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.mobilitydata</groupId>
     <artifactId>gbfs-java-model</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
 
     <name>gbfs-java-model</name>
 
@@ -17,8 +17,8 @@
     </organization>
     <licenses>
         <license>
-            <name>EUPL-1.2 with modifications</name>
-            <url>https://joinup.ec.europa.eu/software/page/eupl</url>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
           </license>
     </licenses>
