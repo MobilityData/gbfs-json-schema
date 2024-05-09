@@ -1,6 +1,6 @@
 # gbfs-java-model
 
-![Maven Central Version](https://img.shields.io/maven-central/v/org.mobilitydata.gbfs/gbfs-java-model.svg)
+![Maven Central Version](https://img.shields.io/maven-central/v/org.mobilitydata/gbfs-java-model.svg)
 
 Generates Java model from GBFS json schema using jsonschema2pojo with jackson2 annotations.
 
