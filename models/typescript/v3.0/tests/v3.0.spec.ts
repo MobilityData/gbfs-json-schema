@@ -29,18 +29,18 @@ const { VehicleStatus } = createCheckers(VehicleStatusTI);
 const { VehicleTypes } = createCheckers(VehicleTypesTI);
 
 // json test data: these are gbfs with no errors for v3.0
-import gbfsVersionsJson from './data/gbfs_versions.json';
-import gbfsJson from './data/gbfs.json';
-import geofencingZonesJson from './data/geofencing_zones.json';
-import manifestJson from './data/manifest.json';
-import stationInformationJson from './data/station_information.json';
-import stationStatusJson from './data/station_status.json';
-import systemAlertsJson from './data/system_alerts.json';
-import systemInformationJson from './data/system_information.json';
-import systemPricingPlansJson from './data/system_pricing_plans.json';
-import systemRegionsJson from './data/system_regions.json';
-import vehicleStatusJson from './data/vehicle_status.json';
-import vehicleTypesJson from './data/vehicle_types.json';
+import gbfsVersionsJson from '../../../../testFixtures/v3.0/gbfs_versions.json';
+import gbfsJson from '../../../../testFixtures/v3.0/gbfs.json';
+import geofencingZonesJson from '../../../../testFixtures/v3.0/geofencing_zones.json';
+import manifestJson from '../../../../testFixtures/v3.0/manifest.json';
+import stationInformationJson from '../../../../testFixtures/v3.0/station_information.json';
+import stationStatusJson from '../../../../testFixtures/v3.0/station_status.json';
+import systemAlertsJson from '../../../../testFixtures/v3.0/system_alerts.json';
+import systemInformationJson from '../../../../testFixtures/v3.0/system_information.json';
+import systemPricingPlansJson from '../../../../testFixtures/v3.0/system_pricing_plans.json';
+import systemRegionsJson from '../../../../testFixtures/v3.0/system_regions.json';
+import vehicleStatusJson from '../../../../testFixtures/v3.0/vehicle_status.json';
+import vehicleTypesJson from '../../../../testFixtures/v3.0/vehicle_types.json';
 
 // Date objects cannot be represented in JSON
 // Manual checks for dates are required
