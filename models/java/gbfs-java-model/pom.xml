@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.mobilitydata</groupId>
     <artifactId>gbfs-java-model</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
 
     <name>gbfs-java-model</name>
 
@@ -170,7 +170,23 @@
             </plugins>
         </pluginManagement>
         <plugins>
-            
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>${maven-exec-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <id>schema-to-subfolders</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>./bin/schema-to-subfolders.sh</executable>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.jsonschema2pojo</groupId>
                 <artifactId>jsonschema2pojo-maven-plugin</artifactId>
@@ -197,7 +213,7 @@
                             <serializable>true</serializable>
                             <initializeCollections>false</initializeCollections>
                             <generateBuilders>true</generateBuilders>
-                            <sourceDirectory>${basedir}/../../../v2.2</sourceDirectory>
+                            <sourceDirectory>${basedir}/resources/v2.2</sourceDirectory>
                             <targetPackage>org.mobilitydata.gbfs.v2_2</targetPackage>
                             <customRuleFactory>org.mobilitydata.gbfs.GeofencingRuleFactory</customRuleFactory>
                         </configuration>
@@ -216,7 +232,7 @@
                             <serializable>true</serializable>
                             <initializeCollections>false</initializeCollections>
                             <generateBuilders>true</generateBuilders>
-                            <sourceDirectory>${basedir}/../../../v2.3</sourceDirectory>
+                            <sourceDirectory>${basedir}/resources/v2.3</sourceDirectory>
                             <targetPackage>org.mobilitydata.gbfs.v2_3</targetPackage>
                             <customRuleFactory>org.mobilitydata.gbfs.GeofencingRuleFactory</customRuleFactory>
                         </configuration>
@@ -235,7 +251,7 @@
                             <serializable>true</serializable>
                             <initializeCollections>false</initializeCollections>
                             <generateBuilders>true</generateBuilders>
-                            <sourceDirectory>${basedir}/../../../v3.0</sourceDirectory>
+                            <sourceDirectory>${basedir}/resources/v3.0</sourceDirectory>
                             <targetPackage>org.mobilitydata.gbfs.v3_0</targetPackage>
                             <customRuleFactory>org.mobilitydata.gbfs.GeofencingRuleFactory</customRuleFactory>
                         </configuration>

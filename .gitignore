@@ -90,5 +90,6 @@ build/
 models/typescript/node_modules/*
 
 models/java/gbfs-java-model/target/*
+models/java/gbfs-java-model/resources/*
 models/java/rule-factory/target/*
 *.iml
