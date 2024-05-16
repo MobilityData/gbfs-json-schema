@@ -1,7 +1,6 @@
 package org.mobilitydata.gbfs.v2_2.free_bike_status;
 
 import org.mobilitydata.gbfs.TestBase;
-import org.mobilitydata.gbfs.v2_2.GBFSFreeBikeStatus;
 import org.junit.jupiter.api.Test;
 
 class FreeBikeStatusTest extends TestBase {

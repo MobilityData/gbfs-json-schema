@@ -2,18 +2,19 @@ package org.mobilitydata.gbfs.v2_2.gbfs;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
-import org.mobilitydata.gbfs.v2_2.GBFSFreeBikeStatus;
-import org.mobilitydata.gbfs.v2_2.GBFSGbfsVersions;
-import org.mobilitydata.gbfs.v2_2.GBFSGeofencingZones;
-import org.mobilitydata.gbfs.v2_2.GBFSStationInformation;
-import org.mobilitydata.gbfs.v2_2.GBFSStationStatus;
-import org.mobilitydata.gbfs.v2_2.GBFSSystemAlerts;
-import org.mobilitydata.gbfs.v2_2.GBFSSystemCalendar;
-import org.mobilitydata.gbfs.v2_2.GBFSSystemHours;
-import org.mobilitydata.gbfs.v2_2.GBFSSystemInformation;
-import org.mobilitydata.gbfs.v2_2.GBFSSystemPricingPlans;
-import org.mobilitydata.gbfs.v2_2.GBFSSystemRegions;
-import org.mobilitydata.gbfs.v2_2.GBFSVehicleTypes;
+
+import org.mobilitydata.gbfs.v2_2.free_bike_status.GBFSFreeBikeStatus;
+import org.mobilitydata.gbfs.v2_2.system_calendar.GBFSSystemCalendar;
+import org.mobilitydata.gbfs.v2_2.system_hours.GBFSSystemHours;
+import org.mobilitydata.gbfs.v2_2.system_information.GBFSSystemInformation;
+import org.mobilitydata.gbfs.v2_2.gbfs_versions.GBFSGbfsVersions;
+import org.mobilitydata.gbfs.v2_2.geofencing_zones.GBFSGeofencingZones;
+import org.mobilitydata.gbfs.v2_2.station_information.GBFSStationInformation;
+import org.mobilitydata.gbfs.v2_2.station_status.GBFSStationStatus;
+import org.mobilitydata.gbfs.v2_2.system_alerts.GBFSSystemAlerts;
+import org.mobilitydata.gbfs.v2_2.system_pricing_plans.GBFSSystemPricingPlans;
+import org.mobilitydata.gbfs.v2_2.system_regions.GBFSSystemRegions;
+import org.mobilitydata.gbfs.v2_2.vehicle_types.GBFSVehicleTypes;
 
 import java.util.HashMap;
 import java.util.Map;

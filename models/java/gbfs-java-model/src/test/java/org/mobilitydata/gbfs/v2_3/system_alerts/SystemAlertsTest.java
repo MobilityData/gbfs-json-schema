@@ -1,7 +1,6 @@
 package org.mobilitydata.gbfs.v2_3.system_alerts;
 
 import org.mobilitydata.gbfs.TestBase;
-import org.mobilitydata.gbfs.v2_3.GBFSSystemAlerts;
 import org.junit.jupiter.api.Test;
 
 class SystemAlertsTest extends TestBase {

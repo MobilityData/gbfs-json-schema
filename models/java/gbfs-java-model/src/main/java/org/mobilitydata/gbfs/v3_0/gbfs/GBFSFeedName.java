@@ -1,17 +1,15 @@
 package org.mobilitydata.gbfs.v3_0.gbfs;
 
-import org.mobilitydata.gbfs.v3_0.GBFSGbfsVersions;
-import org.mobilitydata.gbfs.v3_0.GBFSGeofencingZones;
-import org.mobilitydata.gbfs.v3_0.GBFSStationInformation;
-import org.mobilitydata.gbfs.v3_0.GBFSStationStatus;
-import org.mobilitydata.gbfs.v3_0.GBFSSystemAlerts;
-import org.mobilitydata.gbfs.v3_0.GBFSSystemInformation;
-import org.mobilitydata.gbfs.v3_0.GBFSSystemPricingPlans;
-import org.mobilitydata.gbfs.v3_0.GBFSSystemRegions;
-import org.mobilitydata.gbfs.v3_0.GBFSVehicleStatus;
-import org.mobilitydata.gbfs.v3_0.GBFSVehicleTypes;
-import org.mobilitydata.gbfs.v3_0.GBFSFeed;
-import org.mobilitydata.gbfs.v3_0.GBFSGbfs;
+import org.mobilitydata.gbfs.v3_0.gbfs_versions.GBFSGbfsVersions;
+import org.mobilitydata.gbfs.v3_0.geofencing_zones.GBFSGeofencingZones;
+import org.mobilitydata.gbfs.v3_0.station_information.GBFSStationInformation;
+import org.mobilitydata.gbfs.v3_0.station_status.GBFSStationStatus;
+import org.mobilitydata.gbfs.v3_0.system_alerts.GBFSSystemAlerts;
+import org.mobilitydata.gbfs.v3_0.system_information.GBFSSystemInformation;
+import org.mobilitydata.gbfs.v3_0.system_pricing_plans.GBFSSystemPricingPlans;
+import org.mobilitydata.gbfs.v3_0.system_regions.GBFSSystemRegions;
+import org.mobilitydata.gbfs.v3_0.vehicle_status.GBFSVehicleStatus;
+import org.mobilitydata.gbfs.v3_0.vehicle_types.GBFSVehicleTypes;
 
 import java.util.EnumMap;
 import java.util.Map;

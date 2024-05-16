@@ -1,5 +1,4 @@
 package org.mobilitydata.gbfs.v2_2.gbfs;
-import org.mobilitydata.gbfs.v2_2.GBFSGbfs;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyDescription;
