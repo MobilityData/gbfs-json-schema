@@ -9,7 +9,6 @@ cd ../../..
 
 # clears old resources
 rm -rf ./models/java/gbfs-java-model/resources
-rm -rf ./models/java/gbfs-java-model/target
 
 output_path="./models/java/gbfs-java-model/resources/"
 path_to_schemas="."
