@@ -1,7 +1,6 @@
 package org.mobilitydata.gbfs.v2_3.system_calendar;
 
 import org.mobilitydata.gbfs.TestBase;
-import org.mobilitydata.gbfs.v2_3.GBFSSystemCalendar;
 import org.junit.jupiter.api.Test;
 
 class SystemCalendarTest extends TestBase {

@@ -25,7 +25,7 @@ dependencies section:
 <dependency>
   <groupId>org.mobilitydata</groupId>
   <artifactId>gbfs-java-model</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.5</version>
 </dependency>
 ```
 
@@ -40,7 +40,7 @@ Make sure the Maven central repository is referenced by your project.
 
 ## Example Code
 ```java
-import org.mobilitydata.gbfs.v3_0.GBFSVehicleStatus;
+import org.mobilitydata.gbfs.v3_0.vehicle_status.GBFSVehicleStatus;
 
 // Assume you use Jackson's ObjectMapper for serializing / deserializing,
 // this is just one of many options
