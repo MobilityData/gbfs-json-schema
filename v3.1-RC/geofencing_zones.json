@@ -1,0 +1,202 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "https://github.com/MobilityData/gbfs/blob/v3.1-RC/gbfs.md#geofencing_zonesjson",
+  "description": "Describes geofencing zones and their associated rules and attributes (added in v2.1-RC).",
+  "type": "object",
+  "properties": {
+    "last_updated": {
+      "description": "Last time the data in the feed was updated in RFC3339 format.",
+      "type": "string",
+      "format": "date-time"
+    },
+    "ttl": {
+      "description": "Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).",
+      "type": "integer",
+      "minimum": 0
+    },
+    "version": {
+      "description": "GBFS version number to which the feed conforms, according to the versioning framework.",
+      "type": "string",
+      "const": "3.1-RC"
+    },
+    "data": {
+      "description": "Array that contains geofencing information for the system.",
+      "type": "object",
+      "properties": {
+        "geofencing_zones": {
+          "type": "object",
+          "description": "Each geofenced zone and its associated rules and attributes is described as an object within the array of features.",
+          "properties": {
+            "type": {
+              "description": "FeatureCollection as per IETF RFC 7946.",
+              "type": "string",
+              "enum": ["FeatureCollection"]
+            },
+            "features": {
+              "description": "Array of objects.",
+              "type": "array",
+              "items": {
+                "title": "GeoJSON Feature",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "enum": ["Feature"]
+                  },
+                  "properties": {
+                    "description": "Describing travel allowances and limitations.",
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "description": "Public name of the geofencing zone.",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "text": {
+                              "description": "The translated text.",
+                              "type": "string"
+                            },
+                            "language": {
+                              "description": "IETF BCP 47 language code.",
+                              "type": "string",
+                              "pattern": "^[a-z]{2,3}(-[A-Z]{2})?$"
+                            }
+                          },
+                          "required": ["text", "language"]
+                        }
+                      },
+                      "start": {
+                        "description": "Start time of the geofencing zone in RFC3339 format.",
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "end": {
+                        "description": "End time of the geofencing zone in RFC3339 format.",
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "rules": {
+                        "description": "Array of Rule objects defining restrictions that apply within the area of the polygon.",
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "vehicle_type_ids": {
+                              "type": "array",
+                              "description": "Array of vehicle type IDs for which these restrictions apply.",
+                              "items": { "type": "string" }
+                            },
+                            "ride_start_allowed": {
+                              "description": "Is the ride allowed to start in this zone?",
+                              "type": "boolean"
+                            },
+                            "ride_end_allowed": {
+                              "description": "Is the ride allowed to end in this zone?",
+                              "type": "boolean"
+                            },
+                            "ride_through_allowed": {
+                              "description": "Is the ride allowed to travel through this zone?",
+                              "type": "boolean"
+                            },
+                            "maximum_speed_kph": {
+                              "description": "What is the maximum speed allowed, in kilometers per hour?",
+                              "type": "integer",
+                              "minimum": 0
+                            },
+                            "station_parking": {
+                              "description": "Vehicle MUST be parked at stations defined in station_information.json within this geofence zone",
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "ride_start_allowed",
+                            "ride_end_allowed",
+                            "ride_through_allowed"
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  "geometry": {
+                    "description": "A polygon that describes where rides might not be able to start, end, go through, or have other limitations. Must follow the right-hand rule.",
+                    "title": "GeoJSON MultiPolygon",
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string",
+                        "enum": ["MultiPolygon"]
+                      },
+                      "coordinates": {
+                        "type": "array",
+                        "items": {
+                          "type": "array",
+                          "items": {
+                            "type": "array",
+                            "minItems": 4,
+                            "items": {
+                              "type": "array",
+                              "minItems": 2,
+                              "items": {
+                                "type": "number"
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "required": ["type", "coordinates"]
+                  }
+                },
+                "required": ["type", "geometry", "properties"]
+              }
+            }
+          },
+          "required": ["type", "features"]
+        },
+        "global_rules": {
+          "description": "Array of Rule objects defining restrictions that apply globally in all areas as the default restrictions, except where overridden with an explicit geofencing zone.",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "vehicle_type_ids": {
+                "type": "array",
+                "description": "Array of vehicle type IDs for which these restrictions apply.",
+                "items": { "type": "string" }
+              },
+              "ride_start_allowed": {
+                "description": "Is the ride allowed to start in this zone?",
+                "type": "boolean"
+              },
+              "ride_end_allowed": {
+                "description": "Is the ride allowed to end in this zone?",
+                "type": "boolean"
+              },
+              "ride_through_allowed": {
+                "description": "Is the ride allowed to travel through this zone?",
+                "type": "boolean"
+              },
+              "maximum_speed_kph": {
+                "description": "What is the maximum speed allowed, in kilometers per hour?",
+                "type": "integer",
+                "minimum": 0
+              },
+              "station_parking": {
+                "description": "Vehicle MUST be parked at stations defined in station_information.json within this geofence zone",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "ride_start_allowed",
+              "ride_end_allowed",
+              "ride_through_allowed"
+            ]
+          }
+        }
+      },
+      "required": ["geofencing_zones", "global_rules"]
+    }
+  },
+  "required": ["last_updated", "ttl", "version", "data"]
+}
