@@ -73,6 +73,16 @@
                 "type": "number",
                 "minimum": 0
               },
+              "reservation_price_per_min": {
+                "description": "The cost, described as per minute rate, to reserve the vehicle prior to beginning a rental.",
+                "type": "number",
+                "minimum": 0
+              },
+              "reservation_price_flat_rate": {
+                "description": "The cost, described as a flat rate, to reserve the vehicle prior to beginning a rental.",
+                "type": "number",
+                "minimum": 0
+              },
               "is_taxable": {
                 "description":
                   "Will additional tax be added to the base price?",
