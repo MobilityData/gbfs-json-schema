@@ -64,9 +64,7 @@ There is no support in jsonschema2pojo to handle "patternProperties" sanely, it 
 in a class without any properties. The `gbfs.json` feed uses "patternProperties" for the `data`
 property to define an object per language, where the language code is the name of the property.
 
-The generated Gbfs class is therefore extended by
-[src/main/org/entur/gbfs/v2_2/gbfs/GBFS.java](src/main/org/entur/gbfs/v2_2/gbfs/GBFS.java)
-to override the `data` property with a Map implementation. This extended class should be used
+The generated Gbfs class is therefore extended by [gbfs-java-model/src/main/java/org/mobilitydata/gbfs/v2_2/gbfs/GBFS.java](gbfs-java-model/src/main/java/org/mobilitydata/gbfs/v2_2/gbfs/GBFS.java) to override the `data` property with a Map implementation. This extended class should be used
 when unmarshalling the `gbfs.json` feed.
 
 #### station_information.json
