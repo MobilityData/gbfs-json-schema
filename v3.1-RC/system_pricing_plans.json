@@ -189,7 +189,11 @@
               "price",
               "is_taxable",
               "description"
-            ]
+            ],
+            "dependencies": {
+              "reservation_price_flat_rate": { "not": { "required": ["reservation_price_per_min"] } },
+              "reservation_price_per_min": { "not": { "required": ["reservation_price_flat_rate"] } }
+            }
           }
         }
       },
