@@ -8,7 +8,7 @@ To use the `gbfs-language-bindings` structs in your own project, you need to
 first install this library with: 
 
 ```
-go get github.com/MobilityData/gbfs-language-bindings/golang
+go get github.com/MobilityData/gbfs-json-schema/models/golang 
 ```
 
 ## Versions
