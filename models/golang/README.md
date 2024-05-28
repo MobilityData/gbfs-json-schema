@@ -20,16 +20,16 @@ Using the pre-build unmarshaller
 import(
     "net/http"
     "io"
-    v30systemInformation "github.com/MobilityData/gbfs-language-bindings/golang/v3.0/system_information"
+    v30systemInformation "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/system_information"
 )
 const url = "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/system-information";
 resp, err := http.Get(url)
 defer resp.Body.Close()
 body, err := io.ReadAll(resp.Body)
-systemInformationData, unmarshalError = v30systemInformation.UnmarshalSystemInformation(body)
+systemInformationData, unmarshalError := v30systemInformation.UnmarshalSystemInformation(body)
 if unmarshalError != nil {
+    // NOTE: If any type mismatch occurs (ex: number instead of string) it will show up as an error
     fmt.Println("Error unmarshelling:", err)
-    return
 }
 // systemInformationData is now typed as SystemInformation
 ```
@@ -37,19 +37,20 @@ Or you can do it manually
 ```go
 import(
     "net/http"
+    "encoding/json"
     "io"
-    v30systemInformation "github.com/MobilityData/gbfs-language-bindings/golang/v3.0/system_information"
+    v30systemInformation "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/system_information"
 )
 const url = "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/system-information";
-resp, err := http.Get(url)
+resp, errHttp := http.Get(url)
 defer resp.Body.Close()
-body, err := io.ReadAll(resp.Body)
+body, errRead := io.ReadAll(resp.Body)
 
 var systemInformationData v30systemInformation.SystemInformation
-err = json.Unmarshal(body, &systemInformationData)
-if err != nil {
+errMarshel := json.Unmarshal(body, &systemInformationData)
+if errMarshel != nil {
+    // NOTE: If any type mismatch occurs (ex: number instead of string) it will show up as an error
     fmt.Println("Error unmarshaling JSON:", err)
-    return
 }
 
 // systemInformationData is now typed as SystemInformation
