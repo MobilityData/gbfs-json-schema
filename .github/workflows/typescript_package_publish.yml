@@ -4,7 +4,8 @@ on:
     push:
       branches:
         - master
-
+      paths:
+        - "models/typescript/**"
 jobs:
     build-publish:
         name: build-publish-job

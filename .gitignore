@@ -88,6 +88,7 @@ build/
 
 # Node Modules
 models/typescript/node_modules/*
+scripts/node_modules/*
 
 models/java/gbfs-java-model/target/*
 models/java/gbfs-java-model/resources/*
