@@ -37,14 +37,6 @@ pub struct SystemPricingPlan {
     /// In case of non-rate price, this field is the total price.
     /// In case of rate price, this field is the base price that is charged only once per trip (typically the price for unlocking) in addition to per_km_pricing and/or per_min_pricing.
     pub price: Option<NonNegativeFloat>,
-    /// The cost, described as per minute rate, to reserve the vehicle prior to beginning a rental.
-    /// This amount is charged for each minute of the vehicle reservation until the rental is initiated, or until the number of minutes defined in vehicle_types.json#default_reserve_time elapses, whichever comes first.
-    /// This field MUST NOT be combined in a single pricing plan with reservation_price_flat_rate.
-    pub reservation_price_per_min: Option<NonNegativeFloat>,
-    /// The cost, described as a flat rate, to reserve the vehicle prior to beginning a rental.
-    /// This amount is charged once to reserve the vehicle for the duration of the time defined by vehicle_types.json#default_reserve_time.
-    /// This field MUST NOT be combined in a single pricing plan with reservation_price_per_min.
-    pub reservation_price_flat_rate: Option<NonNegativeFloat>,
     /// Will additional tax be added to the base price?
     pub is_taxable: Option<bool>,
     /// Customer-readable description of the pricing plan.
