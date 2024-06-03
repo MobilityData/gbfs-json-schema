@@ -1,0 +1,28 @@
+{
+    "last_updated": "2023-07-17T13:34:13+02:00",
+    "ttl": 60,
+    "version": "3.0",
+    "data": {
+        "name": [
+            {
+                "text": "Example Bike Rental",
+                "language": "en"
+            }
+        ],
+        "system_id": "example_cityname",
+        "timezone": "America/Chicago",
+        "languages": [
+            "en"
+        ],
+        "rental_apps": {
+            "android": {
+              "store_uri": "https://play.google.com/store/apps/details?id=com.example.android",
+              "discovery_uri": "com.example.android://"
+            },
+            "ios": {
+              "store_uri": "https://apps.apple.com/app/apple-store/id123456789",
+              "discovery_uri": "com.example.ios://"
+            }
+          }
+    }
+}

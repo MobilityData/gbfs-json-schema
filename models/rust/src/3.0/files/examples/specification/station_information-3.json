@@ -1,0 +1,24 @@
+{
+    "last_updated": "2023-07-17T13:34:13+02:00",
+    "ttl": 60,
+    "version": "3.0",
+    "data": {
+        "stations": [
+            {
+                "station_id": "425",
+                "name": [
+                    {
+                        "text": "Coppertail",
+                        "language": "en"
+                    }
+                ],
+                "lat": 27.956333,
+                "lon": -82.430436,
+                "rental_uris": {
+                    "android": "https://www.example.com/app?sid=1234567890&platform=android",
+                    "ios": "https://www.example.com/app?sid=1234567890&platform=ios"
+                }
+            }
+        ]
+    }
+}

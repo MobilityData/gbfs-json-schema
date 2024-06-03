@@ -1,0 +1,33 @@
+{
+    "last_updated": "2023-07-17T13:34:13+02:00",
+    "ttl": 0,
+    "version": "3.0",
+    "data": {
+        "stations": [
+            {
+                "station_id": "pga",
+                "name": [
+                    {
+                        "text": "Parking garage A",
+                        "language": "en"
+                    }
+                ],
+                "lat": 12.345678,
+                "lon": 45.678901,
+                "station_opening_hours": "Su-Th 05:00-22:00; Fr-Sa 05:00-01:00",
+                "parking_type": "underground_parking",
+                "parking_hoop": false,
+                "contact_phone": "+33109874321",
+                "is_charging_station": true,
+                "vehicle_docks_capacity": [
+                    {
+                        "vehicle_type_ids": [
+                            "abc123"
+                        ],
+                        "count": 7
+                    }
+                ]
+            }
+        ]
+    }
+}
