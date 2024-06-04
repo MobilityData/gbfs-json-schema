@@ -14,7 +14,8 @@ npm install gbfs-typescript-types --save-dev
 ```
 
 ## Versions
-Currently only version 3.0 of GBFS is supported
+- v3.0
+- v3.1-RC
 
 ## Example Code
 ```typescript
