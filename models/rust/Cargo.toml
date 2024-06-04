@@ -1,0 +1,56 @@
+[package]
+name = "gbfs_types"
+version = "0.1.1"
+edition = "2021"
+license = "Apache-2.0"
+description = "Types for GBFS"
+authors = ["MobilityData <it@mobilitydata.org>", "Tom Delmas <tom.delmas@fluctuo.com>"]
+repository = "https://github.com/MobilityData/gbfs-json-schema"
+homepage = "https://github.com/MobilityData/gbfs-json-schema/tree/master/models/rust"
+keywords = ["gbfs", "types"]
+categories = ["transit", "mobility"]
+readme = "README.md"
+
+[features]
+default = ["reqwest_blocking", "pyo3", "napi"]
+reqwest_blocking = ["reqwest/blocking"]
+pyo3 = ["dep:pyo3"]
+napi = ["dep:napi", "dep:napi-derive"]
+
+[dev-dependencies]
+pretty_assertions = "1.4"
+
+[dependencies]
+futures = "0.3"
+http = "1.0"
+serde_json = "1.0"
+serde_with = "3.6"
+url = "2.5"
+url_serde = "0.2"
+
+[dependencies.geo-types]
+version = "0.7"
+features = ["serde"]
+
+[dependencies.serde]
+version = "1.0"
+features = ["derive"]
+
+[dependencies.reqwest]
+version = "0.11"
+features = ["json"]
+
+[dependencies.napi]
+version = "2.15"
+default-features = false
+features = ["napi6"]
+optional = true
+
+[dependencies.napi-derive]
+version = "2.15"
+optional = true
+
+[dependencies.pyo3]
+version = "0.20"
+features = ["serde"]
+optional = true
