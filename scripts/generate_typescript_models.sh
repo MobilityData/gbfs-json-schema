@@ -35,7 +35,8 @@ for gbfs_version in "${gbfs_versions[@]}"; do
         npx quicktype -s schema "$folder_path$file_name" -o "$output_file.ts" --prefer-unions --just-types
 
         # JSON cannot represent Date objects, so manually change Date to string
-        sed -i "" "s/Date;/string;/g" "$output_file.ts"
+        #sed -i '' "s/Date;/string;/g" "$output_file.ts"
+        perl -pi -e "s/Date;/string;/g" "$output_file.ts"
 
         # generates files for typescript testing
         npx ts-interface-builder "$output_file.ts" -o $test_path
