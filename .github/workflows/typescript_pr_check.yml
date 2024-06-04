@@ -40,9 +40,6 @@ jobs:
     run-tests:
         name: run-tests-job
         runs-on: ubuntu-latest
-        defaults:
-          run:
-            working-directory: ./models/typescript
 
         steps:
             - name: Checkout repository
@@ -54,8 +51,12 @@ jobs:
                 node-version: '18'
     
             - name: Install dependencies
-              run: yarn
+              run: |
+                cd ./scripts
+                yarn
+                cd ../models/typescript
+                yarn
 
             - name: Run tests
-              run: yarn test
+              run: cd ./models/typescript && yarn test
     
