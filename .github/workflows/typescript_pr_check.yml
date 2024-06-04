@@ -37,7 +37,17 @@ jobs:
                     echo "Please update the package.json version so that your changes will be published."
                     exit 1
                 fi
-            
+    run-tests:
+        name: run-tests-job
+        runs-on: ubuntu-latest
+        defaults:
+          run:
+            working-directory: ./models/typescript
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
             - name: Setup Node.js
               uses: actions/setup-node@v2
               with:
