@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum GBFSFeedName {
-    GBFS("gbfs", GBFSGbfs.class),
+    GBFS("gbfs", org.mobilitydata.gbfs.v2_3.gbfs.GBFS.class),
     GBFSVersions("gbfs_versions", GBFSGbfsVersions.class),
     SystemInformation("system_information", GBFSSystemInformation.class),
     VehicleTypes("vehicle_types", GBFSVehicleTypes.class),
