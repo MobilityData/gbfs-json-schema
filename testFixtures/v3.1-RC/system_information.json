@@ -1,0 +1,28 @@
+{
+    "data": {
+        "feed_contact_email": "emailaddress@email.app",
+        "languages": [
+            "en"
+        ],
+        "manifest_url": "https://api.ridecheck.app/gbfs/v3/manifest.json",
+        "name": [
+            {
+                "language": "en",
+                "text": "Check Technologies"
+            }
+        ],
+        "opening_hours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
+        "system_id": "check_eindhoven",
+        "terms_last_updated": "2012-04-23",
+        "terms_url": [
+            {
+                "language": "en",
+                "text": "https://ridecheck.app"
+            }
+        ],
+        "timezone": "Europe/Amsterdam"
+    },
+    "last_updated": "2019-07-04T13:33:03.969Z",
+    "ttl": 3600,
+    "version": "3.1-RC"
+}

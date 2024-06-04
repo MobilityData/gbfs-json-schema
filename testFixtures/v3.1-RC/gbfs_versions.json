@@ -1,0 +1,25 @@
+{
+    "last_updated": "2019-07-04T13:33:03.969Z",
+    "ttl": 60,
+    "version": "3.1-RC",
+    "data": {
+        "versions": [
+            {
+                "version": "2.1",
+                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/2.1"
+            },
+            {
+                "version": "2.2",
+                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/2.2"
+            },
+            {
+                "version": "2.3",
+                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/2.3"
+            },
+            {
+                "version": "3.0",
+                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0"
+            }
+        ]
+    }
+}
