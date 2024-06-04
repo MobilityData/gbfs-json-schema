@@ -31,8 +31,9 @@ do
     npx quicktype -s schema "$folder_path/$file_name" -o "$output_file" --package $file_name_no_extension
 
     # JSON cannot represent time.Time objects, so manually change time.Time to string and removes the import "time"
-    sed -i "" "s/time\.Time/string/g" "$output_file"  
-    sed -i "" "s/import \"time\"//g" "$output_file"
+    # perl over sed because of compatibility issues with MacOS
+    perl -pi -e "s/time\.Time/string/g" "$output_file"  
+    perl -pi -e "s/import \"time\"//g" "$output_file"
 
     # Inject copyright text at the top of the file
     temp_file=$(mktemp)
