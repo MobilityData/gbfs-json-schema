@@ -22,7 +22,7 @@ import(
     "io"
     v30systemInformation "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/system_information"
 )
-const url = "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/system-information";
+const url = "https://berlin.example.tier-services.io/tier_paris/gbfs/3.0/system-information";
 resp, err := http.Get(url)
 defer resp.Body.Close()
 body, err := io.ReadAll(resp.Body)
@@ -41,7 +41,7 @@ import(
     "io"
     v30systemInformation "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/system_information"
 )
-const url = "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/system-information";
+const url = "https://berlin.example.tier-services.io/tier_paris/gbfs/3.0/system-information";
 resp, errHttp := http.Get(url)
 defer resp.Body.Close()
 body, errRead := io.ReadAll(resp.Body)
