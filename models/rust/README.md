@@ -28,7 +28,7 @@ use gbfs_types::v3_0::files::SystemInformationFile;
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
-    let gbfs_url = "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/system-information";
+    let gbfs_url = "https://example-gbfs-feed/gbfs/3.0/system-information";
     let client = reqwest::Client::new();
     let response = client.get(url).header("User-Agent", "rust-reqwest").send().await?;
 
@@ -57,12 +57,12 @@ async fn main() -> Result<(), Error> {
         feeds: vec![
             GbfsDataFeeds {
                 name: "system_information".to_string(),
-                url: "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/system-information".to_string(),
+                url: "https://example-gbfs-feed/gbfs/3.0/system-information".to_string(),
             },
             // ... all other feeds
             GbfsDataFeeds{
                 name: "gbfs_versions".to_string(),
-                url: "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/versions".to_string()
+                url: "https://example-gbfs-feed/gbfs/3.0/versions".to_string()
             }
         ],
     };
