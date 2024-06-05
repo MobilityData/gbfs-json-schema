@@ -4,7 +4,7 @@
         "languages": [
             "en"
         ],
-        "manifest_url": "https://api.ridecheck.app/gbfs/v3/manifest.json",
+        "manifest_url": "https://api.berlin.example.app/gbfs/v3/manifest.json",
         "name": [
             {
                 "language": "en",
@@ -17,7 +17,7 @@
         "terms_url": [
             {
                 "language": "en",
-                "text": "https://ridecheck.app"
+                "text": "https://berlin.example.app"
             }
         ],
         "timezone": "Europe/Amsterdam"

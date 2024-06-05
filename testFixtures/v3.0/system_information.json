@@ -4,7 +4,7 @@
         "languages": [
             "en"
         ],
-        "manifest_url": "https://api.ridecheck.app/gbfs/v3/manifest.json",
+        "manifest_url": "https://api.berlin.example.app/gbfs/v3/manifest.json",
         "name": [
             {
                 "language": "en",
@@ -12,12 +12,12 @@
             }
         ],
         "opening_hours": "Mo,Tu,We,Th,Fr,Sa,Su 00:00-23:59",
-        "system_id": "check_eindhoven",
+        "system_id": "example_london",
         "terms_last_updated": "2012-04-23",
         "terms_url": [
             {
                 "language": "en",
-                "text": "https://ridecheck.app"
+                "text": "https://berlin.example.app"
             }
         ],
         "timezone": "Europe/Amsterdam"

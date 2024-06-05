@@ -13,8 +13,8 @@
           "current_range_meters": 16000,
           "pricing_plan_id": "87c7ed6e-aecf-4900-9a85-2a78efbba65b",
           "rental_uris": {
-            "android": "https://tier.page.link/Vbaff",
-            "ios": "https://tier.page.link/Vbaff"
+            "android": "https://berlin.example.page.link/Vbaff",
+            "ios": "https://berlin.example.page.link/Vbaff"
           },
           "vehicle_id": "2b6488755477b6803d3e21072a3dbcff52fb8f806283fc73591c8053e6ad6125"
         },
@@ -27,8 +27,8 @@
           "current_range_meters": 12000,
           "pricing_plan_id": "87c7ed6e-aecf-4900-9a85-2a78efbba65b",
           "rental_uris": {
-            "android": "https://tier.page.link/Vbaff",
-            "ios": "https://tier.page.link/Vbaff"
+            "android": "https://berlin.example.page.link/Vbaff",
+            "ios": "https://berlin.example.page.link/Vbaff"
           },
           "vehicle_id": "654178e18313c008c3e7b662e094228ce0bc513894b5739dd15895e6c57b1336"
         },
@@ -41,8 +41,8 @@
           "current_range_meters": 19000,
           "pricing_plan_id": "87c7ed6e-aecf-4900-9a85-2a78efbba65b",
           "rental_uris": {
-            "android": "https://tier.page.link/Vbaff",
-            "ios": "https://tier.page.link/Vbaff"
+            "android": "https://berlin.example.page.link/Vbaff",
+            "ios": "https://berlin.example.page.link/Vbaff"
           },
           "vehicle_id": "3b76e14b223fedaba66179669872f9167025e0e821151ef3a0a0f67460a42b13"
         },
@@ -55,8 +55,8 @@
           "current_range_meters": 37000,
           "pricing_plan_id": "87c7ed6e-aecf-4900-9a85-2a78efbba65b",
           "rental_uris": {
-            "android": "https://tier.page.link/Vbaff",
-            "ios": "https://tier.page.link/Vbaff"
+            "android": "https://berlin.example.page.link/Vbaff",
+            "ios": "https://berlin.example.page.link/Vbaff"
           },
           "vehicle_id": "12b8d6baf647e3c87b5c790aed7cd8ebd4308ac53e9a54736724c0de5b479d69"
         },
@@ -69,8 +69,8 @@
           "current_range_meters": 6000,
           "pricing_plan_id": "87c7ed6e-aecf-4900-9a85-2a78efbba65b",
           "rental_uris": {
-            "android": "https://tier.page.link/Vbaff",
-            "ios": "https://tier.page.link/Vbaff"
+            "android": "https://berlin.example.page.link/Vbaff",
+            "ios": "https://berlin.example.page.link/Vbaff"
           },
           "vehicle_id": "1b3b711140409665782be31bd1b9de1a783d85ac0465594de706348c5fdfd986"
         },
@@ -83,8 +83,8 @@
           "current_range_meters": 10000,
           "pricing_plan_id": "87c7ed6e-aecf-4900-9a85-2a78efbba65b",
           "rental_uris": {
-            "android": "https://tier.page.link/Vbaff",
-            "ios": "https://tier.page.link/Vbaff"
+            "android": "https://berlin.example.page.link/Vbaff",
+            "ios": "https://berlin.example.page.link/Vbaff"
           },
           "vehicle_id": "b0f808a0c90e120e3239c1ffaf8b58888dcdf70fae5644f07273db1d869261cd"
         },
@@ -97,8 +97,8 @@
           "current_range_meters": 12000,
           "pricing_plan_id": "87c7ed6e-aecf-4900-9a85-2a78efbba65b",
           "rental_uris": {
-            "android": "https://tier.page.link/Vbaff",
-            "ios": "https://tier.page.link/Vbaff"
+            "android": "https://berlin.example.page.link/Vbaff",
+            "ios": "https://berlin.example.page.link/Vbaff"
           },
           "vehicle_id": "299f744dfd91d63fde6ceeb1e938bae3a64d475d8311a1e439dbca4c4a692f2f"
         }
