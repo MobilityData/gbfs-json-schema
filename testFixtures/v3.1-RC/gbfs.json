@@ -1,41 +1,17 @@
 {
-    "last_updated": "2019-07-04T13:33:03.969Z",
-    "ttl": 60,
+    "last_updated": "2023-07-17T13:34:13+02:00",
+    "ttl": 0,
     "version": "3.1-RC",
     "data": {
-        "feeds": [
-            {
-                "name": "system_information",
-                "url": "https://berlin.example.tier-services.io/tier_paris/gbfs/3.1-RC/system-information"
-            },
-            {
-                "name": "vehicle_status",
-                "url": "https://berlin.example.tier-services.io/tier_paris/gbfs/3.1-RC/vehicle-status"
-            },
-            {
-                "name": "vehicle_types",
-                "url": "https://berlin.example.tier-services.io/tier_paris/gbfs/3.1-RC/vehicle-types"
-            },
-            {
-                "name": "system_pricing_plans",
-                "url": "https://berlin.example.tier-services.io/tier_paris/gbfs/3.1-RC/system-pricing-plans"
-            },
-            {
-                "name": "station_information",
-                "url": "https://berlin.example.tier-services.io/tier_paris/gbfs/3.1-RC/station-information"
-            },
-            {
-                "name": "station_status",
-                "url": "https://berlin.example.tier-services.io/tier_paris/gbfs/3.1-RC/station-status"
-            },
-            {
-                "name": "geofencing_zones",
-                "url": "https://berlin.example.tier-services.io/tier_paris/gbfs/3.1-RC/geofencing-zones"
-            },
-            {
-                "name": "gbfs_versions",
-                "url": "https://berlin.example.tier-services.io/tier_paris/gbfs/3.1-RC/versions"
-            }
-        ]
+      "feeds": [
+        {
+          "name": "system_information",
+          "url": "https://www.example.com/gbfs/1/system_information"
+        },
+        {
+          "name": "station_information",
+          "url": "https://www.example.com/gbfs/1/station_information"
+        }
+      ]
     }
-}
+  }
