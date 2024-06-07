@@ -1,18 +1,18 @@
 import { createCheckers } from "ts-interface-checker";
 
 // checker model
-import GbfsVersionsTI from './ti/gbfs_versions-ti';
-import GbfsTI from './ti/gbfs-ti';
-import GeofencingZonesTI from './ti/geofencing_zones-ti';
-import ManifestTI from './ti/manifest-ti';
-import StationsInformationTI from './ti/station_information-ti';
-import StationStatusTI from './ti/station_status-ti';
-import SystemAlertsTI from "./ti/system_alerts-ti";
-import SystemInformationTI from './ti/system_information-ti';
-import SystemPricingPlansTI from './ti/system_pricing_plans-ti'
-import SystemRegionsTI  from "./ti/system_regions-ti";
-import VehicleStatusTI from "./ti/vehicle_status-ti";
-import VehicleTypesTI from './ti/vehicle_types-ti';
+import GbfsVersionsTI from '../v3.0/test-type-checkers/gbfs_versions-ti';
+import GbfsTI from '../v3.0/test-type-checkers/gbfs-ti';
+import GeofencingZonesTI from '../v3.0/test-type-checkers/geofencing_zones-ti';
+import ManifestTI from '../v3.0/test-type-checkers/manifest-ti';
+import StationsInformationTI from '../v3.0/test-type-checkers/station_information-ti';
+import StationStatusTI from '../v3.0/test-type-checkers/station_status-ti';
+import SystemAlertsTI from "../v3.0/test-type-checkers/system_alerts-ti";
+import SystemInformationTI from '../v3.0/test-type-checkers/system_information-ti';
+import SystemPricingPlansTI from '../v3.0/test-type-checkers/system_pricing_plans-ti'
+import SystemRegionsTI  from "../v3.0/test-type-checkers/system_regions-ti";
+import VehicleStatusTI from "../v3.0/test-type-checkers/vehicle_status-ti";
+import VehicleTypesTI from '../v3.0/test-type-checkers/vehicle_types-ti';
 
 // checkers
 const { GbfsVersions } = createCheckers(GbfsVersionsTI);
@@ -29,18 +29,18 @@ const { VehicleStatus } = createCheckers(VehicleStatusTI);
 const { VehicleTypes } = createCheckers(VehicleTypesTI);
 
 // json test data: these are gbfs with no errors for v3.0
-import gbfsVersionsJson from '../../../../testFixtures/v3.0/gbfs_versions.json';
-import gbfsJson from '../../../../testFixtures/v3.0/gbfs.json';
-import geofencingZonesJson from '../../../../testFixtures/v3.0/geofencing_zones.json';
-import manifestJson from '../../../../testFixtures/v3.0/manifest.json';
-import stationInformationJson from '../../../../testFixtures/v3.0/station_information.json';
-import stationStatusJson from '../../../../testFixtures/v3.0/station_status.json';
-import systemAlertsJson from '../../../../testFixtures/v3.0/system_alerts.json';
-import systemInformationJson from '../../../../testFixtures/v3.0/system_information.json';
-import systemPricingPlansJson from '../../../../testFixtures/v3.0/system_pricing_plans.json';
-import systemRegionsJson from '../../../../testFixtures/v3.0/system_regions.json';
-import vehicleStatusJson from '../../../../testFixtures/v3.0/vehicle_status.json';
-import vehicleTypesJson from '../../../../testFixtures/v3.0/vehicle_types.json';
+import gbfsVersionsJson from '../../../testFixtures/v3.0/gbfs_versions.json';
+import gbfsJson from '../../../testFixtures/v3.0/gbfs.json';
+import geofencingZonesJson from '../../../testFixtures/v3.0/geofencing_zones.json';
+import manifestJson from '../../../testFixtures/v3.0/manifest.json';
+import stationInformationJson from '../../../testFixtures/v3.0/station_information.json';
+import stationStatusJson from '../../../testFixtures/v3.0/station_status.json';
+import systemAlertsJson from '../../../testFixtures/v3.0/system_alerts.json';
+import systemInformationJson from '../../../testFixtures/v3.0/system_information.json';
+import systemPricingPlansJson from '../../../testFixtures/v3.0/system_pricing_plans.json';
+import systemRegionsJson from '../../../testFixtures/v3.0/system_regions.json';
+import vehicleStatusJson from '../../../testFixtures/v3.0/vehicle_status.json';
+import vehicleTypesJson from '../../../testFixtures/v3.0/vehicle_types.json';
 
 // Date objects cannot be represented in JSON
 // Manual checks for dates are required

@@ -37,4 +37,26 @@ jobs:
                     echo "Please update the package.json version so that your changes will be published."
                     exit 1
                 fi
+    run-tests:
+        name: run-tests-job
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: '18'
+    
+            - name: Install dependencies
+              run: |
+                cd ./scripts
+                yarn
+                cd ../models/typescript
+                yarn
+
+            - name: Run tests
+              run: cd ./models/typescript && yarn test
     

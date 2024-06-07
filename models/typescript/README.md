@@ -14,7 +14,8 @@ npm install gbfs-typescript-types --save-dev
 ```
 
 ## Versions
-Currently only version 3.0 of GBFS is supported
+- v3.0
+- v3.1-RC
 
 ## Example Code
 ```typescript
@@ -30,7 +31,7 @@ import { Data as VehicleStatusData } from 'gbfs-typescript-types/v3.0/vehicle_st
 
 let vehicleStatus: v3.VehicleStatus;
 let systemInformationData: SystemInformationData;
-const url = "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0/system-information";
+const url = "https://berlin.example.tier-services.io/tier_paris/gbfs/3.0/system-information";
 fetch(url).then((systemInformationResponse) => {
     systemInformationResponse.json().then((systemInformationJson: SystemInformation) => {
         systemInformationJson // will have access to types

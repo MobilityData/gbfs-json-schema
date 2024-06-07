@@ -6,19 +6,19 @@
         "versions": [
             {
                 "version": "2.1",
-                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/2.1"
+                "url": "https://berlin.example.tier-services.io/tier_paris/gbfs/2.1"
             },
             {
                 "version": "2.2",
-                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/2.2"
+                "url": "https://berlin.example.tier-services.io/tier_paris/gbfs/2.2"
             },
             {
                 "version": "2.3",
-                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/2.3"
+                "url": "https://berlin.example.tier-services.io/tier_paris/gbfs/2.3"
             },
             {
                 "version": "3.0",
-                "url": "https://data-sharing.tier-services.io/tier_paris/gbfs/3.0"
+                "url": "https://berlin.example.tier-services.io/tier_paris/gbfs/3.0"
             }
         ]
     }

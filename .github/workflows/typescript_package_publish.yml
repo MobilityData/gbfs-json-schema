@@ -10,9 +10,6 @@ jobs:
     build-publish:
         name: build-publish-job
         runs-on: ubuntu-latest
-        defaults:
-          run:
-            working-directory: ./models/typescript
 
         steps:
             - name: Checkout repository
@@ -25,10 +22,14 @@ jobs:
                 registry-url: 'https://registry.npmjs.org'
     
             - name: Install dependencies
-              run: yarn
+              run: |
+                cd ./scripts
+                yarn
+                cd ../models/typescript
+                yarn
     
             - name: Publish to npm
-              run: npm publish
+              run: cd ./models/typescript && npm publish
               env:
                 NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
                 
