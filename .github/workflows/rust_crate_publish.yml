@@ -1,0 +1,33 @@
+name: GBFS Rust Language Bindings - Publish
+
+on:
+    push:
+      branches:
+        - master
+      paths:
+        - "models/rust/**"
+jobs:
+    build-publish:
+        name: build-publish-job
+        runs-on: ubuntu-latest
+        defaults:
+          run:
+            working-directory: ./models/rust
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+            
+            - name: Load secrets from 1Password
+              uses: 1password/load-secrets-action@v1.3.1
+              with:
+                export-env: true # Export loaded secrets as environment variables
+              env:
+                OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+                CARGO_REGISTRY_TOKEN: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/ms6rxv2lhpok44mg32wuihbv7q/credential"
+    
+            - name: Publish to crates.io
+              env:
+                CARGO_REGISTRY_TOKEN: ${{ env.CARGO_REGISTRY_TOKEN }}
+              run: cargo publish --token $CARGO_REGISTRY_TOKEN
+                
