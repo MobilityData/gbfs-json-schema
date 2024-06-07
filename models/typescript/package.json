@@ -1,12 +1,12 @@
 {
   "name": "gbfs-typescript-types",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Language Bindings for GBFS in Typescript",
   "license": "Apache-2.0",
   "types": "index.d.ts",
   "author": "MobilityData",
   "scripts": {
-    "postinstall": "cd ../../scripts && ./generate_typescript_models.sh",
+    "prepare": "cd ../../scripts && ./generate_typescript_models.sh",
     "test": "jest"
   },
   "devDependencies": {
