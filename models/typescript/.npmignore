@@ -1,0 +1,6 @@
+# overrides .gitignore to include all files in the root directory
+
+!v3.0/*
+!v3.0/index.d.ts
+!v3.1-RC/*
+!v3.1-RC/index.d.ts

@@ -1,6 +1,6 @@
 {
   "name": "gbfs-typescript-types",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Language Bindings for GBFS in Typescript",
   "license": "Apache-2.0",
   "types": "index.d.ts",
@@ -9,6 +9,11 @@
     "prepare": "cd ../../scripts && ./generate_typescript_models.sh",
     "test": "jest"
   },
+  "files": [
+    "index.d.ts",
+    "v3.1-RC",
+    "v3.0" 
+  ],
   "devDependencies": {
     "@types/jest": "^29.5.12",
     "jest": "^29.7.0",
