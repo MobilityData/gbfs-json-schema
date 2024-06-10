@@ -12,7 +12,7 @@
   "files": [
     "index.d.ts",
     "v3.1-RC",
-    "v3.0"
+    "v3.0" 
   ],
   "devDependencies": {
     "@types/jest": "^29.5.12",
