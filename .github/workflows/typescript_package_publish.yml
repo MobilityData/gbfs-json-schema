@@ -25,9 +25,17 @@ jobs:
               run: |
                 cd ./scripts
                 yarn
-    
+
+            - name: Load secrets from 1Password
+              uses: 1password/load-secrets-action@v2.0.0
+              with:
+                export-env: true # Export loaded secrets as environment variables
+              env:
+                OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+                NODE_AUTH_TOKEN: "op://TECHNOLOGIES/vwhmodynvelkwrqbpel45ncve4/credential"
+      
             - name: Publish to npm
               run: cd ./models/typescript && npm publish
               env:
-                NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+                NODE_AUTH_TOKEN: ${{ env.NODE_AUTH_TOKEN }}
                 
