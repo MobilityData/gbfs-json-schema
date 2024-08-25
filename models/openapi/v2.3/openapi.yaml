@@ -1,0 +1,1421 @@
+---
+openapi: 3.0.3
+info:
+    title: 'GBFS'
+    version: '2.3'
+    description: |-
+      OpenAPI specification for [General Bikeshare Feed Specification  (GBFS)](https://github.com/MobilityData/gbfs/blob/master/gbfs.md) feeds, managed by MobilityData.
+tags:
+    -   name: gbfs
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#gbfsjson
+    -   name: gbfs_versions
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#gbfs_versionsjson
+    -   name: system_information
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_informationjson
+    -   name: vehicle_types
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#vehicle_typesjson
+    -   name: station_information
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#station_informationjson
+    -   name: station_status
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#station_statusjson
+    -   name: free_bike_status
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#free_bike_statusjson
+    -   name: system_hours
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_hoursjson
+    -   name: system_calendar
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_calendarjson
+    -   name: system_regions
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_regionsjson
+    -   name: system_pricing_plans
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_pricing_plansjson
+    -   name: system_alerts
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_alertsjson
+    -   name: geofencing_zones
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#geofencing_zonesjson
+paths:
+    /gbfs:
+        get:
+            tags:
+                - gbfs
+            operationId: getGbfs
+            responses:
+                '200':
+                    description: returns gbfs.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/GbfsJson'
+
+    /gbfs_versions:
+        get:
+            tags:
+                - gbfs_versions
+            operationId: getGbfsVersions
+            responses:
+                '200':
+                    description: returns gbfs_versions.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/GbfsVersionsJson'
+  
+    /system_information:
+        get:
+            tags:
+                - system_information
+            operationId: getSystemInformation
+            responses:
+                '200':
+                    description: returns system_information.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SystemInformationJson'
+
+    /vehicle_types:
+        get:
+            tags:
+                - vehicle_types
+            operationId: getVehicleTypes
+            responses:
+                '200':
+                    description: returns vehicle_types.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/VehicleTypesJson'
+
+    /station_information:
+        get:
+            tags:
+                - station_information
+            operationId: getStationInformation
+            responses:
+                '200':
+                    description: returns station_information.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/StationInformationJson'
+
+    /station_status:
+        get:
+            tags:
+                - station_status
+            operationId: getStationStatus
+            responses:
+                '200':
+                    description: returns station_status.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/StationStatusJson'
+
+    /free_bike_status:
+        get:
+            tags:
+                - free_bike_status
+            operationId: getFreeBikeStatus
+            responses:
+                '200':
+                    description: returns free_bike_status.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/FreeBikeStatusJson'
+    
+    /system_hours:
+        get:
+            tags:
+                - system_hours
+            operationId: getSystemHours
+            responses:
+                '200':
+                    description: returns system_hours.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SystemHoursJson'
+    
+    /system_calendar:
+        get:
+            tags:
+                - system_calendar
+            operationId: getSystemCalendar
+            responses:
+                '200':
+                    description: returns system_calendar.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SystemCalendarJson'
+
+    /system_regions:
+        get:
+            tags:
+                - system_regions
+            operationId: getSystemRegions
+            responses:
+                '200':
+                    description: returns system_regions.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SystemRegionsJson'
+
+    /system_pricing_plans:
+        get:
+            tags:
+                - system_pricing_plans
+            operationId: getSystemPricingPlans
+            responses:
+                '200':
+                    description: returns system_pricing_plans.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SystemPricingPlansJson'
+
+    /system_alerts:
+        get:
+            tags:
+                - system_alerts
+            operationId: getSystemAlerts
+            responses:
+                '200':
+                    description: returns system_alerts.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/SystemAlertsJson'
+
+    /geofencing_zones:
+        get:
+            tags:
+                - geofencing_zones
+            operationId: getGeofencingZones
+            responses:
+                '200':
+                    description: returns geofencing_zones.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: '#/components/schemas/GeofencingZonesJson'
+
+components:
+    schemas:
+        FileMetaProperties:
+            type: object
+            properties:
+                last_updated:
+                    type: integer
+                    minimum: 1450155600
+                    description: Last time the data in the feed was updated in POSIX time.
+                ttl:
+                    type: integer
+                    minimum: 0
+                    description: Number of seconds before the data in the feed will be updated again (0 if the data should always be refreshed).
+                version:
+                    type: string
+                    description: GBFS version number to which the feed conforms, according to the versioning framework.
+                    default: '2.3'
+            required:
+                - last_updated
+                - ttl
+                - version
+
+        GbfsJson:
+            type: object
+            description: Auto-discovery file that links to all of the other files published by the system.
+            title: gbfs.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            properties:
+                                de:
+                                    $ref: '#/components/schemas/GbfsItem'
+            required:
+                - data
+
+        GbfsItem:
+            type: object
+            properties:
+                feeds:
+                    type: array
+                    description: An array of all of the feeds that are published by the auto-discovery file. Each element in the array is an object with the keys below.
+                    items:
+                        type: object
+                        properties:
+                            name:
+                                type: string
+                                description: Key identifying the type of feed this is. The key must be the base file name defined in the spec for the corresponding feed type.
+                                enum:
+                                    - gbfs
+                                    - gbfs_versions
+                                    - system_information
+                                    - vehicle_types
+                                    - station_information
+                                    - station_status
+                                    - free_bike_status
+                                    - system_hours
+                                    - system_alerts
+                                    - system_calendar
+                                    - system_regions
+                                    - system_pricing_plans
+                                    - geofencing_zones
+                            url:
+                                type: string
+                                description: URL for the feed.
+                        required:
+                            - name
+                            - url
+            required:
+                - feeds
+
+        GbfsVersionsJson:
+            type: object
+            description: Lists all feed endpoints published according to version sof the GBFS documentation.
+            title: gbfs_versions.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            type: object
+                            properties:
+                                versions:
+                                    type: array
+                                    description: Contains one object, as defined below, for each of the available versions of a feed. The array must be sorted by increasing MAJOR and MINOR version number.
+                                    items:
+                                        $ref: '#/components/schemas/GbfsVersionsItem'
+                            required:
+                                - versions
+            required:
+                - data
+
+        GbfsVersionsItem:
+            type: object
+            properties:
+                version:
+                    type: string
+                    description: The semantic version of the feed in the form X.Y
+                    enum:
+                        - '1.0'
+                        - '1.1'
+                        - '2.0'
+                        - '2.1'
+                        - '2.2'
+                        - '2.3'
+                        - '3.0'
+                url:
+                    type: string
+                    description: URL of the corresponding gbfs.json endpoint
+            required:
+                - version
+                - url
+
+        SystemInformationJson:
+            type: object
+            description: Details including system operator, system location, year implemented, URL, contact info, time zone.
+            title: system_information.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            type: object
+                            properties:
+                                system_id:
+                                    type: string
+                                    description: Identifier for this vehicle share system. This should be globally unique (even between different systems).
+                                language:
+                                    type: string
+                                    pattern: ^[a-z]{2,3}(-[A-Z]{2})?$
+                                    description: The language that will be used throughout the rest of the files. It must match the value in the gbfs.json file.
+                                name:
+                                    type: string
+                                    description: Name of the system to be displayed to customers.
+                                short_name:
+                                    type: string
+                                    description: Optional abbreviation for a system.
+                                operator:
+                                    type: string
+                                    description: Name of the operator
+                                url:
+                                    type: string
+                                    description: The URL of the vehicle share system.
+                                purchase_url:
+                                    type: string
+                                    description: URL where a customer can purchase a membership.
+                                start_date:
+                                    type: string
+                                    format: date
+                                    description: Date that the system began operations.
+                                phone_number:
+                                    type: string
+                                    description: A single voice telephone number for the specified system that presents the telephone number as typical for the system's service area.
+                                email:
+                                    type: string
+                                    format: email
+                                    description: Email address actively monitored by the operator's customer service department.
+                                feed_contact_email:
+                                    type: string
+                                    format: email
+                                    description: A single contact email address for consumers of this feed to report technical issues.
+                                timezone:
+                                    type: string
+                                    description: The time zone where the system is located.
+                                license_url:
+                                    type: string
+                                    description: A fully qualified URL of a page that defines the license terms for the GBFS data for this system.
+                                brand_assets:
+                                    type: object
+                                    description: An object where each key defines one of the items listed below.
+                                    properties:
+                                        brand_last_modified:
+                                            type: string
+                                            format: date
+                                            description: Date that indicates the last time any included brand assets were updated or modified.
+                                        brand_terms_url:
+                                            type: string
+                                            description: A fully qualified URL pointing to the location of a page that defines the license terms of brand icons, colors, or other trademark information.
+                                        brand_image_url:
+                                            type: string
+                                            description: A fully qualified URL pointing to the location of a graphic file representing the brand for the service.
+                                        brand_image_url_dark:
+                                            type: string
+                                            description: A fully qualified URL pointing to the location of a graphic file representing the brand for the service for use in dark mode applications.
+                                        color:
+                                            type: string
+                                            description: Color used to represent the brand for the service expressed as a 6 digit hexadecimal color code in the form #000000.
+                                terms_url:
+                                    type: string
+                                    description: A fully qualified URL pointing to the terms of service (also often called "terms of use" or "terms and conditions") for the service.
+                                terms_last_updated:
+                                    type: string
+                                    format: date
+                                    description: The date that the terms of service provided at terms_url were last updated.
+                                privacy_url:
+                                    type: string
+                                    description: A fully qualified URL pointing to the privacy policy for the service.
+                                privacy_last_updated:
+                                    type: string
+                                    format: date
+                                    description: The date that the privacy policy provided at privacy_url was last updated.
+                                rental_apps:
+                                    type: object
+                                    description: Contains rental app information in the android and ios JSON objects.
+                                    properties:
+                                        android:
+                                            type: object
+                                            description: Contains rental app download and app discovery information for the Android platform.
+                                            properties:
+                                                store_uri:
+                                                    type: string
+                                                    description: URI where the rental Android app can be downloaded from.
+                                                discovery_uri:
+                                                    type: string
+                                                    description: URI that can be used to discover if the rental Android app is installed on the device.
+                                            required:
+                                                - store_uri
+                                                - discovery_uri
+                                        ios:
+                                            type: object
+                                            description: Contains rental information for the iOS platform.
+                                            properties:
+                                                store_uri:
+                                                    type: string
+                                                    description: URI where the rental iOS app can be downloaded from.
+                                                discovery_uri:
+                                                    type: string
+                                                    description: URI that can be used to discover if the rental iOS app is installed on the device.
+                                            required:
+                                                - store_uri
+                                                - discovery_uri
+                            required:
+                                - system_id
+                                - language
+                                - name
+                                - timezone
+            required:
+                - data
+        
+        VehicleTypesJson:
+            type: object
+            description: Describes the types of vehicles that System operator has available for rent.
+            title: vehicle_types.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            type: object
+                            properties:
+                                vehicle_types:
+                                    type: array
+                                    items:
+                                        $ref: '#/components/schemas/VehicleTypesItem'
+                            required:
+                                - vehicle_types
+            required:
+                - data
+
+        VehicleTypesItem:
+            type: object
+            properties:
+                vehicle_type_id:
+                    type: string
+                    description: Unique identifier of a vehicle type.
+                form_factor:
+                    type: string
+                    description: The vehicle's general form factor.
+                    enum:
+                        - bicycle
+                        - cargo_bicycle
+                        - car
+                        - moped
+                        - scooter_standing
+                        - scooted_seated
+                        - other
+                        - scooter
+                ride_capacity:
+                    type: integer
+                    description: The number of riders (driver included) the vehicle can legally accommodate.
+                cargo_volume_capacity:
+                    type: integer
+                    description: Cargo volume available in the vehicle, expressed in liters. For cars, it corresponds to the space between the boot floor, including the storage under the hatch, to the rear shelf in the trunk.
+                cargo_load_capacity:
+                    type: integer
+                    description: The capacity of the vehicle cargo space (excluding passengers), expressed in kilograms.
+                propulsion_type:
+                    type: string
+                    description: The primary propulsion type of the vehicle.
+                    enum:
+                        - human
+                        - electric_assist
+                        - electric
+                        - combustion
+                        - combustion_diesel
+                        - hybrid
+                        - plug_in_hybrid
+                        - hydrogen_fuel_cell
+                eco_label:
+                    type: array
+                    description: Vehicle air quality certificate. Official anti-pollution certificate, based on the information on the vehicle's registration certificate, attesting to its level of pollutant emissions based on a defined standard. In Europe, for example, it is the European emission standard. The aim of this measure is to encourage the use of the least polluting vehicles by allowing them to drive during pollution peaks or in low emission zones.
+                    items:
+                        type: object
+                        properties:
+                            country_code:
+                                type: string
+                                description: Country where the eco_sticker applies.
+                            eco_sticker:
+                                type: string
+                                description: Name of the eco label. The name must be written in lowercase, separated by an underscore.
+                                enum:
+                                    - critair
+                                    - critair_1
+                                    - critair_2
+                                    - critair_3
+                                    - critair_4
+                                    - critair_5
+                                    - euro_2
+                                    - euro_3
+                                    - euro_4
+                                    - euro_5
+                                    - euro_6
+                                    - euro_6_temp
+                                    - euro_E
+                                    - euro_1
+                                    - reg_certificates
+                                    - 0
+                                    - eco
+                                    - b
+                                    - c
+                max_range_meters:
+                    type: number
+                    minimum: 0
+                    description: The furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential.
+                name:
+                    type: string
+                    description: The public name of this vehicle type.
+                vehicle_accessories:
+                    description: Description of accessories available in the vehicle. These accessories are part of the vehicle and are not supposed to change frequently.
+                    type: array
+                    items:
+                        type: string
+                        enum:
+                            - air_conditioning
+                            - automatic
+                            - manual
+                            - convertible
+                            - cruise_control
+                            - doors_2
+                            - doors_3
+                            - doors_4
+                            - doors_5
+                            - navigation
+                g_CO2_km:
+                    type: integer
+                    description: Maximum quantity of CO2, in grams, emitted per kilometer, according to the WLTP.
+                vehicle_image:
+                    type: string
+                    description: URL to an image that would assist the user in identifying the vehicle (for example, an image of the vehicle or a logo).
+                make:
+                    type: string
+                    description: The name of the vehicle manufacturer.
+                model:
+                    type: string
+                    description: The name of the vehicle model.
+                color:
+                    type: string
+                    description: The color of the vehicle.
+                wheel_count:
+                    type: integer
+                    description: Number of wheels this vehicle type has.
+                max_permitted_speed:
+                    type: integer
+                    description: The maximum speed in kilometers per hour this vehicle is permitted to reach in accordance with local permit and regulations.
+                rated_power:
+                    type: integer
+                    description: The rated power of the motor for this vehicle type in watts.
+                default_reserve_time:
+                    type: integer
+                    description: Maximum time in minutes that a vehicle can be reserved before a rental begins. When a vehicle is reserved by a user, the vehicle remains locked until the rental begins. During this time the vehicle is unavailable and cannot be reserved or rented by other users.
+                return_constraint:
+                    type: string
+                    description: The conditions for returning the vehicle at the end of the rental.
+                    enum:
+                        - free_floating
+                        - roundtrip_station
+                        - any_station
+                        - hybrid
+                vehicle_assets:
+                    type: object
+                    description: An object where each key defines one of the items listed below.
+                    properties:
+                        icon_url:
+                            type: string
+                            description: A fully qualified URL pointing to the location of a graphic icon file that MAY be used to represent this vehicle type on maps and in other applications.
+                        icon_url_dark:
+                            type: string
+                            description: A fully qualified URL pointing to the location of a graphic icon file to be used to represent this vehicle type when in dark mode on maps and in other applications.
+                        icon_last_modified:
+                            type: string
+                            format: date
+                            description: Date that indicates the last time any included vehicle icon images were modified or updated.
+                        default_pricing_plan_id:
+                            type: string
+                            description: A plan_id, as defined in system_pricing_plans.json, that identifies a default pricing plan for this vehicle to be used by trip planning applications for purposes of calculating the cost of a single trip using this vehicle type.
+                        pricing_plan_ids:
+                            type: array
+                            description: Array of all pricing plan IDs, as defined in system_pricing_plans.json, that are applied to this vehicle type.
+                            items:
+                                type: string
+            required:
+                - vehicle_type_id
+                - form_factor
+                - propulsion_type
+
+        StationInformationJson:
+            type: object
+            description: Details including system operator, system location, year implemented, URL, contact info, time zone.
+            title: station_information.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            type: object
+                            properties:
+                                stations:
+                                    type: array
+                                    items:
+                                        $ref: '#/components/schemas/StationInformationItem'
+                            required:
+                                - stations
+
+        StationInformationItem:
+            type: object
+            properties:
+                station_id:
+                    type: string
+                    description: Identifier of a station.
+                name:
+                    type: string
+                    description: Public name of the station.
+                short_name:
+                    type: string
+                    description: Short name or other type of identifier.
+                lat:
+                    type: number
+                    minimum: -90
+                    maximum: 90
+                    description: The latitude of the station.
+                lon:
+                    type: number
+                    minimum: -180
+                    maximum: 180
+                    description: The longitude of the station.
+                address:
+                    type: string
+                    description: Address where station is located.
+                cross_street:
+                    type: string
+                    description: Cross street or landmark where the station is located.
+                region_id:
+                    type: string
+                    description: Identifier of the region where the station is located.
+                post_code:
+                    type: string
+                    description: Postal code where station is located.
+                rental_methods:
+                    type: array
+                    description: Payment methods accepted at this station.
+                    minItems: 1
+                    items:
+                        type: string
+                        enum:
+                            - key
+                            - creditcard
+                            - paypass
+                            - applepay
+                            - androidpay
+                            - transitcard
+                            - accountnumber
+                            - phone
+                is_virtual_station:
+                    type: boolean
+                    description: Is this station a location with or without physical infrastructure?
+                station_area:
+                    type: object
+                    description: A multipolygon that describes the area of a virtual station.
+                    properties:
+                        type:
+                            type: string
+                            default: MultiPolygon
+                            enum: 
+                                - MultiPolygon
+                        coordinates:
+                            type: array
+                            items:
+                                type: array
+                                items:
+                                    type: array
+                                    minItems: 4
+                                    items:
+                                        type: array
+                                        minItems: 2
+                                        items:
+                                            type: number
+                parking_type:
+                    type: string
+                    description: Type of parking station.
+                    enum:
+                        - parking_lot
+                        - street_parking
+                        - underground_parking
+                        - sidewalk_parking
+                        - other
+                parking_hoop:
+                    type: boolean
+                    description: Are parking hoops present at this station?
+                contact_phone:
+                    type: string
+                    description: Contact phone of the station.
+                capacity:
+                    type: integer
+                    minimum: 0
+                    description: Number of total docking points installed at this station, both available and unavailable.
+                vehicle_capacity:
+                    type: object
+                    description: An object where each key is a vehicle_type_id and the value is a number presenting the total number of vehicles of this type that can park within the station_area.
+                    additionalProperties:
+                        type: number
+                is_valet_station:
+                    type: boolean
+                    description: Are valet services provided at this station?
+                is_charging_station:
+                    type: boolean
+                    description: Does the station support charging of electric vehicles?
+                rental_uris:
+                    type: object
+                    description: Contains rental uris for Android, iOS, and web in the android, ios, and web fields.
+                    properties:
+                        android:
+                            type: string
+                            description: URI that can be passed to an Android app with an intent.
+                        ios:
+                            type: string
+                            description: URI that can be used on iOS to launch the rental app for this station.
+                        web:
+                            type: string
+                            description: URL that can be used by a web browser to show more information about renting a vehicle at this station.
+                vehicle_type_capacity:
+                    type: object
+                    description: An object where each key is a vehicle_type_id and the value is a number representing the total docking points installed at this station for each vehicle type.
+                    additionalProperties:
+                        type: number
+            required:
+                - station_id
+                - name
+                - lat
+                - lon
+
+        StationStatusJson:
+            type: object
+            description: Describes the capacity and rental availability of the station.
+            title: station_status.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            type: object
+                            properties:
+                                stations:
+                                    type: array
+                                    items:
+                                        $ref: '#/components/schemas/StationStatusItem'
+                            required:
+                                - stations
+                    required:
+                        - data
+
+        StationStatusItem:
+            type: object
+            properties:
+                station_id:
+                    type: string
+                    description: Identifier of a station.
+                num_bikes_available:
+                    type: integer
+                    minimum: 0
+                    description: Number of vehicles of any type physically available for rental at the station.
+                vehicle_types_available:
+                    type: array
+                    minItems: 1
+                    items:
+                        type: object
+                        properties:
+                            vehicle_type_id:
+                                type: string
+                                description: The vehicle_type_id of vehicle at the station.
+                            count:
+                                type: integer
+                                minimum: 0
+                                description: A number representing the total amount of this vehicle type at the station.
+                        required:
+                            - vehicle_type_id
+                            - count
+                num_bikes_disabled:
+                    type: integer
+                    minimum: 0
+                    description: Number of disabled vehicles of any type at the station.
+                num_docks_available:
+                    type: integer
+                    minimum: 0
+                    description: Number of functional docks physically at the station.
+                num_docks_disabled:
+                    type: integer
+                    minimum: 0
+                    description: Number of empty but disabled docks at the station.
+                is_installed:
+                    type: boolean
+                    description: Is the station currently on the street?
+                is_renting:
+                    type: boolean
+                    description: Is the station currently renting vehicles?
+                is_returning:
+                    type: boolean
+                    description: Is the station accepting vehicle returns?
+                last_reported:
+                    type: number
+                    minimum: 1450155600
+                    description: The last time this station reported its status to the operator's backend in POSIX time.
+                vehicle_docks_available:
+                    type: array
+                    items:
+                        type: object
+                        properties:
+                            vehicle_type_ids:
+                                type: array
+                                description: An array of strings where each string represents a vehicle_type_id that is able to use a particular type of dock at the station.
+                                items:
+                                    type: string
+                            count:
+                                type: integer
+                                minimum: 0
+                                description: A number representing the total number of available docks for the defined vehicle type.
+                        required:
+                            - vehicle_type_ids
+                            - count
+            required:
+                - station_id
+                - num_bikes_available
+                - is_installed
+                - is_renting
+                - is_returning
+                - last_reported
+
+        FreeBikeStatusJson:
+            type: object
+            description: Describes the vehicles that are available for rent (as of v2.1-RC2).
+            title: free_bike_status.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            type: object
+                            properties:
+                                bikes:
+                                    type: array
+                                    description: Array that contains one object per bike as defined below.
+                                    items:
+                                        $ref: '#/components/schemas/FreeBikeStatusItem'
+                            required:
+                                - bikes
+                    required:
+                        - data
+
+        FreeBikeStatusItem:
+            type: object
+            properties:
+                bike_id:
+                    type: string
+                    description: Rotating (as of v2.0) identifier of a vehicle.
+                lat:
+                    type: number
+                    description: The latitude of the vehicle.
+                    minimum: -90
+                    maximum: 90
+                lon:
+                    type: number
+                    description: The longitude of the vehicle.
+                    minimum: -180
+                    maximum: 180
+                is_reserved:
+                    type: boolean
+                    description: Is the vehicle currently reserved?
+                is_disabled:
+                    type: boolean
+                    description: Is the vehicle currently disabled (broken)?
+                rental_uris:
+                    type: object
+                    description: Contains rental uris for Android, iOS, and web in the android, ios, and web fields.
+                    properties:
+                        android:
+                            type: string
+                            description: URI that can be passed to an Android app with an intent.
+                        ios:
+                            type: string
+                            description: URI that can be used on iOS to launch the rental app for this vehicle.
+                        web:
+                            type: string
+                            description: URL that can be used by a web browser to show more information about renting this vehicle.
+                vehicle_type_id:
+                    type: string
+                    description: The vehicle_type_id of this vehicle.
+                last_reported:
+                    type: number
+                    minimum: 1450155600
+                    description: The last time this vehicle reported its status to the operator's backend in POSIX time.
+                current_range_meters:
+                    type: number
+                    minimum: 0
+                    description: The furthest distance in meters that the vehicle can travel without recharging or refueling with the vehicle's current charge or fuel .
+                current_fuel_percent:
+                    type: number
+                    minimum: 0
+                    maximum: 1
+                    description: This value represents the current percentage, expressed from 0 to 1, of fuel or battery power remaining in the vehicle.
+                station_id:
+                    type: string
+                    description: Identifier referencing the station_id field in station_information.json.
+                home_station_id:
+                    type: string
+                    description: The station_id of the station this vehicle must be returned to as defined in station_information.json.
+                pricing_plan_id:
+                    type: string
+                    description: The plan_id of the pricing plan this vehicle is eligible for.
+                vehicle_equipment:
+                    type: array
+                    description: List of vehicle equipment provided by the operator in addition to the accessories already provided in the vehicle (field vehicle_accessories of vehicle_types.json) but subject to more frequent updates.
+                    items:
+                        type: string
+                        enum:
+                            - child_seat_a
+                            - child_seat_b
+                            - child_seat_c
+                            - winter_tires
+                            - snow_chains
+                available_until:
+                    type: string
+                    format: 'date-time'
+                    description: The date and time when any rental of the vehicle must be completed. The vehicle must be returned and made available for the next user by this time. If this field is empty, it indicates that the vehicle is available indefinitely.
+            required:
+                - bike_id
+                - is_reserved
+                - is_disabled
+        
+        SystemHoursJson:
+            type: object
+            description: Describes the system hours of operation.
+            title: system_hours.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            type: object
+                            properties:
+                                rental_hours:
+                                    type: array
+                                    description: Array that contains system hours of operations.
+                                    items:
+                                        $ref: '#/components/schemas/SystemHoursItem'
+                            required:
+                                - rental_hours
+            required:
+                - data
+
+        SystemHoursItem:
+            type: object
+            properties:
+                user_types:
+                    type: array
+                    description: Array of member and nonmember value(s) indicating that this set of rental hours applies to either members or non-members only.
+                    items:
+                        type: string
+                        enum:
+                            - member
+                            - nonmember
+                        minItems: 1
+                        maxItems: 2
+                days:
+                    type: array
+                    description: An array of abbreviations (first 3 letters) of English names of the days of the week for which this object applies.
+                    items: 
+                        type: string
+                        enum:
+                            - sun
+                            - mon
+                            - tue
+                            - wed
+                            - thu
+                            - fri
+                            - sat
+                        minItems: 1
+                        maxItems: 7
+                start_time: 
+                    type: string
+                    description: An array of abbreviations (first 3 letters) of English names of the days of the week for which this object applies.
+                end_time: 
+                    type: string
+                    description: End time for the hours of operation of the system.
+            required:
+                - user_types
+                - days
+                - start_time
+                - end_time
+        
+        SystemCalendarJson:
+            type: object
+            description: Describes the operating calendar for a system.
+            title: system_calendar.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            type: object
+                            properties:
+                                calendars:
+                                    type: array
+                                    description: Array that contains opertions calendar for the system.
+                                    items:
+                                        $ref: '#/components/schemas/SystemCalendarItem'
+                            required:
+                                - calendars
+            required:
+                - data
+
+        SystemCalendarItem:
+            type: object
+            properties:
+                start_month:
+                    type: string
+                    description: Starting month for the system operations.
+                    minimum: 1
+                    maximum: 12
+                start_day:
+                    type: string
+                    description: Starting day for the system operations.
+                    minimum: 1
+                    maximum: 31
+                start_year:
+                    type: string
+                    description: Starting year for the system operations.
+                    pattern: ^\\d{4}$
+                end_month:
+                    type: string
+                    description: End month for the system operations.
+                    minimum: 1
+                    maximum: 12
+                end_day:
+                    type: string
+                    description: End day for the system operations.
+                    minimum: 1
+                    maximum: 31
+                end_year:
+                    type: string
+                    description: End year for the system operations.
+                    pattern: ^\\d{4}$
+            required:
+                - start_month
+                - start_day
+                - end_month
+                - end_day
+
+        SystemRegionsJson:
+            type: object
+            description: Describes regions for a system that is broken up by geographic or political region.
+            title: system_regions.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            type: object
+                            properties:
+                                regions:
+                                    type: array
+                                    description: Array of regions.
+                                    items:
+                                        $ref: '#/components/schemas/SystemRegionsItem'
+                            required:
+                                - regions
+            required:
+                - data
+
+        SystemRegionsItem:
+            type: object
+            properties:
+                region_id:
+                    type: string
+                    description: identifier of the region.
+                name:
+                    type: string
+                    description: Public name for this region.
+            required:
+                - region_id
+                - name
+
+        SystemPricingPlansJson:
+            type: object
+            description: Describes the pricing schemes of the system.
+            title: system_pricing_plans.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            type: object
+                            properties:
+                                plans:
+                                    type: array
+                                    description: Array that contains one object per plan as defined below.
+                                    items:
+                                        $ref: '#/components/schemas/SystemPricingPlansItem'
+                            required:
+                                - plans
+            required:
+                - data
+
+        SystemPricingPlansItem:
+            type: object
+            properties:
+                plan_id:
+                    type: string
+                    description: Identifier of a pricing plan in the system.
+                url:
+                    type: string
+                    description: URL where the customer can learn more about this pricing plan.
+                name:
+                    type: string
+                    description: Name of this pricing plan.
+                currency:
+                    type: string
+                    description: Currency used to pay the fare in ISO 4217 code.
+                    pattern: ^\\w{3}$
+                price:
+                    type: number
+                    description: Fare price.
+                    minimum: 0
+                is_taxable:
+                    type: boolean
+                    description: Will additional tax be added to the base price?
+                description:
+                    type: string
+                    description: Customer-readable description of the pricing plan.
+                per_km_pricing:
+                    type: array
+                    description: Array of segments when the price is a function of distance travelled, displayed in kilometers.
+                    items:
+                        type: object
+                        properties:
+                            start:
+                                type: integer
+                                description: Number of kilometers that have to elapse before this segment starts applying.
+                                minimum: 0
+                            rate:
+                                type: number
+                                description: Rate that is charged for each kilometer interval after the start.
+                            interval:
+                                type: integer
+                                description: Interval in kilometers at which the rate of this segment is either reapplied indefinitely, or if defined, up until (but not including) end kilometer.
+                                minimum: 0
+                            end:
+                                type: integer
+                                description: The kilometer at which the rate will no longer apply.
+                                minimum: 0
+                        required:
+                            - start
+                            - rate
+                            - interval
+                per_min_pricing:
+                    type: array
+                    description: Array of segments when the price is a function of time travelled, displayed in minutes.
+                    items:
+                        type: object
+                        properties:
+                            start:
+                                type: integer
+                                description: Number of minutes that have to elapse before this segment starts applying.
+                                minimum: 0
+                            rate:
+                                type: number
+                                description: Rate that is charged for each minute interval after the start.
+                            interval:
+                                type: integer
+                                description: Interval in minutes at which the rate of this segment is either reapplied.
+                                minimum: 0
+                            end:
+                                type: integer
+                                description: The minute at which the rate will no longer apply.
+                                minimum: 0
+                        required:
+                            - start
+                            - rate
+                            - interval
+                surge_pricing:
+                    type: boolean
+                    description: Is there currently an increase in price in response to increased demand in this pricing plan?
+            required:
+                - plan_id
+                - name
+                - currency
+                - price
+                - is_taxable
+                - description
+
+        SystemAlertsJson:
+            type: object
+            description: Describes ad-hoc changes to the system.
+            title: system_alerts.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            type: object
+                            properties:
+                                alerts:
+                                    type: array
+                                    description: Array that contains ad-hoc alerts for the system.
+                                    items:
+                                        $ref: '#/components/schemas/SystemAlertsItem'
+                            required:
+                                - alerts
+            required:
+                - data
+
+        SystemAlertsItem:
+            type: object
+            properties:
+                alert_id:
+                    type: string
+                    description: Identifier for this alert.
+                type:
+                    type: string
+                    description: Type of alert.
+                    enum:
+                        - system_closure
+                        - station_closure
+                        - station_move
+                        - other
+                times:
+                    type: array
+                    description: Array of objects indicating when the alert is in effect
+                    items:
+                        type: object
+                        properties:
+                            start:
+                                type: integer
+                                description: Start time of the alert.
+                                minimum: 1450155600
+                            end:
+                                type: integer
+                                description: End time of the alert.
+                                minimum: 1450155600
+                        required:
+                            - start
+                station_ids:
+                    type: array
+                    description: Array of identifiers of the stations for which this alert applies.
+                    items:
+                        type: string
+                region_ids:
+                    type: array
+                    description: Array of identifiers of the regions for which this alert applies.
+                    items:
+                        type: string
+                url:
+                    type: string
+                    description: URL where the customer can learn more information about this alert.
+                summary:
+                    type: string
+                    description: A short summary of this alert to be displayed to the customer.
+                description:
+                    type: string
+                    description: Detailed description of the alert.
+                last_updated:
+                    type: number
+                    description: Indicates the last time the info for the alert was updated.
+                    minimum: 1450155600
+            required:
+                - alert_id
+                - type
+                - summary
+
+        GeofencingZonesJson:
+            type: object
+            description: Describes geofencing zones and their associated rules and attributes.
+            title: geofencing_zones.json
+            allOf:
+                -   $ref: '#/components/schemas/FileMetaProperties'
+                -   type: object
+                    properties:
+                        data:
+                            type: object
+                            properties:
+                                geofencing_zones:
+                                    type: object
+                                    description: Each geofenced zone and its associated rules and attributes is described as an object within the array of features.
+                                    properties:
+                                        type:
+                                            type: string
+                                            description: FeatureCollection as per IETF RFC 7946.
+                                            default: FeatureCollection
+                                            enum:
+                                                - FeatureCollection
+                                        features:
+                                            type: array
+                                            items:
+                                                $ref: '#/components/schemas/GeoJSONFeature'
+                                    required:
+                                        - type
+                                        - features
+
+        GeoJSONFeature:
+            type: object
+            properties:
+                type:
+                    type: string
+                    default: Feature
+                    enum: 
+                        - Feature
+                properties:
+                    type: object
+                    description: Describing travel allowances and limitations.
+                    properties:
+                        name:
+                            type: string
+                            description: Public name of the geofencing zone.
+                        start:
+                            type: number
+                            minimum: 1450155600
+                            description: Start time of the geofencing zone in POSIX time.
+                        end:
+                            type: number
+                            minimum: 1450155600
+                            description: End time of the geofencing zone in POSIX time.
+                        rules:
+                            type: array
+                            items:
+                                $ref: '#/components/schemas/GeoJSONFencingRule'
+                geometry:
+                    type: object
+                    description: A polygon that describes where rides might not be able to start, end, go through, or have other limitations. Must follow the right-hand rule.
+                    properties:
+                        type:
+                            type: string
+                            default: MultiPolygon
+                            enum:
+                                - MultiPolygon
+                        coordinates:
+                            type: array
+                            items:
+                                type: array
+                                items:
+                                    type: array
+                                    minItems: 4
+                                    items:
+                                        type: array
+                                        minItems: 2
+                                        items:
+                                            type: number
+                    required:
+                        - type
+                        - coordinates
+            required:
+                - type
+                - properties
+                - geometry
+
+        GeoJSONFencingRule:
+            type: object
+            properties:
+                vehicle_type_id:
+                    type: array
+                    description: Array of vehicle type IDs for which these restrictions apply.
+                    items:
+                        type: string
+                ride_allowed:
+                    type: boolean
+                    description: Is the undocked ride allowed to start and end in this zone?
+                ride_through_allowed:
+                    type: boolean
+                    description: Is the ride allowed to travel through this zone?
+                maximum_speed_kph:
+                    type: integer
+                    minimum: 0
+                    description: What is the maximum speed allowed, in kilometers per hour?
+                station_parking:
+                    type: boolean
+                    description: Can vehicles only be parked at stations defined in station_information.json within this geofence zone?
