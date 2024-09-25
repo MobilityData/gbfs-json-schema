@@ -1220,7 +1220,7 @@
         }
       ],
       "required": ["system_id", "languages", "name", "opening_hours", "feed_contact_email", "timezone"],
-      "dependentRequired": {
+      "dependencies": {
         "terms_url": ["terms_last_updated"],
         "privacy_url": ["privacy_last_updated"]
       },
