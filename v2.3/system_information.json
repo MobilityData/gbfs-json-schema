@@ -578,7 +578,7 @@
         }
       },
       "required": ["system_id", "language", "name", "timezone"],
-      "dependentRequired": {
+      "dependencies": {
         "terms_url": ["terms_last_updated"],
         "privacy_url": ["privacy_last_updated"]
       }
