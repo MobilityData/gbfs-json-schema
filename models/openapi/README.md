@@ -1,16 +1,27 @@
 # GBFS OpenAPI Specification
 
-OpenAPI specifications for the General Bikeshare Feed Specification (GBFS), to use with [OpenAPI Generator](https://openapi-generator.tech/) (or similar) for various client and server languages.
+OpenAPI specifications for the General Bikeshare Feed Specification (GBFS) to easily create models and client code for existing GBFS systems or server code for your own implementation.
 
 ## Usage
 
-To generate client or server code and models, you need to run:
+### Code generation
+
+Many tools will let you generate models or client and server code direcly from the openapi file, e.g.
+
+* [OpenAPI Generator](https://openapi-generator.tech)
+* [Swagger Codegen](https://swagger.io/tools/swagger-codegen/)
+
+or one of [https://tools.openapis.org/categories/code-generators.html](these generators).
+
+### Customization
+
+The `openapi.yaml` can be extended with individual details within the `ìnfo` block. It's also recommended to add a `servers` block with your base root url, e.g.
 
 ```
-openapi-generator generate -i v2.3/openapi.yaml -g ruby -o ./output
+servers:
+  - url: https://my.gbfs.org/v1
 ```
-
-> This example generates a ruby client, please refer to openapi-generator's documentation for more [supported generators](https://openapi-generator.tech/docs/generators) and parameters.
+If needed, this can be overriden for a specific path.
 
 ## Versions
 - v2.3
