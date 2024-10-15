@@ -1,0 +1,216 @@
+---
+openapi: 3.0.3
+info:
+    title: 'GBFS'
+    version: '2.3'
+    description: |-
+      OpenAPI specification for [General Bikeshare Feed Specification  (GBFS)](https://github.com/MobilityData/gbfs/blob/master/gbfs.md) feeds, managed by MobilityData.
+tags:
+    -   name: gbfs
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#gbfsjson
+    -   name: gbfs_versions
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#gbfs_versionsjson
+    -   name: system_information
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_informationjson
+    -   name: vehicle_types
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#vehicle_typesjson
+    -   name: station_information
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#station_informationjson
+    -   name: station_status
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#station_statusjson
+    -   name: free_bike_status
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#free_bike_statusjson
+    -   name: system_hours
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_hoursjson
+    -   name: system_calendar
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_calendarjson
+    -   name: system_regions
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_regionsjson
+    -   name: system_pricing_plans
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_pricing_plansjson
+    -   name: system_alerts
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_alertsjson
+    -   name: geofencing_zones
+        externalDocs:
+            url: https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#geofencing_zonesjson
+paths:
+    /gbfs:
+        get:
+            tags:
+                - gbfs
+            operationId: getGbfs
+            responses:
+                '200':
+                    description: returns gbfs.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/gbfs.json
+
+    /gbfs_versions:
+        get:
+            tags:
+                - gbfs_versions
+            operationId: getGbfsVersions
+            responses:
+                '200':
+                    description: returns gbfs_versions.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/gbfs_versions.json
+  
+    /system_information:
+        get:
+            tags:
+                - system_information
+            operationId: getSystemInformation
+            responses:
+                '200':
+                    description: returns system_information.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/system_information.json
+
+    /vehicle_types:
+        get:
+            tags:
+                - vehicle_types
+            operationId: getVehicleTypes
+            responses:
+                '200':
+                    description: returns vehicle_types.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/vehicle_types.json
+
+    /station_information:
+        get:
+            tags:
+                - station_information
+            operationId: getStationInformation
+            responses:
+                '200':
+                    description: returns station_information.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/station_information.json
+
+    /station_status:
+        get:
+            tags:
+                - station_status
+            operationId: getStationStatus
+            responses:
+                '200':
+                    description: returns station_status.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/station_status.json
+
+    /free_bike_status:
+        get:
+            tags:
+                - free_bike_status
+            operationId: getFreeBikeStatus
+            responses:
+                '200':
+                    description: returns free_bike_status.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/free_bike_status.json
+    
+    /system_hours:
+        get:
+            tags:
+                - system_hours
+            operationId: getSystemHours
+            responses:
+                '200':
+                    description: returns system_hours.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/system_hours.json
+    
+    /system_calendar:
+        get:
+            tags:
+                - system_calendar
+            operationId: getSystemCalendar
+            responses:
+                '200':
+                    description: returns system_calendar.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/system_calendar.json
+
+    /system_regions:
+        get:
+            tags:
+                - system_regions
+            operationId: getSystemRegions
+            responses:
+                '200':
+                    description: returns system_regions.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/system_regions.json
+
+    /system_pricing_plans:
+        get:
+            tags:
+                - system_pricing_plans
+            operationId: getSystemPricingPlans
+            responses:
+                '200':
+                    description: returns system_pricing_plans.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/system_pricing_plans.json
+
+    /system_alerts:
+        get:
+            tags:
+                - system_alerts
+            operationId: getSystemAlerts
+            responses:
+                '200':
+                    description: returns system_alerts.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/system_alerts.json
+
+    /geofencing_zones:
+        get:
+            tags:
+                - geofencing_zones
+            operationId: getGeofencingZones
+            responses:
+                '200':
+                    description: returns geofencing_zones.json
+                    content:
+                        application/json:
+                            schema:
+                                $ref: https://raw.githubusercontent.com/MobilityData/gbfs-json-schema/refs/heads/master/v2.3/geofencing_zones.json
