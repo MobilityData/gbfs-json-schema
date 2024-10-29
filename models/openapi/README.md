@@ -25,3 +25,4 @@ If needed, this can be overriden for a specific path.
 
 ## Versions
 - v2.3
+- v3.0
