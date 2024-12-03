@@ -1,7 +1,7 @@
 {
   "name": "gbfs-typescript-types",
-  "version": "1.0.8",
-  "description": "Language Bindings for GBFS in Typescript",
+  "version": "1.0.9",
+  "description": "Language Bindings for GBFS in Typescript.",
   "license": "Apache-2.0",
   "types": "index.d.ts",
   "author": "MobilityData",
