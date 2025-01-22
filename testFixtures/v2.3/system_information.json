@@ -1,0 +1,22 @@
+{
+  "last_updated": 1606830357,
+  "ttl": 300,
+  "version": "2.3",
+  "data": {
+    "system_id": "TST:System:Test",
+    "language": "en",
+    "name": "Test",
+    "url": "https://www.test.com/",
+    "timezone": "Europe/Oslo",
+    "rental_apps": {
+      "android": {
+        "store_uri": "https://play.google.com/store/apps/details?id=com.testrental.android",
+        "discovery_uri": "com.testrental.android://"
+      },
+      "ios": {
+        "store_uri": "https://apps.apple.com/app/apple-store/id123456789",
+        "discovery_uri": "com.testrental.ios://"
+      }
+    }
+  }
+}

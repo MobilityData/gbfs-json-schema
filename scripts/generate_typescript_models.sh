@@ -10,7 +10,7 @@ gbfs_version="v$1" #$1 is the first argument passed to the script (the version n
 parent_dir="$(dirname "$(dirname "$0")")"
 copyright_file="$parent_dir/copyright.txt"
 
-gbfs_versions=("v3.0" "v3.1-RC")
+gbfs_versions=("v2.3" "v3.0" "v3.1-RC")
 
 for gbfs_version in "${gbfs_versions[@]}"; do
     echo "gbfs_version: $gbfs_version"
