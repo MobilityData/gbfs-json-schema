@@ -1,0 +1,17 @@
+{
+  "name": "gbfs-json-schema",
+  "version": "1.0.0",
+  "description": "JSON Schemas for GBFS",
+  "license": "Apache-2.0",
+  "author": "MobilityData",
+  "files": [
+    "/v*.*/*.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MobilityData/gbfs-json-schema.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MobilityData/gbfs-json-schema/issues"
+  }
+}
