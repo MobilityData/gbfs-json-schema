@@ -2,7 +2,6 @@ name: GBFS Schema - Publish
 
 on:
   workflow_dispatch:
-  workflow_call:
   push:
     branches:
       - master
