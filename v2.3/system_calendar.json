@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id":
-    "https://github.com/MobilityData/gbfs/blob/v2.3/gbfs.md#system_calendarjson",
+    "https://github.com/MobilityData/gbfs-json-schema/blob/master/v2.3/system_calendar.json",
   "description": "Describes the operating calendar for a system.",
   "type": "object",
   "properties": {
