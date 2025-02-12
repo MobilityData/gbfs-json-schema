@@ -80,9 +80,9 @@
                       "description": " Name of the eco label. Added in v2.3.",
                       "type": "string"
                     }
-                  }
-                },
-                "required": ["country_code", "eco_sticker"]
+                  },
+                  "required": ["country_code", "eco_sticker"]
+                }
               },
               "max_range_meters": {
                 "description":
