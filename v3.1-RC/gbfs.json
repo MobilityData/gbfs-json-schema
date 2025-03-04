@@ -53,7 +53,19 @@
             },
             "required": ["name", "url"]
           },
-          "minItems": 1
+          "minItems": 1,
+          "allOf": [
+            {
+              "type": "array",
+              "contains": {
+                "type": "object",
+                "properties": {
+                  "name": { "const": "system_information" }
+                },
+                "required": ["name"]
+              }
+            }
+          ]
         }
       },
       "required": ["feeds"]
