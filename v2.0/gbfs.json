@@ -71,8 +71,7 @@
                     "type": "object",
                     "properties": {
                       "name": { "const": "system_information" }
-                    },
-                    "required": ["name"]
+                    }
                   }
                 }
               ]
