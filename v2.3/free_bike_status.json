@@ -96,7 +96,8 @@
               "current_fuel_percent": {
                 "description": "This value represents the current percentage, expressed from 0 to 1, of fuel or battery power remaining in the vehicle. Added in v2.3-RC.",
                 "type": "number",
-                "minimum": 0
+                "minimum": 0,
+                "maximum": 1
               },
               "station_id": {
                 "description": "Identifier referencing the station_id if the vehicle is currently at a station (added in v2.1-RC2).",

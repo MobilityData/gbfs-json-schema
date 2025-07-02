@@ -1,6 +1,8 @@
 name: GBFS Typescript Language Bindings - Publish
 
 on:
+    workflow_dispatch:
+    workflow_call:
     push:
       branches:
         - master
@@ -32,7 +34,7 @@ jobs:
                 export-env: true # Export loaded secrets as environment variables
               env:
                 OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
-                NODE_AUTH_TOKEN: "op://TECHNOLOGIES/vwhmodynvelkwrqbpel45ncve4/credential"
+                NODE_AUTH_TOKEN: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/ppzc4jxrwkf3omdmcs7z2wiwum/credential"
       
             - name: Publish to npm
               run: cd ./models/typescript && npm publish

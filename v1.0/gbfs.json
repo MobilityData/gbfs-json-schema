@@ -36,6 +36,12 @@
                   }
                 },
                 "required": ["name", "url"]
+              },
+              "minItems": 1,
+              "contains": {
+                "properties": {
+                  "name": { "const": "system_information" }
+                }
               }
             }
           },

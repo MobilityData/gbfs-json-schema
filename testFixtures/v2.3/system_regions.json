@@ -1,0 +1,13 @@
+{
+  "last_updated": 1606858379,
+  "ttl": 300,
+  "version": "2.3",
+  "data": {
+    "regions": [
+      {
+        "region_id": "TST:Region:Sahara",
+        "name": "Sahara"
+      }
+    ]
+  }
+}

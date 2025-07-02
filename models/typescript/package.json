@@ -1,7 +1,29 @@
 {
   "name": "gbfs-typescript-types",
-  "version": "1.0.7",
-  "description": "Language Bindings for GBFS in Typescript",
+  "version": "1.0.11",
+  "description": "Language Bindings for GBFS in Typescript.",
+  "keywords": [
+    "gbfs",
+    "general-bikeshare-feed-specification",
+    "typescript",
+    "types",
+    "type-definitions",
+    "bikeshare",
+    "bike-sharing",
+    "mobility",
+    "shared-mobility",
+    "transportation",
+    "feed-specification",
+    "open-data",
+    "npm-package",
+    "javascript",
+    "data-standard",
+    "schema",
+    "json-schema",
+    "typescript-support",
+    "npm",
+    "types-for-gbfs"
+  ],
   "license": "Apache-2.0",
   "types": "index.d.ts",
   "author": "MobilityData",
@@ -11,8 +33,9 @@
   },
   "files": [
     "index.d.ts",
-    "v3.1-RC",
-    "v3.0" 
+    "v2.3",
+    "v3.0",
+    "v3.1-RC"
   ],
   "devDependencies": {
     "@types/jest": "^29.5.12",

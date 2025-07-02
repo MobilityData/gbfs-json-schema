@@ -79,8 +79,8 @@ fabric.properties
 build/
 
 # Inputs and outputs
-/input/
-/output/
+input/
+output/
 
 # Mac
 */.DS_Store
