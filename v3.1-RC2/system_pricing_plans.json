@@ -183,7 +183,7 @@
               },
               "fare_capping": {
                 "type": "object",
-                "description": "Object defining a capped fare once a price threshold has been spent within a timeframe. (added in v3.1-RC22)",
+                "description": "Object defining a capped fare once a price threshold has been spent within a timeframe. (added in v3.1-RC2)",
                 "properties": {
                   "duration": {
                     "description": "Amount of time in minutes during which the fare is capped.",
