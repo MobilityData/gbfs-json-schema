@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "$id": "https://github.com/MobilityData/gbfs-json-schema/blob/master/v3.1-RC2/vehicle_availabilityjson",
+  "$id": "https://github.com/MobilityData/gbfs-json-schema/blob/master/v3.1-RC2/vehicle_availability.json",
   "description": "Describes the vehicle availabilities of the system.",
   "type": "object",
   "properties": {
