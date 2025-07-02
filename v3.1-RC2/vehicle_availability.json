@@ -56,7 +56,6 @@
                 "description": "Array of time slots during which the specified vehicle is available.",
                 "items": {
                   "type": "object",
-
                   "properties": {
                     "from": {
                       "type": "string",
