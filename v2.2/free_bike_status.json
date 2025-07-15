@@ -91,7 +91,7 @@
               "last_reported": {
                 "description":
                   "The last time this vehicle reported its status to the operator's backend in POSIX time (added in v2.1-RC).",
-                "type": "number",
+                "type": "integer",
                 "minimum": 1450155600
               },
               "current_range_meters": {
