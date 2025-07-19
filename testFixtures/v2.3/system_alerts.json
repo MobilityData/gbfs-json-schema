@@ -1,5 +1,5 @@
 {
-  "last_updated": 1434054678,
+  "last_updated": 1751434987,
   "ttl": 0,
   "version": "2.3",
   "data": {
@@ -9,14 +9,14 @@
         "type": "station_closure",
         "times": [
           {
-            "start": 1434054678,
-            "end": 1434054987
+            "start": 1751437263,
+            "end": 1751434987
           }
         ],
         "station_ids": ["TST:Station:1"],
         "summary": "Closed for maintenance",
         "description": "Station is closed to install more docks.",
-        "last_updated": 1434054678
+        "last_updated": 1751434987
       }
     ]
   }

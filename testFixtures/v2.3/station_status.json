@@ -1,5 +1,5 @@
 {
-  "last_updated": 1434054678,
+  "last_updated": 1751437263,
   "ttl": 0,
   "version": "2.3",
   "data": {
@@ -9,7 +9,7 @@
         "is_installed": true,
         "is_renting": true,
         "is_returning": true,
-        "last_reported": 1434054678,
+        "last_reported": 1751437263,
         "num_docks_available": 3,
         "vehicle_docks_available": [
           {
@@ -38,7 +38,7 @@
         "is_installed": true,
         "is_renting": true,
         "is_returning": true,
-        "last_reported": 1434054678,
+        "last_reported": 1751437263,
         "num_docks_available": 8,
         "vehicle_docks_available": [
           {
