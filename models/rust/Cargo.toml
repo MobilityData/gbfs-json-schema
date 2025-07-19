@@ -22,9 +22,9 @@ pretty_assertions = "1.4"
 
 [dependencies]
 futures = "0.3"
-http = "1.0"
+http = "1.3"
 serde_json = "1.0"
-serde_with = "3.6"
+serde_with = "3.13"
 url = "2.5"
 url_serde = "0.2"
 
@@ -37,20 +37,20 @@ version = "1.0"
 features = ["derive"]
 
 [dependencies.reqwest]
-version = "0.11"
+version = "0.12"
 features = ["json"]
 
 [dependencies.napi]
-version = "2.15"
+version = "2.16"
 default-features = false
 features = ["napi6"]
 optional = true
 
 [dependencies.napi-derive]
-version = "2.15"
+version = "2.16"
 optional = true
 
 [dependencies.pyo3]
-version = "0.20"
+version = "0.25"
 features = ["serde"]
 optional = true
