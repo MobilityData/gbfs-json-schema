@@ -1,7 +1,7 @@
 {
     "last_updated": "2023-07-17T13:34:13+02:00",
     "ttl":0,
-    "version": "3.1-RC",
+    "version": "3.1-RC2",
     "data":{
       "datasets":[
         {
@@ -12,8 +12,8 @@
               "url":"https://berlin.example.com/gbfs/2/gbfs"
             },
             {
-              "version": "3.1-RC",
-              "url":"https://berlin.example.com/gbfs/3.1-RC/gbfs"
+              "version": "3.1-RC2",
+              "url":"https://berlin.example.com/gbfs/3.1-RC2/gbfs"
             }
           ],
           "area": {
@@ -63,8 +63,8 @@
               "url":"https://paris.example.com/gbfs/2/gbfs"
             },
             {
-              "version": "3.1-RC",
-              "url":"https://paris.example.com/gbfs/3.1-RC/gbfs"
+              "version": "3.1-RC2",
+              "url":"https://paris.example.com/gbfs/3.1-RC2/gbfs"
             }
           ],
           "area": {
