@@ -5,14 +5,15 @@
 # Using this script can be done as follows: ./scripts/generate_go_models.sh 3.0
 # Just make sure to have the gbfs schemas in the correct folder ./vX.X
 
+# The script relative path. This make sure the script can be executed from any folder within the repository.
+SCRIPT_PATH="$(dirname -- "${BASH_SOURCE[0]}")"
+
 gbfs_version="v$1" #$1 is the first argument passed to the script (the version number)
 gbfs_version_no_decimal=$(echo "$1" | tr -d '.' | tr -d -)
-parent_dir="$(dirname "$(dirname "$0")")"
-folder_path="../$parent_dir/$gbfs_version/"
-go_folder="../models/golang/"
+folder_path="$SCRIPT_PATH/../$gbfs_version/"
+go_folder="$SCRIPT_PATH/../models/golang/"
 output_path="$go_folder/$gbfs_version/"
-test_path="$parent_dir/$gbfs_version/tests/ti/"
-copyright_file="$parent_dir/copyright.txt"
+copyright_file="$SCRIPT_PATH/copyright.txt"
 
 # Iterate over all the files in the folder of the gbfs version
 for file in "$folder_path"/*
