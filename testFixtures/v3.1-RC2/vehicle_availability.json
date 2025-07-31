@@ -1,0 +1,27 @@
+{
+  "last_updated": "2025-07-17T13:34:13+02:00",
+  "ttl": 0,
+  "version": "3.1-RC2",
+  "data": {
+    "vehicles": [
+      {
+        "vehicle_id": "vehicle_id_1",
+        "vehicle_type_id": "abc123",
+        "station_id": "pga",
+        "pricing_plan_id": "plan2",
+        "vehicle_equipment": [
+          "child_seat_a"
+        ],
+        "availabilities": [
+          {
+            "from": "2025-05-24T00:00:00+02:00",
+            "until": "2025-07-24T23:59:00+02:00"
+          },
+          {
+            "from": "2025-10-25T00:00:00+02:00"
+          }
+        ]
+      }
+    ]
+  }
+}
