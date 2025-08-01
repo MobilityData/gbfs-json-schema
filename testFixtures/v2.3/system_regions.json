@@ -1,12 +1,24 @@
 {
-  "last_updated": 1606858379,
-  "ttl": 300,
+  "last_updated": 1640887163,
+  "ttl": 86400,
   "version": "2.3",
   "data": {
     "regions": [
       {
-        "region_id": "TST:Region:Sahara",
-        "name": "Sahara"
+        "name": "North",
+        "region_id": "3"
+      },
+      {
+        "name": "East",
+        "region_id": "4"
+      },
+      {
+        "name": "South",
+        "region_id": "5"
+      },
+      {
+        "name": "West",
+        "region_id": "6"
       }
     ]
   }

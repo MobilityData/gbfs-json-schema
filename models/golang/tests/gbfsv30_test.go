@@ -6,6 +6,7 @@ import (
 	"os"
 	"testing"
 
+	struct_assignment "github.com/MobilityData/gbfs-json-schema/models/golang/common/struct_assignment"
 	gbfs "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/gbfs"
 	gbfsversions "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/gbfs_versions"
 	geofencingzones "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/geofencing_zones"
@@ -22,12 +23,10 @@ import (
 	"github.com/xeipuuv/gojsonschema"
 )
 
-const pathToTestFixtures = "./../../../testFixtures/v3.0/"
+const pathToTestFixtures30 = "./../../../testFixtures/v3.0/"
 
-func LoadSchemaAndFixture(t *testing.T, fileName string) (gojsonschema.JSONLoader, []byte) {
-
-	pathToSchema := "./../../../v3.0/"
-	schemaDataBytes, schemaErr := os.ReadFile(pathToSchema + fileName)
+func loadSchemaAndFixture30(t *testing.T, schemaPath string, fixturePath string) (gojsonschema.JSONLoader, []byte) {
+	schemaDataBytes, schemaErr := os.ReadFile(schemaPath)
 	if schemaErr != nil {
 		t.Error("Error opening JSON file:", schemaErr)
 		return nil, nil
@@ -39,7 +38,7 @@ func LoadSchemaAndFixture(t *testing.T, fileName string) (gojsonschema.JSONLoade
 		return nil, nil
 	}
 	schemaLoader := gojsonschema.NewGoLoader(schemaData)
-	jsonData, err2 := os.ReadFile(pathToTestFixtures + fileName)
+	jsonData, err2 := os.ReadFile(fixturePath)
 	if err2 != nil {
 		t.Error("Error opening JSON file:", err2)
 		return nil, nil
@@ -47,7 +46,7 @@ func LoadSchemaAndFixture(t *testing.T, fileName string) (gojsonschema.JSONLoade
 	return schemaLoader, jsonData
 }
 
-func ValidateSchemaToUnmarshal(t *testing.T, schemaLoader gojsonschema.JSONLoader, gbfsData interface{}) {
+func validateSchemaToUnmarshal30(t *testing.T, schemaLoader gojsonschema.JSONLoader, gbfsData interface{}) {
 	loader := gojsonschema.NewGoLoader(gbfsData)
 	result, err3 := gojsonschema.Validate(schemaLoader, loader)
 	if err3 != nil {
@@ -63,122 +62,152 @@ func ValidateSchemaToUnmarshal(t *testing.T, schemaLoader gojsonschema.JSONLoade
 	}
 }
 
-func TestGbfs(t *testing.T) {
-	schemaLoader, jsonData := LoadSchemaAndFixture(t, "gbfs.json")
-	gbfsData, err := gbfs.UnmarshalGbfs(jsonData)
+func TestGbfs30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/gbfs.json", pathToTestFixtures30+"gbfs.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[gbfs.Gbfs](jsonData)
 	if err != nil {
 		t.Error("Error With Unmarshal:", err)
 		return
 	}
-	ValidateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
 }
 
-func TestGbfsVersions(t *testing.T) {
-	schemaLoader, jsonData := LoadSchemaAndFixture(t, "gbfs_versions.json")
-	gbfsData, err := gbfsversions.UnmarshalGbfsVersions(jsonData)
+func TestGbfsVersions30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/gbfs_versions.json", pathToTestFixtures30+"gbfs_versions.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[gbfsversions.GbfsVersions](jsonData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
-	ValidateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
 }
 
-func TestGeofencingZones(t *testing.T) {
-	schemaLoader, jsonData := LoadSchemaAndFixture(t, "geofencing_zones.json")
-	gbfsData, err := geofencingzones.UnmarshalGeofencingZones(jsonData)
+func TestGeofencingZones30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/geofencing_zones.json", pathToTestFixtures30+"geofencing_zones.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[geofencingzones.GeofencingZones](jsonData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
-	ValidateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
 }
 
-func TestManifest(t *testing.T) {
-	schemaLoader, jsonData := LoadSchemaAndFixture(t, "manifest.json")
-	gbfsData, err := manifest.UnmarshalManifest(jsonData)
+func TestManifest30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/manifest.json", pathToTestFixtures30+"manifest.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[manifest.Manifest](jsonData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
-	ValidateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
 }
 
-func TestStationInformation(t *testing.T) {
-	schemaLoader, jsonData := LoadSchemaAndFixture(t, "station_information.json")
-	gbfsData, err := stationinformation.UnmarshalStationInformation(jsonData)
+func TestStationInformationPhysicalLimitedHoursOfOperation30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/station_information.json", pathToTestFixtures30+"station_information_physical_station_limited_hours_of_operation.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[stationinformation.StationInformation](jsonData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
-	ValidateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
 }
 
-func TestStationStatus(t *testing.T) {
-	schemaLoader, jsonData := LoadSchemaAndFixture(t, "station_status.json")
-	gbfsData, err := stationstatus.UnmarshalStationStatus(jsonData)
+func TestStationInformationVirtual30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/station_information.json", pathToTestFixtures30+"station_information_virtual_station.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[stationinformation.StationInformation](jsonData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
-	ValidateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
 }
 
-func TestSystemAlerts(t *testing.T) {
-	schemaLoader, jsonData := LoadSchemaAndFixture(t, "system_alerts.json")
-	gbfsData, err := systemalerts.UnmarshalSystemAlerts(jsonData)
+func TestStationStatus30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/station_status.json", pathToTestFixtures30+"station_status.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[stationstatus.StationStatus](jsonData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
-	ValidateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
 }
 
-func TestSystemInformation(t *testing.T) {
-	schemaLoader, jsonData := LoadSchemaAndFixture(t, "system_information.json")
-	gbfsData, err := systeminformation.UnmarshalSystemInformation(jsonData)
+func TestSystemAlerts30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/system_alerts.json", pathToTestFixtures30+"system_alerts.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[systemalerts.SystemAlerts](jsonData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
-	ValidateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
 }
 
-func TestSystemPricingPlan(t *testing.T) {
-	schemaLoader, jsonData := LoadSchemaAndFixture(t, "system_pricing_plans.json")
-	gbfsData, err := systempricingplans.UnmarshalSystemPricingPlans(jsonData)
+func TestSystemInformation30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/system_information.json", pathToTestFixtures30+"system_information.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[systeminformation.SystemInformation](jsonData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
-	ValidateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
 }
 
-func TestSystemRegions(t *testing.T) {
-	schemaLoader, jsonData := LoadSchemaAndFixture(t, "system_regions.json")
-	gbfsData, err := systemregions.UnmarshalSystemRegions(jsonData)
+func TestSystemPricingPlanA30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/system_pricing_plans.json", pathToTestFixtures30+"system_pricing_plans_a.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[systempricingplans.SystemPricingPlans](jsonData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
-	ValidateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
 }
 
-func TestVehicleStatus(t *testing.T) {
-	schemaLoader, jsonData := LoadSchemaAndFixture(t, "vehicle_status.json")
-	gbfsData, err := vehiclestatus.UnmarshalVehicleStatus(jsonData)
+func TestSystemPricingPlan30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/system_pricing_plans.json", pathToTestFixtures30+"system_pricing_plans_b.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[systempricingplans.SystemPricingPlans](jsonData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
-	ValidateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
 }
 
-func TestVehicleTypes(t *testing.T) {
-	schemaLoader, jsonData := LoadSchemaAndFixture(t, "vehicle_types.json")
-	gbfsData, err := vehicletypes.UnmarshalVehicleTypes(jsonData)
+func TestSystemRegions30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/system_regions.json", pathToTestFixtures30+"system_regions.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[systemregions.SystemRegions](jsonData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
-	ValidateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
+}
+
+func TestVehicleStatusCarsharing30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/vehicle_status.json", pathToTestFixtures30+"vehicle_status_carsharing.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[vehiclestatus.VehicleStatus](jsonData)
+	if err != nil {
+		t.Error("Error UnmarshalGbfs:", err)
+		return
+	}
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
+}
+
+func TestVehicleStatusmicromobility30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/vehicle_status.json", pathToTestFixtures30+"vehicle_status_micromobility.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[vehiclestatus.VehicleStatus](jsonData)
+	if err != nil {
+		t.Error("Error UnmarshalGbfs:", err)
+		return
+	}
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
+}
+
+func TestVehicleTypes30(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture30(t, "./../../../v3.0/vehicle_types.json", pathToTestFixtures30+"vehicle_types.json")
+	gbfsData, err := struct_assignment.UnmarshalStruct[vehicletypes.VehicleTypes](jsonData)
+	if err != nil {
+		t.Error("Error UnmarshalGbfs:", err)
+		return
+	}
+	validateSchemaToUnmarshal30(t, schemaLoader, gbfsData)
 }

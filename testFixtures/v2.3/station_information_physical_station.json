@@ -1,0 +1,23 @@
+{
+  "last_updated": 1640887163,
+  "ttl": 0,
+  "version": "2.3",
+  "data": {
+    "stations": [
+      {
+        "station_id": "pga",
+        "name": "Parking garage A",
+        "lat": 12.345678,
+        "lon": 45.678901,
+        "parking_type": "underground_parking",
+        "parking_hoop": false,
+        "contact_phone": "+33109874321",
+        "is_charging_station": true,
+        "vehicle_type_capacity": {
+          "abc123": 7,
+          "def456": 9
+        }
+      }
+    ]
+  }
+}

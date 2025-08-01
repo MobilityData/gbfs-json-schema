@@ -1,0 +1,31 @@
+{
+  "last_updated": 1640887163,
+  "ttl": 0,
+  "version": "2.3",
+  "data": {
+    "plans": [
+      {
+        "plan_id": "plan3",
+        "name": "Simple Rate",
+        "currency": "CAD",
+        "price": 3.00,
+        "is_taxable": true,
+        "description": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
+        "per_km_pricing": [
+          {
+            "start": 0,
+            "rate": 0.25,
+            "interval": 1
+          }
+        ],
+        "per_min_pricing": [
+          {
+            "start": 0,
+            "rate": 0.50,
+            "interval": 1
+          }
+        ]
+      }
+    ]
+  }
+}

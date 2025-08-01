@@ -1,22 +1,27 @@
 {
-  "last_updated": 1751434987,
-  "ttl": 0,
+  "last_updated": 1604519393,
+  "ttl": 60,
   "version": "2.3",
   "data": {
     "alerts": [
       {
-        "alert_id": "TST:Alert:1",
+        "alert_id": "21",
         "type": "station_closure",
+        "station_ids": [
+          "123",
+          "456",
+          "789"
+        ],
         "times": [
           {
-            "start": 1751437263,
-            "end": 1751434987
+            "start": 1604448000,
+            "end": 1604674800
           }
         ],
-        "station_ids": ["TST:Station:1"],
-        "summary": "Closed for maintenance",
-        "description": "Station is closed to install more docks.",
-        "last_updated": 1751434987
+        "url": "https://example.com/more-info",
+        "summary": "Disruption of Service",
+        "description": "The three stations on Broadway will be out of service from 12:00am Nov 3 to 3:00pm Nov 6th to accommodate road work",
+        "last_updated": 1604198100
       }
     ]
   }
