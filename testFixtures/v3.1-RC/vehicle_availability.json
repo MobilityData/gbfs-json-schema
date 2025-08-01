@@ -1,0 +1,37 @@
+{
+  "last_updated": "2023-07-17T13:34:13+02:00",
+  "ttl": 0,
+  "version": "3.1-RC2",
+  "data": {
+    "vehicles": [
+      {
+        "vehicle_id": "45bd3fb7-a2d5-4def-9de1-c645844ba962",
+        "vehicle_type_id": "abc123",
+        "station_id": "station1",
+        "pricing_plan_id": "plan3",
+        "vehicle_equipment": [
+          "child_seat_a"
+        ],
+        "availabilities": [
+          {
+            "from": "2024-12-24T08:15Z",
+            "until": "2024-12-24T09:15Z"
+          },
+          {
+            "from": "2024-12-25T10:30Z"
+          }
+        ]
+      },
+      {
+        "vehicle_id": "987fd100-b822-4347-86a4-b3eef8ca8b53",
+        "vehicle_type_id": "def456",
+        "station_id": "86",
+        "availabilities": [
+          {
+            "from": "2024-12-24T08:45Z"
+          }
+        ]
+      }
+    ]
+  }
+}

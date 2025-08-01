@@ -1,7 +1,7 @@
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
   "ttl": 0,
-  "version": "3.1-RC",
+  "version": "3.1-RC2",
   "data": {
     "stations": [
       {
@@ -11,14 +11,19 @@
         "is_returning": true,
         "last_reported": "2023-07-17T13:34:13+02:00",
         "num_docks_available": 3,
-        "num_docks_disabled" : 1,
+        "num_docks_disabled": 1,
         "vehicle_docks_available": [
           {
-            "vehicle_type_ids": [ "abc123", "def456" ],
+            "vehicle_type_ids": [
+              "abc123",
+              "def456"
+            ],
             "count": 2
           },
           {
-            "vehicle_type_ids": [ "def456" ],
+            "vehicle_type_ids": [
+              "def456"
+            ],
             "count": 1
           }
         ],
@@ -42,19 +47,23 @@
         "is_returning": true,
         "last_reported": "2023-07-17T13:34:13+02:00",
         "num_docks_available": 8,
-        "num_docks_disabled" : 1,
+        "num_docks_disabled": 1,
         "vehicle_docks_available": [
           {
-            "vehicle_type_ids": [ "abc123" ],
+            "vehicle_type_ids": [
+              "abc123"
+            ],
             "count": 6
           },
           {
-            "vehicle_type_ids": [ "def456" ],
+            "vehicle_type_ids": [
+              "def456"
+            ],
             "count": 2
           }
         ],
         "num_vehicles_available": 6,
-        "num_vehicles_disabled": 1, 
+        "num_vehicles_disabled": 1,
         "vehicle_types_available": [
           {
             "vehicle_type_id": "abc123",
