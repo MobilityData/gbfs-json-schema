@@ -1,4 +1,4 @@
-// Copyright 2024 MobilityData
+// Copyright 2025 MobilityData
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -35,8 +35,8 @@ type Data struct {
 
 type Dataset struct {
 	manifest_v30.Dataset
-	// A GeoJSON MultiPolygon that describes the operating area. 
-	// If area is supplied, then the record describes the general operating area of the system for the purpose of discovery. 
+	// A GeoJSON MultiPolygon that describes the operating area.
+	// If area is supplied, then the record describes the general operating area of the system for the purpose of discovery.
 	// Geographic details of the system's operating restrictions must be explicitly specified using station locations and geofencing zones, where appropriate.
 	Area *geojson.MultiPolygon `json:"area,omitempty"`
 	// The ISO 3166-1 alpha-2 country code of the operating area. The field MUST NOT be specified if the operating area spans multiple countries.
