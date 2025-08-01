@@ -16,6 +16,7 @@ import (
 	systeminformation "github.com/MobilityData/gbfs-json-schema/models/golang/v2.3/system_information"
 	systempricingplans "github.com/MobilityData/gbfs-json-schema/models/golang/v2.3/system_pricing_plans"
 	systemregions "github.com/MobilityData/gbfs-json-schema/models/golang/v2.3/system_regions"
+	vehicle_types "github.com/MobilityData/gbfs-json-schema/models/golang/v2.3/vehicle_types"
 )
 
 
@@ -24,7 +25,7 @@ func TestGbfs23(t *testing.T) {
 	var gbfsData gbfs.Gbfs
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
-		t.Error("Error With Unmarshal:", err)
+		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
 	validateSchemaToUnmarshal(t, schemaLoader, gbfsData)
@@ -176,6 +177,17 @@ func TestFreeBikeStatusCarsharing23(t *testing.T) {
 func TestFreeBikeStatusMicromobility23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v2.3/free_bike_status.json", TestFixturesV23+"free_bike_status_micromobility.json")
 	var gbfsData freebikestatus.FreeBikeStatus
+	err := json.Unmarshal(jsonData, &gbfsData)
+	if err != nil {
+		t.Error("Error UnmarshalGbfs:", err)
+		return
+	}
+	validateSchemaToUnmarshal(t, schemaLoader, gbfsData)
+}
+
+func TestVehicleTypes23(t *testing.T) {
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v2.3/vehicle_types.json", TestFixturesV23+"vehicle_types.json")
+	var gbfsData vehicle_types.VehicleTypes
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)

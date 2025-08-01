@@ -24,7 +24,7 @@ func TestGbfs31RC2(t *testing.T) {
 	var gbfsData gbfs.Gbfs
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
-		t.Error("Error With Unmarshal:", err)
+		t.Error("Error UnmarshalGbfs:", err)
 		return
 	}
 	validateSchemaToUnmarshal(t, schemaLoader, gbfsData)
