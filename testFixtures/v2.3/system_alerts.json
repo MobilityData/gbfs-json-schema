@@ -5,15 +5,20 @@
   "data": {
     "alerts": [
       {
-        "alert_id": "TST:Alert:1",
+        "alert_id": "21",
         "type": "station_closure",
+        "station_ids": [
+          "123",
+          "456",
+          "789"
+        ],
         "times": [
           {
             "start": 1751437263,
             "end": 1751434987
           }
         ],
-        "station_ids": ["TST:Station:1"],
+        "url": "https://example.com/more-info",
         "summary": "Closed for maintenance",
         "description": "Station is closed to install more docks.",
         "last_updated": 1751434987

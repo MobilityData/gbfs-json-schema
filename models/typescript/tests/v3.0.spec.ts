@@ -33,13 +33,16 @@ import gbfsVersionsJson from '../../../testFixtures/v3.0/gbfs_versions.json';
 import gbfsJson from '../../../testFixtures/v3.0/gbfs.json';
 import geofencingZonesJson from '../../../testFixtures/v3.0/geofencing_zones.json';
 import manifestJson from '../../../testFixtures/v3.0/manifest.json';
-import stationInformationJson from '../../../testFixtures/v3.0/station_information.json';
+import stationInformationPhysicalStationLimitedHoursOfOperationJson from '../../../testFixtures/v3.0/station_information_physical_station_limited_hours_of_operation.json';
+import stationInformationVirtualStationJson from '../../../testFixtures/v3.0/station_information_virtual_station.json';
 import stationStatusJson from '../../../testFixtures/v3.0/station_status.json';
 import systemAlertsJson from '../../../testFixtures/v3.0/system_alerts.json';
 import systemInformationJson from '../../../testFixtures/v3.0/system_information.json';
-import systemPricingPlansJson from '../../../testFixtures/v3.0/system_pricing_plans.json';
+import systemPricingPlansAJson from '../../../testFixtures/v3.0/system_pricing_plans_a.json';
+import systemPricingPlansBJson from '../../../testFixtures/v3.0/system_pricing_plans_b.json';
 import systemRegionsJson from '../../../testFixtures/v3.0/system_regions.json';
-import vehicleStatusJson from '../../../testFixtures/v3.0/vehicle_status.json';
+import vehicleStatusCarsharingJson from '../../../testFixtures/v3.0/vehicle_status_carsharing.json';
+import vehicleStatusMicromobilityJson from '../../../testFixtures/v3.0/vehicle_status_micromobility.json';
 import vehicleTypesJson from '../../../testFixtures/v3.0/vehicle_types.json';
 
 // Date objects cannot be represented in JSON
@@ -71,7 +74,13 @@ describe('GBFS Validator v3.0', () => {
 
     it('should check if station_information is valid', () => {
         expect(() => {
-            StationInformation.check(stationInformationJson);
+            StationInformation.check(stationInformationPhysicalStationLimitedHoursOfOperationJson);
+        }).not.toThrow();
+    });
+
+    it('should check if station_information is valid', () => {
+        expect(() => {
+            StationInformation.check(stationInformationVirtualStationJson);
         }).not.toThrow();
     });
 
@@ -95,7 +104,13 @@ describe('GBFS Validator v3.0', () => {
 
     it('should check if system_pricing_plans is valid', () => { 
         expect(() => {
-            SystemPricingPlans.check(systemPricingPlansJson);
+            SystemPricingPlans.check(systemPricingPlansAJson);
+        }).not.toThrow();
+    });
+
+    it('should check if system_pricing_plans is valid', () => { 
+        expect(() => {
+            SystemPricingPlans.check(systemPricingPlansBJson);
         }).not.toThrow();
     });
 
@@ -105,9 +120,15 @@ describe('GBFS Validator v3.0', () => {
         }).not.toThrow();
     });
 
-    it('should check if vehicle_status is valida', () => {
+    it('should check if vehicle_status is valid', () => {
         expect(() => {
-            VehicleStatus.check(vehicleStatusJson);
+            VehicleStatus.check(vehicleStatusMicromobilityJson);
+        }).not.toThrow();
+    });
+
+    it('should check if vehicle_status is valid', () => {
+        expect(() => {
+            VehicleStatus.check(vehicleStatusCarsharingJson);
         }).not.toThrow();
     });
 

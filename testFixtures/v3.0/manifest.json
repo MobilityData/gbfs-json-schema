@@ -1,156 +1,35 @@
 {
-    "last_updated": "2019-07-04T13:33:03.969Z",
-    "ttl": 60,
-    "version": "3.0",
-    "data": {
-        "datasets": [
-            {
-                "system_id": "example_berlin",
-                "versions": [
-                    {
-                        "url": "https://berlin.example.com/gbfs/2.1",
-                        "version": "2.1"
-                    },
-                    {
-                        "url": "https://berlin.example.com/gbfs/2.2",
-                        "version": "2.2"
-                    },
-                    {
-                        "url": "https://berlin.example.com/gbfs/2.3",
-                        "version": "2.3"
-                    },
-                    {
-                        "url": "https://berlin.example.com/gbfs/3.0",
-                        "version": "3.0"
-                    }
-                ]
-            },
-            {
-                "system_id": "example_rome",
-                "versions": [
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_mainz/gbfs/2.1",
-                        "version": "2.1"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_mainz/gbfs/2.2",
-                        "version": "2.2"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_mainz/gbfs/2.3",
-                        "version": "2.3"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_mainz/gbfs/3.0",
-                        "version": "3.0"
-                    }
-                ]
-            },
-            {
-                "system_id": "example_london",
-                "versions": [
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_boras/gbfs/2.1",
-                        "version": "2.1"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_boras/gbfs/2.2",
-                        "version": "2.2"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_boras/gbfs/2.3",
-                        "version": "2.3"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_boras/gbfs/3.0",
-                        "version": "3.0"
-                    }
-                ]
-            },
-            {
-                "system_id": "example_toronto",
-                "versions": [
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_rabka-zdroj/gbfs/2.1",
-                        "version": "2.1"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_rabka-zdroj/gbfs/2.2",
-                        "version": "2.2"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_rabka-zdroj/gbfs/2.3",
-                        "version": "2.3"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_rabka-zdroj/gbfs/3.0",
-                        "version": "3.0"
-                    }
-                ]
-            },
-            {
-                "system_id": "example_montreal",
-                "versions": [
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_osnabrueck/gbfs/2.1",
-                        "version": "2.1"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_osnabrueck/gbfs/2.2",
-                        "version": "2.2"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_osnabrueck/gbfs/2.3",
-                        "version": "2.3"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_osnabrueck/gbfs/3.0",
-                        "version": "3.0"
-                    }
-                ]
-            },
-            {
-                "system_id": "example_los_angeles",
-                "versions": [
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_dornbirn/gbfs/2.1",
-                        "version": "2.1"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_dornbirn/gbfs/2.2",
-                        "version": "2.2"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_dornbirn/gbfs/2.3",
-                        "version": "2.3"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_dornbirn/gbfs/3.0",
-                        "version": "3.0"
-                    }
-                ]
-            },
-            {
-                "system_id": "example_las_vegas",
-                "versions": [
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_trnava/gbfs/2.1",
-                        "version": "2.1"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_trnava/gbfs/2.2",
-                        "version": "2.2"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_trnava/gbfs/2.3",
-                        "version": "2.3"
-                    },
-                    {
-                        "url": "https://berlin.example.com/data-sharing/tier_tier_trnava/gbfs/3.0",
-                        "version": "3.0"
-                    }
-                ]
-            }
+  "last_updated": "2023-07-17T13:34:13+02:00",
+  "ttl":0,
+  "version":"3.0",
+  "data":{
+    "datasets":[
+      {
+        "system_id":"example_berlin",
+        "versions":[
+          {
+            "version":"2.0",
+            "url":"https://berlin.example.com/gbfs/2/gbfs"
+          },
+          {
+            "version":"3.0",
+            "url":"https://berlin.example.com/gbfs/3/gbfs"
+          }
         ]
-    }
+      },
+      {
+        "system_id":"example_paris",
+        "versions":[
+          {
+            "version":"2.0",
+            "url":"https://paris.example.com/gbfs/2/gbfs"
+          },
+          {
+            "version":"3.0",
+            "url":"https://paris.example.com/gbfs/3/gbfs"
+          }
+        ]
+      }
+    ]
+  }
 }
