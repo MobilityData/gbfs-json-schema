@@ -1,6 +1,6 @@
 {
-  "last_updated": 1604519393,
-  "ttl": 60,
+  "last_updated": 1751434987,
+  "ttl": 0,
   "version": "2.3",
   "data": {
     "alerts": [
@@ -14,14 +14,14 @@
         ],
         "times": [
           {
-            "start": 1604448000,
-            "end": 1604674800
+            "start": 1751437263,
+            "end": 1751434987
           }
         ],
         "url": "https://example.com/more-info",
-        "summary": "Disruption of Service",
-        "description": "The three stations on Broadway will be out of service from 12:00am Nov 3 to 3:00pm Nov 6th to accommodate road work",
-        "last_updated": 1604198100
+        "summary": "Closed for maintenance",
+        "description": "Station is closed to install more docks.",
+        "last_updated": 1751434987
       }
     ]
   }
