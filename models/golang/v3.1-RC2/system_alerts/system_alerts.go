@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package station_information
+package system_alerts
 
 import (
-	station_information_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/station_information"
+	system_alerts_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/system_alerts"
 )
 
-// List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
-type StationInformation struct {
-	station_information_v30.StationInformation
+// Describes ad-hoc changes to the system.
+type SystemAlerts struct {
+	system_alerts_v31RC.SystemAlerts
 }

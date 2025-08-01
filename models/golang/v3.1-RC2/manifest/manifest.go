@@ -12,13 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package station_information
+package manifest
 
 import (
-	station_information_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/station_information"
+	manifest_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/manifest"
 )
 
-// List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
-type StationInformation struct {
-	station_information_v30.StationInformation
+// An index of gbfs.json URLs for each GBFS data set produced by a publisher. A single
+// instance of this file should be published at a single stable URL, for example:
+// https://example.com/gbfs/manifest.json.
+type Manifest struct {
+	manifest_v31RC.Manifest
 }

@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package station_information
+package system_regions
 
 import (
-	station_information_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/station_information"
+	system_regions_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/system_regions"
 )
 
-// List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
-type StationInformation struct {
-	station_information_v30.StationInformation
+// Describes regions for a system that is broken up by geographic or political region.
+type SystemRegions struct {
+	system_regions_v31RC.SystemRegions
 }

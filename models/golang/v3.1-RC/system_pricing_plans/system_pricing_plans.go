@@ -44,14 +44,4 @@ type Plan struct {
 	// vehicle_types.json#default_reserve_time. This field MUST NOT be combined in a single pricing
 	// plan with reservation_price_per_min.
 	Reservation_price_flat_rate *float64 `json:"reservation_price_flat_rate,omitempty"`
-	// Object defining a capped fare once a price threshold has been spent within a timeframe.
-	// The same fare cap applies to each subsequent timeframe. For example, a fare capped at 15.00 CAD per 12-hour period.
-	Fare_capping *FareCapping `json:"fare_capping,omitempty"`
-}
-
-type FareCapping struct {
-	// Amount of time in minutes during which the fare is capped.
-	Duration uint64 `json:"duration"`
-	// The maximum fare threshold for the current timeframe, in the unit specified by currency.
-	Price float64 `json:"price"`
 }

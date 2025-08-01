@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package station_information
+package station_status
 
 import (
-	station_information_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/station_information"
+	station_status_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/station_status"
 )
 
-// List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
-type StationInformation struct {
-	station_information_v30.StationInformation
+// Describes the capacity and rental availability of the station
+type StationStatus struct {
+	station_status_v31RC.StationStatus
 }

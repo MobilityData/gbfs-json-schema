@@ -12,13 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package station_information
+package geofencing_zones
 
 import (
-	station_information_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/station_information"
+	geofencing_zones_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/geofencing_zones"
 )
 
-// List of all stations, their capacities and locations. REQUIRED of systems utilizing docks.
-type StationInformation struct {
-	station_information_v30.StationInformation
+// Describes geofencing zones and their associated rules and attributes (added in v2.1-RC).
+type GeofencingZones struct {
+	geofencing_zones_v31RC.GeofencingZones
 }
