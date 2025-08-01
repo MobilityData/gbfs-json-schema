@@ -18,10 +18,8 @@ import (
 	vehicletypes "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/vehicle_types"
 )
 
-const pathToTestFixtures31RC = "./../../../testFixtures/v3.1-RC/"
-
 func TestGbfs31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/gbfs.json", pathToTestFixtures31RC+"gbfs.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/gbfs.json", TestFixturesV31RC+"gbfs.json")
 	var gbfsData gbfs.Gbfs
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -32,7 +30,7 @@ func TestGbfs31RC(t *testing.T) {
 }
 
 func TestGbfsVersions31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/gbfs_versions.json", pathToTestFixtures31RC+"gbfs_versions.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/gbfs_versions.json", TestFixturesV31RC+"gbfs_versions.json")
 	var gbfsData gbfsversions.GbfsVersions
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -43,7 +41,7 @@ func TestGbfsVersions31RC(t *testing.T) {
 }
 
 func TestGeofencingZones31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/geofencing_zones.json", pathToTestFixtures31RC+"geofencing_zones.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/geofencing_zones.json", TestFixturesV31RC+"geofencing_zones.json")
 	var gbfsData geofencingzones.GeofencingZones
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -54,7 +52,7 @@ func TestGeofencingZones31RC(t *testing.T) {
 }
 
 func TestManifest31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/manifest.json", pathToTestFixtures31RC+"manifest.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/manifest.json", TestFixturesV31RC+"manifest.json")
 	var gbfsData manifest.Manifest
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -65,7 +63,7 @@ func TestManifest31RC(t *testing.T) {
 }
 
 func TestStationInformationPhysicalLimitedHoursOfOperation31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/station_information.json", pathToTestFixtures31RC+"station_information_physical_station_limited_hours_of_operation.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/station_information.json", TestFixturesV31RC+"station_information_physical_station_limited_hours_of_operation.json")
 	var gbfsData stationinformation.StationInformation
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -76,7 +74,7 @@ func TestStationInformationPhysicalLimitedHoursOfOperation31RC(t *testing.T) {
 }
 
 func TestStationInformationVirtual31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/station_information.json", pathToTestFixtures31RC+"station_information_virtual_station.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/station_information.json", TestFixturesV31RC+"station_information_virtual_station.json")
 	var gbfsData stationinformation.StationInformation
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -87,7 +85,7 @@ func TestStationInformationVirtual31RC(t *testing.T) {
 }
 
 func TestStationStatus31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/station_status.json", pathToTestFixtures31RC+"station_status.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/station_status.json", TestFixturesV31RC+"station_status.json")
 	var gbfsData stationstatus.StationStatus
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -98,7 +96,7 @@ func TestStationStatus31RC(t *testing.T) {
 }
 
 func TestSystemAlerts31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/system_alerts.json", pathToTestFixtures31RC+"system_alerts.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/system_alerts.json", TestFixturesV31RC+"system_alerts.json")
 	var gbfsData systemalerts.SystemAlerts
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -109,7 +107,7 @@ func TestSystemAlerts31RC(t *testing.T) {
 }
 
 func TestSystemInformation31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/system_information.json", pathToTestFixtures31RC+"system_information.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/system_information.json", TestFixturesV31RC+"system_information.json")
 	var gbfsData systeminformation.SystemInformation
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -120,7 +118,7 @@ func TestSystemInformation31RC(t *testing.T) {
 }
 
 func TestSystemPricingPlanA31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/system_pricing_plans.json", pathToTestFixtures31RC+"system_pricing_plans_a.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/system_pricing_plans.json", TestFixturesV31RC+"system_pricing_plans_a.json")
 	var gbfsData systempricingplans.SystemPricingPlans
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -131,7 +129,7 @@ func TestSystemPricingPlanA31RC(t *testing.T) {
 }
 
 func TestSystemPricingPlan31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/system_pricing_plans.json", pathToTestFixtures31RC+"system_pricing_plans_b.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/system_pricing_plans.json", TestFixturesV31RC+"system_pricing_plans_b.json")
 	var gbfsData systempricingplans.SystemPricingPlans
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -142,7 +140,7 @@ func TestSystemPricingPlan31RC(t *testing.T) {
 }
 
 func TestSystemRegions31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/system_regions.json", pathToTestFixtures31RC+"system_regions.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/system_regions.json", TestFixturesV31RC+"system_regions.json")
 	var gbfsData systemregions.SystemRegions
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -153,7 +151,7 @@ func TestSystemRegions31RC(t *testing.T) {
 }
 
 func TestVehicleStatusCarsharing31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/vehicle_status.json", pathToTestFixtures31RC+"vehicle_status_carsharing.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/vehicle_status.json", TestFixturesV31RC+"vehicle_status_carsharing.json")
 	var gbfsData vehiclestatus.VehicleStatus
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -164,7 +162,7 @@ func TestVehicleStatusCarsharing31RC(t *testing.T) {
 }
 
 func TestVehicleStatusMicromobility31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/vehicle_status.json", pathToTestFixtures31RC+"vehicle_status_micromobility.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/vehicle_status.json", TestFixturesV31RC+"vehicle_status_micromobility.json")
 	var gbfsData vehiclestatus.VehicleStatus
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
@@ -175,7 +173,7 @@ func TestVehicleStatusMicromobility31RC(t *testing.T) {
 }
 
 func TestVehicleTypes31RC(t *testing.T) {
-	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/vehicle_types.json", pathToTestFixtures31RC+"vehicle_types.json")
+	schemaLoader, jsonData := loadSchemaAndFixture(t, "./../../../v3.1-RC/vehicle_types.json", TestFixturesV31RC+"vehicle_types.json")
 	var gbfsData vehicletypes.VehicleTypes
 	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
