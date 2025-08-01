@@ -1,7 +1,7 @@
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 0,
-  "version": "3.1-RC",
+  "ttl": 300,
+  "version": "3.1-RC2",
   "data": {
     "plans": [
       {
@@ -17,7 +17,7 @@
         "is_taxable": true,
         "description": [
           {
-            "text": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute.",
+            "text": "$3 unlock fee, $0.25 per kilometer and 0.50 per minute, capped at $15 per 12-hour period.",
             "language": "en"
           }
         ],
@@ -34,7 +34,11 @@
             "rate": 0.50,
             "interval": 1
           }
-        ]
+        ],
+        "fare_capping": {
+          "duration": 720,
+          "price": 15.00
+        }
       }
     ]
   }

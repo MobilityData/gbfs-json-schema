@@ -1,7 +1,7 @@
 {
   "last_updated": "2023-07-17T13:34:13+02:00",
-  "ttl": 0,
-  "version": "3.1-RC",
+  "ttl": 300,
+  "version": "3.1-RC2",
   "data": {
     "feeds": [
       {
