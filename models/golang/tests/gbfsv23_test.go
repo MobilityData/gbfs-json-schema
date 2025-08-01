@@ -6,7 +6,6 @@ import (
 	"os"
 	"testing"
 
-	struct_assignment "github.com/MobilityData/gbfs-json-schema/models/golang/common/struct_assignment"
 	freebikestatus "github.com/MobilityData/gbfs-json-schema/models/golang/v2.3/free_bike_status"
 	gbfs "github.com/MobilityData/gbfs-json-schema/models/golang/v2.3/gbfs"
 	gbfsversions "github.com/MobilityData/gbfs-json-schema/models/golang/v2.3/gbfs_versions"
@@ -64,7 +63,8 @@ func validateSchemaToUnmarshal23(t *testing.T, schemaLoader gojsonschema.JSONLoa
 
 func TestGbfs23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/gbfs.json", pathToTestFixtures23+"gbfs.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[gbfs.Gbfs](jsonData)
+	var gbfsData gbfs.Gbfs
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error With Unmarshal:", err)
 		return
@@ -74,7 +74,8 @@ func TestGbfs23(t *testing.T) {
 
 func TestGbfsVersions23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/gbfs_versions.json", pathToTestFixtures23+"gbfs_versions.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[gbfsversions.GbfsVersions](jsonData)
+	var gbfsData gbfsversions.GbfsVersions
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -84,7 +85,8 @@ func TestGbfsVersions23(t *testing.T) {
 
 func TestGeofencingZones23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/geofencing_zones.json", pathToTestFixtures23+"geofencing_zones.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[geofencingzones.GeofencingZones](jsonData)
+	var gbfsData geofencingzones.GeofencingZones
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -94,7 +96,8 @@ func TestGeofencingZones23(t *testing.T) {
 
 func TestStationInformationPhysical23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/station_information.json", pathToTestFixtures23+"station_information_physical_station.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[stationinformation.StationInformation](jsonData)
+	var gbfsData stationinformation.StationInformation
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -104,7 +107,8 @@ func TestStationInformationPhysical23(t *testing.T) {
 
 func TestStationInformationVirtual23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/station_information.json", pathToTestFixtures23+"station_information_virtual_station.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[stationinformation.StationInformation](jsonData)
+	var gbfsData stationinformation.StationInformation
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -114,7 +118,8 @@ func TestStationInformationVirtual23(t *testing.T) {
 
 func TestStationStatus23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/station_status.json", pathToTestFixtures23+"station_status.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[stationstatus.StationStatus](jsonData)
+	var gbfsData stationstatus.StationStatus
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -124,7 +129,8 @@ func TestStationStatus23(t *testing.T) {
 
 func TestSystemAlerts23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/system_alerts.json", pathToTestFixtures23+"system_alerts.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[systemalerts.SystemAlerts](jsonData)
+	var gbfsData systemalerts.SystemAlerts
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -134,7 +140,8 @@ func TestSystemAlerts23(t *testing.T) {
 
 func TestSystemInformation23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/system_information.json", pathToTestFixtures23+"system_information.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[systeminformation.SystemInformation](jsonData)
+	var gbfsData systeminformation.SystemInformation
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -144,7 +151,8 @@ func TestSystemInformation23(t *testing.T) {
 
 func TestSystemPricingPlanA23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/system_pricing_plans.json", pathToTestFixtures23+"system_pricing_plans_a.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[systempricingplans.SystemPricingPlans](jsonData)
+	var gbfsData systempricingplans.SystemPricingPlans
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -154,7 +162,8 @@ func TestSystemPricingPlanA23(t *testing.T) {
 
 func TestSystemPricingPlanB23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/system_pricing_plans.json", pathToTestFixtures23+"system_pricing_plans_b.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[systempricingplans.SystemPricingPlans](jsonData)
+	var gbfsData systempricingplans.SystemPricingPlans
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -164,7 +173,8 @@ func TestSystemPricingPlanB23(t *testing.T) {
 
 func TestSystemRegions23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/system_regions.json", pathToTestFixtures23+"system_regions.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[systemregions.SystemRegions](jsonData)
+	var gbfsData systemregions.SystemRegions
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -174,7 +184,8 @@ func TestSystemRegions23(t *testing.T) {
 
 func TestSystemCalendar23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/system_calendar.json", pathToTestFixtures23+"system_calendar.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[systemcalendar.SystemCalendar](jsonData)
+	var gbfsData systemcalendar.SystemCalendar
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -184,7 +195,8 @@ func TestSystemCalendar23(t *testing.T) {
 
 func TestSystemOperatingHours23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/system_hours.json", pathToTestFixtures23+"system_hours.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[systemhours.SystemHours](jsonData)
+	var gbfsData systemhours.SystemHours
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -194,7 +206,8 @@ func TestSystemOperatingHours23(t *testing.T) {
 
 func TestFreeBikeStatusCarsharing23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/free_bike_status.json", pathToTestFixtures23+"free_bike_status_carsharing.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[freebikestatus.FreeBikeStatus](jsonData)
+	var gbfsData freebikestatus.FreeBikeStatus
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
@@ -204,7 +217,8 @@ func TestFreeBikeStatusCarsharing23(t *testing.T) {
 
 func TestFreeBikeStatusMicromobility23(t *testing.T) {
 	schemaLoader, jsonData := loadSchemaAndFixture23(t, "./../../../v2.3/free_bike_status.json", pathToTestFixtures23+"free_bike_status_micromobility.json")
-	gbfsData, err := struct_assignment.UnmarshalStruct[freebikestatus.FreeBikeStatus](jsonData)
+	var gbfsData freebikestatus.FreeBikeStatus
+	err := json.Unmarshal(jsonData, &gbfsData)
 	if err != nil {
 		t.Error("Error UnmarshalGbfs:", err)
 		return
