@@ -15,10 +15,10 @@
 package gbfs
 
 import (
-	gbfs_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/gbfs"
+	gbfs_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/gbfs"
 )
 
 // Auto-discovery file that links to all of the other files published by the system.
 type Gbfs struct {
-	gbfs_v31RC.Gbfs
+	gbfs_v30.Gbfs
 }

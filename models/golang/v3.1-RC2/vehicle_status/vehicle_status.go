@@ -15,11 +15,11 @@
 package vehicle_status
 
 import (
-	vehicle_status_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/vehicle_status"
+	vehicle_status_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/vehicle_status"
 )
 
 // Describes the vehicles that are available for rent (as of v3.0, formerly
 // free_bike_status).
 type VehicleStatus struct {
-	vehicle_status_v31RC.VehicleStatus
+	vehicle_status_v30.VehicleStatus
 }

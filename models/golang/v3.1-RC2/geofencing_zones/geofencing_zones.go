@@ -15,10 +15,10 @@
 package geofencing_zones
 
 import (
-	geofencing_zones_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/geofencing_zones"
+	geofencing_zones_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/geofencing_zones"
 )
 
 // Describes geofencing zones and their associated rules and attributes (added in v2.1-RC).
 type GeofencingZones struct {
-	geofencing_zones_v31RC.GeofencingZones
+	geofencing_zones_v30.GeofencingZones
 }

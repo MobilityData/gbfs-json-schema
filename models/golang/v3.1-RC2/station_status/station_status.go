@@ -15,10 +15,10 @@
 package station_status
 
 import (
-	station_status_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/station_status"
+	station_status_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/station_status"
 )
 
 // Describes the capacity and rental availability of the station
 type StationStatus struct {
-	station_status_v31RC.StationStatus
+	station_status_v30.StationStatus
 }

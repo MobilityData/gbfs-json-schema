@@ -15,11 +15,11 @@
 package system_information
 
 import (
-	system_information_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/system_information"
+	system_information_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/system_information"
 )
 
 // Details including system operator, system location, year implemented, URL, contact info,
 // time zone.
 type SystemInformation struct {
-	system_information_v31RC.SystemInformation
+	system_information_v30.SystemInformation
 }

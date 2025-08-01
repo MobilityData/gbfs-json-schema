@@ -15,10 +15,10 @@
 package system_alerts
 
 import (
-	system_alerts_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/system_alerts"
+	system_alerts_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/system_alerts"
 )
 
 // Describes ad-hoc changes to the system.
 type SystemAlerts struct {
-	system_alerts_v31RC.SystemAlerts
+	system_alerts_v30.SystemAlerts
 }

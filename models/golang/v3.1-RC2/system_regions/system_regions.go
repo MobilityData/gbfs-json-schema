@@ -15,10 +15,10 @@
 package system_regions
 
 import (
-	system_regions_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/system_regions"
+	system_regions_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/system_regions"
 )
 
 // Describes regions for a system that is broken up by geographic or political region.
 type SystemRegions struct {
-	system_regions_v31RC.SystemRegions
+	system_regions_v30.SystemRegions
 }

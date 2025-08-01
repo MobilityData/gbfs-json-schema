@@ -15,11 +15,11 @@
 package gbfs_versions
 
 import (
-	versions_v31RC "github.com/MobilityData/gbfs-json-schema/models/golang/v3.1-RC/gbfs_versions"
+	versions_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/gbfs_versions"
 )
 
 // Lists all feed endpoints published according to version sof the GBFS documentation.
 // (added in v1.1)
 type GbfsVersions struct {
-	versions_v31RC.GbfsVersions
+	versions_v30.GbfsVersions
 }
