@@ -13,6 +13,7 @@ import SystemPricingPlansTI from '../v3.1-RC2/test-type-checkers/system_pricing_
 import SystemRegionsTI from "../v3.1-RC2/test-type-checkers/system_regions-ti";
 import VehicleStatusTI from "../v3.1-RC2/test-type-checkers/vehicle_status-ti";
 import VehicleTypesTI from '../v3.1-RC2/test-type-checkers/vehicle_types-ti';
+import VehicleAvailabilityTI from '../v3.1-RC2/test-type-checkers/vehicle_availability-ti';
 
 // checkers
 const { GbfsVersions } = createCheckers(GbfsVersionsTI);
@@ -27,6 +28,7 @@ const { SystemPricingPlans } = createCheckers(SystemPricingPlansTI);
 const { SystemRegions } = createCheckers(SystemRegionsTI);
 const { VehicleStatus } = createCheckers(VehicleStatusTI);
 const { VehicleTypes } = createCheckers(VehicleTypesTI);
+const { VehicleAvailability } = createCheckers(VehicleAvailabilityTI);
 
 // json test data: these are gbfs with no errors for v3.1-RC2
 import gbfsVersionsJson from '../../../testFixtures/v3.1-RC2/gbfs_versions.json';
@@ -44,6 +46,7 @@ import systemRegionsJson from '../../../testFixtures/v3.1-RC2/system_regions.jso
 import vehicleStatusCarsharingJson from '../../../testFixtures/v3.1-RC2/vehicle_status_carsharing.json';
 import vehicleStatusMicromobilityJson from '../../../testFixtures/v3.1-RC2/vehicle_status_micromobility.json';
 import vehicleTypesJson from '../../../testFixtures/v3.1-RC2/vehicle_types.json';
+import vehicleAvailabilityJson from '../../../testFixtures/v3.1-RC2/vehicle_availability.json';
 
 // Date objects cannot be represented in JSON
 // Manual checks for dates are required
@@ -135,6 +138,12 @@ describe('GBFS Validator v3.1-RC2', () => {
     it('should check if vehicle_types is valid', () => {
         expect(() => {
             VehicleTypes.check(vehicleTypesJson);
+        }).not.toThrow();
+    });
+
+    it('should check if vehicle_availability is valid', () => {
+        expect(() => {
+            VehicleAvailability.check(vehicleAvailabilityJson);
         }).not.toThrow();
     });
 });
