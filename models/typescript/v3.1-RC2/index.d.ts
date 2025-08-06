@@ -12,3 +12,4 @@ export { SystemPricingPlans } from './system_pricing_plans';
 export { SystemRegions } from './system_regions';
 export { VehicleStatus } from './vehicle_status';
 export { VehicleTypes } from './vehicle_types';
+export { VehicleAvailability } from './vehicle_availability';

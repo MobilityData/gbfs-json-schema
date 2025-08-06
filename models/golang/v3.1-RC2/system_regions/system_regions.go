@@ -12,64 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Code generated from JSON Schema using quicktype. DO NOT EDIT.
-// To parse and unparse this JSON data, add this code to your project and do:
-//
-//    systemRegions, err := UnmarshalSystemRegions(bytes)
-//    bytes, err = systemRegions.Marshal()
-
 package system_regions
 
-
-
-import "encoding/json"
-
-func UnmarshalSystemRegions(data []byte) (SystemRegions, error) {
-	var r SystemRegions
-	err := json.Unmarshal(data, &r)
-	return r, err
-}
-
-func (r *SystemRegions) Marshal() ([]byte, error) {
-	return json.Marshal(r)
-}
+import (
+	system_regions_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/system_regions"
+)
 
 // Describes regions for a system that is broken up by geographic or political region.
 type SystemRegions struct {
-	// Describe regions for a system that is broken up by geographic or political region.                 
-	Data                                                                                        Data      `json:"data"`
-	// Last time the data in the feed was updated in RFC3339 format.                                      
-	LastUpdated                                                                                 string `json:"last_updated"`
-	// Number of seconds before the data in the feed will be updated again (0 if the data should          
-	// always be refreshed).                                                                              
-	TTL                                                                                         int64     `json:"ttl"`
-	// GBFS version number to which the feed conforms, according to the versioning framework              
-	// (added in v1.1).                                                                                   
-	Version                                                                                     Version   `json:"version"`
+	system_regions_v30.SystemRegions
 }
-
-// Describe regions for a system that is broken up by geographic or political region.
-type Data struct {
-	// Array of regions.         
-	Regions             []Region `json:"regions"`
-}
-
-type Region struct {
-	// Public name for this region.       
-	Name                           []Name `json:"name"`
-	// identifier of the region.          
-	RegionID                       string `json:"region_id"`
-}
-
-type Name struct {
-	// IETF BCP 47 language code.       
-	Language                     string `json:"language"`
-	// The translated text.             
-	Text                         string `json:"text"`
-}
-
-type Version string
-
-const (
-	The31Rc2 Version = "3.1-RC2"
-)

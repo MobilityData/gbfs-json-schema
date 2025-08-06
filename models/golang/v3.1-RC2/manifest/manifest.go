@@ -12,95 +12,33 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Code generated from JSON Schema using quicktype. DO NOT EDIT.
-// To parse and unparse this JSON data, add this code to your project and do:
-//
-//    manifest, err := UnmarshalManifest(bytes)
-//    bytes, err = manifest.Marshal()
-
 package manifest
 
-
-
-import "encoding/json"
-
-func UnmarshalManifest(data []byte) (Manifest, error) {
-	var r Manifest
-	err := json.Unmarshal(data, &r)
-	return r, err
-}
-
-func (r *Manifest) Marshal() ([]byte, error) {
-	return json.Marshal(r)
-}
+import (
+	"github.com/MobilityData/gbfs-json-schema/models/golang/common"
+	manifest_v30 "github.com/MobilityData/gbfs-json-schema/models/golang/v3.0/manifest"
+	"github.com/paulmach/orb/geojson"
+)
 
 // An index of gbfs.json URLs for each GBFS data set produced by a publisher. A single
 // instance of this file should be published at a single stable URL, for example:
 // https://example.com/gbfs/manifest.json.
 type Manifest struct {
-	Data                                                                                        Data            `json:"data"`
-	// Last time the data in the feed was updated in RFC3339 format.                                            
-	LastUpdated                                                                                 string       `json:"last_updated"`
-	// Number of seconds before the data in the feed will be updated again (0 if the data should                
-	// always be refreshed).                                                                                    
-	TTL                                                                                         int64           `json:"ttl"`
-	// GBFS version number to which the feed conforms, according to the versioning framework                    
-	// (added in v1.1).                                                                                         
-	Version                                                                                     ManifestVersion `json:"version"`
+	manifest_v30.Manifest
+	Data Data `json:"data"`
 }
 
 type Data struct {
-	// An array of objects, each containing the keys below.          
-	Datasets                                               []Dataset `json:"datasets"`
+	// An array of objects, each containing the keys below.
+	Datasets []Dataset `json:"datasets"`
 }
 
 type Dataset struct {
-	// A GeoJSON MultiPolygon that describes the operating area.                                                
-	Area                                                                                       *Area            `json:"area,omitempty"`
-	// The ISO 3166-1 alpha-2 country code of the operating area.                                               
-	CountryCode                                                                                *string          `json:"country_code,omitempty"`
-	// The system_id from system_information.json for the corresponding data set(s).                            
-	SystemID                                                                                   string           `json:"system_id"`
-	// Contains one object, as defined below, for each of the available versions of a feed. The                 
-	// array MUST be sorted by increasing MAJOR and MINOR version number.                                       
-	Versions                                                                                   []VersionElement `json:"versions"`
+	manifest_v30.Dataset
+	// A GeoJSON MultiPolygon that describes the operating area.
+	// If area is supplied, then the record describes the general operating area of the system for the purpose of discovery.
+	// Geographic details of the system's operating restrictions must be explicitly specified using station locations and geofencing zones, where appropriate.
+	Area *geojson.MultiPolygon `json:"area,omitempty"`
+	// The ISO 3166-1 alpha-2 country code of the operating area. The field MUST NOT be specified if the operating area spans multiple countries.
+	CountryCode *common.CountryCode `json:"country_code,omitempty"`
 }
-
-// A GeoJSON MultiPolygon that describes the operating area.
-type Area struct {
-	Coordinates [][][][]float64 `json:"coordinates"`
-	Type        Type            `json:"type"`
-}
-
-type VersionElement struct {
-	// URL of the corresponding gbfs.json endpoint                    
-	URL                                                string         `json:"url"`
-	// The semantic version of the feed in the form X.Y               
-	Version                                            VersionVersion `json:"version"`
-}
-
-type Type string
-
-const (
-	MultiPolygon Type = "MultiPolygon"
-)
-
-// The semantic version of the feed in the form X.Y
-type VersionVersion string
-
-const (
-	Purple31RC2 VersionVersion = "3.1-RC2"
-	The10       VersionVersion = "1.0"
-	The11       VersionVersion = "1.1"
-	The20       VersionVersion = "2.0"
-	The21       VersionVersion = "2.1"
-	The22       VersionVersion = "2.2"
-	The23       VersionVersion = "2.3"
-	The30       VersionVersion = "3.0"
-)
-
-type ManifestVersion string
-
-const (
-	Fluffy31RC2 ManifestVersion = "3.1-RC2"
-)
