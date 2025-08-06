@@ -8,7 +8,7 @@ authors = ["MobilityData <it@mobilitydata.org>", "Tom Delmas <tom.delmas@fluctuo
 repository = "https://github.com/MobilityData/gbfs-json-schema"
 homepage = "https://github.com/MobilityData/gbfs-json-schema/tree/master/models/rust"
 keywords = ["gbfs", "types"]
-categories = ["transit", "mobility"]
+categories = ["api-bindings"]
 readme = "README.md"
 
 [features]
