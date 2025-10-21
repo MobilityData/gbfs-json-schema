@@ -42,6 +42,9 @@ jobs:
             # Ensure npm 11.5.1 or later is installed
             - name: Update npm
               run: npm install -g npm@latest
+
+            - name: Print NPM version after update
+              run: npm --version
       
             - name: Publish to npm
               run: cd ./models/typescript && npm publish --dry-run

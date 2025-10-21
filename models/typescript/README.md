@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/gbfs-typescript-types.svg)](http://badge.fury.io/js/gbfs-typescript-types)
 
-TypeScript types for parsing and working with General Bikeshare Feed Specification (GBFS) data, ensuring type safety and code consistency in TypeScript projects
+TypeScript types for parsing and working with General Bikeshare Feed Specification (GBFS) data, ensuring type safety and code consistency in TypeScript projects.
 
 ## Add the Dependency
 
