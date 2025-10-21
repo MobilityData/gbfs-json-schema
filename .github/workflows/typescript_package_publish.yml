@@ -6,8 +6,16 @@ on:
     push:
       branches:
         - master
+        - fix/update-npm-token-to-trusted-publisher
       paths:
         - "models/typescript/**"
+
+# Npm authentication via OpenID Connect (OIDC)
+# https://docs.npmjs.com/trusted-publishers
+permissions:
+    id-token: write  # Required for OIDC
+    contents: read
+  
 jobs:
     build-publish:
         name: build-publish-job
@@ -15,12 +23,12 @@ jobs:
 
         steps:
             - name: Checkout repository
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
 
             - name: Setup Node.js
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v4
               with:
-                node-version: '18'
+                node-version: '20'
                 registry-url: 'https://registry.npmjs.org'
     
             - name: Install dependencies
@@ -28,16 +36,13 @@ jobs:
                 cd ./scripts
                 yarn
 
-            - name: Load secrets from 1Password
-              uses: 1password/load-secrets-action@v2.0.0
-              with:
-                export-env: true # Export loaded secrets as environment variables
-              env:
-                OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
-                NODE_AUTH_TOKEN: "op://rbiv7rvkkrsdlpcrz3bmv7nmcu/ppzc4jxrwkf3omdmcs7z2wiwum/credential"
+            - name: Print NPM version
+              run: npm --version
+            
+            # Ensure npm 11.5.1 or later is installed
+            - name: Update npm
+              run: npm install -g npm@latest
       
             - name: Publish to npm
-              run: cd ./models/typescript && npm publish
-              env:
-                NODE_AUTH_TOKEN: ${{ env.NODE_AUTH_TOKEN }}
+              run: cd ./models/typescript && npm publish --dry-run
                 
