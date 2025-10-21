@@ -35,17 +35,11 @@ jobs:
               run: |
                 cd ./scripts
                 yarn
-
-            - name: Print NPM version
-              run: npm --version
             
-            # Ensure npm 11.5.1 or later is installed
+            # Ensure npm 11.5.1 or later is installed for OIDC support
             - name: Update npm
-              run: npm install -g npm@latest
-
-            - name: Print NPM version after update
-              run: npm --version
+              run: npm install -g npm@11.6.2
       
             - name: Publish to npm
-              run: cd ./models/typescript && npm publish --dry-run
+              run: cd ./models/typescript && npm publish
                 
