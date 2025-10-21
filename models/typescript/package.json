@@ -1,6 +1,6 @@
 {
   "name": "gbfs-typescript-types",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Language Bindings for GBFS in Typescript.",
   "keywords": [
     "gbfs",
@@ -35,7 +35,7 @@
     "index.d.ts",
     "v2.3",
     "v3.0",
-    "v3.1-RC"
+    "v3.1-RC2"
   ],
   "devDependencies": {
     "@types/jest": "^29.5.12",
