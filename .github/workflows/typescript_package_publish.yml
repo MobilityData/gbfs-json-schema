@@ -6,7 +6,6 @@ on:
     push:
       branches:
         - master
-        - fix/update-npm-token-to-trusted-publisher
       paths:
         - "models/typescript/**"
 
