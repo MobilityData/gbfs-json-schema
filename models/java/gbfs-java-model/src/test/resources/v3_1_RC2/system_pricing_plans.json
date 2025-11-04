@@ -1,0 +1,46 @@
+{
+    "last_updated": "2023-07-17T13:34:13+02:00",
+    "ttl": 0,
+    "version": "3.1-RC2",
+    "data": {
+      "plans": [
+        {
+          "plan_id": "plan2",
+          "name": [
+            {
+              "text": "One-Way",
+              "language": "en"
+            }
+          ],
+          "currency": "USD",
+          "price": 2.00,
+          "reservation_price_per_min": 0.15,
+          "is_taxable": false,
+          "description": [
+            {
+              "text": "Includes 10km, overage fees apply after 10km.",
+              "language": "en"
+            }
+          ],
+          "per_km_pricing": [
+            {
+              "start": 10,
+              "rate": 1.00,
+              "interval": 1,
+              "end": 25
+            },
+            {
+              "start": 25,
+              "rate": 0.50,
+              "interval": 1
+            },
+            {
+              "start": 25,
+              "rate": 3.00,
+              "interval": 5
+            }
+          ]
+        }
+      ]
+    }
+  }

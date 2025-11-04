@@ -13,7 +13,7 @@ rm -rf ./models/java/gbfs-java-model/resources
 output_path="./models/java/gbfs-java-model/resources/"
 path_to_schemas="."
 
-versions=("v3.0" "v2.3" "v2.2" "v2.1" "v2.0" "v1.1" "v1.0")
+versions=("v3.1-RC2" "v3.0" "v2.3" "v2.2" "v2.1" "v2.0" "v1.1" "v1.0")
 
 echo "Start Schema to Subfolders Script"
 
