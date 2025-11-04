@@ -27,6 +27,7 @@ pub mod system_alerts;
 pub mod system_information;
 pub mod system_pricing_plans;
 pub mod system_regions;
+pub mod vehicle_availability;
 pub mod vehicle_status;
 pub mod vehicle_types;
 
@@ -165,5 +166,12 @@ mod tests {
         let geofencing_zones = include_str!("./examples/specification/geofencing_zones.json");
 
         test_file::<super::geofencing_zones::GeofencingZonesFile>(geofencing_zones);
+    }
+
+    #[test]
+    fn vehicle_availability() {
+        let vehicle_availability = include_str!("./examples/specification/vehicle_availability.json");
+
+        test_file::<super::vehicle_availability::VehicleAvailabilityFile>(vehicle_availability);
     }
 }
