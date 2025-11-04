@@ -8,12 +8,12 @@ use serde::{Deserialize, Serialize};
 
 file_struct!(GeofencingZonesFile, GeofencingZonesData);
 
-use crate::v3_0::types::*;
+use crate::v3_1_rc2::types::*;
 
 #[cfg(doc)]
-use crate::v3_0::files::geofencing_zones;
+use crate::v3_1_rc2::files::geofencing_zones;
 #[cfg(doc)]
-use crate::v3_0::files::station_information;
+use crate::v3_1_rc2::files::station_information;
 
 #[cfg_attr(feature = "napi", napi(object))]
 #[cfg_attr(feature = "pyo3", pyclass(get_all, set_all))]

@@ -7,44 +7,44 @@ use pyo3::prelude::*;
 use napi_derive::napi;
 
 #[cfg(doc)]
-use crate::v3_0::files::gbfs::GbfsFile;
+use crate::v3_1_rc2::files::gbfs::GbfsFile;
 #[cfg(doc)]
-use crate::v3_0::files::gbfs_versions::GbfsVersionsFile;
+use crate::v3_1_rc2::files::gbfs_versions::GbfsVersionsFile;
 #[cfg(doc)]
-use crate::v3_0::files::geofencing_zones::GeofencingZonesFile;
+use crate::v3_1_rc2::files::geofencing_zones::GeofencingZonesFile;
 #[cfg(doc)]
-use crate::v3_0::files::station_information::StationInformationFile;
+use crate::v3_1_rc2::files::station_information::StationInformationFile;
 #[cfg(doc)]
-use crate::v3_0::files::station_status::StationStatusFile;
+use crate::v3_1_rc2::files::station_status::StationStatusFile;
 #[cfg(doc)]
-use crate::v3_0::files::system_alerts::SystemAlertsFile;
+use crate::v3_1_rc2::files::system_alerts::SystemAlertsFile;
 #[cfg(doc)]
-use crate::v3_0::files::system_information::SystemInformationFile;
+use crate::v3_1_rc2::files::system_information::SystemInformationFile;
 #[cfg(doc)]
-use crate::v3_0::files::system_pricing_plans::SystemPricingPlansFile;
+use crate::v3_1_rc2::files::system_pricing_plans::SystemPricingPlansFile;
 #[cfg(doc)]
-use crate::v3_0::files::system_regions::SystemRegionsFile;
+use crate::v3_1_rc2::files::system_regions::SystemRegionsFile;
 #[cfg(doc)]
-use crate::v3_0::files::vehicle_status::VehicleStatusFile;
+use crate::v3_1_rc2::files::vehicle_status::VehicleStatusFile;
 #[cfg(doc)]
-use crate::v3_0::files::vehicle_types::VehicleTypesFile;
+use crate::v3_1_rc2::files::vehicle_types::VehicleTypesFile;
 
 #[cfg(doc)]
-use crate::v3_0::files::manifest::System;
+use crate::v3_1_rc2::files::manifest::System;
 #[cfg(doc)]
-use crate::v3_0::files::station_information::Station;
+use crate::v3_1_rc2::files::station_information::Station;
 #[cfg(doc)]
-use crate::v3_0::files::system_alerts::SystemAlert;
+use crate::v3_1_rc2::files::system_alerts::SystemAlert;
 #[cfg(doc)]
-use crate::v3_0::files::system_information::SystemInformationData;
+use crate::v3_1_rc2::files::system_information::SystemInformationData;
 #[cfg(doc)]
-use crate::v3_0::files::system_pricing_plans::SystemPricingPlan;
+use crate::v3_1_rc2::files::system_pricing_plans::SystemPricingPlan;
 #[cfg(doc)]
-use crate::v3_0::files::system_regions::Region;
+use crate::v3_1_rc2::files::system_regions::Region;
 #[cfg(doc)]
-use crate::v3_0::files::vehicle_status::Vehicle;
+use crate::v3_1_rc2::files::vehicle_status::Vehicle;
 #[cfg(doc)]
-use crate::v3_0::files::vehicle_types::VehicleType;
+use crate::v3_1_rc2::files::vehicle_types::VehicleType;
 
 /// Should be represented as a string that identifies that particular entity. An ID:
 /// - MUST be unique within like fields (for example, `station_id` MUST be unique among stations).

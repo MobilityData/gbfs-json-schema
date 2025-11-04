@@ -6,8 +6,8 @@ use napi_derive::napi;
 
 use serde::{Deserialize, Serialize};
 
-use crate::v3_0::types::*;
-use crate::v3_0::urls::*;
+use crate::v3_1_rc2::types::*;
+use crate::v3_1_rc2::urls::*;
 
 file_struct!(GbfsVersionsFile, GbfsVersionsData);
 

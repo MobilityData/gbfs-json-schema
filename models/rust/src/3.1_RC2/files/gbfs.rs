@@ -11,8 +11,8 @@ use futures::try_join;
 use super::super::GbfsObjects;
 
 use super::*;
-use crate::v3_0::types::*;
-use crate::v3_0::urls::*;
+use crate::v3_1_rc2::types::*;
+use crate::v3_1_rc2::urls::*;
 
 file_struct!(GbfsFile, GbfsData);
 

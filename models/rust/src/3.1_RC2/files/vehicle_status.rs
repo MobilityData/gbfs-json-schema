@@ -6,7 +6,7 @@ use napi_derive::napi;
 
 use serde::{Deserialize, Serialize};
 
-use crate::v3_0::types::*;
+use crate::v3_1_rc2::types::*;
 
 file_struct!(VehicleStatusFile, VehicleStatusData);
 
@@ -38,7 +38,7 @@ pub struct Vehicle {
     pub is_disabled: bool,
     /// Rental URIs for Android, iOS, and web
     pub rental_uris: Option<RentalUris>,
-    /// The [VehicleType](crate::v3_0::files::vehicle_types::VehicleType) of this vehicle.
+    /// The [VehicleType](crate::v3_1_rc2::files::vehicle_types::VehicleType) of this vehicle.
     pub vehicle_type_id: Option<VehicleTypeID>,
     /// The last time this vehicle reported its status to the operator's backend.
     pub last_reported: Option<Timestamp>,
@@ -47,13 +47,13 @@ pub struct Vehicle {
     pub current_range_meters: Option<NonNegativeFloat>,
     /// This value represents the current percentage, expressed from 0 to 1, of fuel or battery power remaining in the vehicle.
     pub current_fuel_percent: Option<NonNegativeFloat>,
-    /// If the vehicle is currently at a [Station](crate::v3_0::files::station_information::Station).
+    /// If the vehicle is currently at a [Station](crate::v3_1_rc2::files::station_information::Station).
     pub station_id: Option<StationID>,
-    /// The [Station](crate::v3_0::files::station_information::Station) where this vehicle must be returned to.
+    /// The [Station](crate::v3_1_rc2::files::station_information::Station) where this vehicle must be returned to.
     pub home_station_id: Option<StationID>,
-    /// The [PricingPlan](crate::v3_0::files::system_pricing_plans::SystemPricingPlan) this vehicle is eligible for.
+    /// The [PricingPlan](crate::v3_1_rc2::files::system_pricing_plans::SystemPricingPlan) this vehicle is eligible for.
     ///
-    /// If this field is defined it supersedes [default_pricing_plan_id](crate::v3_0::files::system_information::SystemInformation::default_pricing_plan_id).
+    /// If this field is defined it supersedes [default_pricing_plan_id](crate::v3_1_rc2::files::system_information::SystemInformation::default_pricing_plan_id).
     pub pricing_plan_id: Option<PricingPlanID>,
     /// List of vehicle equipment provided by the operator in addition to the accessories already provided in the vehicle (field vehicle_accessories of vehicle_types.json) but subject to more frequent updates.
     pub vehicle_equipment: Option<Vec<String>>,

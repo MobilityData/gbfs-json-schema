@@ -4,11 +4,11 @@ use pyo3::prelude::*;
 #[cfg(feature = "napi")]
 use napi_derive::napi;
 
-use crate::v3_0::types::*;
+use crate::v3_1_rc2::types::*;
 
 use serde::{Deserialize, Serialize};
 
-use crate::v3_0::files::gbfs_versions::GbfsVersion;
+use crate::v3_1_rc2::files::gbfs_versions::GbfsVersion;
 
 file_struct!(ManifestFile, ManifestData);
 

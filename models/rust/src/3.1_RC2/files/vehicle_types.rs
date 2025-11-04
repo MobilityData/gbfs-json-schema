@@ -8,7 +8,7 @@ use napi_derive::napi;
 
 use serde::{Deserialize, Serialize};
 
-use crate::v3_0::types::*;
+use crate::v3_1_rc2::types::*;
 
 file_struct!(VehicleTypesFile, VehicleTypesData);
 
