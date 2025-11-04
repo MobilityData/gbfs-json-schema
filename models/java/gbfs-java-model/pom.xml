@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.mobilitydata</groupId>
     <artifactId>gbfs-java-model</artifactId>
-    <version>1.0.9</version>
+    <version>1.0.10</version>
 
     <name>gbfs-java-model</name>
 
@@ -253,6 +253,25 @@
                             <generateBuilders>true</generateBuilders>
                             <sourceDirectory>${basedir}/resources/v3.0</sourceDirectory>
                             <targetPackage>org.mobilitydata.gbfs.v3_0</targetPackage>
+                            <customRuleFactory>org.mobilitydata.gbfs.GeofencingRuleFactory</customRuleFactory>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>generate-v3.1-RC2-sources</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <classNamePrefix>GBFS</classNamePrefix>
+                            <formatTypeMapping>
+                                <uri>java.lang.String</uri>
+                            </formatTypeMapping>
+                            <removeOldOutput>false</removeOldOutput>
+                            <serializable>true</serializable>
+                            <initializeCollections>false</initializeCollections>
+                            <generateBuilders>true</generateBuilders>
+                            <sourceDirectory>${basedir}/resources/v3.1-RC2</sourceDirectory>
+                            <targetPackage>org.mobilitydata.gbfs.v3_1_RC2</targetPackage>
                             <customRuleFactory>org.mobilitydata.gbfs.GeofencingRuleFactory</customRuleFactory>
                         </configuration>
                     </execution>
