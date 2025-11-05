@@ -69,7 +69,7 @@ pub struct PricingRate {
     /// Interval at which the rate of this segment is either reapplied indefinitely, or if defined, up until (but not including) `end` unit.
     ///
     /// An interval of 0 indicates the rate is only charged once.
-    pub interval: NonNegativeFloat,
+    pub interval: u32,
     /// The unit at which the rate will no longer apply (exclusive) for example, if end is `20` the rate no longer applies at `20.00`.
     ///
     ///  If this field is empty, the price issued for this segment is charged until the trip ends, in addition to the cost of any subsequent segments.
