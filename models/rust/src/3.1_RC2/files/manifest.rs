@@ -30,4 +30,6 @@ pub struct System {
     /// Contains one object, as defined below, for each of the available versions of a feed.
     /// The array MUST be sorted by increasing MAJOR and MINOR version number.
     pub versions: Vec<GbfsVersion>,
+    pub area: Option<geo_json::MultiPolygon>,
+    pub country_code: Option<CountryCode>,
 }
