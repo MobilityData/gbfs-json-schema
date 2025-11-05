@@ -41,6 +41,7 @@ pub use self::system_alerts::{SystemAlertsData, SystemAlertsFile};
 pub use self::system_information::{SystemInformationData, SystemInformationFile};
 pub use self::system_pricing_plans::{SystemPricingPlansData, SystemPricingPlansFile};
 pub use self::system_regions::{SystemRegionsData, SystemRegionsFile};
+pub use self::vehicle_availability::{VehicleAvailabilityData, VehicleAvailabilityFile};
 pub use self::vehicle_status::{VehicleStatusData, VehicleStatusFile};
 pub use self::vehicle_types::{VehicleTypesData, VehicleTypesFile};
 
@@ -170,7 +171,8 @@ mod tests {
 
     #[test]
     fn vehicle_availability() {
-        let vehicle_availability = include_str!("./examples/specification/vehicle_availability.json");
+        let vehicle_availability =
+            include_str!("./examples/specification/vehicle_availability.json");
 
         test_file::<super::vehicle_availability::VehicleAvailabilityFile>(vehicle_availability);
     }

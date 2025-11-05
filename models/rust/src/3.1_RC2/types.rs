@@ -25,6 +25,8 @@ use crate::v3_1_rc2::files::system_pricing_plans::SystemPricingPlansFile;
 #[cfg(doc)]
 use crate::v3_1_rc2::files::system_regions::SystemRegionsFile;
 #[cfg(doc)]
+use crate::v3_1_rc2::files::vehicle_availability::VehicleAvailabilityFile;
+#[cfg(doc)]
 use crate::v3_1_rc2::files::vehicle_status::VehicleStatusFile;
 #[cfg(doc)]
 use crate::v3_1_rc2::files::vehicle_types::VehicleTypesFile;
@@ -149,6 +151,7 @@ pub type AlertID = ID;
 /// - `system_pricing_plans` for [SystemPricingPlansFile],
 /// - `system_alerts` for [SystemAlertsFile],
 /// - `geofencing_zones` for [GeofencingZonesFile]
+/// - `vehicle_availability` for [VehicleAvailabilityFile]
 pub type FeedType = String;
 
 /// Opening hours in the [OSM opening_hours](https://wiki.openstreetmap.org/wiki/Key:opening_hours).

@@ -183,3 +183,11 @@ add_file_type!(
     VehicleTypesFile,
     "vehicle_types"
 );
+
+add_file_type!(
+    get_vehicle_availability_url,
+    VehicleAvailabilityFileUrl,
+    get_vehicle_availability,
+    VehicleAvailabilityFile,
+    "vehicle_availability"
+);

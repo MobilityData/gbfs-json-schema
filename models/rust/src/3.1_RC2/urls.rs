@@ -80,3 +80,4 @@ file_url!(SystemPricingPlansFileUrl, SystemPricingPlansFile);
 file_url!(SystemRegionsFileUrl, SystemRegionsFile);
 file_url!(VehicleStatusFileUrl, VehicleStatusFile);
 file_url!(VehicleTypesFileUrl, VehicleTypesFile);
+file_url!(VehicleAvailabilityFileUrl, VehicleAvailabilityFile);
