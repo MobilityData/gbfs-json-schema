@@ -55,6 +55,8 @@ pub struct Station {
     pub region_id: Option<RegionID>,
     /// Postal code where station is located.
     pub post_code: Option<String>,
+    /// City where station is located.
+    pub city: Option<String>,
     /// Hours of operation for the station.
     /// If `station_opening_hours` is defined it overrides any `opening_hours` defined in `system_information.json` for the station for which it is defined.
     pub station_opening_hours: Option<OSMOpeningHours>,
