@@ -37,8 +37,14 @@ pub struct SystemPricingPlan {
     /// In case of non-rate price, this field is the total price.
     /// In case of rate price, this field is the base price that is charged only once per trip (typically the price for unlocking) in addition to per_km_pricing and/or per_min_pricing.
     pub price: Option<NonNegativeFloat>,
+    /// The cost, described as per minute rate, to reserve the vehicle prior to beginning a rental.
+    pub reservation_price_per_min: Option<NonNegativeFloat>,
+    /// The cost, described as a flat rate, to reserve the vehicle prior to beginning a rental.
+    pub reservation_price_flat_rate: Option<NonNegativeFloat>,
     /// Will additional tax be added to the base price?
     pub is_taxable: Option<bool>,
+    /// Object defining a capped fare once a price threshold has been spent within a timeframe.
+    pub fare_capping: Option<FareCapping>,
     /// Customer-readable description of the pricing plan.
     /// This SHOULD include the duration, price, conditions, etc. that the publisher would like users to see.
     pub description: Option<Vec<LocalizedString>>,
@@ -68,4 +74,13 @@ pub struct PricingRate {
     ///
     ///  If this field is empty, the price issued for this segment is charged until the trip ends, in addition to the cost of any subsequent segments.
     pub end: Option<i32>,
+}
+
+#[cfg_attr(feature = "napi", napi(object))]
+#[cfg_attr(feature = "pyo3", pyclass(get_all, set_all))]
+#[serde_with::skip_serializing_none]
+#[derive(Serialize, Deserialize, Debug, Clone)]
+pub struct FareCapping {
+    pub duration: u32,
+    pub price: NonNegativeFloat,
 }
