@@ -42,7 +42,7 @@ pub struct VehicleType {
     /// Vehicle air quality certificate. Official anti-pollution certificate, based on the information on the vehicle's registration certificate, attesting to its level of pollutant emissions based on a defined standard. In Europe, for example, it is the European emission standard. The aim of this measure is to encourage the use of the least polluting vehicles by allowing them to drive during pollution peaks or in low emission zones.
     pub eco_labels: Option<Vec<EcoLabel>>,
     /// This represents the furthest distance in meters that the vehicle can travel without recharging or refueling when it has the maximum amount of energy potential (for example, a full battery or full tank of gas).
-    pub max_range_meters: Option<f64>,
+    pub max_range_meters: Option<NonNegativeFloat>,
     /// The public name of this vehicle type.
     pub name: Option<Vec<LocalizedString>>,
     /// Description of accessories available in the vehicle. These accessories are part of the vehicle and are not supposed to change frequently.
