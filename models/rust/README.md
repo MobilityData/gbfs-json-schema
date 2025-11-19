@@ -18,7 +18,7 @@ cargo add gbfs_types
 ```
 
 ## Versions
-Currently only version 3.0 of GBFS is supported
+Currently only versions 3.0 and 3.1-RC2 of GBFS are supported
 
 ## Example Code (Types)
 ```rust
