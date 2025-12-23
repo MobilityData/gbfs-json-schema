@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [closed]
     branches:
-      - 187-automatically-create-new-release-each-time-a-json-schema-change-is-merged
+      - master
 
 jobs:
   release:

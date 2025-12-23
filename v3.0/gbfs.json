@@ -67,4 +67,3 @@
   "additionalProperties": false,
   "required": ["last_updated", "ttl", "version", "data"]
 }
-{ "test": true }
