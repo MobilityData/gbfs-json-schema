@@ -1,0 +1,60 @@
+name: Auto Release on Schema Changes
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+
+jobs:
+  release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository (full history + tags)
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Detect schema changes in versioned folders
+        run: |
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          MERGE_SHA="${{ github.sha }}"
+
+          echo "Base SHA: $BASE_SHA"
+          echo "Merge SHA: $MERGE_SHA"
+
+          changed_files=$(git diff --name-only "$BASE_SHA" "$MERGE_SHA")
+
+          echo "Changed files:"
+          echo "$changed_files"
+
+          # Root-level vX.X folders only
+          if echo "$changed_files" | grep -qE '^v[0-9]+\.[0-9]+/'; then
+            echo "Schema changes detected in versioned folders."
+            echo "release_needed=true" >> $GITHUB_ENV
+          else
+            echo "No schema changes detected."
+            echo "release_needed=false" >> $GITHUB_ENV
+          fi
+
+      - name: Determine next version
+        if: env.release_needed == 'true'
+        run: |
+          latest_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          echo "Latest tag: $latest_tag"
+
+          new_version=$(echo "$latest_tag" | awk -F. -v OFS=. '{$NF++; print}')
+          echo "New version: $new_version"
+
+          echo "new_version=$new_version" >> $GITHUB_ENV
+
+      - name: Create GitHub Release
+        if: env.release_needed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$new_version" \
+            --title "Release $new_version" \
+            --notes "Automatic release triggered by changes to versioned schema folders."
