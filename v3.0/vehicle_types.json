@@ -42,7 +42,7 @@
               "form_factor": {
                 "description": "The vehicle's general form factor.",
                 "type": "string",
-                "enum": ["bicycle", "cargo_bicycle" ,"car", "moped", "scooter_standing", "scooter_seated", "other", "scooter"]
+                "enum": ["bicycle", "cargo_bicycle" ,"car", "moped", "scooter_standing", "scooter_seated", "other"]
               },
               "rider_capacity": {
                 "description": "The number of riders (driver included) the vehicle can legally accommodate",
