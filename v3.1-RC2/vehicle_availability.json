@@ -75,7 +75,6 @@
             },
             "required": [
               "vehicle_id",
-              "vehicle_type_id",
               "station_id",
               "availabilities"
             ],
