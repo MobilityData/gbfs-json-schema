@@ -58,7 +58,7 @@ type Station struct {
 	Address                                                                                     *string                `json:"address,omitempty"`
 	// Number of total docking points installed at this station, both available and unavailable.                       
 	Capacity                                                                                    *int64                 `json:"capacity,omitempty"`
-	// City where station is located. (added in v3.1-RC2)                                                              
+	// City where station is located. (added in v3.1-RC3)                                                              
 	City                                                                                        *string                `json:"city,omitempty"`
 	// Contact phone of the station. Added in v2.3                                                                     
 	ContactPhone                                                                                *string                `json:"contact_phone,omitempty"`
@@ -191,5 +191,5 @@ const (
 type Version string
 
 const (
-	The31Rc2 Version = "3.1-RC2"
+	The31Rc3 Version = "3.1-RC3"
 )

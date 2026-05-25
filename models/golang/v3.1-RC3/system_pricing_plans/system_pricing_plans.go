@@ -59,7 +59,7 @@ type Plan struct {
 	// Customer-readable description of the pricing plan.                                                     
 	Description                                                                               []Description   `json:"description"`
 	// Object defining a capped fare once a price threshold has been spent within a timeframe.                
-	// (added in v3.1-RC2)                                                                                    
+	// (added in v3.1-RC3)                                                                                    
 	FareCapping                                                                               *FareCapping    `json:"fare_capping,omitempty"`
 	// Will additional tax be added to the base price?                                                        
 	IsTaxable                                                                                 bool            `json:"is_taxable"`
@@ -95,7 +95,7 @@ type Description struct {
 }
 
 // Object defining a capped fare once a price threshold has been spent within a timeframe.
-// (added in v3.1-RC2)
+// (added in v3.1-RC3)
 type FareCapping struct {
 	// Amount of time in minutes during which the fare is capped.                                     
 	Duration                                                                                  int64   `json:"duration"`
@@ -140,5 +140,5 @@ type PerMinPricing struct {
 type Version string
 
 const (
-	The31Rc2 Version = "3.1-RC2"
+	The31Rc3 Version = "3.1-RC3"
 )

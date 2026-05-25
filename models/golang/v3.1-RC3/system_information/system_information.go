@@ -1335,5 +1335,5 @@ const (
 type Version string
 
 const (
-	The31Rc2 Version = "3.1-RC2"
+	The31Rc3 Version = "3.1-RC3"
 )

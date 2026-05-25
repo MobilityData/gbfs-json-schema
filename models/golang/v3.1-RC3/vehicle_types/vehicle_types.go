@@ -85,6 +85,8 @@ type VehicleType struct {
 	// The furthest distance in meters that the vehicle can travel without recharging or                           
 	// refueling when it has the maximum amount of energy potential.                                               
 	MaxRangeMeters                                                                              *float64           `json:"max_range_meters,omitempty"`
+	// Minimum age required to use this vehicle. Added in v3.1-RC3.                                                
+	MinAge                                                                                      *int64             `json:"min_age,omitempty"`
 	// The name of the vehicle model. An array with one object per supported language with the                     
 	// following keys:                                                                                             
 	Model                                                                                       []Model            `json:"model,omitempty"`
@@ -172,7 +174,6 @@ const (
 	CargoBicycle    FormFactor = "cargo_bicycle"
 	Moped           FormFactor = "moped"
 	Other           FormFactor = "other"
-	Scooter         FormFactor = "scooter"
 	ScooterSeated   FormFactor = "scooter_seated"
 	ScooterStanding FormFactor = "scooter_standing"
 )
@@ -220,5 +221,5 @@ const (
 type Version string
 
 const (
-	The31Rc2 Version = "3.1-RC2"
+	The31Rc3 Version = "3.1-RC3"
 )

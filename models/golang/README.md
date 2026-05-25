@@ -12,7 +12,7 @@ go get github.com/MobilityData/gbfs-json-schema/models/golang
 ```
 
 ## Versions
-Currently only version 3.0 of GBFS is supported
+Currently only version 3.0 and 3.1-RC3 of GBFS is supported
 
 ## Example Code
 Using the pre-build unmarshaller

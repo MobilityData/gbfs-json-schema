@@ -64,7 +64,7 @@ type Vehicle struct {
 	// Identifier of a vehicle                                                            
 	VehicleID                                                              string         `json:"vehicle_id"`
 	// Unique identifier of a vehicle type as defined in vehicle_types.json               
-	VehicleTypeID                                                          string         `json:"vehicle_type_id"`
+	VehicleTypeID                                                          *string        `json:"vehicle_type_id,omitempty"`
 }
 
 type Availability struct {
@@ -77,5 +77,5 @@ type Availability struct {
 type Version string
 
 const (
-	The31Rc2 Version = "3.1-RC2"
+	The31Rc3 Version = "3.1-RC3"
 )
