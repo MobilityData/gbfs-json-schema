@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
   "$id":
-    "https://github.com/MobilityData/gbfs-json-schema/blob/master/v3.1-RC2/vehicle_types.json",
+    "https://github.com/MobilityData/gbfs-json-schema/blob/master/v3.1-RC3/vehicle_types.json",
   "description":
     "Describes the types of vehicles that System operator has available for rent (added in v2.1-RC).",
   "type": "object",
@@ -22,7 +22,7 @@
       "description":
         "GBFS version number to which the feed conforms, according to the versioning framework.",
       "type": "string",
-      "const": "3.1-RC2"
+      "const": "3.1-RC3"
     },
     "data": {
       "description": "Response data in the form of name:value pairs.",
@@ -211,6 +211,11 @@
                 "description": "The conditions for returning the vehicle at the end of the trip. Added in v2.3-RC as return_type, and updated to return_constraint in v2.3.",
                 "type": "string",
                 "enum": ["free_floating", "roundtrip_station", "any_station", "hybrid"]
+              },
+              "min_age": {
+                "description": "Minimum age required to use this vehicle. Added in v3.1-RC3.",
+                "type": "integer",
+                "minimum": 0
               },
               "vehicle_assets": {
                 "description": "An object where each key defines one of the items listed below added in v2.3-RC.",

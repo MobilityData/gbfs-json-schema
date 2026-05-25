@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "https://github.com/MobilityData/gbfs-json-schema/blob/master/v3.1-RC2/manifest.json",
+  "$id": "https://github.com/MobilityData/gbfs-json-schema/blob/master/v3.1-RC3/manifest.json",
   "description": "An index of gbfs.json URLs for each GBFS data set produced by a publisher. A single instance of this file should be published at a single stable URL, for example: https://example.com/gbfs/manifest.json.",
   "type": "object",
   "properties": {
@@ -17,7 +17,7 @@
     "version": {
       "description": "GBFS version number to which the feed conforms, according to the versioning framework (added in v1.1).",
       "type": "string",
-      "const": "3.1-RC2"
+      "const": "3.1-RC3"
     },
     "data": {
       "type": "object",
@@ -49,7 +49,7 @@
                         "2.2",
                         "2.3",
                         "3.0",
-                        "3.1-RC2"
+                        "3.1-RC3"
                       ]
                     },
                     "url": {
