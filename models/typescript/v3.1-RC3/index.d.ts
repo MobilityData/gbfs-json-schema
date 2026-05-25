@@ -10,5 +10,6 @@ export { SystemAlerts } from './system_alerts';
 export { SystemInformation } from './system_information';
 export { SystemPricingPlans } from './system_pricing_plans';
 export { SystemRegions } from './system_regions';
+export { VehicleAvailability } from './vehicle_availability';
 export { VehicleStatus } from './vehicle_status';
 export { VehicleTypes } from './vehicle_types';
