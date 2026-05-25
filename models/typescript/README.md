@@ -16,7 +16,7 @@ npm install gbfs-typescript-types --save-dev
 ## Versions
 - v2.3
 - v3.0
-- v3.1-RC2
+- v3.1-RC3
 
 ## Example Code
 ```typescript

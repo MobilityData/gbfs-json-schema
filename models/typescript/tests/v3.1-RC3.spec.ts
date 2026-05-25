@@ -1,18 +1,19 @@
 import { createCheckers } from "ts-interface-checker";
 
 // checker model
-import GbfsVersionsTI from '../v3.1-RC2/test-type-checkers/gbfs_versions-ti';
-import GbfsTI from '../v3.1-RC2/test-type-checkers/gbfs-ti';
-import GeofencingZonesTI from '../v3.1-RC2/test-type-checkers/geofencing_zones-ti';
-import ManifestTI from '../v3.1-RC2/test-type-checkers/manifest-ti';
-import StationsInformationTI from '../v3.1-RC2/test-type-checkers/station_information-ti';
-import StationStatusTI from '../v3.1-RC2/test-type-checkers/station_status-ti';
-import SystemAlertsTI from "../v3.1-RC2/test-type-checkers/system_alerts-ti";
-import SystemInformationTI from '../v3.1-RC2/test-type-checkers/system_information-ti';
-import SystemPricingPlansTI from '../v3.1-RC2/test-type-checkers/system_pricing_plans-ti'
-import SystemRegionsTI  from "../v3.1-RC2/test-type-checkers/system_regions-ti";
-import VehicleStatusTI from "../v3.1-RC2/test-type-checkers/vehicle_status-ti";
-import VehicleTypesTI from '../v3.1-RC2/test-type-checkers/vehicle_types-ti';
+import GbfsVersionsTI from '../v3.1-RC3/test-type-checkers/gbfs_versions-ti';
+import GbfsTI from '../v3.1-RC3/test-type-checkers/gbfs-ti';
+import GeofencingZonesTI from '../v3.1-RC3/test-type-checkers/geofencing_zones-ti';
+import ManifestTI from '../v3.1-RC3/test-type-checkers/manifest-ti';
+import StationsInformationTI from '../v3.1-RC3/test-type-checkers/station_information-ti';
+import StationStatusTI from '../v3.1-RC3/test-type-checkers/station_status-ti';
+import SystemAlertsTI from "../v3.1-RC3/test-type-checkers/system_alerts-ti";
+import SystemInformationTI from '../v3.1-RC3/test-type-checkers/system_information-ti';
+import SystemPricingPlansTI from '../v3.1-RC3/test-type-checkers/system_pricing_plans-ti'
+import SystemRegionsTI  from "../v3.1-RC3/test-type-checkers/system_regions-ti";
+import VehicleAvailabilityTI from "../v3.1-RC3/test-type-checkers/vehicle_availability-ti";
+import VehicleStatusTI from "../v3.1-RC3/test-type-checkers/vehicle_status-ti";
+import VehicleTypesTI from '../v3.1-RC3/test-type-checkers/vehicle_types-ti';
 
 // checkers
 const { GbfsVersions } = createCheckers(GbfsVersionsTI);
@@ -25,26 +26,28 @@ const { SystemAlerts } = createCheckers(SystemAlertsTI);
 const { SystemInformation } = createCheckers(SystemInformationTI);
 const { SystemPricingPlans } = createCheckers(SystemPricingPlansTI);
 const { SystemRegions } = createCheckers(SystemRegionsTI);
+const { VehicleAvailability } = createCheckers(VehicleAvailabilityTI);
 const { VehicleStatus } = createCheckers(VehicleStatusTI);
 const { VehicleTypes } = createCheckers(VehicleTypesTI);
 
-// json test data: these are gbfs with no errors for v3.1-RC2
-import gbfsVersionsJson from '../../../testFixtures/v3.1-RC2/gbfs_versions.json';
-import gbfsJson from '../../../testFixtures/v3.1-RC2/gbfs.json';
-import geofencingZonesJson from '../../../testFixtures/v3.1-RC2/geofencing_zones.json';
-import manifestJson from '../../../testFixtures/v3.1-RC2/manifest.json';
-import stationInformationJson from '../../../testFixtures/v3.1-RC2/station_information.json';
-import stationStatusJson from '../../../testFixtures/v3.1-RC2/station_status.json';
-import systemAlertsJson from '../../../testFixtures/v3.1-RC2/system_alerts.json';
-import systemInformationJson from '../../../testFixtures/v3.1-RC2/system_information.json';
-import systemPricingPlansJson from '../../../testFixtures/v3.1-RC2/system_pricing_plans.json';
-import systemRegionsJson from '../../../testFixtures/v3.1-RC2/system_regions.json';
-import vehicleStatusJson from '../../../testFixtures/v3.1-RC2/vehicle_status.json';
-import vehicleTypesJson from '../../../testFixtures/v3.1-RC2/vehicle_types.json';
+// json test data: these are gbfs with no errors for v3.1-RC3
+import gbfsVersionsJson from '../../../testFixtures/v3.1-RC3/gbfs_versions.json';
+import gbfsJson from '../../../testFixtures/v3.1-RC3/gbfs.json';
+import geofencingZonesJson from '../../../testFixtures/v3.1-RC3/geofencing_zones.json';
+import manifestJson from '../../../testFixtures/v3.1-RC3/manifest.json';
+import stationInformationJson from '../../../testFixtures/v3.1-RC3/station_information.json';
+import stationStatusJson from '../../../testFixtures/v3.1-RC3/station_status.json';
+import systemAlertsJson from '../../../testFixtures/v3.1-RC3/system_alerts.json';
+import systemInformationJson from '../../../testFixtures/v3.1-RC3/system_information.json';
+import systemPricingPlansJson from '../../../testFixtures/v3.1-RC3/system_pricing_plans.json';
+import systemRegionsJson from '../../../testFixtures/v3.1-RC3/system_regions.json';
+import vehicleAvailabilityJson from '../../../testFixtures/v3.1-RC3/vehicle_availability.json';
+import vehicleStatusJson from '../../../testFixtures/v3.1-RC3/vehicle_status.json';
+import vehicleTypesJson from '../../../testFixtures/v3.1-RC3/vehicle_types.json';
 
 // Date objects cannot be represented in JSON
 // Manual checks for dates are required
-describe('GBFS Validator v3.1-RC2', () => {
+describe('GBFS Validator v3.1-RC3', () => {
     it('should check if gbfs_versions is valid', () => {
         expect(() => {
             GbfsVersions.check(gbfsVersionsJson);
@@ -104,8 +107,13 @@ describe('GBFS Validator v3.1-RC2', () => {
             SystemRegions.check(systemRegionsJson);
         }).not.toThrow();
     });
+    it('should check if vehicle_availability is valid', () => {
+        expect(() => {
+            VehicleAvailability.check(vehicleAvailabilityJson);
+        }).not.toThrow();
+    });
 
-    it('should check if vehicle_status is valida', () => {
+    it('should check if vehicle_status is valid', () => {
         expect(() => {
             VehicleStatus.check(vehicleStatusJson);
         }).not.toThrow();
