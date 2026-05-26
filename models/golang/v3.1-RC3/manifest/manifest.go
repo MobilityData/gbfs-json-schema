@@ -89,7 +89,7 @@ const (
 type VersionVersion string
 
 const (
-	Purple31RC2 VersionVersion = "3.1-RC2"
+	Purple31RC3 VersionVersion = "3.1-RC3"
 	The10       VersionVersion = "1.0"
 	The11       VersionVersion = "1.1"
 	The20       VersionVersion = "2.0"
@@ -102,5 +102,5 @@ const (
 type ManifestVersion string
 
 const (
-	Fluffy31RC2 ManifestVersion = "3.1-RC2"
+	Fluffy31RC3 ManifestVersion = "3.1-RC3"
 )

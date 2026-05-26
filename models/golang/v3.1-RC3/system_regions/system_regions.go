@@ -15,27 +15,28 @@
 // Code generated from JSON Schema using quicktype. DO NOT EDIT.
 // To parse and unparse this JSON data, add this code to your project and do:
 //
-//    gbfs, err := UnmarshalGbfs(bytes)
-//    bytes, err = gbfs.Marshal()
+//    systemRegions, err := UnmarshalSystemRegions(bytes)
+//    bytes, err = systemRegions.Marshal()
 
-package gbfs
+package system_regions
 
 
 
 import "encoding/json"
 
-func UnmarshalGbfs(data []byte) (Gbfs, error) {
-	var r Gbfs
+func UnmarshalSystemRegions(data []byte) (SystemRegions, error) {
+	var r SystemRegions
 	err := json.Unmarshal(data, &r)
 	return r, err
 }
 
-func (r *Gbfs) Marshal() ([]byte, error) {
+func (r *SystemRegions) Marshal() ([]byte, error) {
 	return json.Marshal(r)
 }
 
-// Auto-discovery file that links to all of the other files published by the system.
-type Gbfs struct {
+// Describes regions for a system that is broken up by geographic or political region.
+type SystemRegions struct {
+	// Describe regions for a system that is broken up by geographic or political region.                 
 	Data                                                                                        Data      `json:"data"`
 	// Last time the data in the feed was updated in RFC3339 format.                                      
 	LastUpdated                                                                                 string `json:"last_updated"`
@@ -47,41 +48,28 @@ type Gbfs struct {
 	Version                                                                                     Version   `json:"version"`
 }
 
+// Describe regions for a system that is broken up by geographic or political region.
 type Data struct {
-	// An array of all of the feeds that are published by the auto-discovery file. Each element       
-	// in the array is an object with the keys below.                                                 
-	Feeds                                                                                      []Feed `json:"feeds"`
+	// Array of regions.         
+	Regions             []Region `json:"regions"`
 }
 
-type Feed struct {
-	// Key identifying the type of feed this is. The key must be the base file name defined in       
-	// the spec for the corresponding feed type.                                                     
-	Name                                                                                      Name   `json:"name"`
-	// URL for the feed.                                                                             
-	URL                                                                                       string `json:"url"`
+type Region struct {
+	// Public name for this region.       
+	Name                           []Name `json:"name"`
+	// identifier of the region.          
+	RegionID                       string `json:"region_id"`
 }
 
-// Key identifying the type of feed this is. The key must be the base file name defined in
-// the spec for the corresponding feed type.
-type Name string
-
-const (
-	GbfsVersions        Name = "gbfs_versions"
-	GeofencingZones     Name = "geofencing_zones"
-	NameGbfs            Name = "gbfs"
-	StationInformation  Name = "station_information"
-	StationStatus       Name = "station_status"
-	SystemAlerts        Name = "system_alerts"
-	SystemInformation   Name = "system_information"
-	SystemPricingPlans  Name = "system_pricing_plans"
-	SystemRegions       Name = "system_regions"
-	VehicleAvailability Name = "vehicle_availability"
-	VehicleStatus       Name = "vehicle_status"
-	VehicleTypes        Name = "vehicle_types"
-)
+type Name struct {
+	// IETF BCP 47 language code.       
+	Language                     string `json:"language"`
+	// The translated text.             
+	Text                         string `json:"text"`
+}
 
 type Version string
 
 const (
-	The31Rc2 Version = "3.1-RC2"
+	The31Rc3 Version = "3.1-RC3"
 )
