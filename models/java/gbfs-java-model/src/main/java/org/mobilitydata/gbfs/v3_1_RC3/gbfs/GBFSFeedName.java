@@ -8,6 +8,7 @@ import org.mobilitydata.gbfs.v3_1_RC3.system_alerts.GBFSSystemAlerts;
 import org.mobilitydata.gbfs.v3_1_RC3.system_information.GBFSSystemInformation;
 import org.mobilitydata.gbfs.v3_1_RC3.system_pricing_plans.GBFSSystemPricingPlans;
 import org.mobilitydata.gbfs.v3_1_RC3.system_regions.GBFSSystemRegions;
+import org.mobilitydata.gbfs.v3_1_RC3.vehicle_availability.GBFSVehicleAvailability;
 import org.mobilitydata.gbfs.v3_1_RC3.vehicle_status.GBFSVehicleStatus;
 import org.mobilitydata.gbfs.v3_1_RC3.vehicle_types.GBFSVehicleTypes;
 
@@ -33,6 +34,7 @@ public class GBFSFeedName {
         feedNameMap.put(GBFSFeed.Name.SYSTEM_INFORMATION, GBFSSystemInformation.class);
         feedNameMap.put(GBFSFeed.Name.SYSTEM_PRICING_PLANS, GBFSSystemPricingPlans.class);
         feedNameMap.put(GBFSFeed.Name.SYSTEM_REGIONS, GBFSSystemRegions.class);
+        feedNameMap.put(GBFSFeed.Name.VEHICLE_AVAILABILITY, GBFSVehicleAvailability.class);
         feedNameMap.put(GBFSFeed.Name.VEHICLE_STATUS, GBFSVehicleStatus.class);
         feedNameMap.put(GBFSFeed.Name.VEHICLE_TYPES, GBFSVehicleTypes.class);
         classMap = feedNameMap.entrySet().stream().collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey));
