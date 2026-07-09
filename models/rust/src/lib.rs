@@ -1,3 +1,6 @@
+#[path = "2.3/mod.rs"]
+pub mod v2_3;
+
 #[path = "3.0/mod.rs"]
 pub mod v3_0;
 
