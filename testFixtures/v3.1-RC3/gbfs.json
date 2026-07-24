@@ -11,6 +11,10 @@
         {
           "name": "station_information",
           "url": "https://www.example.com/gbfs/1/station_information"
+        },
+        {
+          "name": "station_status",
+          "url": "https://www.example.com/gbfs/1/station_status"
         }
       ]
     }
