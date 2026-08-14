@@ -70,7 +70,43 @@
                 "properties": {
                   "name": { "const": "system_information" }
                 }
-              }
+              },
+              "allOf": [
+                {
+                  "anyOf": [
+                    {
+                      "contains": {
+                        "properties": {
+                          "name": { "const": "station_status" }
+                        }
+                      }
+                    },
+                    {
+                      "contains": {
+                        "properties": {
+                          "name": { "const": "free_bike_status" }
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "if": {
+                    "contains": {
+                      "properties": {
+                        "name": { "const": "station_information" }
+                      }
+                    }
+                  },
+                  "then": {
+                    "contains": {
+                      "properties": {
+                        "name": { "const": "station_status" }
+                      }
+                    }
+                  }
+                }
+              ]
             }
           },
           "required": ["feeds"]
