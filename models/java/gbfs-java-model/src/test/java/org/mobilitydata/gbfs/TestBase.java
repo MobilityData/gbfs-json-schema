@@ -1,7 +1,8 @@
 package org.mobilitydata.gbfs;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import tools.jackson.databind.ObjectMapper;
 
+import java.io.InputStream;
 import java.net.URL;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -13,7 +14,11 @@ public abstract class TestBase {
     public <T> T assertUnmarshalDoesNotThrow(String path, Class<T> clazz) {
         URL resource = getClass().getClassLoader().getResource(path);
         AtomicReference<T> returnValue = new AtomicReference<>();
-        assertDoesNotThrow(() -> returnValue.set(objectMapper.readValue(resource, clazz)));
+        assertDoesNotThrow(() -> {
+            try (InputStream in = resource.openStream()) {
+                returnValue.set(objectMapper.readValue(in, clazz));
+            }
+        });
         return returnValue.get();
     }
 }

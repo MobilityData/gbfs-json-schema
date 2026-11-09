@@ -1,5 +1,5 @@
 {
-  "last_updated": 1640887163,
+  "last_updated": "2021-12-30T17:59:23Z",
   "ttl": 60,
   "version": "3.0",
   "data": {
@@ -68,8 +68,8 @@
                 "language": "en"
               }
             ],
-            "start": 1593878400,
-            "end": 1593907260,
+            "start": "2020-07-04T16:00:00Z",
+            "end": "2020-07-05T00:01:00Z",
             "rules": [
               {
                 "vehicle_type_id": [
