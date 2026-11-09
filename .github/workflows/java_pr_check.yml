@@ -1,8 +1,9 @@
 name: GBFS Java Language Bindings - PR Version Update Check
 on:
   pull_request:
-    branches: 
+    branches:
         - master
+        - release/java-model-1.x
     paths:
         - "models/java/**"
     
@@ -28,27 +29,30 @@ jobs:
               working-directory: models/java/gbfs-java-model
               run: echo "VERSION_CURRENT=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)" >> $GITHUB_OUTPUT
 
-            - name: Checkout master branch
+            - name: Checkout base branch
+              env:
+                base_ref: ${{ github.base_ref }}
               run: |
-                git fetch origin master
-                git checkout master
-            
-            - name: Extract Version from Master Branch
-              id: extract_version_master
+                git fetch origin "$base_ref"
+                git checkout FETCH_HEAD
+
+            - name: Extract Version from Base Branch
+              id: extract_version_base
               working-directory: models/java/gbfs-java-model
-              run: echo "VERSION_MASTER=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)" >> $GITHUB_OUTPUT
-            
+              run: echo "VERSION_BASE=$(mvn -q -Dexec.executable=echo -Dexec.args='${project.version}' --non-recursive exec:exec)" >> $GITHUB_OUTPUT
+
             - name: Compare versions
               id: version-change-check
               env:
                 local_version: ${{ steps.extract_version_current.outputs.VERSION_CURRENT }}
-                master_version: ${{ steps.extract_version_master.outputs.VERSION_MASTER }}
+                base_version: ${{ steps.extract_version_base.outputs.VERSION_BASE }}
+                base_ref: ${{ github.base_ref }}
               run: |
-                if [ "$local_version" != "$master_version" ]; then
-                    echo "Local branch version ($local_version) is different from master branch version ($master_version)"
+                if [ "$local_version" != "$base_version" ]; then
+                    echo "Local branch version ($local_version) is different from $base_ref branch version ($base_version)"
                     echo "VERSION_CHANGED=true" >> $GITHUB_OUTPUT
                 else
-                    echo "Local branch version ($local_version) is the same as master branch version ($master_version)"
+                    echo "Local branch version ($local_version) is the same as $base_ref branch version ($base_version)"
                     echo "Please update the models/java/gbfs-java-model/pom.xml version so that your changes will be published."
                     echo "VERSION_CHANGED=false" >> $GITHUB_OUTPUT
                 fi

@@ -2,6 +2,11 @@
 
 ![Maven Central Version](https://img.shields.io/maven-central/v/org.mobilitydata/gbfs-java-model.svg)
 
+> **Maintenance branch (1.x, Jackson 2).** This branch (`release/java-model-1.x`) maintains the
+> Jackson 2 line of `gbfs-java-model` (versions 1.0.x) for existing users. It only receives fixes and
+> schema updates; new development happens on `master` (2.x, Jackson 3). To upgrade, see the
+> [migration guide](https://github.com/MobilityData/gbfs-json-schema/blob/master/models/java/MIGRATING_TO_2.md).
+
 Generates Java model from GBFS json schema using jsonschema2pojo with jackson2 annotations.
 
 In order to avoid naming conflicts in generated classes, each feed gets its own package, and all
@@ -25,7 +30,7 @@ dependencies section:
 <dependency>
   <groupId>org.mobilitydata</groupId>
   <artifactId>gbfs-java-model</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.14</version>
 </dependency>
 ```
 
@@ -33,7 +38,7 @@ For [Gradle](https://www.gradle.org/), add the following to your `build.gradle`
 dependecies section:
 
 ```
-implementation group: 'org.mobilitydata', name: 'gbfs-java-model', version: '1.0.0'
+implementation group: 'org.mobilitydata', name: 'gbfs-java-model', version: '1.0.14'
 ```
 
 Make sure the Maven central repository is referenced by your project.

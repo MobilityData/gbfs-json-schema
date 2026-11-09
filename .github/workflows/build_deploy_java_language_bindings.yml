@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - release/java-model-1.x
     paths:
       - "models/java/**"
 
