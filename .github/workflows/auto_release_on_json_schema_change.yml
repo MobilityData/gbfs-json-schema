@@ -1,14 +1,16 @@
 name: Auto Release on Schema Changes
 
+# Runs on push (not pull_request: closed) so merges of fork PRs get a writable GITHUB_TOKEN.
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches:
       - master
 
+permissions:
+  contents: write
+
 jobs:
   release:
-    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +21,8 @@ jobs:
 
       - name: Detect schema changes in versioned folders
         run: |
-          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          # Compare against master before this push, not the PR base, which can be stale.
+          BASE_SHA="${{ github.event.before }}"
           MERGE_SHA="${{ github.sha }}"
 
           echo "Base SHA: $BASE_SHA"
