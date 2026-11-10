@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.mobilitydata</groupId>
     <artifactId>gbfs-java-model</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
 
     <name>gbfs-java-model</name>
 
@@ -64,7 +64,7 @@
         <central-publishing-maven-plugin.version>0.9.0</central-publishing-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.12</jacoco-maven-plugin.version>
         <maven-exec-plugin.version>1.6.0</maven-exec-plugin.version>
-        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
         <maven-enforcer-plugin.version>3.4.1</maven-enforcer-plugin.version>
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.6.3</maven-javadoc-plugin.version>
@@ -193,6 +193,8 @@
                 <version>${jsonschema2pojo-maven-plugin.version}</version>
                 <configuration>
                     <annotationStyle>jackson3</annotationStyle>
+                    <!-- Keeps the generated code free of a dependency on the java.compiler module -->
+                    <includeGeneratedAnnotation>false</includeGeneratedAnnotation>
                     <customAnnotator>org.mobilitydata.gbfs.Rfc3339DateTimeAnnotator</customAnnotator>
                 </configuration>
                 <dependencies>
@@ -292,6 +294,10 @@
                     <compilerArgs>
                         <!--arg>-Werror</arg-->
                         <arg>-Xlint:all</arg>
+                        <!-- Only reported for classes in exported packages, i.e. now that there is a module-info.
+                             The model classes intentionally rely on default constructors (Jackson, builders), and
+                             the generated Serializable classes hold List/Map fields. -->
+                        <arg>-Xlint:-missing-explicit-ctor,-serial</arg>
                     </compilerArgs>
                 </configuration>
                 <dependencies>
