@@ -39,7 +39,7 @@ public class GeofencingRuleFactory extends RuleFactory {
         ) {
             if ((nodeName.equals("geometry") || nodeName.equals("station_area")) && node instanceof ObjectNode) {
                 ObjectNode on = (ObjectNode) node;
-                on.set("existingJavaType", new TextNode("org.geojson.MultiPolygon"));
+                on.set("existingJavaType", new TextNode("org.mobilitydata.gbfs.geojson.MultiPolygon"));
             }
             return super.apply(nodeName, node, parent, _package, schema);
         }

@@ -2,7 +2,7 @@ package org.mobilitydata.gbfs.v3_0.geofencing_zones;
 
 import org.mobilitydata.gbfs.TestBase;
 
-import org.geojson.LngLatAlt;
+import org.mobilitydata.gbfs.geojson.LngLatAlt;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
