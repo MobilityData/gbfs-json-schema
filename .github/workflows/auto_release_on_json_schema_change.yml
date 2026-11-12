@@ -15,7 +15,7 @@ jobs:
 
     steps:
       - name: Checkout repository (full history + tags)
-        uses: actions/checkout@v3
+        uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
 
