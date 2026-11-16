@@ -4,14 +4,14 @@
 
 Generates Java model from GBFS json schema using jsonschema2pojo with Jackson 3 annotations.
 
-The model depends on [Jackson 3](https://github.com/FasterXML/jackson) (`tools.jackson` databind) and
-the Jackson 3 version of [geojson-jackson](https://github.com/opendatalab-de/geojson-jackson).
+The model depends on [Jackson 3](https://github.com/FasterXML/jackson) (`tools.jackson` databind).
+GeoJSON geometries (geofencing zones and station areas) use the model's own `org.mobilitydata.gbfs.geojson` types.
 The generated classes still use the `com.fasterxml.jackson.annotation` annotations, which are shared
 by Jackson 2 and 3. From version 2.0.0 the model can no longer be used with a Jackson 2 `ObjectMapper`: the geofencing
 geometry types carry Jackson 3 (de)serializers, and the v3.x date handling (see below) relies on Jackson 3
 annotations that Jackson 2 silently ignores.
 
-Upgrading from 1.x? See the [migration guide](MIGRATING_TO_2.md).
+Upgrading from 1.x? See the [migration guide](MIGRATING_TO_2.md). Upgrading from 2.x? See [MIGRATING_TO_3.md](MIGRATING_TO_3.md).
 
 In order to avoid naming conflicts in generated classes, each feed gets its own package, and all
 classes are prefixed with "GBFS".
@@ -34,7 +34,7 @@ dependencies section:
 <dependency>
   <groupId>org.mobilitydata</groupId>
   <artifactId>gbfs-java-model</artifactId>
-  <version>2.0.0</version>
+  <version>3.0.0</version>
 </dependency>
 ```
 
@@ -42,7 +42,7 @@ For [Gradle](https://www.gradle.org/), add the following to your `build.gradle`
 dependecies section:
 
 ```
-implementation group: 'org.mobilitydata', name: 'gbfs-java-model', version: '2.0.0'
+implementation group: 'org.mobilitydata', name: 'gbfs-java-model', version: '3.0.0'
 ```
 
 Make sure the Maven central repository is referenced by your project.
