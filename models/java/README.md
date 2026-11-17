@@ -21,6 +21,22 @@ since some consumers may need to handle multiple non-compatible versions in the 
 (i.e. you should be able to parse v2.1 feeds with the v2.2 package, but v3.0 package would not
 be able to parse v2.2 feeds).
 
+## Java module
+
+The jar is a Java module named `org.mobilitydata.gbfs`. It requires `tools.jackson.databind` and `geojson.jackson`
+(both transitively, since `org.geojson.MultiPolygon` is part of the public API) and exports the model packages.
+Jackson reads and writes the classes through their public getters and setters, so no package is opened.
+`geojson-jackson` has no module descriptor, so `geojson.jackson` is a filename-derived automatic module and the
+compiler warns about it when building this project.
+On the classpath nothing changes. If you used the jar on the module path before 2.1.0, the automatic module was
+named `gbfs.java.model`, so update `requires gbfs.java.model;` to `requires org.mobilitydata.gbfs;`. Reflection into
+the model packages by libraries other than Jackson (for example Gson) now needs `--add-opens`. The
+`org.mobilitydata.gbfs.jackson` serializers are exported to Jackson only, whereas the automatic module exported them
+to everyone.
+
+When adding a GBFS version or feed, add its packages to `gbfs-java-model/src/main/java/module-info.java`.
+`ModuleDescriptorTest` fails if one is missing.
+
 ## Add the Dependency 
 
 To use the `gbfs-java-model` classes in your own project, you need to add
@@ -34,7 +50,7 @@ dependencies section:
 <dependency>
   <groupId>org.mobilitydata</groupId>
   <artifactId>gbfs-java-model</artifactId>
-  <version>2.0.0</version>
+  <version>2.1.0</version>
 </dependency>
 ```
 
@@ -42,7 +58,7 @@ For [Gradle](https://www.gradle.org/), add the following to your `build.gradle`
 dependecies section:
 
 ```
-implementation group: 'org.mobilitydata', name: 'gbfs-java-model', version: '2.0.0'
+implementation group: 'org.mobilitydata', name: 'gbfs-java-model', version: '2.1.0'
 ```
 
 Make sure the Maven central repository is referenced by your project.
